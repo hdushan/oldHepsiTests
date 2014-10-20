@@ -49,3 +49,11 @@ Then(/^I should see the notification$/) do
   sleep(3)
   find('#notification').should_not be_visible
 end
+
+Then(/^I should see a list of (.*) results$/) do | search_term |
+  expect(first('.search-item a').text have_content search_term)
+end
+
+Then(/^I should see no results page$/) do
+  expect(find(".search-no-results"))
+end

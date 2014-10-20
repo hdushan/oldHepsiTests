@@ -46,8 +46,7 @@
 @78 @storefront Feature: Display generic return policy on details page 
 @73 @storefront Feature: Display tech specs on details page 
 @68 @storefront Feature: Show Installments by Bank on Details Page 
-@67 @storefront Feature: Add one to basket from details page 
-@65 @storefront Feature: Display super fast on details page 
+@65 @storefront Feature: Display super fast on details page
 @64 @storefront Feature: Display 2-slot/scheduled delivery 
 @62 @storefront Feature: Display basic product description on details page 
 @61 @storefront Feature: Display one product image on details page 
@@ -65,5 +64,8 @@
 @23 @storefront Feature: Filter by Price Range 
 @19 @storefront Feature: Show image for products in results 
 @18 @storefront Feature: Display one product price on results 
-@17 @storefront Feature: Display more search results 
-@16 @storefront Feature: Basic search 
+@17 @storefront Feature: Display more search results
+
+Done
+@67 @storefront Feature: Add one to basket from details page
+@16 @storefront Feature: Basic search
