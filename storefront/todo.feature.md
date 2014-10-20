@@ -1,0 +1,69 @@
+@523 @storefront Feature: Display Campaign Banners in Flyout Menu 
+@488 @storefront Feature: Display Tax Added Price for On Sale Products 
+@483 @storefront Feature: Homepage Campaign Banners Next to Carousel 
+@481 @storefront Feature: Feedback Mechanism for Beta 
+@476 @storefront Feature: Search results page enhancements on Desktop 
+@473 @storefront Feature: Hamburger menu for mobile journey 
+@467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day""" 
+@460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click" 
+@428 @storefront Feature: Browse by 4th level 
+@423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants" 
+@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" 
+@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page 
+@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page 
+@358 @storefront Feature: Error Handling for Merchant Listings on Details Page 
+@343 @storefront Feature: Display Filter by Product Specific Attributes 
+@315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results 
+@313 @storefront Feature: Category event tracking 
+@312 @storefront Feature: Include deactive state for clear 
+@305 @storefront Feature: Browse Categories by 3rd 
+@301 @storefront Feature: Split and label variants 
+@295 @storefront Feature: Indicate which filter is on 
+@276 @storefront Feature: Understand old category page URLs 
+@263 @storefront Feature: Turn off native auto suggest 
+@261 @storefront Feature: Remove filter & sort on 0 results 
+@256 @storefront Feature: "Filter by brand needs ""Show More"" button" 
+@255 @storefront Feature: "Fix ""extra fee"" product pricing" 
+@248 @storefront Feature: Footer 
+@246 @storefront Feature: Clear all enabled filters 
+@237 @storefront Feature: Introduce 'search' button with in product search 
+@221 @storefront Feature: Display merchant offers on details page 
+@212 @storefront Feature: Separate sort & filter on results 
+@200 @storefront Feature: Dynamic announcement banners 
+@190 @storefront Feature: "Show ""Deal of the Day"" on Homepage" 
+@189 @storefront Feature: Static announcement banners 
+@183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page 
+@167 @storefront Feature: Shorten product name 
+@144 @storefront Feature: Display variants on details page 
+@143 @storefront Feature: Display one product price 
+@141 @storefront Feature: "Filter Results by ""Shipping Style"" (E.g. Super Fast Delivery  Free Shipping)"
+@140 @storefront Feature: Display product specific return policy 
+@138 @storefront Feature: Display discount - i.e. original price & percentage on image 
+@116 @storefront Feature: Remember my basket without login 
+@103 @storefront Feature: Display free shipping on details page 
+@84 @storefront Feature: Show comments about a product on details page 
+@83 @storefront Feature: Show ratings of a products on details & results 
+@78 @storefront Feature: Display generic return policy on details page 
+@73 @storefront Feature: Display tech specs on details page 
+@68 @storefront Feature: Show Installments by Bank on Details Page 
+@67 @storefront Feature: Add one to basket from details page 
+@65 @storefront Feature: Display super fast on details page 
+@64 @storefront Feature: Display 2-slot/scheduled delivery 
+@62 @storefront Feature: Display basic product description on details page 
+@61 @storefront Feature: Display one product image on details page 
+@60 @storefront Feature: Display multiple images on details page 
+@56 @storefront Feature: Display product name on details page 
+@51 @storefront Feature: Login using e-mail & password 
+@48 @storefront Feature: Browse by 2nd-level subcategories 
+@47 @storefront Feature: Browse 1st level categories 
+@31 @storefront Feature: Sort by best selling 
+@28 @storefront Feature: Filter by one brand 
+@27 @storefront Feature: Filter by 1st level category 
+@26 @storefront Feature: Sort by price 
+@25 @storefront Feature: Filter by one type of rating 
+@24 @storefront Feature: Ability to Filter by Promotion (E.g. Discounted  Super Fast, Limited Stock)
+@23 @storefront Feature: Filter by Price Range 
+@19 @storefront Feature: Show image for products in results 
+@18 @storefront Feature: Display one product price on results 
+@17 @storefront Feature: Display more search results 
+@16 @storefront Feature: Basic search 
