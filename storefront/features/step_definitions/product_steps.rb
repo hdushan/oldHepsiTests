@@ -1,7 +1,8 @@
 productName = ""
+@page = ""
 
 Given /^I am on the homepage$/ do
-  visit '/'
+  @page = Pages::Homepage.visit
 end
 
 Given /^I select the iphone from search results$/ do
@@ -46,8 +47,8 @@ end
 
 Then(/^I should see the notification$/) do
   find('#notification').should be_visible
-  sleep(3)
-  find('#notification').should be_visible
+  sleep(5)
+  find('#notification').should_not be_visible
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
@@ -55,5 +56,5 @@ Then(/^I should see a list of (.*) results$/) do | search_term |
 end
 
 Then(/^I should see no results page$/) do
-  expect(find(".search-no-results"))
+  expect(find(".no-results-container"))
 end

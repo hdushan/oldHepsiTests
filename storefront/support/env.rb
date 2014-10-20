@@ -7,6 +7,7 @@ require 'selenium-webdriver'
 require 'faker'
 require 'capybara-screenshot'
 require 'capybara-screenshot/cucumber'
+require 'capybara-page-object'
 
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 Capybara.run_server = true

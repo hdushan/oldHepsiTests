@@ -9,3 +9,4 @@ gem 'poltergeist'
 gem 'selenium-webdriver'
 gem 'faker'
 gem 'capybara-screenshot', :group => :test
+gem 'capybara-page-object'
