@@ -32,5 +32,4 @@ After getting into the directory, all you need to do is just installing the gems
 
 To run your test cases with tags ;
 
-    cucumber  --tag @regression merchant
-    cucumber  --tag @regression hbadmin	
+    cucumber --tag @regression storefront

@@ -47,7 +47,7 @@ end
 Then(/^I should see the notification$/) do
   find('#notification').should be_visible
   sleep(3)
-  find('#notification').should_not be_visible
+  find('#notification').should be_visible
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
