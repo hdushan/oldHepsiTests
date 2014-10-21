@@ -4,6 +4,7 @@ Given /^I select the iphone from search results$/ do
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
+  # @17 expect('.search-item a').count to_be 20
   expect(first('.search-item a').text have_content search_term)
 end
 

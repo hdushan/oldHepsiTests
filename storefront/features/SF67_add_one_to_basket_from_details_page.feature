@@ -18,3 +18,4 @@ Feature: Add one to basket from details page
 
     When I click on the shopping cart
   	Then I should see the product in the cart
+
