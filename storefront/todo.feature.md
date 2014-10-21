@@ -1,4 +1,4 @@
-To be analysed
+---------------------------- To be analysed ----------------------------
 
 @481 @storefront Feature: Feedback Mechanism for Beta 
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day""" 
@@ -62,21 +62,20 @@ To be analysed
 @48 @storefront Feature: Browse by 2nd-level subcategories 
 @47 @storefront Feature: Browse 1st level categories 
 @31 @storefront Feature: Sort by best selling 
-@26 @storefront Feature: Sort by price 
-@24 @storefront Feature: Ability to Filter by Promotion (E.g. Discounted  Super Fast, Limited Stock)
-@141 @storefront Feature: "Filter Results by ""Shipping Style"" (E.g. Super Fast Delivery  Free Shipping)"
+@26 @storefront Feature: Sort by price
 
-@28 @storefront Feature: Filter by one brand 
-@27 @storefront Feature: Filter by 1st level category 
-@25 @storefront Feature: Filter by one type of rating 
-@23 @storefront Feature: Filter by Price Range 
-
-
-To implement
 @17 @storefront Feature: Display more search results
 @18 @storefront Feature: Display one product price on result
 @19 @storefront Feature: Show image for products in results
 
-Done
+
+@24 @storefront Feature: Ability to Filter by Promotion (E.g. Discounted  Super Fast, Limited Stock)
+@141 @storefront Feature: "Filter Results by ""Shipping Style"" (E.g. Super Fast Delivery  Free Shipping)"
+---------------------------- Done ----------------------------
 @67 @storefront Feature: Add one to basket from details page
 @16 @storefront Feature: Basic search
+
+@28 @storefront Feature: Filter by one brand
+@27 @storefront Feature: Filter by 1st level category
+@25 @storefront Feature: Filter by one type of rating
+@23 @storefront Feature: Filter by Price Range

@@ -17,7 +17,3 @@ Feature: Basic search
   Scenario: Searching, with no results
     When I searched for iphonethatdoesnotexist
     Then I should see no results page
-
-
-
-#  @18 @storefront Feature: Display one product price on results

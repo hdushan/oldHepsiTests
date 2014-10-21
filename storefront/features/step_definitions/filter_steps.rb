@@ -1,12 +1,30 @@
 originalResult = ""
-When(/^I click load more results$/) do
-  click_button "moreResult"
+
+Given(/^I filter by first level category$/) do
+  originalResult = find("#totalItems").text
+  first('#categoryList li label').click
+end
+
+Given(/^I filter by brand$/) do
+  originalResult = find("#totalItems").text
+  click_button "btnExpandBrands"
+  first('#brandList li label').click
+end
+
+Given(/^I filter by rating$/) do
+  originalResult = find("#totalItems").text
+  click_button "btnExpandStarRatings"
+  all('#starRatingList li label')[3].click
 end
 
 Given(/^I filter by price$/) do
   originalResult = find("#totalItems").text
   click_button "btnExpand-actual_price"
   first('#otherFilterList-actual_price li label').click
+end
+
+When(/^I click load more results$/) do
+  click_button "moreResult"
 end
 
 Then(/^I should only see products that fall under my preset range$/) do

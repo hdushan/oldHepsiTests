@@ -1,10 +1,5 @@
-#@28 @storefront Feature: Filter by one brand
-#@27 @storefront Feature: Filter by 1st level category
-#@25 @storefront Feature: Filter by one type of rating
-
-
-
 @23 @storefront
+
 Feature: Filter by Price Range
   As a buyer
   I want to filter my results by price
