@@ -18,7 +18,7 @@ Feature: Filter by Price Range
     Given I filter by price
     Then I should only see products that fall under my preset range
 
-#  Scenario: Clicking more results
-#    Given I filter by price
-#    When I click load more results
-#    Then the filter should still be applied
+  Scenario: Clicking more results
+    Given I filter by price
+    When I click load more results
+    Then there should be 40 results visible results
