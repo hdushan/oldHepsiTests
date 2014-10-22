@@ -4,10 +4,13 @@ Given /^I select the iphone from search results$/ do
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
-  # @17 expect('.search-item a').count to_be 20
   expect(first('.search-item a').text have_content search_term)
 end
 
 Then(/^I should see no results page$/) do
   expect(find(".no-results-container"))
+end
+
+Then(/^I see a result with product price and tax$/) do
+  expect(first(".product-price"))
 end

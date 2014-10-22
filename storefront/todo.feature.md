@@ -20,25 +20,21 @@
 @312 @storefront Feature: Include deactive state for clear
 @246 @storefront Feature: Clear all enabled filters 
 
-@212 @storefront Feature: Separate sort & filter on results 
-@200 @storefront Feature: Dynamic announcement banners 
-@190 @storefront Feature: "Show ""Deal of the Day"" on Homepage" 
+@212 @storefront Feature: Separate sort & filter on results
+
 @189 @storefront Feature: Static announcement banners 
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page 
 @167 @storefront Feature: Shorten product name 
 
-@116 @storefront Feature: Remember my basket without login 
-
+@116 @storefront Feature: Remember my basket without login
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @221 @storefront Feature: Display merchant offers on details page 
 @343 @storefront Feature: Display Filter by Product Specific Attributes 
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results 
 @523 @storefront Feature: Display Campaign Banners in Flyout Menu
-@488 @storefront Feature: Display Tax Added Price for On Sale Products 
-@483 @storefront Feature: Homepage Campaign Banners Next to Carousel 
-@144 @storefront Feature: Display variants on details page 
-@143 @storefront Feature: Display one product price 
+@488 @storefront Feature: Display Tax Added Price for On Sale Products
+@144 @storefront Feature: Display variants on details page
 @140 @storefront Feature: Display product specific return policy 
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image 
 @103 @storefront Feature: Display free shipping on details page 
@@ -78,3 +74,5 @@
 @23 @storefront Feature: Filter by Price Range
 
 @51 @storefront Feature: Login using e-mail & password
+@190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
+@143 @storefront Feature: Display one product price

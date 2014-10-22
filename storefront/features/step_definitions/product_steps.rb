@@ -27,3 +27,7 @@ Then(/^I should see the notification$/) do
   sleep(5)
   find('#notification').should_not be_visible
 end
+
+Then(/^I see product price with tax$/) do
+  expect(find("#offering-price"))
+end
