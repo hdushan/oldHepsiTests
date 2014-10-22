@@ -23,6 +23,12 @@ Given(/^I filter by price$/) do
   first('#otherFilterList-actual_price li label').click
 end
 
+Given(/^I filter by shipping style$/) do
+  originalResult = find("#totalItems").text
+  click_button "btnExpand-filterflag"
+  all('#otherFilterList-filterflag li label')[1].click
+end
+
 When(/^I click load more results$/) do
   click_button "moreResult"
 end

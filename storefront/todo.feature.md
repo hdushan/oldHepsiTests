@@ -6,23 +6,18 @@
  
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants" 
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" 
-@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page 
-@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page 
-@358 @storefront Feature: Error Handling for Merchant Listings on Details Page 
 
-@313 @storefront Feature: Category event tracking 
-
-@428 @storefront Feature: Browse by 4th level
-@305 @storefront Feature: Browse Categories by 3rd 
+@358 @storefront Feature: Error Handling for Merchant Listings on Details Page
 
 @301 @storefront Feature: Split and label variants 
 @295 @storefront Feature: Indicate which filter is on 
 @276 @storefront Feature: Understand old category page URLs 
 @263 @storefront Feature: Turn off native auto suggest 
-@261 @storefront Feature: Remove filter & sort on 0 results 
-@256 @storefront Feature: "Filter by brand needs ""Show More"" button" 
+@261 @storefront Feature: Remove filter & sort on 0 results
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" 
-@248 @storefront Feature: Footer 
+@248 @storefront Feature: Footer
+
+@312 @storefront Feature: Include deactive state for clear
 @246 @storefront Feature: Clear all enabled filters 
 
 @212 @storefront Feature: Separate sort & filter on results 
@@ -34,7 +29,8 @@
 
 @116 @storefront Feature: Remember my basket without login 
 
-@312 @storefront Feature: Include deactive state for clear 
+@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
+@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @221 @storefront Feature: Display merchant offers on details page 
 @343 @storefront Feature: Display Filter by Product Specific Attributes 
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results 
@@ -55,12 +51,15 @@
 @62 @storefront Feature: Display basic product description on details page 
 @61 @storefront Feature: Display one product image on details page 
 @60 @storefront Feature: Display multiple images on details page 
-@56 @storefront Feature: Display product name on details page 
+@56 @storefront Feature: Display product name on details page
+@68 @storefront Feature: Show Installments by Bank on Details Page
 
-@68 @storefront Feature: Show Installments by Bank on Details Page 
-@51 @storefront Feature: Login using e-mail & password 
+
+@428 @storefront Feature: Browse by 4th level
+@305 @storefront Feature: Browse Categories by 3rd
 @48 @storefront Feature: Browse by 2nd-level subcategories 
-@47 @storefront Feature: Browse 1st level categories 
+@47 @storefront Feature: Browse 1st level categories
+
 @31 @storefront Feature: Sort by best selling 
 @26 @storefront Feature: Sort by price
 
@@ -69,8 +68,6 @@
 @19 @storefront Feature: Show image for products in results
 
 
-@24 @storefront Feature: Ability to Filter by Promotion (E.g. Discounted  Super Fast, Limited Stock)
-@141 @storefront Feature: "Filter Results by ""Shipping Style"" (E.g. Super Fast Delivery  Free Shipping)"
 ---------------------------- Done ----------------------------
 @67 @storefront Feature: Add one to basket from details page
 @16 @storefront Feature: Basic search
@@ -79,3 +76,5 @@
 @27 @storefront Feature: Filter by 1st level category
 @25 @storefront Feature: Filter by one type of rating
 @23 @storefront Feature: Filter by Price Range
+
+@51 @storefront Feature: Login using e-mail & password
