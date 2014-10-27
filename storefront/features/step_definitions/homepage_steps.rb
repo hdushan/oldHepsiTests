@@ -1,7 +1,7 @@
 @page = ""
 
 Given /^I am on the homepage$/ do
-  @page = Pages::Homepage.visit
+   @page = Pages::Homepage.visit
 end
 
 When /^I searched for (.*)$/  do | search_term |
