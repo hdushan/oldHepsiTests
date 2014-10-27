@@ -22,7 +22,11 @@ After getting into the directory, all you need to do is just installing the gems
 
     bundle install --verbose
 
-To run your test cases with tags ;
+To run all test use ;
+
+cucumber storefront
+
+To run only test cases with the regression tag ;
 
     cucumber  --tag @regression storefront
 
