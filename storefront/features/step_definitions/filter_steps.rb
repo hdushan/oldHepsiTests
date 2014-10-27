@@ -7,25 +7,21 @@ end
 
 Given(/^I filter by brand$/) do
   originalResult = find("#totalItems").text
-  click_button "btnExpandBrands"
   first('#brandList li label').click
 end
 
 Given(/^I filter by rating$/) do
   originalResult = find("#totalItems").text
-  click_button "btnExpandStarRatings"
   all('#starRatingList li label')[3].click
 end
 
 Given(/^I filter by price$/) do
   originalResult = find("#totalItems").text
-  click_button "btnExpand-actual_price"
   first('#otherFilterList-actual_price li label').click
 end
 
 Given(/^I filter by shipping style$/) do
   originalResult = find("#totalItems").text
-  click_button "btnExpand-filterflag"
   all('#otherFilterList-filterflag li label')[1].click
 end
 
