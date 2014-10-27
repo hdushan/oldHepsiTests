@@ -23,9 +23,8 @@ Then /^I should see the product in the cart$/ do
 end
 
 Then(/^I should see the notification$/) do
-  find('#notification').should be_visible
-  sleep(5)
-  find('#notification').should_not be_visible
+  wait_for_visibility(page, '#notification', true)
+  wait_for_visibility(page, '#notification', false)
 end
 
 Then(/^I see product price with tax$/) do
