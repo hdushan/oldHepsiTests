@@ -1,0 +1,1 @@
+--------------Any Assumptions made about cards ------------------
