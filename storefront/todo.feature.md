@@ -1,7 +1,6 @@
 ---------------------------- To be analysed ----------------------------
 
-@481 @storefront Feature: Feedback Mechanism for Beta 
-@467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day""" 
+@467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click" 
  
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants" 
@@ -65,6 +64,9 @@
 
 
 ---------------------------- Done ----------------------------
+
+@481 @storefront Feature: Feedback Mechanism for Beta
+
 @67 @storefront Feature: Add one to basket from details page
 @16 @storefront Feature: Basic search
 
