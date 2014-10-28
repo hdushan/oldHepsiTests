@@ -27,7 +27,7 @@ end
 
 Then /^I should see the product in the cart$/ do
   expect(find('.cart-item', :count => 1))
-  expect(find('.cart-item')).to have_content @productName
+  expect(find('.cart-item').text have_content @productName)
 end
 
 Then(/^I should see the notification$/) do
@@ -56,4 +56,8 @@ end
 
 Then(/^I should see an empty cart$/) do
   expect(page).to_not have_selector '.cart-item'
+end
+
+Then(/^I see the details page for the selected product$/) do 
+  expect(page.find('#product-name').text).to eq @productName
 end
