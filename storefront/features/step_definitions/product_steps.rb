@@ -30,3 +30,11 @@ end
 Then(/^I see product price with tax$/) do
   expect(find("#offering-price"))
 end
+
+Then(/^I should see the 'go to cart' button$/) do
+  expect(find("#linkToCart").should be_visible)
+end
+
+When(/^I click 'go to cart'$/) do
+  click_link 'linkToCart'
+end
