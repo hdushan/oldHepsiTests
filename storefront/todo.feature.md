@@ -4,8 +4,7 @@
 
 @301 @storefront Feature: Split and label variants 
 @295 @storefront Feature: Indicate which filter is on 
-@276 @storefront Feature: Understand old category page URLs 
-@263 @storefront Feature: Turn off native auto suggest 
+@263 @storefront Feature: Turn off native auto suggest
 @261 @storefront Feature: Remove filter & sort on 0 results
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" 
 @248 @storefront Feature: Footer
@@ -76,4 +75,5 @@
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @143 @storefront Feature: Display one product price
 
+@276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop

@@ -7,3 +7,5 @@
 
 @116 This story was intended to include the preservation of the shopping cart when returning to the site after leaving as AC
 @116 Scenario 2, showing the visual indication on cart has been moved to #244
+
+@276 Nothing to test for this as it appears to be a placeholder
