@@ -21,5 +21,12 @@ Feature: Add to basket from details page
     When I click 'go to cart'
     Then I should see the product in the cart
 
+  @460
+  Scenario: Add to cart and click 'add-one-more'
+    When I add to cart
+    Then I should see the 'add one more' button
+    When I click 'add one more'
+    And I click on the shopping cart
+    Then I should see two of the product in the cart
 
 

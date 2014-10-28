@@ -1,5 +1,5 @@
 Given /^I select the iphone from search results$/ do
-  @productName = first('.search-item a').text
+  @productName = first('.search-item a .product-title').text
   click_link(@productName)
 end
 

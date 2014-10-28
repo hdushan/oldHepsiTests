@@ -17,6 +17,14 @@ When(/^I click on the shopping cart$/) do
   click_link "shoppingCart"
 end
 
+When(/^I click 'go to cart'$/) do
+  click_link 'linkToCart'
+end
+
+When(/^I click 'add one more'$/) do
+  click_button 'addToCartAgain'
+end
+
 Then /^I should see the product in the cart$/ do
   expect(find('.cart-item', :count => 1))
   expect(find('.cart-item').text have_content @productName)
@@ -32,9 +40,14 @@ Then(/^I see product price with tax$/) do
 end
 
 Then(/^I should see the 'go to cart' button$/) do
-  expect(find("#linkToCart").should be_visible)
+  wait_for_visibility(page, '#linkToCart', true)
 end
 
-When(/^I click 'go to cart'$/) do
-  click_link 'linkToCart'
+Then(/^I should see the 'add one more' button$/) do
+  wait_for_visibility(page, '#addToCartAgain', true)
+end
+
+Then(/^I should see two of the product in the cart$/) do
+  expect(all('.cart-item').count).to be 2
+  expect(all('.cart-item')).to all_satisfy(have_content @productName)
 end
