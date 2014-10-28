@@ -10,5 +10,5 @@ Then(/^I see a feedback window$/) do
 end
 
 When(/^I reload the page$/) do
-  pending
+  visit current_url
 end

@@ -29,4 +29,11 @@ Feature: Add to basket from details page
     And I click on the shopping cart
     Then I should see two of the product in the cart
 
+  @116
+  Scenario: Preserve cart on page reload
+    Given I add to cart
+    And I click 'go to cart'
+    When I reload the page
+    Then I should see the product in the cart
+
 
