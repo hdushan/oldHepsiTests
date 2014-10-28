@@ -10,7 +10,6 @@
 @248 @storefront Feature: Footer
 
 @312 @storefront Feature: Include deactive state for clear
-@246 @storefront Feature: Clear all enabled filters 
 
 @212 @storefront Feature: Separate sort & filter on results
 
@@ -77,3 +76,5 @@
 
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop
+@246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
+
