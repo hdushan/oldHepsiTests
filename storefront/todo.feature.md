@@ -1,6 +1,4 @@
 ---------------------------- To be analysed ----------------------------
-@460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
- 
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" 
 
@@ -63,6 +61,7 @@
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
+@460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
 
 @481 @storefront Feature: Feedback Mechanism for Beta
 
