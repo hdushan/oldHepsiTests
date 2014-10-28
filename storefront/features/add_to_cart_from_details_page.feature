@@ -15,12 +15,11 @@ Feature: Add to basket from details page
   	Then I should see the product in the cart
 
   @460
-  Scenario: Add to cart and transform button
+  Scenario: Add to cart and click 'go-to-cart'
     When I add to cart
     Then I should see the 'go to cart' button
     When I click 'go to cart'
     Then I should see the product in the cart
-
 
 
 
