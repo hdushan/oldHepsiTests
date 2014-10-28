@@ -12,3 +12,8 @@ end
 When(/^I reload the page$/) do
   visit current_url
 end
+
+When(/^I clear the browsers cookies$/) do
+  browser = Capybara.current_session.driver.browser
+  browser.manage.delete_all_cookies
+end

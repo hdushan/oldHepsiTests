@@ -6,3 +6,4 @@
 @467 We assume that all items in the 'deal of the day' list should have a discounted price, and hence an original price. (not the case in the QA environment, as of 2014-10-28)
 
 @116 This story was intended to include the preservation of the shopping cart when returning to the site after leaving as AC
+@116 Scenario 2, showing the visual indication on cart has been moved to #244

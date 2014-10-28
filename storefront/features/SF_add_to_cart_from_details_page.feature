@@ -12,7 +12,7 @@ Feature: Add to basket from details page
     When I add to cart
     Then I should see the notification
     When I click on the shopping cart
-  	Then I should see the product in the cart
+    Then I should see the product in the cart
 
   @460
   Scenario: Add to cart and click 'go-to-cart'
@@ -36,4 +36,10 @@ Feature: Add to basket from details page
     When I reload the page
     Then I should see the product in the cart
 
-
+  @116
+  Scenario: Remove cart on cookie deletion
+    Given I add to cart
+    And I click 'go to cart'
+    When I clear the browsers cookies
+    And I reload the page
+    Then I should see an empty cart

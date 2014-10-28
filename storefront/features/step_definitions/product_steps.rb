@@ -53,3 +53,7 @@ Then(/^I should see two of the product in the cart$/) do
   }
   expect(find('.cart-item .quantity').text).to eq '2'
 end
+
+Then(/^I should see an empty cart$/) do
+  expect(page.should_not have_selector '.cart-item')
+end
