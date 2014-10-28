@@ -10,6 +10,5 @@ Feature: Product page is as expected
     And I select the iphone from search results
 
   @143
-    Scenario: Display one product price
-      Then I see product price with tax
-
+  Scenario: Display one product price
+    Then I see product price with tax

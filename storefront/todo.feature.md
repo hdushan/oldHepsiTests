@@ -1,6 +1,4 @@
----------------------------- To be analysed ----------------------------
-@423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"
-@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" 
+@423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 
 @358 @storefront Feature: Error Handling for Merchant Listings on Details Page
 
@@ -58,6 +56,8 @@
 @18 @storefront Feature: Display one product price on result
 @19 @storefront Feature: Show image for products in results
 
+------------------------ In Progress -------------------------
+@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page"
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
