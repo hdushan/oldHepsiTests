@@ -14,3 +14,8 @@ end
 Then(/^I see a result with product price and tax$/) do
   expect(first(".product-price"))
 end
+
+Then(/^there should be (\d+) results visible results$/) do |amount_of_visible_results|
+  sleep(1)
+  expect(all(".search-item").count.to_s).to eq amount_of_visible_results
+end

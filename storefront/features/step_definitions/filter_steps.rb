@@ -37,11 +37,6 @@ Then(/^I should only see products that fall under my preset range$/) do
   expect(find("#totalItems")).to_not have_content originalResult
 end
 
-Then(/^there should be (\d+) results visible results$/) do |amount_of_visible_results|
-  sleep(1)
-  expect(all(".search-item").count.to_s).to eq amount_of_visible_results
-end
-
 Then(/^I should see all results$/) do
   expect(find("#totalItems")).to have_content originalResult
 end
