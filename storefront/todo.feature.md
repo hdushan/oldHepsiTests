@@ -19,7 +19,7 @@
 
 @189 @storefront Feature: Static announcement banners 
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page 
-@167 @storefront Feature: Shorten product name 
+@167 @storefront Feature: Shorten product name   -- Mobile Only
 
 @116 @storefront Feature: Remember my basket without login
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
