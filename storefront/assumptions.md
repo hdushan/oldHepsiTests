@@ -11,3 +11,5 @@
 @276 Nothing to test for this as it appears to be a placeholder
 
 @141 refers to the 'Only' filter rather than 'Shipping style' which does not appear to be present on the page
+
+@373 Div containing offer flags should be distinguished by a class
