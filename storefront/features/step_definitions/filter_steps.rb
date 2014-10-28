@@ -12,7 +12,7 @@ end
 
 Given(/^I filter by rating$/) do
   originalResult = find("#totalItems").text
-  all('#starRatingList li label')[3].click
+  first('#starRatingList li label').click
 end
 
 Given(/^I filter by price$/) do
