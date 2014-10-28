@@ -6,7 +6,7 @@ Feature: Search page is as expected
 
   Background:
     Given I am on the homepage
-    When I searched for iphone
+    When I search for iphone
 
   @143
   Scenario: Display one product price
