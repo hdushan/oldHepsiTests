@@ -57,3 +57,7 @@ end
 Then(/^I should see an empty cart$/) do
   expect(page.should_not have_selector '.cart-item')
 end
+
+Then(/^I see the details page for the selected product$/) do 
+  expect(page.find('#product-name').text).to eq @productName
+end
