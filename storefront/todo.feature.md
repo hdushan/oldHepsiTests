@@ -19,7 +19,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page 
 @167 @storefront Feature: Shorten product name   -- Mobile Only
 
-@116 @storefront Feature: Remember my basket without login
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @221 @storefront Feature: Display merchant offers on details page 
@@ -76,3 +75,5 @@
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @143 @storefront Feature: Display one product price
+
+@116 @storefront Feature: Remember my basket without login
