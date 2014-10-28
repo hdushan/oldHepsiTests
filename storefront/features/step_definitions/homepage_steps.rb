@@ -19,7 +19,7 @@ end
 
 Then(/^each deal of the day product shows its undiscounted price/) do
   expect(page.all("#dealOfTheDayCarousel li .product-price-wrapper"))
-    .to all_satisfy(have_selector(".product-old-price"))
+  .to all_satisfy(have_selector(".product-old-price"))
 end
 
 When(/^I click the feedback button$/) do
@@ -27,7 +27,8 @@ When(/^I click the feedback button$/) do
 end
 
 Then(/^I see a feedback window$/) do
-    within_frame all('div iframe').last do
+  sleep(1)
+  within_frame all('div iframe').last do
     expect(page.find('#usabilla-choice-container'))
   end
 end
