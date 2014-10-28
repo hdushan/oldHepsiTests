@@ -17,6 +17,11 @@ Then(/^I see (\d+) items in deal of the day$/) do |items|
   expect(all("#dealOfTheDayCarousel li a").count should equal? items)
 end
 
+Then(/^each deal of the day product shows its undiscounted price/) do
+  expect(page.all("#dealOfTheDayCarousel li .product-price-wrapper"))
+    .to all_satisfy(have_selector(".product-old-price"))
+end
+
 When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
 end
