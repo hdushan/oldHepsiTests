@@ -44,3 +44,7 @@ end
 Then(/^I see all results$/) do
   expect(find("#totalItems").text should have_content originalResult)
 end
+
+Then(/^I cannot click the clear filters button$/) do
+  expect(find('#btnClearFilters')[:disabled].should eq 'true')
+end
