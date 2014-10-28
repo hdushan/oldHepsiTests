@@ -76,4 +76,4 @@
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @143 @storefront Feature: Display one product price
 
-@116 @storefront Feature: Remember my basket without login
+@116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop
