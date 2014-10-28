@@ -7,7 +7,7 @@ Feature: Add to basket from details page
     When I searched for iphone
     Then I select the iphone from search results
 
-  @regression @67
+  @67
   Scenario: Add iphone to cart
     When I add to cart
     Then I should see the notification

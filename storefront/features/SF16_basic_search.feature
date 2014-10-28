@@ -8,12 +8,10 @@ Feature: Basic search
   Background:
     Given I am on the homepage
 
-  @regression
   Scenario: Searching, with results
     When I searched for iphone
     Then I should see a list of iphone results
 
-  @regression
   Scenario: Searching, with no results
     When I searched for iphonethatdoesnotexist
     Then I should see no results page
