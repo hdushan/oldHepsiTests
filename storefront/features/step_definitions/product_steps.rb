@@ -48,6 +48,8 @@ Then(/^I should see the 'add one more' button$/) do
 end
 
 Then(/^I should see two of the product in the cart$/) do
-  expect(all('.cart-item').count).to be 2
-  expect(all('.cart-item')).to all_satisfy(have_content @productName)
+  steps %{
+      Given I should see the product in the cart
+  }
+  expect(find('.cart-item .quantity').text).to eq '2'
 end
