@@ -4,11 +4,11 @@ Feature: Add to basket from details page
   Background:
     Given I have an empty cart
     And I am on the homepage
-    When I search for iphone
-    Then I select the iphone from search results
+    When I search for iPhone
+    Then I select the iPhone from search results
 
   @67
-  Scenario: Add iphone to cart
+  Scenario: Add iPhone to cart
     When I add to cart
     Then I should see the notification
     When I click on the shopping cart

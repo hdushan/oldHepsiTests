@@ -34,17 +34,24 @@ When(/^I clear active filters$/) do
 end
 
 Then(/^I should only see products that fall under my preset range$/) do
-  expect(find("#totalItems").text should_not have_content originalResult)
+  expect(find("#totalItems")).to_not have_content originalResult
 end
 
 Then(/^there should be (\d+) results visible results$/) do |amount_of_visible_results|
-  expect(all(".search-item").count should equal? amount_of_visible_results)
+  sleep(1)
+  expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
 
-Then(/^I see all results$/) do
-  expect(find("#totalItems").text should have_content originalResult)
+Then(/^I should see all results$/) do
+  expect(find("#totalItems")).to have_content originalResult
 end
 
 Then(/^I cannot click the clear filters button$/) do
-  expect(find('#btnClearFilters')[:disabled].should eq 'true')
+  expect(find('#btnClearFilters')[:disabled]).to eq 'true'
+end
+
+Then(/^I should not see any selected filters$/) do
+  all('#filterResults li input').each do |input|
+    expect(input).to_not be_checked
+  end
 end

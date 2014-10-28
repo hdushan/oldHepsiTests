@@ -6,8 +6,8 @@ Feature: Product page is as expected
 
   Background:
     Given I am on the homepage
-    When I search for iphone
-    And I select the iphone from search results
+    When I search for iPhone
+    And I select the iPhone from search results
 
   @143
   Scenario: Display one product price

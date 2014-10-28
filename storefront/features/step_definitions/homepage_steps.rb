@@ -9,7 +9,7 @@ Then(/^I see deal of the day$/) do
 end
 
 Then(/^I see (\d+) items in deal of the day$/) do |items|
-  expect(all("#dealOfTheDayCarousel li a").count should equal? items)
+  expect(all("#dealOfTheDayCarousel li a").count.to_s).to eq items
 end
 
 Then(/^each deal of the day product shows its undiscounted price/) do

@@ -11,7 +11,8 @@ Feature: Remove filters from results
     Given I filter by rating
     And   I filter by brand
     When I clear active filters
-    Then I see all results
+    Then I should see all results
+    And I should not see any selected filters
 
   @246
   Scenario: Clear filters button inactive when no filters are active
