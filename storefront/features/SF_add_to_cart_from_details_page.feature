@@ -4,7 +4,7 @@ Feature: Add to basket from details page
   Background:
     Given I have an empty cart
     And I am on the homepage
-    When I searched for iphone
+    When I search for iphone
     Then I select the iphone from search results
 
   @67

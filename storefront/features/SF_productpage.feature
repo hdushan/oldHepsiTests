@@ -6,7 +6,7 @@ Feature: Product page is as expected
 
   Background:
     Given I am on the homepage
-    When I searched for iphone
+    When I search for iphone
     And I select the iphone from search results
 
   @143

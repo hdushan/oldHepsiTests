@@ -9,9 +9,9 @@ Feature: Basic search
     Given I am on the homepage
 
   Scenario: Searching, with results
-    When I searched for iphone
+    When I search for iphone
     Then I should see a list of iphone results
 
   Scenario: Searching, with no results
-    When I searched for iphonethatdoesnotexist
+    When I search for iphonethatdoesnotexist
     Then I should see no results page
