@@ -12,3 +12,7 @@ Feature: Product page is as expected
   @143
   Scenario: Display one product price
     Then I see product price with tax
+
+  @19
+  Scenario: Display product image
+    Then I see the product image

@@ -61,3 +61,11 @@ end
 Then(/^I see the details page for the selected product$/) do 
   expect(page.find('#product-name').text).to eq @productName
 end
+
+Then(/^I see a result with product price and tax$/) do
+  expect(first(".product-price"))
+end
+
+Then(/^I see the product image$/) do
+  expect(first(".product-image"))
+end
