@@ -45,9 +45,11 @@
 
 ------------------------ In Progress -------------------------
 @343 @storefront Feature: Display Filter by Product Specific Attributes
-@248 @storefront Feature: Footer
 
 ---------------------------- Done ----------------------------
+
+@248 @storefront Feature: Footer -- Cannot test order tracking appearing in footer as do not have a login
+
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
 
