@@ -17,3 +17,5 @@
 @19 All products have images
 
 @248 A login link is no longer required in the footer
+
+@56 assuming URL is correct as currently implemented, not as given in scenario 2 --- not tested

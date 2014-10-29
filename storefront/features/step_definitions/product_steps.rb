@@ -69,3 +69,7 @@ end
 Then(/^I see the product image$/) do
   expect(first(".product-image"))
 end
+
+Then(/^the page title contains the product name$/) do
+  expect(page.title).to include(@productName)
+end

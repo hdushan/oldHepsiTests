@@ -16,3 +16,7 @@ Feature: Product page is as expected
   @19
   Scenario: Display product image
     Then I see the product image
+
+  @56
+  Scenario: Page title contains product name
+    Then the page title contains the product name

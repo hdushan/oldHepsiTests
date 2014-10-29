@@ -13,7 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@56 @storefront Feature: Display product name on details page
 @60 @storefront Feature: Display multiple images on details page
 @61 @storefront Feature: Display one product image on details page
 @62 @storefront Feature: Display basic product description on details page
@@ -40,7 +39,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@343 @storefront Feature: Display Filter by Product Specific Attributes
 
 ---------------------------- Done ----------------------------
 
@@ -52,10 +50,12 @@
 @27 @storefront Feature: Filter by 1st level category
 @28 @storefront Feature: Filter by one brand
 @51 @storefront Feature: Login using e-mail & password
+@56 @storefront Feature: Display product name on details page
 @67 @storefront Feature: Add one to basket from details page
 @143 @storefront Feature: Display one product price
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @212 @storefront Feature: Separate sort & filter on results
+@343 @storefront Feature: Display Filter by Product Specific Attributes
 @460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @481 @storefront Feature: Feedback Mechanism for Beta
