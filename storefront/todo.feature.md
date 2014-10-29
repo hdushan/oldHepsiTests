@@ -48,7 +48,6 @@
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
-@18 @storefront Feature: Display one product price on result
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
@@ -68,6 +67,7 @@
 @26 @storefront Feature: Sort by price -- Cannot test scenario 4 due to data, or scenario 5 as it is mobile specific
 
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
+@18 @storefront Feature: Display one product price on result
 
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
