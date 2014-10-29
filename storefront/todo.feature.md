@@ -50,8 +50,6 @@
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
-@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
-
 @26 @storefront Feature: Sort by price
 
 ---------------------------- Done ----------------------------
@@ -79,3 +77,5 @@
 @246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
 
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page; no 'analytics events' visible
+@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- unclear what the 'sorting displayed products' scenario refers to
+
