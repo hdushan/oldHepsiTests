@@ -45,7 +45,6 @@
 @47 @storefront Feature: Browse 1st level categories
 
 ------------------------ In Progress -------------------------
-@26 @storefront Feature: Sort by price
 @343 @storefront Feature: Display Filter by Product Specific Attributes
 
 ---------------------------- Done ----------------------------
@@ -67,6 +66,9 @@
 
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
 @18 @storefront Feature: Display one product price on result
+@19 @storefront Feature: Show image for products in results
+
+@26 @storefront Feature: Sort by price
 
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
