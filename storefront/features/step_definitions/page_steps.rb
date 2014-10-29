@@ -33,3 +33,7 @@ Then(/^I see the social icons in the footer$/) do
   expect(find('footer .icon-instagram'))
   expect(find('footer .icon-youtube'))
 end
+
+Then(/^I see the security logo in the footer$/) do
+  expect(find('footer .icon-security-link'))
+end

@@ -16,3 +16,6 @@ Feature: Homepage is as expected
   Scenario: Show social icons in footer
     Then I see the social icons in the footer
 
+  @248
+  Scenario: Show security logo in footer
+    Then I see the security logo in the footer
