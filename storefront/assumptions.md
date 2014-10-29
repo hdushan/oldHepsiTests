@@ -15,3 +15,5 @@
 @373 Div containing offer flags should be distinguished by a class
 
 @19 All products have images
+
+@248 A login link is no longer required in the footer
