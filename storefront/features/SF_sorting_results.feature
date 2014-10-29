@@ -24,8 +24,8 @@ Feature: Sorting Search Results
 
   @31
   Scenario: Change sort mode
-    When I sort by bestseller
-    And I sort by lowest price
+    Given I sort by bestseller
+    When I sort by lowest price
     Then I see the bestseller button is not selected
     And I see the lowest price button is selected
 
