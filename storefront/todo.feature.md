@@ -7,7 +7,6 @@
 @263 @storefront Feature: Turn off native auto suggest
 @261 @storefront Feature: Remove filter & sort on 0 results
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" 
-@248 @storefront Feature: Footer
 
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
 
@@ -46,6 +45,7 @@
 
 ------------------------ In Progress -------------------------
 @343 @storefront Feature: Display Filter by Product Specific Attributes
+@248 @storefront Feature: Footer
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
