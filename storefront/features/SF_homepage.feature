@@ -19,3 +19,8 @@ Feature: Homepage is as expected
   @248
   Scenario: Show security logo in footer
     Then I see the security logo in the footer
+
+  @248
+  Scenario: Show copyright in the footer
+    Then I see the copyright message in the footer
+

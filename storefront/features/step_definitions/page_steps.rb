@@ -23,7 +23,6 @@ When(/^I clear the browsers cookies$/) do
   browser.manage.delete_all_cookies
 end
 
-
 Then(/^I see the social icons in the footer$/) do
   expect(find('footer .icon-facebook'))
   expect(find('footer .icon-twitter'))
@@ -36,4 +35,8 @@ end
 
 Then(/^I see the security logo in the footer$/) do
   expect(find('footer .icon-security-link'))
+end
+
+Then(/^I see the copyright message in the footer$/) do
+  expect(find('footer .copyright'))
 end
