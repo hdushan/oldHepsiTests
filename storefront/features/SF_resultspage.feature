@@ -10,7 +10,7 @@ Feature: Search page is as expected
 
   @143 @18
   Scenario: Display product prices
-    Then I see all results with either a price or an unavailable statement
+    Then I see either a price or an unavailable statement for each result
 
   @17
   Scenario: View results page
