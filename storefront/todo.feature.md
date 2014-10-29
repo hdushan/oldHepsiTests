@@ -45,11 +45,11 @@
 @48 @storefront Feature: Browse by 2nd-level subcategories 
 @47 @storefront Feature: Browse 1st level categories
 
-@17 @storefront Feature: Display more search results
 @18 @storefront Feature: Display one product price on result
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
+@17 @storefront Feature: Display more search results
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
