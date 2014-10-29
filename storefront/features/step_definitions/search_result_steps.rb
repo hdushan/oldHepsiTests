@@ -19,3 +19,7 @@ Then(/^there should be (\d+) results visible results$/) do |amount_of_visible_re
   sleep(1)
   expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
+
+Then(/^I see all results with either a price or an unavailable statement$/) do
+  expect(all('.product-price').count + all('.procurement-status').count).to eq all('.search-item').count
+end

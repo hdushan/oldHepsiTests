@@ -8,9 +8,9 @@ Feature: Search page is as expected
     Given I am on the homepage
     When I search for iPhone
 
-  @143
-  Scenario: Display one product price
-    Then I see a result with product price and tax
+  @143 @18
+  Scenario: Display product prices
+    Then I see all results with either a price or an unavailable statement
 
   @17
   Scenario: View results page
