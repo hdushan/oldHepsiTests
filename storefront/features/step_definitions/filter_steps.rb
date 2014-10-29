@@ -30,6 +30,11 @@ Given(/^I filter by case type$/) do
   first('#otherFilterList-851_dp li label').click
 end
 
+Given(/^I filter by material type$/) do
+  originalResult = find("#totalItems").text
+  first('#otherFilterList-380_dp li label').click
+end
+
 When(/^I click load more results$/) do
   click_button "moreResult"
 end
