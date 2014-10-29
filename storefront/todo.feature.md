@@ -49,7 +49,6 @@
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
-@17 @storefront Feature: Display more search results
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
@@ -68,6 +67,8 @@
 @31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
 @26 @storefront Feature: Sort by price -- Cannot test scenario 4 due to data, or scenario 5 as it is mobile specific
 
+@17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
+
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @143 @storefront Feature: Display one product price
@@ -78,4 +79,5 @@
 
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page; no 'analytics events' visible
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- unclear what the 'sorting displayed products' scenario refers to
+
 
