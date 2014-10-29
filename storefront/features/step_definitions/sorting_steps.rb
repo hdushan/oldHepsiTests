@@ -17,3 +17,8 @@ end
 Then(/^I see the bestseller button is selected$/) do
   expect(find('#bestSelling')[:class]).to include 'selected'
 end
+
+
+Then(/^I see the best matching button is selected$/) do
+  expect(find('#bestMatching')[:class]).to include 'selected'
+end

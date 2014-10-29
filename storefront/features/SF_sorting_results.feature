@@ -29,4 +29,6 @@ Feature: Sorting Search Results
     Then I see the bestseller button is not selected
     And I see the lowest price button is selected
 
-
+  @26
+  Scenario: Default sort mode
+    Then I see the best matching button is selected
