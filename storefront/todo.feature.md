@@ -54,8 +54,6 @@
 ------------------------ In Progress -------------------------
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page"
 
-@31 @storefront Feature: Sort by best selling
-
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
@@ -70,6 +68,8 @@
 @25 @storefront Feature: Filter by one type of rating
 @23 @storefront Feature: Filter by Price Range
 
+@31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
+
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @143 @storefront Feature: Display one product price
@@ -77,4 +77,5 @@
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop
 @246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
+
 
