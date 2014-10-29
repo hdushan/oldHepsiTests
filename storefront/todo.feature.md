@@ -9,7 +9,7 @@
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" 
 @248 @storefront Feature: Footer
 
-@312 @storefront Feature: Include deactive state for clear
+@312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
 
 @212 @storefront Feature: Separate sort & filter on results
 
