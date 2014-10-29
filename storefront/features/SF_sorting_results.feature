@@ -32,3 +32,9 @@ Feature: Sorting Search Results
   @26
   Scenario: Default sort mode
     Then I see the best matching button is selected
+
+  @26
+  Scenario: Sort by lowest price
+    When I sort by lowest price
+    Then I see the lowest price button is selected
+    And I see results lowest price first

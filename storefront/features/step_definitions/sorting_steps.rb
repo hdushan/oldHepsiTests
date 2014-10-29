@@ -22,3 +22,8 @@ end
 Then(/^I see the best matching button is selected$/) do
   expect(find('#bestMatching')[:class]).to include 'selected'
 end
+
+Then(/^I see results lowest price first$/) do
+  price_list = prices_to_list(all('.search-item'))
+  expect(price_list).to eq price_list.sort
+end
