@@ -45,9 +45,8 @@
 @48 @storefront Feature: Browse by 2nd-level subcategories 
 @47 @storefront Feature: Browse 1st level categories
 
-@19 @storefront Feature: Show image for products in results
-
 ------------------------ In Progress -------------------------
+@19 @storefront Feature: Show image for products in results
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
