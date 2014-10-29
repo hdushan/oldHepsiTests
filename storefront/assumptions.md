@@ -13,3 +13,5 @@
 @141 refers to the 'Only' filter rather than 'Shipping style' which does not appear to be present on the page
 
 @373 Div containing offer flags should be distinguished by a class
+
+@19 All products have images
