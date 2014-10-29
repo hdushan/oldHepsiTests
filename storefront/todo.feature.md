@@ -17,7 +17,7 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page 
 @167 @storefront Feature: Shorten product name   -- Mobile Only
 
-@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
+
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @221 @storefront Feature: Display merchant offers on details page 
 @343 @storefront Feature: Display Filter by Product Specific Attributes 
@@ -50,7 +50,7 @@
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
-@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page"
+@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page
 
 @26 @storefront Feature: Sort by price
 
@@ -78,4 +78,4 @@
 @116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop
 @246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
 
-
+@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page; no 'analytics events' visible
