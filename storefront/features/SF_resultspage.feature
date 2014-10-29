@@ -12,6 +12,10 @@ Feature: Search page is as expected
   Scenario: Display product prices
     Then I see either a price or an unavailable statement for each result
 
+  @19
+    Scenario: Display product images
+    Then I see a product image for each result
+
   @17
   Scenario: View results page
     Then there should be 20 results visible results

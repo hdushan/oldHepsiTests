@@ -23,3 +23,7 @@ end
 Then(/^I see either a price or an unavailable statement for each result$/) do
   expect(all('.product-price').count + all('.procurement-status').count).to eq all('.search-item').count
 end
+
+Then(/^I see a product image for each result$/) do
+  expect(all('.product-image-wrapper').count).to eq all('.search-item').count
+end
