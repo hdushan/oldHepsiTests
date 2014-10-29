@@ -40,14 +40,12 @@
 @56 @storefront Feature: Display product name on details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 
+@26 @storefront Feature: Sort by price
 
 @428 @storefront Feature: Browse by 4th level
 @305 @storefront Feature: Browse Categories by 3rd
 @48 @storefront Feature: Browse by 2nd-level subcategories 
 @47 @storefront Feature: Browse 1st level categories
-
-@31 @storefront Feature: Sort by best selling 
-@26 @storefront Feature: Sort by price
 
 @17 @storefront Feature: Display more search results
 @18 @storefront Feature: Display one product price on result
@@ -55,6 +53,8 @@
 
 ------------------------ In Progress -------------------------
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page"
+
+@31 @storefront Feature: Sort by best selling
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
