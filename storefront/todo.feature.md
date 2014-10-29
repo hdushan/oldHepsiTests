@@ -50,7 +50,6 @@
 @19 @storefront Feature: Show image for products in results
 
 ------------------------ In Progress -------------------------
-@26 @storefront Feature: Sort by price
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
@@ -67,6 +66,7 @@
 @23 @storefront Feature: Filter by Price Range
 
 @31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
+@26 @storefront Feature: Sort by price -- Cannot test scenario 4 due to data, or scenario 5 as it is mobile specific
 
 @51 @storefront Feature: Login using e-mail & password
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
