@@ -44,3 +44,11 @@ Feature: Sorting Search Results
     When I sort by highest price
     Then I see the highest price button is selected
     And I see results highest price first
+
+  @26
+  Scenario: View more results preserves sort
+    Given I sort by lowest price
+    When I click load more results
+    Then there should be 40 results visible results
+    And I see results lowest price first
+
