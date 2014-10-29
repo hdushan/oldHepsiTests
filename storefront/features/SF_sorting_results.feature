@@ -38,3 +38,9 @@ Feature: Sorting Search Results
     When I sort by lowest price
     Then I see the lowest price button is selected
     And I see results lowest price first
+
+  @26
+  Scenario: Sort by highest
+    When I sort by highest price
+    Then I see the highest price button is selected
+    And I see results highest price first

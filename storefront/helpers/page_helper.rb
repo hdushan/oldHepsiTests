@@ -16,6 +16,6 @@ def prices_to_list(items)
 end
 
 def price_from_string(string)
-  string.gsub!(/,/, '.')
-  string.gsub!(/[^0-9 .]/, '').to_f
+  string.gsub!(/[^0-9 ,]/, '')
+  string.gsub!(/,/, '.').to_f
 end
