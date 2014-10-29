@@ -8,7 +8,6 @@
 @295 @storefront Feature: Indicate which filter is on
 @301 @storefront Feature: Split and label variants 
 
-@212 @storefront Feature: Separate sort & filter on results
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
 
 @167 @storefront Feature: Shorten product name   -- Mobile Only
@@ -63,6 +62,7 @@
 @143 @storefront Feature: Display one product price
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 
+@212 @storefront Feature: Separate sort & filter on results
 @246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
 @248 @storefront Feature: Footer -- Cannot test order tracking appearing in footer as do not have a login
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
