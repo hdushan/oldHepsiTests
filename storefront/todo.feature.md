@@ -20,10 +20,9 @@
 
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @221 @storefront Feature: Display merchant offers on details page 
-@343 @storefront Feature: Display Filter by Product Specific Attributes 
-@315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results 
+@315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 @523 @storefront Feature: Display Campaign Banners in Flyout Menu
-@488 @storefront Feature: Display Tax Added Price for On Sale Products
+@488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 @144 @storefront Feature: Display variants on details page
 @140 @storefront Feature: Display product specific return policy 
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image 
@@ -46,7 +45,8 @@
 @47 @storefront Feature: Browse 1st level categories
 
 ------------------------ In Progress -------------------------
-@19 @storefront Feature: Show image for products in results
+@26 @storefront Feature: Sort by price
+@343 @storefront Feature: Display Filter by Product Specific Attributes
 
 ---------------------------- Done ----------------------------
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
@@ -76,7 +76,5 @@
 @116 @storefront Feature: Remember my basket without login -- Not tested on /m/ but on desktop
 @246 @storefront Feature: Clear all enabled filters   -- Mobile specific scenarios not tested
 
-@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page; no 'analytics events' visible
-@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- unclear what the 'sorting displayed products' scenario refers to
-
-
+@373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page
+@372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- need to check what the 'sorting displayed products' scenario refers to

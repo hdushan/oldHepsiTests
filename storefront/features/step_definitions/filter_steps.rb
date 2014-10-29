@@ -25,6 +25,11 @@ Given(/^I filter by shipping style$/) do
   all('#otherFilterList-filterflag li label')[1].click
 end
 
+Given(/^I filter by case type$/) do
+  originalResult = find("#totalItems").text
+  first('#otherFilterList-851_dp li label').click
+end
+
 When(/^I click load more results$/) do
   click_button "moreResult"
 end

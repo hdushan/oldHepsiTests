@@ -26,7 +26,18 @@ Feature: Filter search results
     Given I filter by first level category
     Then I should only see products that fall under my preset range
 
+  @343
+  Scenario: Filter by specific attribute
+    Given I filter by case type
+    Then I should only see products that fall under my preset range
+
   @23
   Scenario: Filter by price range
     Given I filter by price
     Then I should only see products that fall under my preset range
+
+  @23
+  Scenario: Clicking more results
+    Given I filter by price
+    When I click load more results
+    Then there should be 40 results visible results
