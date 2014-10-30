@@ -25,3 +25,9 @@ Feature: Product page is as expected
   Scenario: Display product reviews
     Then I see 3 reviews
     And I can see the 'More Reviews' button
+
+    @78
+    Scenario: Display returns policy
+      Given I see to link to view the returns policy
+      When I click on the returns policy link
+      Then I see the returns policy

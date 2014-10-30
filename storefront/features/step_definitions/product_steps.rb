@@ -25,6 +25,10 @@ When(/^I click 'add one more'$/) do
   click_button 'addToCartAgain'
 end
 
+When(/^I click on the returns policy link$/) do
+  click_link 'productReturnPolicy'
+end
+
 Then /^I should see the product in the cart$/ do
   expect(find('.cart-item', :count => 1))
   expect(find('.cart-item').text have_content @productName)
@@ -58,7 +62,7 @@ Then(/^I should see an empty cart$/) do
   expect(page).to_not have_selector '.cart-item'
 end
 
-Then(/^I see the details page for the selected product$/) do 
+Then(/^I see the details page for the selected product$/) do
   expect(page.find('#product-name').text).to eq @productName
 end
 
@@ -80,4 +84,12 @@ end
 
 Then(/^I can see the 'More Reviews' button$/) do
   expect(find('#showMoreComments'))
+end
+
+Then(/^I see to link to view the returns policy$/) do
+  expect(find('#productReturnPolicy'))
+end
+
+Then(/^I see the returns policy$/) do
+  expect(find('#productReturnPolicyText'))
 end
