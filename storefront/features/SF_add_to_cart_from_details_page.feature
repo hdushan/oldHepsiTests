@@ -5,7 +5,7 @@ Feature: Add to basket from details page
     Given I have an empty cart
     And I am on the homepage
     When I search for iPhone
-    Then I select the iPhone from search results
+    Then I select the first item from search results
 
   @67
   Scenario: Add iPhone to cart
