@@ -38,7 +38,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@84 @storefront Feature: Show comments about a product on details page
 
 ---------------------------- Done ----------------------------
 
@@ -65,7 +64,9 @@
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
 @26 @storefront Feature: Sort by price -- Cannot test scenario 4 due to data, or scenario 5 as it is mobile specific
 @31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
+@84 @storefront Feature: Show comments about a product on details page -- Done, but depends on the test product having more than 3 reviews
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" -- Can not test as appears data specific
+
 
 
 -- Mobile Scenarios not tested --
