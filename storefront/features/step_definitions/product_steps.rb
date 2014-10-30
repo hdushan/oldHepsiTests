@@ -73,3 +73,11 @@ end
 Then(/^the page title contains the product name$/) do
   expect(page.title).to include(@productName)
 end
+
+Then(/^I see (\d+) reviews$/) do |num|
+  expect(all('.review-item').count.to_s).to eq num
+end
+
+Then(/^I can see the 'More Reviews' button$/) do
+  expect(find('#showMoreComments'))
+end

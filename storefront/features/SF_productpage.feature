@@ -20,3 +20,8 @@ Feature: Product page is as expected
   @56
   Scenario: Page title contains product name
     Then the page title contains the product name
+
+  @84
+  Scenario: Display product reviews
+    Then I see 3 reviews
+    And I can see the 'More Reviews' button
