@@ -32,7 +32,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@64 @storefront Feature: Display 2-slot/scheduled delivery
 @83 @storefront Feature: Show ratings of a products on details & results
 
 ---------------------------- Done ----------------------------
@@ -75,8 +74,8 @@
 
 
 -- Other elements could not be tested --
+@64 @storefront Feature: Display 2-slot/scheduled delivery --- unable to determine whether or not product should satisfy 'same day delivery' conditions without DB access
 @248 @storefront Feature: Footer -- Cannot test order tracking appearing in footer as do not have a login
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- need to check what the 'sorting displayed products' scenario refers to
-
