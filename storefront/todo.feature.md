@@ -36,7 +36,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@60 @storefront Feature: Display multiple images on details page
 
 ---------------------------- Done ----------------------------
 
@@ -70,6 +69,7 @@
 
 
 -- Mobile Scenarios not tested --
+@60 @storefront Feature: Display multiple images on details page
 @116 @storefront Feature: Remember my basket without login
 @246 @storefront Feature: Clear all enabled filters
 
