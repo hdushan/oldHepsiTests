@@ -13,7 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@65 @storefront Feature: Display super fast on details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 @73 @storefront Feature: Display tech specs on details page
 @103 @storefront Feature: Display free shipping on details page
@@ -61,10 +60,10 @@
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
 @26 @storefront Feature: Sort by price -- Cannot test scenario 4 due to data, or scenario 5 as it is mobile specific
 @31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
+@65 @storefront Feature: Display super fast on details page -- can't test that flag is not visible when product does not have super-fast shipping
 @78 @storefront Feature: Display generic return policy on details page -- Could assert content of returns policy as is currently blank
 @84 @storefront Feature: Show comments about a product on details page -- Done, but depends on the test product having more than 3 reviews
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" -- Can not test as appears data specific
-
 
 
 -- Mobile Scenarios not tested --

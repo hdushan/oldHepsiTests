@@ -28,12 +28,12 @@ end
 
 Then(/^I click the second discounted product$/) do
   product_entry = page.all('.discounted-product-container li')[1]
-  @productName = product_entry.find('.product-title').text
+  @product_name = product_entry.find('.product-title').text
   product_entry.find('a').click
 end
 
 Then(/^I click the second top-seller product$/) do
   product_entry = page.all('.top-seller-container li')[1]
-  @productName = product_entry.find('.product-title').text
+  @product_name = product_entry.find('.product-title').text
   product_entry.find('a').click
 end

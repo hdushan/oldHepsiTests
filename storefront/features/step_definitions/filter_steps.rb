@@ -35,6 +35,10 @@ Given(/^I filter by material type$/) do
   first('#otherFilterList-380_dp li label').click
 end
 
+Given(/^I filter by super fast delivery$/) do
+  first(:xpath, '//label[@for="sfcper20h0131zl013120gf6nderidekiler"]').click
+end
+
 When(/^I click load more results$/) do
   click_button "moreResult"
 end

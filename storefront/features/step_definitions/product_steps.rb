@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 Given(/^I have an empty cart$/) do
   steps %{
       Given I am on the homepage
@@ -31,7 +32,7 @@ end
 
 Then /^I should see the product in the cart$/ do
   expect(find('.cart-item', :count => 1))
-  expect(find('.cart-item').text have_content @productName)
+  expect(find('.cart-item').text have_content @product_name)
 end
 
 Then(/^I should see the notification$/) do
@@ -63,7 +64,7 @@ Then(/^I should see an empty cart$/) do
 end
 
 Then(/^I see the details page for the selected product$/) do
-  expect(page.find('#product-name').text).to eq @productName
+  expect(page.find('#product-name').text).to eq @product_name
 end
 
 Then(/^I see a result with product price and tax$/) do
@@ -71,11 +72,11 @@ Then(/^I see a result with product price and tax$/) do
 end
 
 Then(/^I see the product image previously shown$/) do
-  expect(first("img.product-image")['src']).to match @productImage
+  expect(first("img.product-image")['src']).to match @product_image
 end
 
 Then(/^the page title contains the product name$/) do
-  expect(page.title).to include(@productName)
+  expect(page.title).to include(@product_name)
 end
 
 Then(/^I see (\d+) reviews$/) do |num|
@@ -105,4 +106,10 @@ end
 
 Then(/^I see a product rating$/) do
   expect(find('.detail-main .product-rating'))
+end
+
+Then(/^I see the super fast delivery flag$/) do
+  # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
+  # how to match encoded string correctly
+  expect(first('#fastShipping').text).to match 'per H'
 end

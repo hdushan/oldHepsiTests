@@ -1,14 +1,14 @@
 Given /^I select the iPhone from search results$/ do
-  @productName = first('.search-item a .product-title').text
-  click_link(@productName)
+  @product_name = first('.search-item a .product-title').text
+  click_link(@product_name)
 end
 
 Given /^I select a product from search results$/ do
   product_links = all('.search-item a')
   product = product_links[rand(product_links.length)]
-  @productImage = product.first('.product-image-wrapper img')['src'].split('/').last
-  @productName = product.first('.product-title').text
-  click_link(@productName)
+  @product_image = product.first('.product-image-wrapper img')['src'].split('/').last
+  @product_name = product.first('.product-title').text
+  click_link(@product_name)
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
