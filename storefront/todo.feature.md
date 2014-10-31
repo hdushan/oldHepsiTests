@@ -13,7 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@61 @storefront Feature: Display one product image on details page
 @62 @storefront Feature: Display basic product description on details page
 @64 @storefront Feature: Display 2-slot/scheduled delivery
 @65 @storefront Feature: Display super fast on details page
@@ -36,6 +35,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
+@61 @storefront Feature: Display one product image on details page
 
 ---------------------------- Done ----------------------------
 
