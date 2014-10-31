@@ -23,3 +23,8 @@ end
 Then(/^I see a product image for each result$/) do
   expect(all('.product-image-wrapper').count).to eq all('.search-item').count
 end
+
+Then(/^I see the same product image on the product page$/) do
+  first_image_path = first('#carousel li img')['src'].split('/').last
+  expect(@productImage).to eq first_image_path
+end
