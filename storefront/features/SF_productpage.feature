@@ -13,10 +13,6 @@ Feature: Product page is as expected
   Scenario: Display one product price
     Then I see product price with tax
 
-  @19
-  Scenario: Display product image
-    Then I see the product image
-
   @56
   Scenario: Page title contains product name
     Then the page title contains the product name
@@ -26,8 +22,12 @@ Feature: Product page is as expected
     Then I see 3 reviews
     And I can see the 'More Reviews' button
 
-    @78
-    Scenario: Display returns policy
-      Given I see to link to view the returns policy
-      When I click on the returns policy link
-      Then I see the returns policy
+  @78
+  Scenario: Display returns policy
+    Given I see to link to view the returns policy
+    When I click on the returns policy link
+    Then I see the returns policy
+
+  @60  @19
+  Scenario: Display multiple product images
+    Then I see multiple product images

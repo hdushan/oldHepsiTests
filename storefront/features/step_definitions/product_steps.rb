@@ -70,10 +70,6 @@ Then(/^I see a result with product price and tax$/) do
   expect(first(".product-price"))
 end
 
-Then(/^I see the product image$/) do
-  expect(first(".product-image"))
-end
-
 Then(/^the page title contains the product name$/) do
   expect(page.title).to include(@productName)
 end
@@ -92,4 +88,9 @@ end
 
 Then(/^I see the returns policy$/) do
   expect(find('#productReturnPolicyText'))
+end
+
+Then(/^I see multiple product images$/) do
+  expect(all('.product-image').count).to be > 1
+  expect(find('#carousel'))
 end
