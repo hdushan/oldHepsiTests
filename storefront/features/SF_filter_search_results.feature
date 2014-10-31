@@ -4,7 +4,7 @@ Feature: Filter search results
 
   Background:
     Given I am on the homepage
-    When I search for Samsung
+    When I search for iPhone
 
   @141
   Scenario: Filter by 'Only'
