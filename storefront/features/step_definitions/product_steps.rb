@@ -98,3 +98,7 @@ Then(/^I see multiple product images$/) do
   expect(all('.product-image').count).to be > 1
   expect(find('#carousel'))
 end
+
+Then(/^I see a product description/) do
+  expect(find('#tabProductDesc'))
+end

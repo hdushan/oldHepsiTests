@@ -31,3 +31,7 @@ Feature: Product page is as expected
   @60  @19
   Scenario: Display multiple product images
     Then I see multiple product images
+
+  @62
+  Scenario: Display product description
+    Then I see a product description

@@ -5,6 +5,7 @@
 @56 assuming URL is correct as currently implemented, not as given in scenario 2 --- not tested
 
 @61 assumes that the image filename (i.e. telephon_15322435.jpg) is the same for all image resolutions
+@62 assumes that product always has a description
 
 @116 This story was intended to include the preservation of the shopping cart when returning to the site after leaving as AC
 @116 Scenario 2, showing the visual indication on cart has been moved to #244
