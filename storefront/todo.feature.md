@@ -13,7 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@62 @storefront Feature: Display basic product description on details page
 @65 @storefront Feature: Display super fast on details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 @73 @storefront Feature: Display tech specs on details page
