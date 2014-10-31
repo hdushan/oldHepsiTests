@@ -102,3 +102,7 @@ end
 Then(/^I see a product description/) do
   expect(find('#tabProductDesc'))
 end
+
+Then(/^I see a product rating$/) do
+  expect(find('.detail-main .product-rating'))
+end

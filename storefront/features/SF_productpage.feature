@@ -36,3 +36,7 @@ Feature: Product page is as expected
   @62
   Scenario: Display product description
     Then I see a product description
+
+  @83
+  Scenario: Display product ratings
+    Then I see a product rating

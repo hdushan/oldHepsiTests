@@ -33,6 +33,5 @@ Then(/^I see a product image for each result$/) do
 end
 
 Then(/^I see ratings for all products$/) do
-  sleep(30)
   expect(all('.search-item .product-rating').count).to eq all('.search-item').count
 end
