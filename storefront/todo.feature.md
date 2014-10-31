@@ -16,7 +16,6 @@
 @65 @storefront Feature: Display super fast on details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 @73 @storefront Feature: Display tech specs on details page
-@83 @storefront Feature: Show ratings of a products on details & results
 @103 @storefront Feature: Display free shipping on details page
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @140 @storefront Feature: Display product specific return policy
@@ -34,6 +33,7 @@
 
 ------------------------ In Progress -------------------------
 @64 @storefront Feature: Display 2-slot/scheduled delivery
+@83 @storefront Feature: Show ratings of a products on details & results
 
 ---------------------------- Done ----------------------------
 
