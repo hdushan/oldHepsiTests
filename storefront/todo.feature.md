@@ -14,7 +14,6 @@
 @189 @storefront Feature: Static announcement banners 
 
 @62 @storefront Feature: Display basic product description on details page
-@64 @storefront Feature: Display 2-slot/scheduled delivery
 @65 @storefront Feature: Display super fast on details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 @73 @storefront Feature: Display tech specs on details page
@@ -35,7 +34,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@61 @storefront Feature: Display one product image on details page
+@64 @storefront Feature: Display 2-slot/scheduled delivery
 
 ---------------------------- Done ----------------------------
 
@@ -48,6 +47,8 @@
 @28 @storefront Feature: Filter by one brand
 @51 @storefront Feature: Login using e-mail & password
 @56 @storefront Feature: Display product name on details page
+@61 @storefront Feature: Display one product image on details page
+@62 @storefront Feature: Display basic product description on details page
 @67 @storefront Feature: Add one to basket from details page
 @143 @storefront Feature: Display one product price
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"

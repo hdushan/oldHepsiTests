@@ -25,12 +25,6 @@ Feature: Search page is as expected
     When I click load more results
     Then there should be 40 results visible results
 
-  @61
-  Scenario: Display same image as results page on product details page
-    Given I see a product image for each result
-    When I select the iPhone from search results
-    Then I see the same product image on the product page
-
 
 
 

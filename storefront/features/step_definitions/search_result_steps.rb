@@ -3,6 +3,14 @@ Given /^I select the iPhone from search results$/ do
   click_link(@productName)
 end
 
+Given /^I select a product from search results$/ do
+  product_links = all('.search-item a')
+  product = product_links[rand(product_links.length)]
+  @productImage = product.first('.product-image-wrapper img')['src'].split('/').last
+  @productName = product.first('.product-title').text
+  click_link(@productName)
+end
+
 Then(/^I should see a list of (.*) results$/) do | search_term |
   expect(first('.search-item a')).to have_content search_term
 end
@@ -24,7 +32,3 @@ Then(/^I see a product image for each result$/) do
   expect(all('.product-image-wrapper').count).to eq all('.search-item').count
 end
 
-Then(/^I see the same product image on the product page$/) do
-  first_image_path = first('#carousel li img')['src'].split('/').last
-  expect(@productImage).to eq first_image_path
-end

@@ -7,7 +7,7 @@ Feature: Product page is as expected
   Background:
     Given I am on the homepage
     When I search for iPhone
-    And I select the iPhone from search results
+    And I select a product from search results
 
   @143
   Scenario: Display one product price
@@ -28,6 +28,11 @@ Feature: Product page is as expected
     When I click on the returns policy link
     Then I see the returns policy
 
-  @60  @19
-  Scenario: Display multiple product images
-    Then I see multiple product images
+  @60 @19 @61
+  Scenario: Display product images
+    Then I see the product image previously shown
+    And I see multiple product images
+
+  @62
+  Scenario: Display product description
+    Then I see a product description
