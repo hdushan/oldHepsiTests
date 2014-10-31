@@ -6,7 +6,7 @@ Feature: Search page is as expected
 
   Background:
     Given I am on the homepage
-    When I search for iPhone
+    When I search for Samsung
 
   @143 @18
   Scenario: Display product prices
@@ -18,14 +18,11 @@ Feature: Search page is as expected
 
   @17
   Scenario: View results page
-    Then there should be 20 results visible results
+    Then I should see 20 results visible results
 
   @17
   Scenario: Clicking more results
     When I click load more results
-    Then there should be 40 results visible results
-
-
-
+    Then I should see 40 results visible results
 
 

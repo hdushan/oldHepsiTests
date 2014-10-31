@@ -19,7 +19,7 @@ Then(/^I should see no results page$/) do
   expect(find(".no-results-container"))
 end
 
-Then(/^there should be (\d+) results visible results$/) do |amount_of_visible_results|
+Then(/^I should see (\d+) results visible results$/) do |amount_of_visible_results|
   sleep(1)
   expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
@@ -32,3 +32,7 @@ Then(/^I see a product image for each result$/) do
   expect(all('.product-image-wrapper').count).to eq all('.search-item').count
 end
 
+Then(/^I see ratings for all products$/) do
+  sleep(30)
+  expect(all('.search-item .product-rating').count).to eq all('.search-item').count
+end

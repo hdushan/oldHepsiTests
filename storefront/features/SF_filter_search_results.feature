@@ -4,17 +4,18 @@ Feature: Filter search results
 
   Background:
     Given I am on the homepage
-    When I search for iPhone
+    When I search for Samsung
 
   @141
   Scenario: Filter by 'Only'
     Given I filter by shipping style
     Then I should only see products that fall under my preset range
 
-  @25
+  @25 @83
   Scenario: Filter by 'Rating'
     Given I filter by rating
     Then I should only see products that fall under my preset range
+    And  I see ratings for all products
 
   @28
   Scenario: Filter by 'Brand'
@@ -40,4 +41,4 @@ Feature: Filter search results
   Scenario: Clicking more results
     Given I filter by price
     When I click load more results
-    Then there should be 40 results visible results
+    Then I should see 40 results visible results
