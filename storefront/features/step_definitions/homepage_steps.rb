@@ -1,5 +1,3 @@
-require 'pry'
-
 @page = ""
 
 Given /^I am on the homepage$/ do
