@@ -8,6 +8,14 @@ Given(/^I have an empty cart$/) do
   click_link "clearCart"
 end
 
+When /^I select a product with SKU (.*)$/ do |sku|
+  steps %{
+    Given I am on the homepage
+    Given I search for #{sku}
+    Given I select a product from search results
+  }
+end
+
 When /^I add to cart$/ do
   within ".product-price-wrapper" do
     click_button "addToCart"
@@ -100,4 +108,12 @@ Then(/^I see the product information$/) do
   expect(find('#carousel'))
   expect(find('#tabProductDesc'))
   expect(find('.detail-main .product-rating'))
+end
+
+Then(/^I view the payment installments information$/) do
+  first('#productPaymentInstallment').click
+end
+
+Then(/^I see at least one payment installment table$/) do
+  all('.paymentInstallmentTable', :minimum => 1)
 end

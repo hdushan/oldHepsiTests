@@ -4,26 +4,31 @@ Feature: Product page is as expected
   I want to be able to see things on the product page
   So that I can decide on whether to purchase the item
 
-  Background:
-    Given I am on the homepage
-    When I search for TELCEPSAMI8200-B
-    And I select a product from search results
-
   @143 @60 @19 @61 @62 @83
   Scenario: Display Product information
+    Given I select a product with SKU TELCEPIPH5C16GPM-N
     Then I see the product information
 
   @56
   Scenario: Page title contains product name
+    Given I select a product with SKU TELCEPIPH5C16GPM-N
     Then the page title contains the product name
 
   @84
   Scenario: Display product reviews
+    Given I select a product with SKU TELCEPIPH5C16GPM-N
     Then I see 3 reviews
     And I can see the 'More Reviews' button
 
   @78
   Scenario: Display returns policy
-    Given I see to link to view the returns policy
+    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    And I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
+
+  @68
+  Scenario: Display payment installment options with table-based information
+    Given I select a product with SKU SPORALTISSD5000
+    When I view the payment installments information
+    Then I see at least one payment installment table
