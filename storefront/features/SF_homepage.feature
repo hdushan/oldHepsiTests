@@ -24,3 +24,13 @@ Feature: Homepage is as expected
   Scenario: Show copyright in the footer
     Then I see the copyright message in the footer
 
+  @16
+  Scenario: Searching, with results
+    When I search for iPhone
+    Then I should see a list of iPhone results
+
+  @16
+  Scenario: Searching, with no results
+    When I search for iPhonethatdoesnotexist
+    Then I should see no results page
+

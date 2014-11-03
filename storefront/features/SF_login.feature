@@ -1,10 +1,11 @@
-@51 @storefront
+@storefront
 
 Feature: Login using email and password
   As a returning Hepsiburada customer
   I want log-in to HB.com
   So that I can make a purchase or interact with anything in "My Account"
 
+  @51
   Scenario:
     Given I am on the homepage
     When I click the account icon

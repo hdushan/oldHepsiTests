@@ -11,7 +11,7 @@ Feature: Filter search results
     Given I filter by shipping style
     Then I should only see products that fall under my preset range
 
-  @25
+  @25 @83
   Scenario: Filter by 'Rating'
     Given I filter by rating
     Then I should only see products that fall under my preset range
@@ -42,8 +42,14 @@ Feature: Filter search results
     Given I filter by price
     Then I should only see products that fall under my preset range
 
-  @23
-  Scenario: Clicking more results
-    Given I filter by price
-    When I click load more results
-    Then I should see 40 visible results
+  @246
+  Scenario: Clear active filters
+    Given I filter by rating
+    And   I filter by brand
+    When I clear active filters
+    Then I should see all results
+    And I should not see any selected filters
+
+  @246
+  Scenario: Clear filters button inactive when no filters are active
+    Then I cannot click the clear filters button
