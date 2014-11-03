@@ -30,7 +30,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@144 @storefront Feature: Display variants on details page
 
 ---------------------------- Done ----------------------------
 
@@ -47,6 +46,7 @@
 @62 @storefront Feature: Display basic product description on details page
 @67 @storefront Feature: Add one to basket from details page
 @143 @storefront Feature: Display one product price
+@144 @storefront Feature: Display variants on details page
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @212 @storefront Feature: Separate sort & filter on results
 @343 @storefront Feature: Display Filter by Product Specific Attributes
