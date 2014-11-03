@@ -18,11 +18,11 @@ Feature: Search page is as expected
 
   @17
   Scenario: View results page
-    Then I should see 20 results visible results
+    Then I should see 20 visible results
 
   @17
   Scenario: Clicking more results
     When I click load more results
-    Then I should see 40 results visible results
+    Then I should see 40 visible results
 
 

@@ -41,4 +41,4 @@ Feature: Filter search results
   Scenario: Clicking more results
     Given I filter by price
     When I click load more results
-    Then I should see 40 results visible results
+    Then I should see 40 visible results

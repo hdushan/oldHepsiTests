@@ -50,6 +50,6 @@ Feature: Sorting Search Results
   Scenario: View more results preserves sort
     Given I sort by lowest price
     When I click load more results
-    Then I should see 40 results visible results
+    Then I should see 40 visible results
     And I see results lowest price first
 

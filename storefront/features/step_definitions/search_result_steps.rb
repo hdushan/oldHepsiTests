@@ -19,7 +19,7 @@ Then(/^I should see no results page$/) do
   expect(find(".no-results-container"))
 end
 
-Then(/^I should see (\d+) results visible results$/) do |amount_of_visible_results|
+Then(/^I should see (\d+) visible results$/) do |amount_of_visible_results|
   sleep(1)
   expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
