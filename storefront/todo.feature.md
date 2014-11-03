@@ -31,7 +31,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@83 @storefront Feature: Show ratings of a products on details & results
 
 ---------------------------- Done ----------------------------
 
@@ -64,6 +63,8 @@
 @78 @storefront Feature: Display generic return policy on details page -- Could assert content of returns policy as is currently blank
 @84 @storefront Feature: Show comments about a product on details page -- Done, but depends on the test product having more than 3 reviews
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" -- Can not test as appears data specific
+@83 @storefront Feature: Show ratings of a products on details & results -- Cannot check that item without ratings does not show ratings due to data
+
 
 
 -- Mobile Scenarios not tested --

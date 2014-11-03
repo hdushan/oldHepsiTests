@@ -15,6 +15,7 @@ Feature: Filter search results
   Scenario: Filter by 'Rating'
     Given I filter by rating
     Then I should only see products that fall under my preset range
+    And I see ratings for all products
 
   @28
   Scenario: Filter by 'Brand'
