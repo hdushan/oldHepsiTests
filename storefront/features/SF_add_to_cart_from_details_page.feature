@@ -4,7 +4,7 @@ Feature: Add to basket from details page
   Background:
     Given I have an empty cart
     And I am on the homepage
-    When I search for bestway
+    When I search for OUTINT1BWAK67000N
     Then I select a product from search results
 
   @67

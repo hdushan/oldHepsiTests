@@ -4,7 +4,7 @@ Given /^I select the iPhone from search results$/ do
 end
 
 Given /^I select a product from search results$/ do
-  product_links = all('.search-item a')
+  product_links = all(:xpath,"//li[@class = 'search-item'][.//@class = 'product-price']")
   product = product_links[rand(product_links.length)]
   @product_image = product.first('.product-image-wrapper img')['src'].split('/').last
   @product_name = product.first('.product-title').text
