@@ -38,3 +38,7 @@ Feature: Product page is as expected
     When I view the payment installments information
     Then I see at least one payment installment table
 
+  @103
+  Scenario: Display free shipping tag
+    Given I select a product with SKU SPORALTISSD5000
+    Then I see text indicating that free shipping is available

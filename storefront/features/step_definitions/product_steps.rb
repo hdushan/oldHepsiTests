@@ -122,3 +122,7 @@ Then(/^I can view the product tech specs$/) do
   first('#productTechSpec').click
   all('.tech-spec', :minimum => 1)
 end
+
+Then(/^I see text indicating that free shipping is available$/) do
+  expect(find('#fastShipping').text).to match "Kargo Bedava"
+end

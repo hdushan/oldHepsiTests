@@ -27,7 +27,6 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@103 @storefront Feature: Display free shipping on details page
 @144 @storefront Feature: Display variants on details page
 
 ---------------------------- Done ----------------------------
@@ -46,6 +45,7 @@
 @67 @storefront Feature: Add one to basket from details page
 @68 @storefront Feature: Show Installments by Bank on Details Page
 @73 @storefront Feature: Display tech specs on details page
+@103 @storefront Feature: Display free shipping on details page
 @143 @storefront Feature: Display one product price
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @212 @storefront Feature: Separate sort & filter on results
