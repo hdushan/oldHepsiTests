@@ -41,6 +41,13 @@ Then /^I should see the product in the cart$/ do
   expect(find('.cart-item').text have_content @product_name)
 end
 
+Then(/^I should see (\d+) of the product in the cart$/) do |num|
+  steps %{
+      Given I should see the product in the cart
+  }
+  expect(find('.cart-item .quantity').text).to eq num
+end
+
 Then(/^I should see the notification$/) do
   wait_for_visibility(page, '#notification', true)
   wait_for_visibility(page, '#notification', false)
@@ -52,13 +59,6 @@ end
 
 Then(/^I should see the 'add one more' button$/) do
   wait_for_visibility(page, '#addToCartAgain', true)
-end
-
-Then(/^I should see two of the product in the cart$/) do
-  steps %{
-      Given I should see the product in the cart
-  }
-  expect(find('.cart-item .quantity').text).to eq '2'
 end
 
 Then(/^I should see an empty cart$/) do

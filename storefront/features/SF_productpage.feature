@@ -57,19 +57,3 @@ Feature: Product page is as expected
     Given I select a product with SKU TELCEPSAMI8200-B
     When I select a variant
     Then I see the page URL has changed
-
-  @73
-  Scenario: Display product tech specs
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
-    Then I can view the product tech specs
-
-  @68
-  Scenario: Display payment installment options with table-based information
-    Given I select a product with SKU SPORALTISSD5000
-    When I view the payment installments information
-    Then I see at least one payment installment table
-
-  @103
-  Scenario: Display free shipping tag
-    Given I select a product with SKU SPORALTISSD5000
-    Then I see text indicating that free shipping is available

@@ -27,7 +27,7 @@ Feature: Add to basket from details page
     Then I should see the 'add one more' button
     When I click 'add one more'
     And I click on the shopping cart
-    Then I should see two of the product in the cart
+    Then I should see 2 of the product in the cart
 
   @116
   Scenario: Preserve cart on page reload
