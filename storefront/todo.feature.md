@@ -18,7 +18,6 @@
 @103 @storefront Feature: Display free shipping on details page
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @140 @storefront Feature: Display product specific return policy
-@144 @storefront Feature: Display variants on details page
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
@@ -31,6 +30,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
+@144 @storefront Feature: Display variants on details page
 
 ---------------------------- Done ----------------------------
 
@@ -61,9 +61,9 @@
 @31 @storefront Feature: Sort by best selling -- Cannot test order without being able to modify the data
 @65 @storefront Feature: Display super fast on details page -- can't test that flag is not visible when product does not have super-fast shipping
 @78 @storefront Feature: Display generic return policy on details page -- Could assert content of returns policy as is currently blank
+@83 @storefront Feature: Show ratings of a products on details & results -- Cannot check that item without ratings does not show ratings due to data
 @84 @storefront Feature: Show comments about a product on details page -- Done, but depends on the test product having more than 3 reviews
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" -- Can not test as appears data specific
-@83 @storefront Feature: Show ratings of a products on details & results -- Cannot check that item without ratings does not show ratings due to data
 
 
 
