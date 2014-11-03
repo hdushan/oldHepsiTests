@@ -13,7 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@103 @storefront Feature: Display free shipping on details page
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @140 @storefront Feature: Display product specific return policy
 @221 @storefront Feature: Display merchant offers on details page
@@ -28,6 +27,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
+@103 @storefront Feature: Display free shipping on details page
 @144 @storefront Feature: Display variants on details page
 
 ---------------------------- Done ----------------------------
