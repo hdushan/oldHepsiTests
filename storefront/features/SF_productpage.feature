@@ -9,9 +9,9 @@ Feature: Product page is as expected
     When I search for TELCEPIPH5C16GPM-N
     And I select a product from search results
 
-  @143
-  Scenario: Display one product price
-    Then I see product price with tax
+  @143 @60 @19 @61 @62 @83
+  Scenario: Display Product information
+    Then I see the product information
 
   @56
   Scenario: Page title contains product name
@@ -27,16 +27,3 @@ Feature: Product page is as expected
     Given I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
-
-  @60 @19 @61
-  Scenario: Display product images
-    Then I see the product image previously shown
-    And I see multiple product images
-
-  @62
-  Scenario: Display product description
-    Then I see a product description
-
-  @83
-  Scenario: Display product ratings
-    Then I see a product rating

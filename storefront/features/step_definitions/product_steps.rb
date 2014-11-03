@@ -40,10 +40,6 @@ Then(/^I should see the notification$/) do
   wait_for_visibility(page, '#notification', false)
 end
 
-Then(/^I see product price with tax$/) do
-  expect(find("#offering-price"))
-end
-
 Then(/^I should see the 'go to cart' button$/) do
   wait_for_visibility(page, '#linkToCart', true)
 end
@@ -71,10 +67,6 @@ Then(/^I see a result with product price and tax$/) do
   expect(first(".product-price"))
 end
 
-Then(/^I see the product image previously shown$/) do
-  expect(first("img.product-image")['src']).to match @product_image
-end
-
 Then(/^the page title contains the product name$/) do
   expect(page.title).to include(@product_name)
 end
@@ -95,21 +87,17 @@ Then(/^I see the returns policy$/) do
   expect(find('#productReturnPolicyText'))
 end
 
-Then(/^I see multiple product images$/) do
-  expect(all('.product-image').count).to be > 1
-  expect(find('#carousel'))
-end
-
-Then(/^I see a product description/) do
-  expect(find('#tabProductDesc'))
-end
-
-Then(/^I see a product rating$/) do
-  expect(find('.detail-main .product-rating'))
-end
-
 Then(/^I see the super fast delivery flag$/) do
   # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
   # how to match encoded string correctly
   expect(first('#fastShipping').text).to match 'per H'
+end
+
+Then(/^I see the product information$/) do
+  expect(find("#offering-price"))
+  expect(first("img.product-image")['src']).to match @product_image
+  expect(all('img.product-image').count).to be > 1
+  expect(find('#carousel'))
+  expect(find('#tabProductDesc'))
+  expect(find('.detail-main .product-rating'))
 end
