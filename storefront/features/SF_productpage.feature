@@ -27,3 +27,16 @@ Feature: Product page is as expected
     Given I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
+
+  @144
+  Scenario: Display variants on the details page
+    Then I see the option to select a variant
+    And I see no variant is selected
+    When I add to cart
+    Then I see an error message asking me to make a selection
+
+  @144 @failing
+  Scenario: Select variant on results page
+    When I select a variant
+    Then I see the page URL has changed
+

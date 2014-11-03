@@ -101,3 +101,26 @@ Then(/^I see the product information$/) do
   expect(find('#tabProductDesc'))
   expect(find('.detail-main .product-rating'))
 end
+
+Then(/^I see the option to select a variant$/) do
+  expect(all("#v-renk option").count).to be > 1
+end
+
+Then(/^I see no variant is selected$/) do
+  selected = page.evaluate_script("$('#v-renk').find(':selected').text()")
+  expect(selected).to eq 'Seçiniz Renk'
+end
+
+Then(/^I see an error message asking me to make a selection$/) do
+  wait_for_visibility(page, 'div #notification', true)
+end
+
+
+When(/^I select a variant$/) do
+  @URL = current_url
+  select 'Siyah', from: "v-renk"
+end
+
+Then(/^I see the page URL has changed$/) do
+  expect(current_url).to_not eq @URL
+end
