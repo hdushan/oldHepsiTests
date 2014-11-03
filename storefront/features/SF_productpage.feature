@@ -1,4 +1,4 @@
-@storefront
+@storefront @product
 Feature: Product page is as expected
   As a buyer
   I want to be able to see things on the product page
@@ -6,7 +6,7 @@ Feature: Product page is as expected
 
   Background:
     Given I am on the homepage
-    When I search for TELCEPIPH5C16GPM-N
+    When I search for TELCEPSAMI8200-B
     And I select a product from search results
 
   @143 @60 @19 @61 @62 @83
