@@ -52,4 +52,3 @@ Feature: Sorting Search Results
     When I click load more results
     Then I should see 40 visible results
     And I see results lowest price first
-

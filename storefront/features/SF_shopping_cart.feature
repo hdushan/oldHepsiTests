@@ -1,9 +1,9 @@
-@storefront
+@storefront @cart
 Feature: Add to basket from details page
 
   Background:
-    Given I have an empty cart
-    And I am on the homepage
+    Given I am on the homepage
+    And I have an empty cart
     When I search for OUTINT1BWAK67000N
     Then I select a product from search results
 

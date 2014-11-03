@@ -1,8 +1,3 @@
-Given /^I select the iPhone from search results$/ do
-  @product_name = first('.search-item a .product-title').text
-  click_link(@product_name)
-end
-
 Given /^I select a product from search results$/ do
   product_links = all(:xpath, "//li[@class = 'search-item'][.//@class = 'product-price']")
   product = product_links[rand(product_links.length)]

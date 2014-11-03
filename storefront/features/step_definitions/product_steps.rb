@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 Given(/^I have an empty cart$/) do
-  steps %{
-      Given I am on the homepage
-  }
-
+  url = current_url
   click_link "shoppingCart"
   click_link "clearCart"
+  visit url
+end
+
+When /^I select a product with SKU (.*)$/ do |sku|
+  steps %{
+    Given I am on the homepage
+    Given I search for #{sku}
+    Given I select a product from search results
+  }
 end
 
 When /^I add to cart$/ do
@@ -115,7 +121,6 @@ Then(/^I see an error message asking me to make a selection$/) do
   wait_for_visibility(page, 'div #notification', true)
 end
 
-
 When(/^I select a variant$/) do
   @URL = current_url
   select 'Siyah', from: "v-renk"
@@ -123,4 +128,21 @@ end
 
 Then(/^I see the page URL has changed$/) do
   expect(current_url).to_not eq @URL
+end
+
+Then(/^I view the payment installments information$/) do
+  first('#productPaymentInstallment').click
+end
+
+Then(/^I see at least one payment installment table$/) do
+  all('.paymentInstallmentTable', :minimum => 1)
+end
+
+Then(/^I can view the product tech specs$/) do
+  first('#productTechSpec').click
+  all('.tech-spec', :minimum => 1)
+end
+
+Then(/^I see text indicating that free shipping is available$/) do
+  expect(find('#fastShipping').text).to match "Kargo Bedava"
 end

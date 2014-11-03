@@ -13,9 +13,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@68 @storefront Feature: Show Installments by Bank on Details Page
-@73 @storefront Feature: Display tech specs on details page
-@103 @storefront Feature: Display free shipping on details page
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @140 @storefront Feature: Display product specific return policy
 @221 @storefront Feature: Display merchant offers on details page
@@ -45,6 +42,9 @@
 @61 @storefront Feature: Display one product image on details page
 @62 @storefront Feature: Display basic product description on details page
 @67 @storefront Feature: Add one to basket from details page
+@68 @storefront Feature: Show Installments by Bank on Details Page
+@73 @storefront Feature: Display tech specs on details page
+@103 @storefront Feature: Display free shipping on details page
 @143 @storefront Feature: Display one product price
 @144 @storefront Feature: Display variants on details page
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
