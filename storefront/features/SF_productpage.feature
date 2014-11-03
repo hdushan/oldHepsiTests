@@ -27,8 +27,14 @@ Feature: Product page is as expected
     When I click on the returns policy link
     Then I see the returns policy
 
+  @73
+  Scenario: Display product tech specs
+    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Then I can view the product tech specs
+
   @68
   Scenario: Display payment installment options with table-based information
     Given I select a product with SKU SPORALTISSD5000
     When I view the payment installments information
     Then I see at least one payment installment table
+

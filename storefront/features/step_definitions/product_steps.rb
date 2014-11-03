@@ -117,3 +117,8 @@ end
 Then(/^I see at least one payment installment table$/) do
   all('.paymentInstallmentTable', :minimum => 1)
 end
+
+Then(/^I can view the product tech specs$/) do
+  first('#productTechSpec').click
+  all('.tech-spec', :minimum => 1)
+end
