@@ -57,3 +57,8 @@ Feature: Product page is as expected
     Given I select a product with SKU TELCEPSAMI8200-B
     When I select a variant
     Then I see the page URL has changed
+
+   @138
+   Scenario: Display original price on details page
+     Given I select a product with SKU TELCEPIPH5C16GPM-N
+     Then I see the original price

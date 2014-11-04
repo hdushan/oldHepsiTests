@@ -146,3 +146,8 @@ end
 Then(/^I see text indicating that free shipping is available$/) do
   expect(find('#fastShipping').text).to match "Kargo Bedava"
 end
+
+
+Then(/^I see the original price$/) do
+  expect(find('.product-old-price'))
+end

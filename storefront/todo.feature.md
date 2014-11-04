@@ -9,7 +9,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @140 @storefront Feature: Display product specific return policy
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
@@ -23,7 +22,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-
+@138 @storefront Feature: Display discount - i.e. original price & percentage on image
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
