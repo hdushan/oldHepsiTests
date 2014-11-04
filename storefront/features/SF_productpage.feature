@@ -62,3 +62,4 @@ Feature: Product page is as expected
    Scenario: Display original price on details page
      Given I select a product with SKU TELCEPIPH5C16GPM-N
      Then I see the original price
+     And I see the discount percentage

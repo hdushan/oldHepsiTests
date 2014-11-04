@@ -151,3 +151,7 @@ end
 Then(/^I see the original price$/) do
   expect(find('.product-old-price'))
 end
+
+And(/^I see the discount percentage$/) do
+  expect(find('#product-discount-rate'))
+end
