@@ -1,9 +1,5 @@
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 
-@358 @storefront Feature: Error Handling for Merchant Listings on Details Page
-
-@261 @storefront Feature: Remove filter & sort on 0 results
-@263 @storefront Feature: Turn off native auto suggest
 @295 @storefront Feature: Indicate which filter is on
 @301 @storefront Feature: Split and label variants 
 
@@ -66,7 +62,6 @@
 @255 @storefront Feature: "Fix ""extra fee"" product pricing" -- Can not test as appears data specific
 
 
-
 -- Mobile Scenarios not tested --
 @60 @storefront Feature: Display multiple images on details page
 @116 @storefront Feature: Remember my basket without login
@@ -79,3 +74,9 @@
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page
 @372 @storefront Feature: Display Top Sellers of a Category on Category Landing Page --- need to check what the 'sorting displayed products' scenario refers to
+@358 @storefront Feature: Error Handling for Merchant Listings on Details Page --- need to be able to control other services (stubs?)
+
+
+-- Test judged to be not required ---
+@261 @storefront Feature: Remove filter & sort on 0 results
+@263 @storefront Feature: Turn off native auto suggest
