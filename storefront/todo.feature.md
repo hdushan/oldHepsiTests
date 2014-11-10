@@ -9,7 +9,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
 @189 @storefront Feature: Static announcement banners 
 
-@140 @storefront Feature: Display product specific return policy
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
@@ -48,7 +47,7 @@
 @460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @481 @storefront Feature: Feedback Mechanism for Beta
-
+@140 @storefront Feature: Display product specific return policy
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

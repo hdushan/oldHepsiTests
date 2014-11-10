@@ -22,3 +22,7 @@
 @460 When adding two of the same item to the cart, that item should only appear once in the cart but with a quantity of 2
 
 @467 We assume that all items in the 'deal of the day' list should have a discounted price, and hence an original price. (not the case in the QA environment, as of 2014-10-28)
+
+@140 We have assumed that the presence of the text "İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7." 
+     (rough translation: "Products you have viewed , the Regulation on Distance Contracts 7 .") is enough to be certain
+     specific returns policy are displayed for the media product in question
