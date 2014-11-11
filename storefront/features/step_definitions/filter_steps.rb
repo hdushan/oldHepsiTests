@@ -1,37 +1,34 @@
-original_result = ""
+original_result= ""
+
+And(/^I can see the results$/) do
+  original_result = find("#totalItems").text
+end
 
 Given(/^I filter by first level category$/) do
-  original_result = find("#totalItems").text
   first('#categoryList li label').click
 end
 
 Given(/^I filter by brand$/) do
-  original_result = find("#totalItems").text
   first('#brandList li label').click
 end
 
 Given(/^I filter by rating$/) do
-  original_result = find("#totalItems").text
   first('#starRatingList li label').click
 end
 
 Given(/^I filter by price$/) do
-  original_result = find("#totalItems").text
   first('#otherFilterList-actual_price li label').click
 end
 
 Given(/^I filter by shipping style$/) do
-  original_result = find("#totalItems").text
   all('#otherFilterList-filterflag li label')[1].click
 end
 
 Given(/^I filter by case type$/) do
-  original_result = find("#totalItems").text
   first('#otherFilterList-851_dp li label').click
 end
 
 Given(/^I filter by material type$/) do
-  original_result = find("#totalItems").text
   first('#otherFilterList-380_dp li label').click
 end
 

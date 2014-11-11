@@ -1,10 +1,11 @@
+
 When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
 end
 
 When /^I search for (.*)$/  do | search_term |
   fill_in 'productSearch', :with => "#{search_term}"
-  click_button "buttonProductSearch"
+  page.find_by_id('buttonProductSearch').click
 end
 
 Then(/^I see a feedback window$/) do

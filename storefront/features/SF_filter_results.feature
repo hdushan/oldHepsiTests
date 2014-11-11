@@ -5,6 +5,7 @@ Feature: Filter search results
   Background:
     Given I am on the homepage
     When I search for iPhone
+    And I can see the results
 
   @141
   Scenario: Filter by 'Only'
