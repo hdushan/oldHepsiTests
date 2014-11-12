@@ -19,7 +19,7 @@
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
-@138 @storefront Feature: Display discount - i.e. original price & percentage on image
+@138 @storefront Feature: Display discount - i.e. original price & percentage on image --Martina working on it
 @47 @storefront Feature: Browse 1st level categories
 @48 @storefront Feature: Browse by 2nd-level subcategories
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
