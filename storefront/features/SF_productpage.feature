@@ -6,12 +6,12 @@ Feature: Product page is as expected
 
   @143 @60 @19 @61 @62 @83
   Scenario: Display Product information
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Given I select a product with SKU TELCEPIPH618GBGO-N
     Then I see the product information
 
   @56
   Scenario: Page title contains product name
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Given I select a product with SKU TELCEPIPH618GBGO-N
     Then the page title contains the product name
 
   @84
@@ -22,14 +22,14 @@ Feature: Product page is as expected
 
   @78
   Scenario: Display returns policy
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Given I select a product with SKU TELCEPIPH618GBGO-N
     And I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
 
   @73
   Scenario: Display product tech specs
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Given I select a product with SKU TELCEPIPH618GBGO-N
     Then I can view the product tech specs
 
   @68
