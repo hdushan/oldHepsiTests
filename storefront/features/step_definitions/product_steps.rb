@@ -154,7 +154,7 @@ Then(/^I see text indicating that free shipping is available$/) do
 end
 
 Then(/^I see the original price$/) do
-  expect(find('del#product-original-price'))
+  expect(find('del#originalPrice'))
 end
 
 Then(/^I see product return information specific to media/) do
