@@ -8,11 +8,9 @@ def all_satisfy(expected)
 end
 
 def prices_to_list(items)
-  list = []
-  items.each do |item|
-    list << price_from_string(item.find('.product-price').text)
-  end
-  list
+  items.map { |item|
+    price_from_string(item.find('.product-price').text)
+  }
 end
 
 def price_from_string(string)
