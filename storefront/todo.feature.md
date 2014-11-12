@@ -1,5 +1,5 @@
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
-
+@295 @storefront Feature: Indicate which filter is on  --- needs clarification
 @301 @storefront Feature: Split and label variants 
 
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
@@ -10,7 +10,7 @@
 
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
-@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
+
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 @523 @storefront Feature: Display Campaign Banners in Flyout Menu
 
@@ -21,7 +21,7 @@
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @47 @storefront Feature: Browse 1st level categories
 @48 @storefront Feature: Browse by 2nd-level subcategories
-@295 @storefront Feature: Indicate which filter is on --Linda working on it
+@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
