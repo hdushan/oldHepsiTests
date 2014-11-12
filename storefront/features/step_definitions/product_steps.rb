@@ -184,3 +184,7 @@ And(/^the variants should have no default$/) do
     variant.should_not be_checked
   end
 end
+
+And(/^I see the discount percentage$/) do
+  expect(find('#product-discount-rate'))
+end

@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 @storefront
 Feature: Homepage is as expected
   As a buyer
