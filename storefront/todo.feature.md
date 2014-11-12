@@ -1,6 +1,5 @@
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 
-@295 @storefront Feature: Indicate which filter is on
 @301 @storefront Feature: Split and label variants 
 
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
@@ -22,6 +21,7 @@
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @47 @storefront Feature: Browse 1st level categories
 @48 @storefront Feature: Browse by 2nd-level subcategories
+@295 @storefront Feature: Indicate which filter is on --Linda working on it
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
