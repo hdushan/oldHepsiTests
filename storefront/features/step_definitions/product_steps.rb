@@ -162,5 +162,5 @@ Then(/^I see product return information specific to media/) do
 end
 
 And(/^I see the discount percentage$/) do
-  expect(find('#product-discount-rate'))
+  expect(find('#productDiscountRate'))
 end
