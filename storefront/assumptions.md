@@ -26,3 +26,14 @@
 @140 We have assumed that the presence of the text "İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7." 
      (rough translation: "Products you have viewed , the Regulation on Distance Contracts 7 .") is enough to be certain
      specific returns policy are displayed for the media product in question
+     
+@47 We have assumed that identifying the presence of the 1st level navigation by checking the presence of the selector 
+    .browser-by-category combined with the presence of the text "Elektronik Beyaz Eşya", "Ev, Yaşam Ofis" and 
+    "Oto, Bahçe Yapı Market" is sufficient. 
+    
+@47 We assume that the text inside the main navbar will remain as it currently is, we select "Elektronik Beyaz Eşya" and
+    then click on "", finally we assume that checking a page has the title "Bilgisayar Fiyatları ve Modelleri & 
+    %45 indirim & Taksit Avantajı" is sufficient to assert we have navigated to the correct page.
+    
+@144 We assume that a radio button being checked is sufficient to assert that a user can select a product variant. 
+     Previous tests were looking for URL changes which appears to not be the case.

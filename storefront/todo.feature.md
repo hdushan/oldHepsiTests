@@ -15,13 +15,13 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 @523 @storefront Feature: Display Campaign Banners in Flyout Menu
 
-@48 @storefront Feature: Browse by 2nd-level subcategories
 @305 @storefront Feature: Browse Categories by 3rd
 @428 @storefront Feature: Browse by 4th level
 
 ------------------------ In Progress -------------------------
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
 @47 @storefront Feature: Browse 1st level categories
+@48 @storefront Feature: Browse by 2nd-level subcategories
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search

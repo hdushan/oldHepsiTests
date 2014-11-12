@@ -109,25 +109,31 @@ Then(/^I see the product information$/) do
 end
 
 Then(/^I see the option to select a variant$/) do
-  expect(all("#v-renk option").count).to be > 1
+  variant_container = find('.variant-container-with-prices')
+  all_price_labels = variant_container.all('.price-label')
+  expect(all_price_labels.count).to be > 1
+  expect(variant_container).to have_selector('input')
 end
 
 Then(/^I see no variant is selected$/) do
-  selected = page.evaluate_script("$('#v-renk').find(':selected').text()")
-  expect(selected).to eq 'Seçiniz Renk'
+  variant_container = find('.variant-container-with-prices')
+  variant_container.all('input[type=radio]').each do | radio_button |
+    radio_button.should_not be_checked
+  end
 end
 
 Then(/^I see an error message asking me to make a selection$/) do
   wait_for_visibility(page, 'div #notification', true)
 end
 
-When(/^I select a variant$/) do
+When(/^I select the first a variant$/) do
   @URL = current_url
-  select 'Siyah', from: "v-renk"
+  all('.variant-container-with-prices .price-label').first.click
 end
 
-Then(/^I see the page URL has changed$/) do
-  expect(current_url).to_not eq @URL
+Then(/^I see the the variant is checked$/) do
+  variant_container = find('.variant-container-with-prices')
+  expect(variant_container.all('input[type=radio]').first).to be_checked
 end
 
 Then(/^I view the payment installments information$/) do

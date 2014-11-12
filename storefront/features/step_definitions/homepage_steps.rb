@@ -4,6 +4,13 @@ Given /^I am on the homepage$/ do
   @page = Pages::Homepage.visit
 end
 
+Given(/^I see the first level navigation bar/) do
+  page.should have_selector('.browser-by-category')
+  expect(find('.browser-by-category').text).to include "Elektronik Beyaz Eşya"
+  expect(find('.browser-by-category').text).to include "Ev, Yaşam Ofis"
+  expect(find('.browser-by-category').text).to include "Oto, Bahçe Yapı Market"
+end
+
 Then(/^I see deal of the day$/) do
 
 end
@@ -20,6 +27,18 @@ end
 When(/^I visit the computers category landing page/) do
   page.first('.browser-by-category a').click
   page.first('.nav-home-wrapper .nav-home a').click
+end
+
+When(/^I hover over the (.*) navigation bar entry/) do | navigation_name |
+  page.find_link(navigation_name).hover
+end
+
+When(/^I click on the link (.*)/) do | link |
+  page.find(:xpath, "//a[@href=\"" + link + "\"]").click
+end
+
+Then(/^I see the page with the title (.*)/) do | expected_title |
+  expect(page).to have_title expected_title
 end
 
 Then(/^I visit the telephones category page$/) do

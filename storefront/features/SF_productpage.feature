@@ -52,15 +52,15 @@ Feature: Product page is as expected
     When I add to cart
     Then I see an error message asking me to make a selection
 
-  @144 @failing
+  @144
   Scenario: Select variant on results page
     Given I select a product with SKU TELCEPSAMI8200-B
-    When I select a variant
-    Then I see the page URL has changed
+    When I select the first a variant
+    Then I see the the variant is checked
 
   @138
   Scenario: Display original price on details page
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
+    Given I select a product with SKU KIMGE033
     Then I see the original price
     And I see the discount percentage
 

@@ -7,7 +7,7 @@ Feature: Homepage is as expected
   Background:
     Given I am on the homepage
 
-  @190 @467 @failing
+  @190 @467
   Scenario: Show "Deal of the Day" on Homepage
     Then I see 6 items in deal of the day
     And each deal of the day product shows its undiscounted price
@@ -33,4 +33,11 @@ Feature: Homepage is as expected
   Scenario: Searching, with no results
     When I search for iPhonethatdoesnotexist
     Then I should see no results page
+
+  @48
+  Scenario: Navigating to a second level category
+    Given I see the first level navigation bar
+    When I hover over the Elektronik Beyaz Eşya navigation bar entry
+    And I click on the link /liste/bilgisayar/department.aspx?categoryId=2147483646
+    Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 
