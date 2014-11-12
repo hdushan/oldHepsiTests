@@ -29,6 +29,8 @@ cucumber storefront
 To run only test cases with the regression tag ;
 
     cucumber  --tag @regression storefront
+    
+For Windows Machine please use # encoding: UTF-8 on step definition 
 
 ### WebKit Headless Testing
 
