@@ -13,7 +13,6 @@
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
-@523 @storefront Feature: Display Campaign Banners in Flyout Menu
 
 @305 @storefront Feature: Browse Categories by 3rd
 @428 @storefront Feature: Browse by 4th level
@@ -21,6 +20,7 @@
 ------------------------ In Progress -------------------------
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image --Martina working on it
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
+@523 @storefront Feature: Display Campaign Banners in Flyout Menu -- Elizabeth and Adam
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
