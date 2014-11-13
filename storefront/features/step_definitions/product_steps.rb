@@ -154,7 +154,7 @@ Then(/^I see text indicating that free shipping is available$/) do
 end
 
 Then(/^I see the original price (.*)$/) do | price |
-  find('del#originalPrice').text.should match(price)
+  find('del#originalPrice').should have_content price
 end
 
 Then(/^I see product return information specific to media/) do
@@ -162,7 +162,7 @@ Then(/^I see product return information specific to media/) do
 end
 
 And(/^I see the discount percentage of (.*)$/) do | discount |
-  find_by_id('product-discount-rate').should have_content(discount)
+  find('#productDiscountRate del').should have_content discount
 end
 
 Then(/^I do not see a discount price$/) do
