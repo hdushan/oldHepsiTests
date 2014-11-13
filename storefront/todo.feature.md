@@ -20,8 +20,6 @@
 
 ------------------------ In Progress -------------------------
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image --Martina working on it
-@47 @storefront Feature: Browse 1st level categories
-@48 @storefront Feature: Browse by 2nd-level subcategories
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
 ---------------------------- Done ----------------------------
 
@@ -49,6 +47,8 @@
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @481 @storefront Feature: Feedback Mechanism for Beta
 @140 @storefront Feature: Display product specific return policy
+@47 @storefront Feature: Browse 1st level categories
+@48 @storefront Feature: Browse by 2nd-level subcategories
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

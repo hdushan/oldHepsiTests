@@ -37,3 +37,6 @@
     
 @144 We assume that a radio button being checked is sufficient to assert that a user can select a product variant. 
      Previous tests were looking for URL changes which appears to not be the case.
+     
+@48 We assume that hovering over a category in the nav bar and clicking on a second level category then checking the 
+    title of a the new page is sufficient to assert that you can navigate to second level categories. 
