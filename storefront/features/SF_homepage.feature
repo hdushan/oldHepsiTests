@@ -34,10 +34,17 @@ Feature: Homepage is as expected
     When I search for iPhonethatdoesnotexist
     Then I should see no results page
 
+  @47
+  Scenario: Hovering over a first level category displays second level categories
+    Given I see the first level navigation bar
+    When I hover over the first navigation bar entry
+    Then I can see the second level categories
+
+
   @48
   Scenario: Navigating to a second level category
     Given I see the first level navigation bar
-    When I hover over the Elektronik Beyaz Eşya navigation bar entry
+    When I hover over the first navigation bar entry
     And I click on the link /liste/bilgisayar/department.aspx?categoryId=2147483646
     Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 

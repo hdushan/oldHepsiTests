@@ -30,12 +30,12 @@ When(/^I visit the computers category landing page/) do
   page.first('.nav-home-wrapper .nav-home a').click
 end
 
-When(/^I hover over the (.*) navigation bar entry/) do | navigation_name |
-  page.find_link(navigation_name).hover
+When(/^I hover over the first navigation bar entry/) do
+  page.first('.browser-by-category li a').hover
 end
 
 When(/^I click on the link (.*)/) do | link |
-  page.find(:xpath, "//a[@href=\"" + link + "\"]").click
+  page.find('nav-home-wrapper').find(:xpath, "//a[@href=\"" + link + "\"]").click
 end
 
 Then(/^I see the page with the title (.*)/) do | expected_title |
@@ -45,4 +45,8 @@ end
 Then(/^I visit the telephones category page$/) do
   page.first('.browser-by-category a').click
   page.all('.nav-home-wrapper .nav-home a')[1].click
+end
+
+Then(/^I can see the second level categories/) do
+  expect(page).to have_selector('.browser-by-category li.active .nav-home-wrapper')
 end

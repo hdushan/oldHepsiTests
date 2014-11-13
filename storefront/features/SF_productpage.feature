@@ -71,6 +71,6 @@ Feature: Product page is as expected
 
   @140
   Scenario: Display non-generic returns policy for DVD
-    Given I select a product with SKU DVDVIDEO1373
+    Given I select a product with SKU DVDEMI249
     When I click on the returns policy link
     Then I see product return information specific to media

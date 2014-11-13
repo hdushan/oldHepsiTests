@@ -18,8 +18,9 @@ Then(/^I should see no results page$/) do
   expect(find(".no-results-container"))
 end
 
-Then(/^I should see (.*) visible results$/) do |amount_of_visible_results|
+Then(/^I should see (.*) visible results$/) do | amount_of_visible_results |
   sleep(1)
+  all(".search-item").count.to_s
   expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
 

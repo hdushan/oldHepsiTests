@@ -154,15 +154,15 @@ Then(/^I see text indicating that free shipping is available$/) do
 end
 
 Then(/^I see the original price (.*)$/) do | price |
-  expect(find('del#originalPrice').text).to match price
+  find('del#originalPrice').text.should match(price)
 end
 
 Then(/^I see product return information specific to media/) do
-  expect(find_by_id('productReturnPolicyText').text).to include "İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7."
+  find_by_id('productReturnPolicyText').should have_content("İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7.")
 end
 
 And(/^I see the discount percentage of (.*)$/) do | discount |
-  expect(find('#productDiscountRate del').text).to match discount
+  find_by_id('product-discount-rate').should have_content(discount)
 end
 
 Then(/^I do not see a discount price$/) do
