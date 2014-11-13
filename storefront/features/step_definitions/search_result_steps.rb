@@ -19,8 +19,7 @@ Then(/^I should see no results page$/) do
 end
 
 Then(/^I should see (.*) visible results$/) do | amount_of_visible_results |
-  sleep(1)
-  all(".search-item").count.to_s
+  sleep(1.5)
   expect(all(".search-item").count.to_s).to eq amount_of_visible_results
 end
 

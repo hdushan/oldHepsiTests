@@ -34,8 +34,8 @@ When(/^I hover over the first navigation bar entry/) do
   page.first('.browser-by-category li a').hover
 end
 
-When(/^I click on the link (.*)/) do | link |
-  page.find('nav-home-wrapper').find(:xpath, "//a[@href=\"" + link + "\"]").click
+When(/^I click on the link (.*) in the active second level/) do | link |
+  page.find('.browser-by-category li.active .nav-home-wrapper').find(:xpath, "//a[@href=\"" + link + "\"]").click
 end
 
 Then(/^I see the page with the title (.*)/) do | expected_title |
@@ -49,4 +49,8 @@ end
 
 Then(/^I can see the second level categories/) do
   expect(page).to have_selector('.browser-by-category li.active .nav-home-wrapper')
+end
+
+When(/^I see the fly-out menu$/) do
+  expect(page.find('.browser-by-category li.active .nav-home-wrapper')).to have_selector('.flyout-campaign-wrapper')
 end

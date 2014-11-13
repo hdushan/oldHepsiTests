@@ -45,6 +45,10 @@ Feature: Homepage is as expected
   Scenario: Navigating to a second level category
     Given I see the first level navigation bar
     When I hover over the first navigation bar entry
-    And I click on the link /liste/bilgisayar/department.aspx?categoryId=2147483646
+    And I click on the link /liste/bilgisayar/department.aspx?categoryId=2147483646 in the active second level
     Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 
+  @523
+  Scenario: Viewing the fly-out menu
+    Given I hover over the first navigation bar entry
+    Then I see the fly-out menu
