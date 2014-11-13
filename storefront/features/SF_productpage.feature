@@ -59,10 +59,15 @@ Feature: Product page is as expected
     Then I see the the variant is checked
 
   @138
-  Scenario: Display original price on details page
+  Scenario: Display original price on details page for discounted product
     Given I select a product with SKU KIMGE033
-    Then I see the original price
-    And I see the discount percentage
+    Then I see the original price 6,30 TL
+    And I see the discount percentage of 11
+
+  @138
+  Scenario:Do not display original price on details page for non discounted product
+    Given I select a product with SKU GYPI22S2S14AMAL
+    Then I do not see a discount price
 
   @140
   Scenario: Display non-generic returns policy for DVD
