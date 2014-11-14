@@ -1,6 +1,6 @@
 @storefront
 Feature: Category page is as expected
-  
+
   Background:
     Given I am on the homepage
     And I visit the computers category landing page
@@ -24,3 +24,8 @@ Feature: Category page is as expected
     Scenario: Clicking through to a product
       When I click the second discounted product
       Then I see the details page for the selected product
+
+    @371
+    Scenario: SEO text in category landing page
+      When I click on SEO link
+      Then I see a pop up with category title and some SEO text
