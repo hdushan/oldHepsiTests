@@ -162,7 +162,7 @@ Then(/^I see product return information specific to media/) do
 end
 
 And(/^I see the discount percentage of (.*)$/) do | discount |
-  find('#productDiscountRate del').should have_content discount
+  find('#product-discount-rate del').should have_content discount
 end
 
 Then(/^I do not see a discount price$/) do
