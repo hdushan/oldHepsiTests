@@ -7,19 +7,18 @@
 
 @167 @storefront Feature: Shorten product name   -- Mobile Only
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
-@189 @storefront Feature: Static announcement banners 
 
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
-@305 @storefront Feature: Browse Categories by 3rd
-@428 @storefront Feature: Browse by 4th level
-
 ------------------------ In Progress -------------------------
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image --Martina working on it
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
+@189 @storefront Feature: Static announcement banners -- Adam working on it
+@305 @storefront Feature: Browse Categories by 3rd -- Adam working on it
+@428 @storefront Feature: Browse by 4th level -- Adam working on it
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
