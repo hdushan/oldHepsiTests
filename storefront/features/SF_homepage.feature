@@ -52,3 +52,7 @@ Feature: Homepage is as expected
   Scenario: Viewing the fly-out menu
     Given I hover over the first navigation bar entry
     Then I see the fly-out menu
+
+  @189
+  Scenario: View the static banners
+    Then I can see at least 2 static banners

@@ -42,3 +42,6 @@
     title of a the new page is sufficient to assert that you can navigate to second level categories.
 
 @523 We assume that finding the "flyout-campaign-wrapper" class is sufficient when hovering on the 2nd level category menu.
+
+@189 We assume that finding the static banner and its list elements by its class ('.static-banners li') and asserting 
+     that there exists at least to elements is sufficient to assert that the static banners are displayed.

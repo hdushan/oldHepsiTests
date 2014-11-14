@@ -54,3 +54,7 @@ end
 When(/^I see the fly-out menu$/) do
   expect(page.find('.browser-by-category li.active .nav-home-wrapper')).to have_selector('.flyout-campaign-wrapper')
 end
+
+Then(/^I can see at least (\d) static banners/) do | minimum_number_of_static_banners |
+  expect(all('.static-banners li').count).to be >= minimum_number_of_static_banners.to_i
+end

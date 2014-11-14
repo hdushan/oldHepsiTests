@@ -16,7 +16,6 @@
 ------------------------ In Progress -------------------------
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image --Martina working on it
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
-@189 @storefront Feature: Static announcement banners -- Adam working on it
 @305 @storefront Feature: Browse Categories by 3rd -- Adam working on it
 @428 @storefront Feature: Browse by 4th level -- Adam working on it
 ---------------------------- Done ----------------------------
@@ -48,6 +47,7 @@
 @47 @storefront Feature: Browse 1st level categories
 @48 @storefront Feature: Browse by 2nd-level subcategories
 @523 @storefront Feature: Display Campaign Banners in Flyout Menu
+@189 @storefront Feature: Static announcement banners
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
