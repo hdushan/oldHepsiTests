@@ -1,12 +1,11 @@
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 
 @295 @storefront Feature: Indicate which filter is on  --- needs clarification
-@301 @storefront Feature: Split and label variants 
 
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
 
 @167 @storefront Feature: Shorten product name   -- Mobile Only
-@183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page
+@183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
 
 @221 @storefront Feature: Display merchant offers on details page
 @315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
@@ -18,6 +17,7 @@
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
 @305 @storefront Feature: Browse Categories by 3rd -- Adam working on it
 @428 @storefront Feature: Browse by 4th level -- Adam working on it
+@301 @storefront Feature: Split and label variants  - Martina
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
