@@ -153,7 +153,11 @@ Then(/^I see text indicating that free shipping is available$/) do
   expect(find('#fastShipping').text).to match "Kargo Bedava"
 end
 
-Then(/^I see the original price (.*)$/) do | price |
+Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
+  find_by_id(sku).should have_content price
+end
+
+Then(/^I see the original price (.*) on the product details page$/) do | price |
   find('del#originalPrice').should have_content price
 end
 

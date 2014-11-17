@@ -67,13 +67,18 @@ Feature: Product page is as expected
   @138
   Scenario: Display original price on details page for discounted product
     Given I select a product with SKU KIMGE033
-    Then I see the original price 6,30 TL
+    Then I see the original price 6,30 TL on the product details page
     And I see the discount percentage of 11
 
   @138
   Scenario:Do not display original price on details page for non discounted product
     Given I select a product with SKU GYPI22S2S14AMAL
     Then I do not see a discount price
+
+  @138
+  Scenario: Display original price on search page
+    Given I search for KIMGE033
+    Then I see the original price 6,30 TL on the product with sku KIMGE033
 
   @140
   Scenario: Display non-generic returns policy for DVD
