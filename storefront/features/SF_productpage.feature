@@ -45,18 +45,24 @@ Feature: Product page is as expected
     Then I see the returns policy
 
   @144
-  Scenario: Display variants on the details page
+  Scenario: Display variants with price on the details page
     Given I select a product with SKU TELCEPSAMI8200-B
-    Then I see the option to select a variant
-    And I see no variant is selected
+    Then I see the option to select a variant with prices
+    And I see no variant with prices is selected
     When I add to cart
     Then I see an error message asking me to make a selection
 
   @144
   Scenario: Select variant on results page
     Given I select a product with SKU TELCEPSAMI8200-B
-    When I select the first a variant
-    Then I see the the variant is checked
+    When I select the first variant with price
+    Then I see the the variant with price is checked
+
+  @301
+  Scenario: Display variants on details page for multi-variant product
+    Given I select a product with SKU GYPI22R5R14AMAM
+    Then there are 2 variants displayed
+    And the variants should have no default
 
   @138
   Scenario: Display original price on details page for discounted product
