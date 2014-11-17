@@ -13,7 +13,6 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
-@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page--Linda working on it
 @305 @storefront Feature: Browse Categories by 3rd -- Adam working on it
 @428 @storefront Feature: Browse by 4th level -- Adam working on it
 ---------------------------- Done ----------------------------
@@ -48,6 +47,7 @@
 @189 @storefront Feature: Static announcement banners
 @301 @storefront Feature: Split and label variants
 @138 @storefront Feature: Display discount - i.e. original price & percentage on image
+@371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
