@@ -1,3 +1,4 @@
+# encoding: UTF-8
 Then(/^I see (\d+) items in discounted products$/) do |items|
   expect(page.all('.discounted-product-container li').count.to_s).to eq items
 end
@@ -36,4 +37,13 @@ Then(/^I click the second top-seller product$/) do
   product_entry = page.all('.top-seller-container li')[1]
   @product_name = product_entry.find('.product-title').text
   product_entry.find('a').click
+end
+
+When(/^I click on SEO link$/)do
+  click_link('showCategoryInfo')
+end
+
+Then(/^I see a pop up with category title and some SEO text$/) do
+  page.should have_selector('#categoryTitle')
+  page.should have_content('Bilgisayar Fiyatları ve Modelleri')
 end

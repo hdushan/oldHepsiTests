@@ -108,14 +108,14 @@ Then(/^I see the product information$/) do
   expect(find('.detail-main .product-rating'))
 end
 
-Then(/^I see the option to select a variant$/) do
+Then(/^I see the option to select a variant with prices$/) do
   variant_container = find('.variant-container-with-prices')
   all_price_labels = variant_container.all('.price-label')
   expect(all_price_labels.count).to be > 1
   expect(variant_container).to have_selector('input')
 end
 
-Then(/^I see no variant is selected$/) do
+Then(/^I see no variant with prices is selected$/) do
   variant_container = find('.variant-container-with-prices')
   variant_container.all('input[type=radio]').each do | radio_button |
     radio_button.should_not be_checked
@@ -126,12 +126,12 @@ Then(/^I see an error message asking me to make a selection$/) do
   wait_for_visibility(page, 'div #notification', true)
 end
 
-When(/^I select the first a variant$/) do
+When(/^I select the first variant with price$/) do
   @URL = current_url
   all('.variant-container-with-prices .price-label').first.click
 end
 
-Then(/^I see the the variant is checked$/) do
+Then(/^I see the the variant with price is checked$/) do
   variant_container = find('.variant-container-with-prices')
   expect(variant_container.all('input[type=radio]').first).to be_checked
 end
@@ -153,7 +153,11 @@ Then(/^I see text indicating that free shipping is available$/) do
   expect(find('#fastShipping').text).to match "Kargo Bedava"
 end
 
-Then(/^I see the original price (.*)$/) do | price |
+Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
+  find_by_id(sku).should have_content price
+end
+
+Then(/^I see the original price (.*) on the product details page$/) do | price |
   find('del#originalPrice').should have_content price
 end
 
@@ -167,4 +171,20 @@ end
 
 Then(/^I do not see a discount price$/) do
   page.should_not have_css('del#orininalPrice')
+end
+
+Then(/^there are (\d*) variants displayed$/) do | number |
+    within('.product-variants-wrapper') do
+      page.all('.variant-container').count.should eql(number.to_i)
+    end
+  end
+
+And(/^the variants should have no default$/) do
+  page.all('.radio-variant').each do | variant |
+    variant.should_not be_checked
+  end
+end
+
+And(/^I see the discount percentage$/) do
+  expect(find('#product-discount-rate'))
 end
