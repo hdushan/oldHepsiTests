@@ -19,13 +19,13 @@
 
   class Header < SitePrism::Section
     section :search, '.home-search-panel' do
-      element :search_field, 'input#productSearch'
-
+      element :field, 'input#productSearch'
+      element :button, 'button#buttonProductSearch'
     end
 
     def search_for(search_term)
-      search_field.set(search_term)
-      click_on('Search')
+      search.field.set(search_term)
+      search.button.click
     end
   end
 
