@@ -1,19 +1,19 @@
 # encoding: UTF-8
 
-@page = ""
+page = Homepage.new
 
 Given /^I am on the homepage$/ do
-  @page = Pages::Homepage.visit
+  page.load
 end
 
 Then(/^I see (\d+) items in deal of the day$/) do |items|
-  deal_of_the_day_carousel = find_by_id('dealOfTheDayCarousel')
-  expect(deal_of_the_day_carousel.all('.grid-item').count.to_s).to eq items
+  page.dealOfTheDayCarousel.deals(count: items)
 end
 
 Then(/^each deal of the day product shows its undiscounted price/) do
-  expect(page.all("#dealOfTheDayCarousel li .product-price-wrapper"))
-  .to all_satisfy(have_selector(".product-old-price"))
+  all(page.dealOfTheDayCarousel.deals).each do |deal|
+      deal.should have_old_price
+  end
 end
 
 When(/^I visit the computers category landing page/) do
