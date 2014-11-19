@@ -8,7 +8,6 @@
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
 
 @221 @storefront Feature: Display merchant offers on details page
-@315 @storefront Feature: Display non-TL prices (e.g. USD) correctly on results --- Really need DB access for this
 
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
