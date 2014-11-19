@@ -15,7 +15,7 @@ When /^I select a product with SKU (.*)$/ do |sku|
 end
 
 When /^I add to cart$/ do
-  within ".product-price-wrapper" do
+  within "#addToCartForm" do
     click_button "addToCart"
   end
 end
