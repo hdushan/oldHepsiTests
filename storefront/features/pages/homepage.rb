@@ -29,10 +29,17 @@
     end
   end
 
+
   class Homepage < SitePrism::Page
     set_url ''
     section :header, Header, '.header-wrapper'
     section :dealOfTheDayCarousel, DealOfTheDayCarousel, "div#dealOfTheDayCarousel"
+    section :results, '#productresults' do
+      elements :result, '.search-item'
+    end
+    section :no_results, '.no-results-container' do
+      #to come
+    end
     section :footer, Footer, "footer.footer-global"
   end
 
