@@ -45,3 +45,7 @@
 
 @189 We assume that finding the static banner and its list elements by its class ('.static-banners li') and asserting 
      that there exists at least to elements is sufficient to assert that the static banners are displayed.
+     
+@428 We assume that navigating by home page -> Electronic Appliances -> Computer -> Computer Components -> Memory (RAM)
+     and then checking for the presence of the RAM breadcrumb id ('breadcrumbFor-47') is sufficient to assert correct 
+     navigation.     

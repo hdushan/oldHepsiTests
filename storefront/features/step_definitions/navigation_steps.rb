@@ -26,8 +26,9 @@ When(/^I click on the computer components category/) do
 end
 
 And(/^I select the RAM sub-category/) do
-  expect(page.find('.secondLevelContainer expanded')).to have_content('Bellek (Ram)')
-  page.find('.secondLevelContainer').find('li', :text => 'Bellek').click
+  computer_components_submenu = page.find('.page-options').find_by_id('8')
+  expect(computer_components_submenu).to have_content('Bellek (Ram)')
+  computer_components_submenu.find('a', :text=>'Bellek (Ram)').click
 end
 
 Then(/^I can see the second level categories/) do
@@ -36,4 +37,8 @@ end
 
 Then(/^I can see the third level categories/) do
   expect(page.find('.nav-browse').all('.secondLevelContainer').count).to be >= 8
+end
+
+Then(/^I can see the RAM breadcrumb/) do
+  expect(page.find_by_id('breadcrumbFor-47')).to have_content('Bellek (Ram)')
 end

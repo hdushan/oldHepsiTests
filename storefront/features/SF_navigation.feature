@@ -15,7 +15,7 @@ Feature: Navigation by categories is as expected
 
 
   @48
-  Scenario: Navigating to a second level category
+  Scenario: I want to navigate to the second level category tablet computers
     And I see the first level navigation bar
     When I hover over the electronic appliances navigation bar entry
     And I click on the second level category tablet computers
@@ -27,8 +27,8 @@ Feature: Navigation by categories is as expected
     Then I can see the third level categories
 
   @428
-  Scenario: I can browse to fourth level categories to buy RAM
+  Scenario: I can browse to the fourth level categories to buy RAM
     Given I navigate to the second level category tablet computers
     When I click on the computer components category
-    #And I select the RAM sub-category
-#    Then
+    And I select the RAM sub-category
+    Then I can see the RAM breadcrumb
