@@ -1,3 +1,4 @@
+page = Homepage.new
 
 When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
@@ -25,19 +26,13 @@ When(/^I clear the browsers cookies$/) do
 end
 
 Then(/^I see the social icons in the footer$/) do
-  expect(find('footer .icon-facebook'))
-  expect(find('footer .icon-twitter'))
-  expect(find('footer .icon-linkedin'))
-  expect(find('footer .icon-google-plus'))
-  expect(find('footer .icon-pinterest'))
-  expect(find('footer .icon-instagram'))
-  expect(find('footer .icon-youtube'))
+  page.footer.should have_social_links
 end
 
 Then(/^I see the security logo in the footer$/) do
-  expect(find('footer .icon-security-link'))
+  page.footer.should have_icon_security_link
 end
 
 Then(/^I see the copyright message in the footer$/) do
-  expect(find('footer .copyright'))
+  page.footer.should have_copyright_message
 end
