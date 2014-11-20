@@ -4,7 +4,7 @@ Feature: Add to basket from details page
   Background:
     Given I am on the homepage
     And I have an empty cart
-    When I search for OUTINT1BWAK67000N
+    When I search for MTSUNOCKE03
     Then I select a product from search results
 
   @67

@@ -77,8 +77,9 @@ Then(/^the page title contains the product name$/) do
   expect(page.title).to include(@product_name)
 end
 
-Then(/^I see (\d+) reviews$/) do |num|
-  expect(all('.review-item').count.to_s).to eq num
+Then(/^I see at least (\d+) reviews$/) do |num|
+  wait_for_visibility(page, '.review-item', true)
+  expect(all('.review-item').count).to be >= num.to_i
 end
 
 Then(/^I can see the 'More Reviews' button$/) do
@@ -100,11 +101,11 @@ Then(/^I see the super fast delivery flag$/) do
 end
 
 Then(/^I see the product information$/) do
-  expect(find("#offering-price"))
+  expect(find_by_id("offering-price"))
   expect(first("img.product-image")['src']).to match @product_image
   expect(all('img.product-image').count).to be > 1
-  expect(find('#carousel'))
-  expect(find('#tabProductDesc'))
+  expect(find_by_id('productDetailsCarousel'))
+  expect(find_by_id('tabProductDesc'))
   expect(find('.detail-main .product-rating'))
 end
 

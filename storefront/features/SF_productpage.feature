@@ -16,8 +16,8 @@ Feature: Product page is as expected
 
   @84
   Scenario: Display product reviews
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
-    Then I see 3 reviews
+    Given I select a product with SKU TELCEPSAMN910-B
+    Then I see at least 3 reviews
     And I can see the 'More Reviews' button
 
   @78
@@ -46,7 +46,7 @@ Feature: Product page is as expected
 
   @144
   Scenario: Display variants with price on the details page
-    Given I select a product with SKU TELCEPSAMI8200-B
+    Given I select a product with SKU SPORALTISSD5000
     Then I see the option to select a variant with prices
     And I see no variant with prices is selected
     When I add to cart
@@ -54,7 +54,7 @@ Feature: Product page is as expected
 
   @144
   Scenario: Select variant on results page
-    Given I select a product with SKU TELCEPSAMI8200-B
+    Given I select a product with SKU SPORALTISSD5000
     When I select the first variant with price
     Then I see the the variant with price is checked
 
