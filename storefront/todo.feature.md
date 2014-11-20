@@ -3,7 +3,7 @@
 @482 @storefront Feature: Check Google analytics functionality for beta (Part 1)
 @525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
 @484 @storefront Feature: Opt-in and Opt-out for beta in internal network -- further clarification needed (not seeing beta opt in on VPN at the moment)
-@486 @storefront Feature: Using Carousel images for desktop
+@466 @storefront Feature: Using Carousel images for desktop
 @448 @storefront Feature: Mega flyout menu for desktop
 
 -- 21/10/14 --
