@@ -1,3 +1,50 @@
+-- 14/10/14 --
+@614 @storefront Feature: Webtrekk for beta
+@482 @storefront Feature: Check Google analytics functionality for beta (Part 1)
+@525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
+@484 @storefront Feature: Opt-in and Opt-out for beta in internal network -- further clarification needed (not seeing beta opt in on VPN at the moment)
+@486 @storefront Feature: Using Carousel images for desktop
+@448 @storefront Feature: Mega flyout menu for desktop
+
+-- 21/10/14 --
+@329 @storefront Feature: anonymize comments with gender names for privacy fo customer
+
+-- 28/10/14 --
+
+-- 04/11/14 --
+@638 @storefront Feature: Update Webtrekk Implementation
+@632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
+@390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
+@418 @storefront Feature: Distinguish non-valid combinations of variants on product details page
+@417 @storefront Feature: Clean URL structure for brand filtered category pages
+@342 @storefront Feature: Display next available variant on results page
+@330 @storefront Feature: Expose colour variants as thumbnails on details page
+@42  @storefront Feature: See products discount percentage on results page
+
+-- 11/11/14 --
+@658 @storefront Feature: Optimise storefront desktop as a responsive site
+@70  @storefront Feature: Display price dependant variants on details page
+
+-- 18/11/14 --
+@700 @storefront Feature: Update discount percent when choosing among variants that differ by price
+@695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
+@673 @storefront Feature: Do not send Turkish characters as part of Webtrekk
+@429 @storefront Feature: Expose breadcrumbs on category landing pages
+@386 @storefront Feature: Add # at the end of URL when sorting for better site crawlability
+@316 @storefront Feature: Show USD prices in results page with campaigns properly
+@304 @storefront Feature: See number items in shopping cart as I am shopping
+@249 @storefront Feature: Display breadcrumbs on product details page
+@137 @storefront Feature: See if a product has more options / variants on the the results page
+
+-- 25/11/14 -- Stories yet to be completed
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+
+-- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 
 @295 @storefront Feature: Indicate which filter is on  --- needs clarification
@@ -62,13 +109,16 @@
 
 
 -- Mobile Scenarios not tested --
-@60 @storefront Feature: Display multiple images on details page
+@60  @storefront Feature: Display multiple images on details page
 @116 @storefront Feature: Remember my basket without login
 @246 @storefront Feature: Clear all enabled filters
+@264 @storefront Feature: Manually remove toast messages (mobile only)
+@698 @storefront Feature: Track when an Andorid user clicks on the smart banner app (mobile only)
+@665 @storefront Feature: Smart app banners for mobile site
 
 
 -- Other elements could not be tested --
-@64 @storefront Feature: Display 2-slot/scheduled delivery --- unable to determine whether or not product should satisfy 'same day delivery' conditions without DB access
+@64  @storefront Feature: Display 2-slot/scheduled delivery --- unable to determine whether or not product should satisfy 'same day delivery' conditions without DB access
 @248 @storefront Feature: Footer -- Cannot test order tracking appearing in footer as do not have a login
 @276 @storefront Feature: Understand old category page URLs -- Story empty on mingle
 @373 @storefront Feature: "Display Top ""10"" Discounted Items of a Category on Category Landing Page" -- it looks like the 'swipe' scenario doesn't apply to the category landing page
@@ -79,3 +129,50 @@
 -- Test judged to be not required ---
 @261 @storefront Feature: Remove filter & sort on 0 results
 @263 @storefront Feature: Turn off native auto suggest
+
+--- Testing difficult due to insufficient information in the Mingle story or not relevant acceptance / regression test ---
+
+-- 07/10/14 --
+@492 @storefront Feature: Fixing top exception
+@491 @storefront Feature: Remove parent categories call (performance)
+@476 @storefront Feature: Search results page enhancements on desktop
+@427 @storefront Feature: Implementing output cache
+
+-- 14/10/14 --
+@528 @storefront Feature: Broken modules on homepage should not effect the entire homepage -- If testable is this a valid regression / acceptance test?
+@522 @storefront Feature: Fix logging for kibana
+@483 @storefront Feature: Homepage campaign banners next to carousel
+
+-- 21/10/14 --
+@626 @storefront Feature: Schedule job in logging machine to prevent disk space problem
+@622 @storefront Feature: Bug bash 10 Oct (part 1)
+@620 @storefront Feature: Fix contract tests
+@619 @storefront Feature: Tab nav hover delay optimisation 
+
+-- 28/10/14 --
+@642 @storefront Feature: Spike for displaying available variant price on results
+@631 @storefront Feature: Spike brand filtered category pages
+@624 @storefront Feature: Bug bash 10 Oct (Part 2)
+@625 @storefront Feature: Bug bash 10 Oct (Part 3)
+
+-- 04/11/14 --
+@635 @storefront Feature: Introduce hover style throw out beta
+@634 @storefront Feature: Review common exceptions reported from Kibana dashboard
+@628 @storefront Feature: Replace sprite image with font icons
+
+-- 11/11/14 --
+@676 @storefront Feature: Align with changed Fredhopper response at services
+@672 @storefront Feature: Add caching support for deal of the day end point
+@637 @storefront Feature: Properly redirecting brand filtered URLs
+@636 @storefront Feature: Investigate most expensive operations in opnet
+
+-- 18/11/14 --
+@715 @storefront Feature: Remove port numbers from port numbers from canonical URLs
+@704 @storefront Feature: Replace carousel plugin
+
+-- 25/11/14 -- Stories yet to be completed
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
+@ @storefront Feature:
