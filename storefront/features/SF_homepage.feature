@@ -44,3 +44,7 @@ Feature: Homepage is as expected
   @189
   Scenario: View the static banners
     Then I can see at least 2 static banners
+
+  @466
+  Scenario: Checking banner size
+    Then I see banners of size 900x370

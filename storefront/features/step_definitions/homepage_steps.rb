@@ -37,3 +37,9 @@ end
 Then(/^I can see at least (\d) static banners/) do | minimum_number_of_static_banners |
   expect(all('.static-banners li').count).to be >= minimum_number_of_static_banners.to_i
 end
+
+Then(/^I see banners of size 900x370/) do
+  carousel_item = page.find_by_id('carousel').first('.owl-item')
+  carousel_item.native.css_value('width').should eq('900px')
+  carousel_item.native.css_value('height').should eq('370px')
+end
