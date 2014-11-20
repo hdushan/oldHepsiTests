@@ -49,3 +49,5 @@
 @428 We assume that navigating by home page -> Electronic Appliances -> Computer -> Computer Components -> Memory (RAM)
      and then checking for the presence of the RAM breadcrumb id ('breadcrumbFor-47') is sufficient to assert correct 
      navigation.     
+     
+@466 We assume there is value in asserting the product image in the carousel is of the expected size
