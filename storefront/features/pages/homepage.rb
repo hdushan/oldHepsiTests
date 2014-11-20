@@ -19,20 +19,27 @@
 
   class Header < SitePrism::Section
     section :search, '.home-search-panel' do
-      element :search_field, 'input#productSearch'
-
+      element :field, 'input#productSearch'
+      element :button, 'button#buttonProductSearch'
     end
 
     def search_for(search_term)
-      search_field.set(search_term)
-      click_on('Search')
+      search.field.set(search_term)
+      search.button.click
     end
   end
+
 
   class Homepage < SitePrism::Page
     set_url ''
     section :header, Header, '.header-wrapper'
     section :dealOfTheDayCarousel, DealOfTheDayCarousel, "div#dealOfTheDayCarousel"
+    section :results, '#productresults' do
+      elements :result, '.search-item'
+    end
+    section :no_results, '.no-results-container' do
+      #to come
+    end
     section :footer, Footer, "footer.footer-global"
   end
 
