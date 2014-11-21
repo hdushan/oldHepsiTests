@@ -25,4 +25,8 @@ Feature: Search page is as expected
     When I click load more results
     Then I should see 40 visible results
 
+  @429
+  Scenario: Do not show breadcrumb trail when searching or filtering
+    Then I do not see a breadcrumb trail
+
 

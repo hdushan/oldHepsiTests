@@ -27,7 +27,7 @@
 @700 @storefront Feature: Update discount percent when choosing among variants that differ by price
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
 @673 @storefront Feature: Do not send Turkish characters as part of Webtrekk
-@429 @storefront Feature: Expose breadcrumbs on category landing pages
+
 @386 @storefront Feature: Add # at the end of URL when sorting for better site crawlability
 @316 @storefront Feature: Show USD prices in results page with campaigns properly
 @304 @storefront Feature: See number items in shopping cart as I am shopping
@@ -95,6 +95,7 @@
 @428 @storefront Feature: Browse by 4th level
 @466 @storefront Feature: Using Carousel images for desktop
 @448 @storefront Feature: Mega flyout menu for desktop -- done assumption dependant (two AC not tested)
+@429 @storefront Feature: Expose breadcrumbs on category landing pages
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

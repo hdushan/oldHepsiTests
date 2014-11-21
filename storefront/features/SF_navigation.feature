@@ -25,9 +25,13 @@ Feature: Navigation by categories is as expected
     Given I navigate to the second level category tablet computers
     Then I can see the third level categories
 
-  @428
+  @428 @429
   Scenario: I can browse to the fourth level categories to buy RAM
-    Given I navigate to the second level category tablet computers
-    When I click on the computer components category
-    And I select the RAM sub-category
+    Given I navigate to the RAM sub-category
     Then I can see the RAM breadcrumb
+
+  @429
+  Scenario: Enable a consumer to navigate using the breadcrumb trail
+    Given I navigate to the RAM sub-category
+    When I click the breadcrumb with ID breadcrumbFor-8
+    Then I see the page with the title Bilgisayar Parçaları ve Bilgisayar Kasası | Bilgisayar Bileşenleri

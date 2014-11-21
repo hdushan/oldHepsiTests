@@ -62,3 +62,6 @@
      clicking the second thumbnail and making sure the img src is different is sufficient to assert that changing banners
      via thumbnails is working.
      
+@429 We assume that navigating to the RAM subcategory (Home | Computer | Components | Computer Memory ( RAM )), then 
+     clicking "Components" and asserting that the title of the page == to the the expected component title is sufficient 
+     to assert the functionality of breadcrumb navigation

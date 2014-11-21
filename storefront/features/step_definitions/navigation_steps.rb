@@ -11,6 +11,13 @@ Given /^I navigate to the second level category tablet computers$/ do
     When I click on the second level category tablet computers
   }
 end
+Given /^I navigate to the RAM sub-category/ do
+  steps %{
+    Given I navigate to the second level category tablet computers
+    When I click on the computer components category
+    And I select the RAM sub-category
+  }
+end
 
 When(/^I hover over the electronic appliances navigation bar entry/) do
   page.find('.browser-by-category').find('a', :text=> 'Elektronik Beyaz Eşya').hover
@@ -41,4 +48,8 @@ end
 
 Then(/^I can see the RAM breadcrumb/) do
   expect(page.find_by_id('breadcrumbFor-47')).to have_content('Bellek (Ram)')
+end
+
+When /^I click the breadcrumb with ID (.*)/ do | element_id |
+  page.find_by_id(element_id).click
 end

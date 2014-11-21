@@ -34,3 +34,7 @@ end
 Then(/^I see ratings for all products$/) do
   expect(all('.search-item .product-rating').count).to eq all('.search-item').count
 end
+
+Then(/^I do not see a breadcrumb trail$/) do
+  page.should_not have_selector('.breadcrumbs-wrapper')
+end
