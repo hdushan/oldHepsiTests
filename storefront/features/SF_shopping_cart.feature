@@ -4,6 +4,7 @@ Feature: Add to basket from details page
   Background:
     Given I am on the homepage
     And I have an empty cart
+    And I see the cart item count is 0
     When I search for MTSUNOCKE03
     Then I select a product from search results
 
@@ -43,3 +44,8 @@ Feature: Add to basket from details page
     When I clear the browsers cookies
     And I reload the page
     Then I should see an empty cart
+
+  @304
+  Scenario: Number of items in cart increases after adding an item from product details page
+    When I add to cart
+    Then I see the cart item count is 1

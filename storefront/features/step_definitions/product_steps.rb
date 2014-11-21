@@ -189,3 +189,7 @@ end
 And(/^I see the discount percentage$/) do
   expect(find('#product-discount-rate'))
 end
+
+Then /^I see the cart item count is (.*)/ do | cart_quantity_count |
+  page.find_by_id('cartItemCount').should have_content(cart_quantity_count)
+end
