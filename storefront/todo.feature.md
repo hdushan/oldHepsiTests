@@ -58,7 +58,7 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
-@466 @storefront Feature: Using Carousel images for desktop -- Leanne and Adam currently working on this
+
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
@@ -94,6 +94,7 @@
 @371 @storefront Feature: Display SEO Friendly Content Area on Category Landing Page
 @305 @storefront Feature: Browse Categories by 3rd
 @428 @storefront Feature: Browse by 4th level
+@466 @storefront Feature: Using Carousel images for desktop
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

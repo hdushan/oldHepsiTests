@@ -48,3 +48,15 @@ Feature: Homepage is as expected
   @466
   Scenario: Checking banner size
     Then I see banners of size 900x370
+
+  @466
+  Scenario: Browsing through banners with thumbnails
+    Given I click on the first banner thumbnail
+    And I see the first banner
+    When I click on the second thumbnail
+    Then I see a different banner
+
+  @466
+  Scenario: Clicking on banners leads to a new page
+    When I click on the current banner
+    Then I am no longer on the homepage

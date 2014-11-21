@@ -4,6 +4,24 @@ page = Homepage.new
 
 Given /^I am on the homepage$/ do
   page.load
+  @homepage_url = current_url
+end
+
+Given /^I click on the first banner thumbnail/ do
+  page.find('.owl-dots').all('.owl-dot').first.click
+end
+
+And /^I see the first banner/ do
+  @first_banner_src = page.find('.owl-item.active').find('.product-image')['src']
+end
+
+When /^I click on the second thumbnail/ do
+  page.find('.owl-dots').all('.owl-dot')[1].click
+end
+
+Then /^I see a different banner/ do
+  second_banner = page.find('.owl-item.active').find('.product-image')['src']
+  expect(@first_banner_src).to_not eq(second_banner)
 end
 
 Then(/^I see (\d+) items in deal of the day$/) do |items|
@@ -14,6 +32,14 @@ Then(/^each deal of the day product shows its undiscounted price/) do
   all(page.dealOfTheDayCarousel.deals).each do |deal|
       deal.should have_old_price
   end
+end
+
+When /^I click on the current banner/ do
+  page.find('.owl-item.active').find('.product-image').click
+end
+
+Then /^I am no longer on the homepage/ do
+  current_url.should_not eq(@homepage_url)
 end
 
 When(/^I visit the computers category landing page/) do

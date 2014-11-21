@@ -50,4 +50,9 @@
      and then checking for the presence of the RAM breadcrumb id ('breadcrumbFor-47') is sufficient to assert correct 
      navigation.     
      
-@466 We assume there is value in asserting the product image in the carousel is of the expected size
+@466 We assume there is value in asserting the product image in the carousel is of the expected size.
+     For asserting that clicking the banners lead to a new page we assume that storing the current URL clicking on a 
+     banner and checking the new URL is different from the previous is sufficient to assert banner navigation.
+     For asserting the thumbnails work for changing banners, we assume that getting the image src for the first banner,
+     clicking the second thumbnail and making sure the img src is different is sufficient to assert that changing banners
+     via thumbnails is working.
