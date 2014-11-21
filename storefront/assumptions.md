@@ -26,20 +26,25 @@
 @140 We have assumed that the presence of the text "İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7." 
      (rough translation: "Products you have viewed , the Regulation on Distance Contracts 7 .") is enough to be certain
      specific returns policy are displayed for the media product in question
-     
-@47 We have assumed that identifying the presence of the 1st level navigation by checking the presence of the selector 
-    .browser-by-category combined with the presence of the text "Elektronik Beyaz Eşya", "Ev, Yaşam Ofis" and 
-    "Oto, Bahçe Yapı Market" is sufficient. 
-    
+
 @47 We assume that the text inside the main navbar will remain as it currently is, we select "Elektronik Beyaz Eşya" and
     then click on "", finally we assume that checking a page has the title "Bilgisayar Fiyatları ve Modelleri & 
     %45 indirim & Taksit Avantajı" is sufficient to assert we have navigated to the correct page.
-    
+     
+@47/@448 
+    We have assumed that identifying the presence of the 1st level navigation by checking the presence of the selector 
+    .browser-by-category and assert there are 9 entries in the navbar.
+     
+@48/@448
+    We assume that hovering over a category in the nav bar and clicking on a second level category then checking the 
+    title of a the new page is sufficient to assert that you can navigate to second level categories.
+     
+@448 For the AC "Using escape fragments for seo" our reading determined we would have to create a new user agent to view
+     the website as a Google Bot. When compared with the other tests remaining it was decided that effort could be better
+     used elsewhere. Same rationale for AC "Analytics"
+
 @144 We assume that a radio button being checked is sufficient to assert that a user can select a product variant. 
      Previous tests were looking for URL changes which appears to not be the case.
-     
-@48 We assume that hovering over a category in the nav bar and clicking on a second level category then checking the 
-    title of a the new page is sufficient to assert that you can navigate to second level categories.
 
 @523 We assume that finding the "flyout-campaign-wrapper" class is sufficient when hovering on the 2nd level category menu.
 
@@ -56,3 +61,4 @@
      For asserting the thumbnails work for changing banners, we assume that getting the image src for the first banner,
      clicking the second thumbnail and making sure the img src is different is sufficient to assert that changing banners
      via thumbnails is working.
+     

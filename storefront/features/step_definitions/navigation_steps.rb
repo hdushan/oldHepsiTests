@@ -1,8 +1,8 @@
-Given(/^I see the first level navigation bar/) do
+Given(/^I see the first level navigation bar with 9 categories/) do
   page.should have_selector('.browser-by-category')
-  expect(find('.browser-by-category').text).to include "Elektronik Beyaz Eşya"
-  expect(find('.browser-by-category').text).to include "Ev, Yaşam Ofis"
-  expect(find('.browser-by-category').text).to include "Oto, Bahçe Yapı Market"
+  expect(page.all('.browser-by-category li.force-two-line').count.to_i).to eq(7)
+  expect(page.all('.browser-by-category li.first-child').count.to_i).to eq(1)
+  expect(page.all('.browser-by-category li.last-child').count.to_i).to eq(1)
 end
 
 Given /^I navigate to the second level category tablet computers$/ do
