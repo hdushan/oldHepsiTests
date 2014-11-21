@@ -38,3 +38,11 @@ end
 Then(/^I do not see a breadcrumb trail$/) do
   page.should_not have_selector('.breadcrumbs-wrapper')
 end
+
+When /^I click on a product from the search results$/ do
+  page.all('.product-image-wrapper').first.click
+end
+
+Then /^I should see a breadcrumb trail$/ do
+  page.should have_selector('.breadcrumbs-wrapper')
+end

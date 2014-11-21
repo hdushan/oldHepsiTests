@@ -29,4 +29,9 @@ Feature: Search page is as expected
   Scenario: Do not show breadcrumb trail when searching or filtering
     Then I do not see a breadcrumb trail
 
+  @249
+  Scenario: Display breadcrumbs on product details
+    When I click on a product from the search results
+    Then I should see a breadcrumb trail
+
 

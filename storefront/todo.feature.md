@@ -30,8 +30,6 @@
 
 @386 @storefront Feature: Add # at the end of URL when sorting for better site crawlability
 @316 @storefront Feature: Show USD prices in results page with campaigns properly
-@304 @storefront Feature: See number items in shopping cart as I am shopping
-@249 @storefront Feature: Display breadcrumbs on product details page
 @137 @storefront Feature: See if a product has more options / variants on the the results page
 
 -- 25/11/14 -- Stories yet to be completed
@@ -57,7 +55,7 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
-
+@304 @storefront Feature: See number items in shopping cart as I am shopping
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
@@ -96,6 +94,7 @@
 @466 @storefront Feature: Using Carousel images for desktop
 @448 @storefront Feature: Mega flyout menu for desktop -- done assumption dependant (two AC not tested)
 @429 @storefront Feature: Expose breadcrumbs on category landing pages
+@249 @storefront Feature: Display breadcrumbs on product details page
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
