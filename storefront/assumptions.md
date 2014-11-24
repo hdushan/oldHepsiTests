@@ -65,3 +65,6 @@
 @429 We assume that navigating to the RAM subcategory (Home | Computer | Components | Computer Memory ( RAM )), then 
      clicking "Components" and asserting that the title of the page == to the the expected component title is sufficient 
      to assert the functionality of breadcrumb navigation
+
+@137 We assume that there will always be a product that has variants when searching for Samsung. We also assume that testing
+     for the class 'product-with-variant' is sufficient to test if a product has variations.

@@ -26,7 +26,6 @@
 
 @386 @storefront Feature: Add # at the end of URL when sorting for better site crawlability
 @316 @storefront Feature: Show USD prices in results page with campaigns properly
-@137 @storefront Feature: See if a product has more options / variants on the the results page
 
 -- 25/11/14 -- Stories yet to be completed
 @ @storefront Feature:
@@ -93,6 +92,7 @@
 @429 @storefront Feature: Expose breadcrumbs on category landing pages
 @249 @storefront Feature: Display breadcrumbs on product details page
 @304 @storefront Feature: See number items in shopping cart as I am shopping
+@137 @storefront Feature: See if a product has more options / variants on the the results page
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
