@@ -4,9 +4,6 @@
 @525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
 @484 @storefront Feature: Opt-in and Opt-out for beta in internal network -- further clarification needed (not seeing beta opt in on VPN at the moment)
 
--- 21/10/14 --
-@329 @storefront Feature: anonymize comments with gender names for privacy of customer - need test accounts
-
 -- 28/10/14 --
 
 -- 04/11/14 --
@@ -148,6 +145,7 @@
 @622 @storefront Feature: Bug bash 10 Oct (part 1)
 @620 @storefront Feature: Fix contract tests
 @619 @storefront Feature: Tab nav hover delay optimisation 
+@329 @storefront Feature: anonymize comments with gender names for privacy of customer - need test accounts - "we cant create a user and leave comments in our new system. that happens in the old system. all we are doing in the current site is anonymize  the existing comments in the old system"
 
 -- 28/10/14 --
 @642 @storefront Feature: Spike for displaying available variant price on results
