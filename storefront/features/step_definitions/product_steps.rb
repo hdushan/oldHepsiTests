@@ -193,3 +193,9 @@ end
 Then /^I see the cart item count is (.*)/ do | cart_quantity_count |
   page.find_by_id('cartItemCount').should have_content(cart_quantity_count)
 end
+
+Then (/^I should see (\d*) color variants$/) do | color_count |
+  all('.question').first.should have_content("renk")
+  variant_container = all('.variant-container').first
+  variant_container.all('div').count.should eql(color_count.to_i)	
+end
