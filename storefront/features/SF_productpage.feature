@@ -90,3 +90,8 @@ Feature: Product page is as expected
   Scenario: Expose Color Variants as Thumbnails on Details Page
     Given I select a product with SKU GYORK6CH2008GRS
     Then I should see 3 color variants
+
+  @330
+  Scenario: Expose One Color Variant as Thumbnail on Details Page
+    Given I select a product with SKU 1210704100152BEY
+    Then I should see 1 color variants
