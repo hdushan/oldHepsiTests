@@ -46,3 +46,7 @@ end
 Then /^I should see a breadcrumb trail$/ do
   page.should have_selector('.breadcrumbs-wrapper')
 end
+
+Then /^I should see the variants message for the product$/ do
+  page.should have_selector('.product-with-variant')
+end

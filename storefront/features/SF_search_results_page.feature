@@ -34,4 +34,6 @@ Feature: Search page is as expected
     When I click on a product from the search results
     Then I should see a breadcrumb trail
 
-
+  @137
+  Scenario: Display if a product has more variants on the results page
+    Then I should see the variants message for the product
