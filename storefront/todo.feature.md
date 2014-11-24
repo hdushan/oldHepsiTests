@@ -5,7 +5,7 @@
 @484 @storefront Feature: Opt-in and Opt-out for beta in internal network -- further clarification needed (not seeing beta opt in on VPN at the moment)
 
 -- 21/10/14 --
-@329 @storefront Feature: anonymize comments with gender names for privacy fo customer
+@329 @storefront Feature: anonymize comments with gender names for privacy of customer - need test accounts
 
 -- 28/10/14 --
 
@@ -13,10 +13,9 @@
 @638 @storefront Feature: Update Webtrekk Implementation
 @632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
 @390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
-@418 @storefront Feature: Distinguish non-valid combinations of variants on product details page
+@418 @storefront Feature: Distinguish non-valid combinations of variants on product details page - need clarification, css bug raised
 @417 @storefront Feature: Clean URL structure for brand filtered category pages
-@342 @storefront Feature: Display next available variant on results page
-@330 @storefront Feature: Expose colour variants as thumbnails on details page
+@342 @storefront Feature: Display next available variant on results page - testing the old site?
 @42  @storefront Feature: See products discount percentage on results page
 
 -- 11/11/14 --
@@ -55,6 +54,7 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
+@330 @storefront Feature: Expose colour variants as thumbnails on details page
 
 ---------------------------- Done ----------------------------
 
