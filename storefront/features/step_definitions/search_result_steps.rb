@@ -50,3 +50,7 @@ end
 Then /^I should see the variants message for the product$/ do
   page.should have_selector('.product-with-variant')
 end
+
+Then /^I should not see the variants message for the product$/ do
+  page.should_not have_selector('.product-with-variant')
+end
