@@ -20,12 +20,8 @@ When /^I add to cart$/ do
   end
 end
 
-When(/^I click on the shopping cart$/) do
-  click_link "shoppingCart"
-end
-
 When(/^I click 'go to cart'$/) do
-  click_link 'linkToCart'
+  click_link 'shoppingCart'
 end
 
 When(/^I click 'add one more'$/) do

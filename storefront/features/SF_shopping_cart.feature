@@ -12,7 +12,7 @@ Feature: Add to basket from details page
   Scenario: Add to cart
     When I add to cart
     Then I should see the notification
-    When I click on the shopping cart
+    When I click 'go to cart'
     Then I should see the product in the cart
 
   @460
@@ -27,7 +27,7 @@ Feature: Add to basket from details page
     When I add to cart
     Then I should see the 'add one more' button
     When I click 'add one more'
-    And I click on the shopping cart
+    And I click 'go to cart'
     Then I should see 2 of the product in the cart
 
   @116
