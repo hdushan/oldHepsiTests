@@ -1,52 +1,23 @@
 -- 14/10/14 --
-@614 @storefront Feature: Webtrekk for beta
-@482 @storefront Feature: Check Google analytics functionality for beta (Part 1)
-@525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
-@484 @storefront Feature: Opt-in and Opt-out for beta in internal network -- further clarification needed (not seeing beta opt in on VPN at the moment)
-
--- 28/10/14 --
 
 -- 04/11/14 --
-@638 @storefront Feature: Update Webtrekk Implementation
 @632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
 @390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
-@418 @storefront Feature: Distinguish non-valid combinations of variants on product details page - need clarification, css bug raised
 @417 @storefront Feature: Clean URL structure for brand filtered category pages
-@342 @storefront Feature: Display next available variant on results page - testing the old site?
-@42  @storefront Feature: See products discount percentage on results page
 
 -- 11/11/14 --
-@658 @storefront Feature: Optimise storefront desktop as a responsive site
-@70  @storefront Feature: Display price dependant variants on details page
+
 
 -- 18/11/14 --
-@700 @storefront Feature: Update discount percent when choosing among variants that differ by price
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
-@673 @storefront Feature: Do not send Turkish characters as part of Webtrekk
-
-@386 @storefront Feature: Add # at the end of URL when sorting for better site crawlability
-@316 @storefront Feature: Show USD prices in results page with campaigns properly
-
--- 25/11/14 -- Stories yet to be completed
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
-
 @295 @storefront Feature: Indicate which filter is on  --- needs clarification
-
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
-
 @167 @storefront Feature: Shorten product name   -- Mobile Only
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
-
 @221 @storefront Feature: Display merchant offers on details page
-
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
@@ -74,7 +45,6 @@
 @190 @storefront Feature: "Show ""Deal of the Day"" on Homepage"
 @212 @storefront Feature: Separate sort & filter on results
 @343 @storefront Feature: Display Filter by Product Specific Attributes
-@460 @storefront Feature: "Transform ""Add to Basket"" Button to ""Finish Shopping"" on Click"
 @467 @storefront Feature: "Show Undiscounted Price on ""Deal of the Day"""
 @481 @storefront Feature: Feedback Mechanism for Beta
 @140 @storefront Feature: Display product specific return policy
@@ -93,6 +63,8 @@
 @249 @storefront Feature: Display breadcrumbs on product details page
 @304 @storefront Feature: See number items in shopping cart as I am shopping
 @137 @storefront Feature: See if a product has more options / variants on the the results page
+@658 @storefront Feature: Optimise storefront desktop as a responsive site
+@42  @storefront Feature: See products discount percentage on results page
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
@@ -167,10 +139,3 @@
 -- 18/11/14 --
 @715 @storefront Feature: Remove port numbers from port numbers from canonical URLs
 @704 @storefront Feature: Replace carousel plugin
-
--- 25/11/14 -- Stories yet to be completed
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:
-@ @storefront Feature:

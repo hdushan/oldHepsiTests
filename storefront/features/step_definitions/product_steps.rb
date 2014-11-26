@@ -20,12 +20,8 @@ When /^I add to cart$/ do
   end
 end
 
-When(/^I click on the shopping cart$/) do
-  click_link "shoppingCart"
-end
-
 When(/^I click 'go to cart'$/) do
-  click_link 'linkToCart'
+  click_link 'shoppingCart'
 end
 
 When(/^I click 'add one more'$/) do
@@ -34,6 +30,15 @@ end
 
 When(/^I click on the returns policy link$/) do
   click_link 'productReturnPolicy'
+end
+
+When /^I make the page half as wide/ do
+  window_size = Capybara.page.driver.browser.manage.window.size
+  Capybara.page.driver.browser.manage.window.resize_to(window_size[0]/2, window_size[1])
+end
+
+When /^I load the page on a 1280x1024 monitor/ do
+  Capybara.page.driver.browser.manage.window.resize_to(1280, 1024)
 end
 
 Then /^I should see the product in the cart$/ do
@@ -214,3 +219,11 @@ Then /^I see a different image$/ do
   expect(@default_image_src).to_not eq(new_image)
 end
 
+Then /^I see no horizontal scroll bar/ do
+  scroll_bar_present = page.execute_script("return document.documentElement.scrollWidth>document.documentElement.clientWidth;");
+  expect(scroll_bar_present).to eq(false)
+end
+
+AfterStep('@658') do
+  Capybara.page.driver.browser.manage.window.maximize
+end

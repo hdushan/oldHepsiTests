@@ -50,3 +50,15 @@ end
 Then /^I should see the variants message for the product$/ do
   page.should have_selector('.product-with-variant')
 end
+
+Then /^I should not see the variants message for the product$/ do
+  page.should_not have_selector('.product-with-variant')
+end
+
+Then /^I should see the discount badge$/ do
+  page.should have_selector('.discount-badge')
+end
+
+Then /^I should not see the discount badge$/ do
+  page.should_not have_selector('.discount-badge')
+end

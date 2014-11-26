@@ -6,30 +6,30 @@ Feature: Product page is as expected
 
   @143 @60 @19 @61 @62 @83
   Scenario: Display Product information
-    Given I select a product with SKU TELCEPIPH618GBGO-N
+    Given I select a product with SKU TELCEPNOKLU925-B
     Then I see the product information
 
   @56
   Scenario: Page title contains product name
-    Given I select a product with SKU TELCEPIPH618GBGO-N
+    Given I select a product with SKU TELCEPNOKLU925-B
     Then the page title contains the product name
 
   @84
   Scenario: Display product reviews
-    Given I select a product with SKU TELCEPIPH5C16GPM-N
-    Then I see 3 reviews
+    Given I select a product with SKU TELCEPNOKLU925-B
+    Then I see at least 3 reviews
     And I can see the 'More Reviews' button
 
   @78
   Scenario: Display returns policy
-    Given I select a product with SKU TELCEPIPH618GBGO-N
+    Given I select a product with SKU TELCEPNOKLU925-B
     And I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
 
   @73
   Scenario: Display product tech specs
-    Given I select a product with SKU TELCEPIPH618GBGO-N
+    Given I select a product with SKU TELCEPNOKLU925-B
     Then I can view the product tech specs
 
   @68
@@ -102,3 +102,15 @@ Feature: Product page is as expected
     And I see the default product image 
     When I select the color Sarı
     Then I see a different image
+
+  @658
+  Scenario: Window resize
+    Given I select a product with SKU 1210704100152BEY
+    When I make the page half as wide
+    Then I see no horizontal scroll bar
+
+  @658
+  Scenario: low resolution monitor
+    Given I select a product with SKU 1210704100152BEY
+    When I load the page on a 1280x1024 monitor
+    Then I see no horizontal scroll bar

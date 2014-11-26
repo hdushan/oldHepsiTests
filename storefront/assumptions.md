@@ -68,3 +68,15 @@
 
 @137 We assume that there will always be a product that has variants when searching for Samsung. We also assume that testing
      for the class 'product-with-variant' is sufficient to test if a product has variations.
+     
+@137 For the second test for story 137, we assume that the specific product being searched will never have variants, and therefore the product
+     variant class will never be found.
+
+@658 Both relevant acceptance criteria have been tested by shrinking the size of the window and assert there is no 
+     horizontal scrollbar. I assume this is what was meant when the term responsive was used, additionally, checking for
+     no horizontal scrolling should be more robust than checking for specific ordering of elements.
+
+@42  We assume that testing that the discount badge being present is sufficient for testing that the discount percentage
+     is displayed. The acceptance criteria for the discount badge not being present on a product out of stock was not
+     tested because there are no products that will be consistently out of stock. We might need to stub the data for this
+     test from Fredhopper or the db, or move the test out of the regression test suite. 
