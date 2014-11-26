@@ -199,3 +199,18 @@ Then (/^I should see (\d*) color variants$/) do | color_count |
   variant_container = all('.variant-container').first
   variant_container.all('div').count.should eql(color_count.to_i)	
 end
+
+And /^I see the default product image$/ do
+  @default_image_src = page.find('.owl-item.active').find('.product-image')['src']
+end
+
+When(/^I select the color (.*)/) do | color |
+  page.find('label', :text=> color).click
+  sleep(15)
+end
+
+Then /^I see a different image$/ do
+  new_image = page.find('.owl-item.active').find('.product-image')['src']
+  expect(@default_image_src).to_not eq(new_image)
+end
+

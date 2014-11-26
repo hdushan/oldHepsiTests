@@ -50,7 +50,7 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
-@330 @storefront Feature: Expose colour variants as thumbnails on details page - second acceptance criteria not done - performance issues when selecting different colours 
+@330 @storefront Feature: Expose colour variants as thumbnails on details page - criteria finished but sleep in place (needs a refactor)
 
 ---------------------------- Done ----------------------------
 

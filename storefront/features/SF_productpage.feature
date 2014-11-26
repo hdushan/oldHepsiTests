@@ -88,10 +88,17 @@ Feature: Product page is as expected
 
   @330
   Scenario: Expose Color Variants as Thumbnails on Details Page
-    Given I select a product with SKU GYORK6CH2008GRS
-    Then I should see 3 color variants
+    Given I select a product with SKU AYKP38462CGBBZ37
+    Then I should see 2 color variants
 
   @330
   Scenario: Expose One Color Variant as Thumbnail on Details Page
     Given I select a product with SKU 1210704100152BEY
     Then I should see 1 color variants
+
+  @330
+  Scenario: Clicking an Exposed Color Changes the Product Image
+    Given I select a product with SKU AYKP38462CGBBZ37
+    And I see the default product image 
+    When I select the color Sarı
+    Then I see a different image
