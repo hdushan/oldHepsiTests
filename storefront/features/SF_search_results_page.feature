@@ -37,3 +37,9 @@ Feature: Search page is as expected
   @137
   Scenario: Display if a product has more variants on the results page
     Then I should see the variants message for the product
+
+  @137
+  Scenario: Display if a product has more variants on the results page
+    When I search for 1210704100152BEY
+    Then I should not see the variants message for the product
+    
