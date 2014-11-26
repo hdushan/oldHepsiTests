@@ -6,7 +6,6 @@
 @632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
 @390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
 @417 @storefront Feature: Clean URL structure for brand filtered category pages
-@42  @storefront Feature: See products discount percentage on results page
 
 -- 11/11/14 --
 @658 @storefront Feature: Optimise storefront desktop as a responsive site
@@ -25,6 +24,7 @@
 
 ------------------------ In Progress -------------------------
 @330 @storefront Feature: Expose colour variants as thumbnails on details page - second acceptance criteria not done - performance issues when selecting different colours 
+@42  @storefront Feature: See products discount percentage on results page
 
 ---------------------------- Done ----------------------------
 
