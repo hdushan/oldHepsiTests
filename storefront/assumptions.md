@@ -76,3 +76,7 @@
      horizontal scrollbar. I assume this is what was meant when the term responsive was used, additionally, checking for
      no horizontal scrolling should be more robust than checking for specific ordering of elements.
 
+@42  We assume that testing that the discount badge being present is sufficient for testing that the discount percentage
+     is displayed. The acceptance criteria for the discount badge not being present on a product out of stock was not
+     tested because there are no products that will be consistently out of stock. We might need to stub the data for this
+     test from Fredhopper or the db, or move the test out of the regression test suite. 
