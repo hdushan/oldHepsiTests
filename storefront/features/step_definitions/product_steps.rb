@@ -32,6 +32,15 @@ When(/^I click on the returns policy link$/) do
   click_link 'productReturnPolicy'
 end
 
+When /^I make the page half as wide/ do
+  window_size = Capybara.page.driver.browser.manage.window.size
+  Capybara.page.driver.browser.manage.window.resize_to(window_size[0]/2, window_size[1])
+end
+
+When /^I load the page on a 1280x1024 monitor/ do
+  Capybara.page.driver.browser.manage.window.resize_to(1280, 1024)
+end
+
 Then /^I should see the product in the cart$/ do
   expect(find('.cart-item', :count => 1))
   expect(find('.cart-item').text have_content @product_name)
@@ -194,4 +203,13 @@ Then (/^I should see (\d*) color variants$/) do | color_count |
   all('.question').first.should have_content("renk")
   variant_container = all('.variant-container').first
   variant_container.all('div').count.should eql(color_count.to_i)	
+end
+
+Then /^I see no horizontal scroll bar/ do
+  scroll_bar_present = page.execute_script("return document.documentElement.scrollWidth>document.documentElement.clientWidth;");
+  expect(scroll_bar_present).to eq(false)
+end
+
+AfterStep('@658') do
+  Capybara.page.driver.browser.manage.window.maximize
 end

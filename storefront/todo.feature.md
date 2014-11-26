@@ -1,6 +1,4 @@
 -- 14/10/14 --
-@482 @storefront Feature: Check Google analytics functionality for beta (Part 1)
-@525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
 
 -- 04/11/14 --
 @632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
@@ -9,7 +7,7 @@
 @42  @storefront Feature: See products discount percentage on results page
 
 -- 11/11/14 --
-@658 @storefront Feature: Optimise storefront desktop as a responsive site
+
 
 -- 18/11/14 --
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
@@ -25,7 +23,6 @@
 
 ------------------------ In Progress -------------------------
 @330 @storefront Feature: Expose colour variants as thumbnails on details page - second acceptance criteria not done - performance issues when selecting different colours 
-
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
@@ -66,6 +63,7 @@
 @249 @storefront Feature: Display breadcrumbs on product details page
 @304 @storefront Feature: See number items in shopping cart as I am shopping
 @137 @storefront Feature: See if a product has more options / variants on the the results page
+@658 @storefront Feature: Optimise storefront desktop as a responsive site
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

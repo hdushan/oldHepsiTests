@@ -19,6 +19,13 @@ Webtrekk
 Most of these stories would be tested by loading pages and asserting that a specific script is present, do you want this?
 How do we test 3rd party software like Webtrekk and Google Analytics?
 
+Google analytics
+@482 @storefront Feature: Check Google analytics functionality for beta (Part 1)
+@525 @storefront Feature: Check Google analytics functionality for beta (Part 2)
+
+Similar to the questions on Webtrekk, is there value in testing this? If so would you like us to crawl the site source 
+looking for specific tags/scripts?
+
 @700: Update discount when choosing among variants that differ by price
 Is it feasible to select two different products and then test that the discount prices are different?
 

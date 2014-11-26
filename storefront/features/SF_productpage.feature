@@ -95,3 +95,16 @@ Feature: Product page is as expected
   Scenario: Expose One Color Variant as Thumbnail on Details Page
     Given I select a product with SKU 1210704100152BEY
     Then I should see 1 color variants
+
+
+  @658
+  Scenario: Window resize
+    Given I select a product with SKU 1210704100152BEY
+    When I make the page half as wide
+    Then I see no horizontal scroll bar
+
+  @658
+  Scenario: low resolution monitor
+    Given I select a product with SKU 1210704100152BEY
+    When I load the page on a 1280x1024 monitor
+    Then I see no horizontal scroll bar

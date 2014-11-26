@@ -68,3 +68,7 @@
 
 @137 We assume that there will always be a product that has variants when searching for Samsung. We also assume that testing
      for the class 'product-with-variant' is sufficient to test if a product has variations.
+     
+@658 Both relevant acceptance criteria have been tested by shrinking the size of the window and assert there is no 
+     horizontal scrollbar. I assume this is what was meant when the term responsive was used, additionally, checking for
+     no horizontal scrolling should be more robust than checking for specific ordering of elements.
