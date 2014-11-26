@@ -16,7 +16,7 @@ Capybara.default_driver = :selenium
 Capybara.javascript_driver = :selenium
 Capybara.page.driver.browser.manage.window.maximize
 Capybara.default_selector = :css
-Capybara.default_wait_time = 10 #default wait time for ajax
+Capybara.default_wait_time = 12 #default wait time for ajax
 Capybara.ignore_hidden_elements = false #ignore hidden elements when testing, make helpful when you hide or show elements using javascript
 Capybara.save_and_open_page_path = "screenshots/"
 
