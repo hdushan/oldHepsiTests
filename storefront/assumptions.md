@@ -71,3 +71,8 @@
      
 @137 For the second test for story 137, we assume that the specific product being searched will never have variants, and therefore the product
      variant class will never be found.
+
+@42  We assume that testing that the discount badge being present is sufficient for testing that the discount percentage
+     is displayed. The acceptance criteria for the discount badge not being present on a product out of stock was not
+     tested because there are no products that will be consistently out of stock. We might need to stub the data for this
+     test from Fredhopper or the db, or move the test out of the regression test suite. 

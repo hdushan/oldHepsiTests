@@ -25,6 +25,15 @@ Feature: Search page is as expected
     When I click load more results
     Then I should see 40 visible results
 
+  @42
+  Scenario: Display discount percentage for a discounted product
+    Then I should see the discount badge
+
+  @42
+  Scenario: Do not display discount percentage for an undiscounted product
+    When I search for OYUNAR522
+    Then I should not see the discount badge
+
   @429
   Scenario: Do not show breadcrumb trail when searching or filtering
     Then I do not see a breadcrumb trail
@@ -42,4 +51,3 @@ Feature: Search page is as expected
   Scenario: Display if a product has more variants on the results page
     When I search for 1210704100152BEY
     Then I should not see the variants message for the product
-    
