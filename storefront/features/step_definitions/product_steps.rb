@@ -209,9 +209,12 @@ And /^I see the default product image$/ do
   @default_image_src = page.find('.owl-item.active').find('.product-image')['src']
 end
 
+And /^I wait for all Ajax requests to complete/ do
+  loop until page.evaluate_script('jQuery.active').zero?
+end
+
 When(/^I select the color (.*)/) do | color |
   page.find('label', :text=> color).click
-  sleep(15)
 end
 
 Then /^I see a different image$/ do
