@@ -101,6 +101,7 @@ Feature: Product page is as expected
     Given I select a product with SKU AYKP38462CGBBZ37
     And I see the default product image 
     When I select the color Sarı
+    And I wait for all Ajax requests to complete
     Then I see a different image
 
   @658
