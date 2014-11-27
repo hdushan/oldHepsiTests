@@ -1,12 +1,5 @@
--- 14/10/14 --
-
 -- 04/11/14 --
-@632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
-@390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
 @417 @storefront Feature: Clean URL structure for brand filtered category pages
-
--- 11/11/14 --
-
 
 -- 18/11/14 --
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
@@ -22,6 +15,8 @@
 
 ------------------------ In Progress -------------------------
 @330 @storefront Feature: Expose colour variants as thumbnails on details page - criteria finished but sleep in place (needs a refactor)
+@632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
+@390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
 
 ---------------------------- Done ----------------------------
 
