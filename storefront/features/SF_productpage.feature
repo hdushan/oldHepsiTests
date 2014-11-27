@@ -119,5 +119,5 @@ Feature: Product page is as expected
   @390 @632
   Scenario: Change the value of a dropdown box
     Given I select a product with SKU OUTOP001200S
-    When I select the value XL from the dropdown
-    Then I see XL in the dropdown box
+    When I select the value XL from the v-beden dropdown
+    Then I see XL in the v-beden dropdown box
