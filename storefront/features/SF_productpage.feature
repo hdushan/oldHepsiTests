@@ -96,7 +96,7 @@ Feature: Product page is as expected
     Given I select a product with SKU 1210704100152BEY
     Then I should see 1 color variants
 
-  @330
+  @330 @390 @632
   Scenario: Clicking an Exposed Color Changes the Product Image
     Given I select a product with SKU AYKP38462CGBBZ37
     And I see the default product image 
@@ -114,3 +114,9 @@ Feature: Product page is as expected
     Given I select a product with SKU 1210704100152BEY
     When I load the page on a 1280x1024 monitor
     Then I see no horizontal scroll bar
+
+  @390 @632
+  Scenario: Change the value of a dropdown box
+    Given I select a product with SKU OUTOP001200S
+    When I select the value XL from the dropdown
+    Then I see XL in the dropdown box

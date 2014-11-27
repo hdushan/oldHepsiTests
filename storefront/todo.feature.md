@@ -15,8 +15,7 @@
 
 ------------------------ In Progress -------------------------
 @330 @storefront Feature: Expose colour variants as thumbnails on details page - criteria finished but sleep in place (needs a refactor)
-@632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
-@390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
+
 
 ---------------------------- Done ----------------------------
 
@@ -60,6 +59,8 @@
 @137 @storefront Feature: See if a product has more options / variants on the the results page
 @658 @storefront Feature: Optimise storefront desktop as a responsive site
 @42  @storefront Feature: See products discount percentage on results page
+@632 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers
+@390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data

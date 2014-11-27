@@ -227,3 +227,11 @@ end
 AfterStep('@658') do
   Capybara.page.driver.browser.manage.window.maximize
 end
+
+When /^I select the value (.*) from the dropdown$/ do | dropdown_value |
+  page.find('option[value="XL"]').click
+end
+
+Then /^I see (.*) in the dropdown box$/ do | dropdown_value |
+  page.find_by_id('v-beden').value.should eq(dropdown_value)
+end
