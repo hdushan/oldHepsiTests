@@ -176,7 +176,7 @@ And(/^I see the discount percentage of (.*)$/) do | discount |
 end
 
 Then(/^I do not see a discount price$/) do
-  page.should_not have_css('del#orininalPrice')
+  page.should_not have_css('del#originalPrice')
 end
 
 Then(/^there are (\d*) variants displayed$/) do | number |

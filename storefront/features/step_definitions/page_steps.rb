@@ -1,11 +1,10 @@
-page = Homepage.new
-
 When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
 end
 
 When /^I search for (.*)$/  do | search_term |
-  page.header.search_for(search_term)
+  fill_in 'productSearch', :with => "#{search_term}"
+  page.find_by_id('buttonProductSearch').click
 end
 
 Then(/^I see a feedback window$/) do
@@ -25,13 +24,19 @@ When(/^I clear the browsers cookies$/) do
 end
 
 Then(/^I see the social icons in the footer$/) do
-  page.footer.should have_social_links
+  expect(find('footer .icon-facebook'))
+  expect(find('footer .icon-twitter'))
+  expect(find('footer .icon-linkedin'))
+  expect(find('footer .icon-google-plus'))
+  expect(find('footer .icon-pinterest'))
+  expect(find('footer .icon-instagram'))
+  expect(find('footer .icon-youtube'))
 end
 
 Then(/^I see the security logo in the footer$/) do
-  page.footer.should have_icon_security_link
+  expect(find('footer .icon-security-link'))
 end
 
 Then(/^I see the copyright message in the footer$/) do
-  page.footer.should have_copyright_message
+  expect(find('footer .copyright'))
 end
