@@ -232,7 +232,7 @@ AfterStep('@658') do
 end
 
 When /^I select the value (.*) from the dropdown$/ do | dropdown_value |
-  page.find('option[value="XL"]').click
+  page.find('option', :text=> dropdown_value).click
 end
 
 Then /^I see (.*) in the dropdown box$/ do | dropdown_value |
