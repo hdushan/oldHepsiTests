@@ -10,3 +10,4 @@ Feature: Filter category results
   Scenario: Filter by specific attribute
     When I filter by material type
     Then I should only see products that fall under my preset range
+
