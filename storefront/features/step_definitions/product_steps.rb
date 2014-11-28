@@ -246,3 +246,8 @@ end
 Then /^I do not see the 'add to basket' button/ do
   expect(page).to_not have_selector('button.add-to-basket.button-like-link')
 end
+
+Then /^I should see the bestseller section$/ do
+  page.should have_selector('.top-seller')
+end
+

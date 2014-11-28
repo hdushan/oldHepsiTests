@@ -84,3 +84,6 @@
 @695 The test for the referel URL was redundant since nothing more than actually visiting the URL was happening. Thus the
      test was only giving the URL (with a referel)to visit and then testing that the URL had the referel property set on
      the header. This is why there is no explicit test for referel URLs.
+
+@97  We assume that testing for the class of the whole section which displays "Bestsellers" is sufficient enough to know
+     that the bestsellers section is being displayed on a product page. 
