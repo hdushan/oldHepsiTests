@@ -55,3 +55,9 @@ Feature: Filter search results
   @246
   Scenario: Clear filters button inactive when no filters are active
     Then I cannot click the clear filters button
+
+  @416
+  Scenario: Canonical for Multiple filtered brands
+    Given I search for TV
+    When I filter by the brand LG
+    And I filter by the brand Samsung

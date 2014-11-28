@@ -12,6 +12,10 @@ Given(/^I filter by brand$/) do
   first('#brandList li label').click
 end
 
+Given /^I filter by the brand (.*)/ do | brand_name |
+  find_by_id('brandList').find('label', :text => brand_name).click
+end
+
 Given(/^I filter by rating$/) do
   first('#starRatingList li label').click
 end

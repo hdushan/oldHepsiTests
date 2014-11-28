@@ -1,3 +1,12 @@
+--25/11/2014--
+@384 @storefront Feature: Create XML Sitemaps
+@259 @storefront Feature: Show filters applied and allow them to be cleared individually
+@139 @storefront Feature:Show the best instalment option prominently to the customer on product details page
+@118 @storefront Feature:Add Multiple to Basket from Product Details
+@113 @storefront Feature:Add a product to cart from the results page
+@97	 @storefront Feature:Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
+@33	 @storefront Feature:Autofill functionality when searching
+
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 @295 @storefront Feature: Indicate which filter is on  --- needs clarification
