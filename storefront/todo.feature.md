@@ -2,7 +2,6 @@
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 @118 @storefront Feature: Add Multiple to Basket from Product Details
-@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
 @33	 @storefront Feature: Autofill functionality when searching
 
 -- Other --
@@ -17,6 +16,8 @@
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
 @113 @storefront Feature: Add a product to cart from the results page
+@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
+
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
