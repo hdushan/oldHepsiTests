@@ -20,6 +20,10 @@ When /^I add to cart$/ do
   end
 end
 
+Given(/^I click the 'add to basket' button$/) do
+  find('button.add-to-basket.button-like-link').click
+end
+
 When(/^I click 'go to cart'$/) do
   click_link 'shoppingCart'
 end
@@ -237,4 +241,8 @@ end
 
 Then /^I see (.*) in the (.*) dropdown box$/ do | dropdown_value, dropdown_name |
   page.find_by_id(dropdown_name).value.should eq(dropdown_value)
+end
+
+Then /^I do not see the 'add to basket' button/ do
+  expect(page).to_not have_selector('button.add-to-basket.button-like-link')
 end
