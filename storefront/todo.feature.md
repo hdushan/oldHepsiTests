@@ -1,6 +1,3 @@
--- 04/11/14 --
-@417 @storefront Feature: Clean URL structure for brand filtered category pages
-
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 @295 @storefront Feature: Indicate which filter is on  --- needs clarification
@@ -12,7 +9,7 @@
 
 ------------------------ In Progress -------------------------
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
-
+@417 @storefront Feature: Clean URL structure for brand filtered category pages
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
