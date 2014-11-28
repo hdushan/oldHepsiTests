@@ -2,7 +2,6 @@
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 @118 @storefront Feature: Add Multiple to Basket from Product Details
-@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
 @33	 @storefront Feature: Autofill functionality when searching
 
 -- Other --
@@ -15,8 +14,8 @@
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
-@695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
+@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
@@ -137,3 +136,6 @@
 -- 18/11/14 --
 @715 @storefront Feature: Remove port numbers from port numbers from canonical URLs
 @704 @storefront Feature: Replace carousel plugin
+
+-- 28/11/14 --
+@695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
