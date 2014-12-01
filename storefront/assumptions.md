@@ -86,4 +86,7 @@
      the header. This is why there is no explicit test for referel URLs.
 
 @97  We assume that testing for the class of the whole section which displays "Bestsellers" is sufficient enough to know
-     that the bestsellers section is being displayed on a product page. 
+     that the bestsellers section is being displayed on a product page.
+
+@118 We assume that testing for the ID and default value for the quantity spinner are sufficient to test for the ability
+     to indicate the product quantity the customer wants. 
