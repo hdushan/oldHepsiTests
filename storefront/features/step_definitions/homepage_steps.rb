@@ -92,3 +92,11 @@ end
 Given /^I append (.*) into search$/ do | search_term | 
    find_field('productSearch').native.send_keys(search_term)
 end
+
+Then /^I can navigate through suggestions$/ do
+   page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').first.trigger(:mouseover)
+end
+
+And /^I can see which search suggestion I am on$/ do
+   page.find('.autocomplete-selected')
+end

@@ -78,3 +78,9 @@ Feature: Homepage is as expected
     Then I see suggestions based on sa
     Given I append m into search
     Then I see suggestions based on sam
+
+  @33
+  Scenario: Ability to navigate through search suggestions
+    Given I have input sa into search
+    Then I can navigate through suggestions
+    And I can see which search suggestion I am on
