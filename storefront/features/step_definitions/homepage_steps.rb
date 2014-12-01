@@ -73,11 +73,10 @@ end
 
 Given /^I have input (.*) into search$/ do | search_term |
   fill_in 'productSearch', :with => search_term
-  expect(page).to have_selector('.autocomplete-suggestions', :visible => true)
 end
 
 Then /^I see no suggestions based on my inputs$/ do
-  page.find('.autocomplete-suggestions')['style'].should include('display: none')
+  expect(page).to have_selector('.autocomplete-suggestions', :visible => false)
 end
 
 And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
@@ -87,14 +86,19 @@ end
 
 When /^I press the down arrow/ do
   find_by_id('productSearch').native.send_keys :arrow_down
-  sleep(2)
 end
 
 Then /^I see suggestions based on (.*)$/ do | search_term |
-   @suggestions = page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
-      expect(suggestion.text).to match(/#{search_term}/i)
+  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+    expect(suggestion.text).to match(/#{search_term}/i)
   end
-end 
+end
+
+Then /^I see updated suggestions based on (.*)$/ do | search_term |
+  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+    expect(suggestion.text).to match(/#{search_term}/i)
+  end
+end
 
 Given /^I append (.*) into search$/ do | search_term | 
    find_field('productSearch').native.send_keys(search_term)
@@ -109,4 +113,8 @@ Given /^I see no visual indication of auto complete selection/ do
   find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | auto_complete_suggestion |
     expect(auto_complete_suggestion.native.style('background-color')).to eq('rgba(255, 255, 255, 1)')
   end
+end
+
+Given /^I see the auto complete suggestions/ do
+  expect(page).to have_selector('.autocomplete-suggestions', :visible => true)
 end

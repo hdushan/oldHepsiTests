@@ -8,6 +8,7 @@ Feature: Homepage is as expected
 
   Background:
     Given I am on the homepage
+    And I clear the browsers cookies
 
   @190 @467 @ignore
   Scenario: Show "Deal of the Day" on Homepage
@@ -69,6 +70,7 @@ Feature: Homepage is as expected
   @33
   Scenario: Searching with at least two characters begins producing suggestions
     Given I have input sa into search
+    And I see the auto complete suggestions
     Then I see suggestions based on sa
     And I see 3 categories and 10 other keywords
 
@@ -79,9 +81,10 @@ Feature: Homepage is as expected
     Given I append m into search
     Then I see suggestions based on sam
 
-  @33 @this
+  @33
   Scenario: Ability to navigate through search suggestions
     Given I have input sa into search
+    And I see the auto complete suggestions
     And I see no visual indication of auto complete selection
     When I press the down arrow
     Then I see visual indication that I have selected an auto complete suggestion
