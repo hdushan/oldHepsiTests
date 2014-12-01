@@ -254,3 +254,7 @@ end
 Then /^I should see the bestseller section$/ do
   page.should have_selector('.top-seller')
 end
+
+Then /^I should see the quantity box with a default of 1$/ do
+  expect(page.find_by_id('quantity')[:value]).to eq "1"
+end
