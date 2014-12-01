@@ -72,7 +72,7 @@ Feature: Product page is as expected
 
   @138
   Scenario:Do not display original price on details page for non discounted product
-    Given I select a product with SKU GYPI22S2S14AMAL
+    Given I select a product with SKU TELCEPIP6P16GBGO-N
     Then I do not see a discount price
 
   @138

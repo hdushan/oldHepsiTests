@@ -7,11 +7,13 @@ Feature: Category page is as expected
 
     @372
     Scenario: Display top seller products on desktop
-      Then I see 10 items in top sellers
+      And I click the bestsellers tab
+      Then I see 10 items in best sellers
       And the first top seller product displays the expected fields
 
     @372
     Scenario: Clicking through to a top-seller product
+      And I click the bestsellers tab
       Then I click the second top-seller product
       And I see the details page for the selected product
 

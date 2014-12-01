@@ -3,7 +3,11 @@ Then(/^I see (\d+) items in discounted products$/) do |items|
   expect(page.all('.discounted-product-container li').count.to_s).to eq items
 end
 
-Then(/^I see (\d+) items in top sellers$/) do |items|
+And /^I click the bestsellers tab/ do
+  find_by_id('bestSelling').click
+end
+
+Then(/^I see (\d+) items in best sellers$/) do |items|
   expect(page.all('.top-seller-container li').count.to_s).to eq items
 end
 

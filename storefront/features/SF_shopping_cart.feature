@@ -33,6 +33,7 @@ Feature: Add to basket from details page
   @116
   Scenario: Preserve cart on page reload
     Given I add to cart
+    And I wait for all Ajax requests to complete
     And I click 'go to cart'
     When I reload the page
     Then I should see the product in the cart
