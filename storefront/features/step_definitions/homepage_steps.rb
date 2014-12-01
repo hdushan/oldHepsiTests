@@ -84,7 +84,7 @@ And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, ke
 end
 
 Then /^I see suggestions based on (.*)$/ do | search_term |
-   @suggestions = page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+    page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
       expect(suggestion.text).to match(/#{search_term}/i)
   end
 end 

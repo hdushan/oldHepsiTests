@@ -2,6 +2,13 @@
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 
+--02/12/2014--
+@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
+@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
+@253 @storefront Feature: Filter search results by subcategories
+@94 @storefront Feature: Display suggested products on product details page
+@30 @storefront Feature: Display free shipping on category and search results page
+
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
