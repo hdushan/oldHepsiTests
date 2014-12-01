@@ -1,21 +1,19 @@
 --25/11/2014--
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
-@118 @storefront Feature: Add Multiple to Basket from Product Details
-@33	 @storefront Feature: Autofill functionality when searching
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
-@295 @storefront Feature: Indicate which filter is on  --- needs clarification
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
-@167 @storefront Feature: Shorten product name   -- Mobile Only
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
 @221 @storefront Feature: Display merchant offers on details page
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
-@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
+@33	 @storefront Feature: Autofill functionality when searching
+@118 @storefront Feature: Add Multiple to Basket from Product Details
+
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
@@ -62,6 +60,7 @@
 @390 @storefront Feature: Change variants selection from dropdown to radio buttons for numbers (Same as @632...?)
 @259 @storefront Feature: Show filters applied and allow them to be cleared individually
 @113 @storefront Feature: Add a product to cart from the results page
+@97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
@@ -81,6 +80,7 @@
 @264 @storefront Feature: Manually remove toast messages (mobile only)
 @698 @storefront Feature: Track when an Andorid user clicks on the smart banner app (mobile only)
 @665 @storefront Feature: Smart app banners for mobile site
+@167 @storefront Feature: Shorten product name
 
 
 -- Other elements could not be tested --
@@ -97,6 +97,9 @@
 @263 @storefront Feature: Turn off native auto suggest
 
 --- Testing difficult due to insufficient information in the Mingle story or not relevant acceptance / regression test ---
+
+-- 21/08/14 --
+@295 @storefront Feature: Indicate which filter is on
 
 -- 07/10/14 --
 @492 @storefront Feature: Fixing top exception

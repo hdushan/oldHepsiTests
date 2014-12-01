@@ -243,6 +243,10 @@ Then /^I see (.*) in the (.*) dropdown box$/ do | dropdown_value, dropdown_name 
   page.find_by_id(dropdown_name).value.should eq(dropdown_value)
 end
 
+And /^(.*) is selected$/ do | variant_name |
+  page.find_by_id(variant_name).should be_checked
+end
+
 Then /^I do not see the 'add to basket' button/ do
   expect(page).to_not have_selector('button.add-to-basket.button-like-link')
 end
@@ -250,4 +254,3 @@ end
 Then /^I should see the bestseller section$/ do
   page.should have_selector('.top-seller')
 end
-
