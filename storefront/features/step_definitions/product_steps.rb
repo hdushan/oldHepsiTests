@@ -20,10 +20,6 @@ When /^I add to cart$/ do
   end
 end
 
-Given(/^I click the 'add to basket' button$/) do
-  find('button.add-to-basket.button-like-link').click
-end
-
 When(/^I click 'go to cart'$/) do
   click_link 'shoppingCart'
 end
@@ -41,8 +37,16 @@ When /^I make the page half as wide/ do
   Capybara.page.driver.browser.manage.window.resize_to(window_size[0]/2, window_size[1])
 end
 
+When /^I should see a notification of (.*) items added to my basket$/ do | quantity |
+  find_by_id('notification').should have_content(quantity + " Ürün başarılı bir şekilde sepete eklenmiştir.")
+end
+
 When /^I load the page on a 1280x1024 monitor/ do
   Capybara.page.driver.browser.manage.window.resize_to(1280, 1024)
+end
+
+And /^I increase the quantity to (.*)$/ do | item_quantity |
+  fill_in 'quantity', with: item_quantity
 end
 
 Then /^I should see the product in the cart$/ do

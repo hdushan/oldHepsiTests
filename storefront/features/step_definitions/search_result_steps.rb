@@ -10,6 +10,10 @@ Given /^I select a product from search results$/ do
   click_link(@product_name)
 end
 
+When(/^I click the 'add to basket' button on results page$/) do
+  find('button.add-to-basket.button-like-link').click
+end
+
 Then(/^I should see a list of (.*) results$/) do | search_term |
   expect(first('.search-item a')).to have_content search_term
 end
