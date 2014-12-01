@@ -60,3 +60,14 @@ Feature: Homepage is as expected
   Scenario: Clicking on banners leads to a new page
     When I click on the current banner
     Then I am no longer on the homepage
+
+  @33
+  Scenario: Searching with one character does not produce suggestions
+    Given I have input s into search
+    Then I see no suggestions based on my inputs
+
+  @33
+  Scenario: Searching with at least two character begins producing suggestions
+    Given I have input sa into search
+    Then I see 3 categories and 10 other keywords 
+    And I see suggestions based on sa

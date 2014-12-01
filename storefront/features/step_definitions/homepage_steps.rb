@@ -69,3 +69,22 @@ Then(/^I see banners of size 900x370/) do
   carousel_item.native.css_value('width').should eq('900px')
   carousel_item.native.css_value('height').should eq('370px')
 end
+
+Given /^I have input (.*) into search$/ do | search_term |
+  fill_in 'productSearch', :with => search_term
+end
+
+Then /^I see no suggestions based on my inputs$/ do
+  page.find('.autocomplete-suggestions')['style'].should include('display: none')
+end
+
+Then /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
+  total_of_search_terms = category_number.to_i + keyword_number.to_i
+  expect(page).to have_selector('.autocomplete-suggestion', count:total_of_search_terms)
+end
+
+And /^I see suggestions based on (.*)$/ do | search_term |
+  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+      expect(suggestion.text).to match(/#{search_term}/i)
+  end
+end 
