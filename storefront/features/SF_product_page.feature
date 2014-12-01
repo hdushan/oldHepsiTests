@@ -122,3 +122,8 @@ Feature: Product page is as expected
     Given I select a product with SKU OUTOP001200S
     When I select the value XL from the v-beden dropdown
     Then I see XL in the v-beden dropdown box
+
+  @97
+  Scenario: Bestseller section
+    Given I select a product with SKU EAKSERELEKTBAT
+    Then I should see the bestseller section

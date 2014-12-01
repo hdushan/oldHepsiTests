@@ -20,6 +20,10 @@ When /^I add to cart$/ do
   end
 end
 
+Given(/^I click the 'add to basket' button$/) do
+  find('button.add-to-basket.button-like-link').click
+end
+
 When(/^I click 'go to cart'$/) do
   click_link 'shoppingCart'
 end
@@ -241,4 +245,12 @@ end
 
 And /^(.*) is selected$/ do | variant_name |
   page.find_by_id(variant_name).should be_checked
+end
+
+Then /^I do not see the 'add to basket' button/ do
+  expect(page).to_not have_selector('button.add-to-basket.button-like-link')
+end
+
+Then /^I should see the bestseller section$/ do
+  page.should have_selector('.top-seller')
 end

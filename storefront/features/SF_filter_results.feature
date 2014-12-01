@@ -55,3 +55,19 @@ Feature: Filter search results
   @246
   Scenario: Clear filters button inactive when no filters are active
     Then I cannot click the clear filters button
+
+  @416
+  Scenario: Canonical for Multiple filtered brands
+    Given I search for TV
+    When I filter for LG
+    And I filter for Samsung
+
+  @256
+  Scenario: Clearing an individual filter from the result page updates the results
+    And I should see all results
+    And I filter for Ozaki
+    And I filter for Muvit
+    And I should only see products that fall under my preset range
+    When I remove the filter for Ozaki
+    When I remove the filter for Muvit
+    Then I should see all results

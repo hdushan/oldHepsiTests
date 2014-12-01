@@ -49,3 +49,14 @@ Feature: Add to basket from details page
   Scenario: Number of items in cart increases after adding an item from product details page
     When I add to cart
     Then I see the cart item count is 1
+
+  @113 @disone
+  Scenario: Adding to basket from results page when product does not have variants
+    Given I search for TELCEPIPH5S6GBSI-N
+    When I click the 'add to basket' button
+    Then I see the cart item count is 1
+
+  @113
+  Scenario: Cannot add to basket from results page when product has variants
+    Given I search for AYKP38462CGBBZ37
+    Then I do not see the 'add to basket' button

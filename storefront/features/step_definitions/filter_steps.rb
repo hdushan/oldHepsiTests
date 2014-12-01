@@ -4,12 +4,24 @@ And(/^I can see the results$/) do
   original_result = find("#totalItems").text
 end
 
+And /^I count the number of results/ do
+  number_of_results = all('.search-item').count
+end
+
 Given(/^I filter by first level category$/) do
   first('#categoryList li label').click
 end
 
 Given(/^I filter by brand$/) do
   first('#brandList li label').click
+end
+
+Given /^I filter for (.*)/ do | filter_name |
+  find_by_id('brandList').find('label', :text => filter_name).click
+end
+
+When /^I remove the filter for (.*)/ do | filter_name |
+  find_by_id('brandList').find('label', :text => filter_name).click
 end
 
 Given(/^I filter by rating$/) do
