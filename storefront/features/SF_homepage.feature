@@ -67,7 +67,14 @@ Feature: Homepage is as expected
     Then I see no suggestions based on my inputs
 
   @33
-  Scenario: Searching with at least two character begins producing suggestions
+  Scenario: Searching with at least two characters begins producing suggestions
     Given I have input sa into search
-    Then I see 3 categories and 10 other keywords 
-    And I see suggestions based on sa
+    Then I see suggestions based on sa   
+    And I see 3 categories and 10 other keywords 
+   
+  @33
+  Scenario: Search suggestions update as user enters in more or less into search
+    Given I have input sa into search
+    Then I see suggestions based on sa
+    Given I append m into search
+    Then I see suggestions based on sam

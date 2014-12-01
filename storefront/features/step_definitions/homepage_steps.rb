@@ -78,13 +78,17 @@ Then /^I see no suggestions based on my inputs$/ do
   page.find('.autocomplete-suggestions')['style'].should include('display: none')
 end
 
-Then /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
+And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
   total_of_search_terms = category_number.to_i + keyword_number.to_i
   expect(page).to have_selector('.autocomplete-suggestion', count:total_of_search_terms)
 end
 
-And /^I see suggestions based on (.*)$/ do | search_term |
-  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+Then /^I see suggestions based on (.*)$/ do | search_term |
+   @suggestions = page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
       expect(suggestion.text).to match(/#{search_term}/i)
   end
 end 
+
+Given /^I append (.*) into search$/ do | search_term | 
+   find_field('productSearch').native.send_keys(search_term)
+end
