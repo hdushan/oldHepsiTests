@@ -127,3 +127,8 @@ Feature: Product page is as expected
   Scenario: Bestseller section
     Given I select a product with SKU EAKSERELEKTBAT
     Then I should see the bestseller section
+
+  @118
+  Scenario: I can add a procurable item to basket
+    Given I select a product with SKU EAKSERELEKTBAT
+    Then I should see the quantity box with a default of 1

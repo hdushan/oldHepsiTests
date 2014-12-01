@@ -71,3 +71,26 @@ Then(/^I see banners with a width of (\d+) and a height of (\d+)/) do | expected
   banner_width.should eq expected_width.to_i
   banner_height.should eq expected_height.to_i
 end
+
+Given /^I have input (.*) into search$/ do | search_term |
+  fill_in 'productSearch', :with => search_term
+end
+
+Then /^I see no suggestions based on my inputs$/ do
+  page.find('.autocomplete-suggestions')['style'].should include('display: none')
+end
+
+And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
+  total_of_search_terms = category_number.to_i + keyword_number.to_i
+  expect(page).to have_selector('.autocomplete-suggestion', count:total_of_search_terms)
+end
+
+Then /^I see suggestions based on (.*)$/ do | search_term |
+   @suggestions = page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+      expect(suggestion.text).to match(/#{search_term}/i)
+  end
+end 
+
+Given /^I append (.*) into search$/ do | search_term | 
+   find_field('productSearch').native.send_keys(search_term)
+end
