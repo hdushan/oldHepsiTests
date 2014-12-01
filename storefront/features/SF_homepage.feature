@@ -69,12 +69,19 @@ Feature: Homepage is as expected
   @33
   Scenario: Searching with at least two characters begins producing suggestions
     Given I have input sa into search
-    Then I see suggestions based on sa   
-    And I see 3 categories and 10 other keywords 
-   
+    Then I see suggestions based on sa
+    And I see 3 categories and 10 other keywords
+
   @33
   Scenario: Search suggestions update as user enters in more or less into search
     Given I have input sa into search
     Then I see suggestions based on sa
     Given I append m into search
     Then I see suggestions based on sam
+
+  @33 @this
+  Scenario: Ability to navigate through search suggestions
+    Given I have input sa into search
+    And I see no visual indication of auto complete selection
+    When I press the down arrow
+    Then I see visual indication that I have selected an auto complete suggestion
