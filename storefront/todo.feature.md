@@ -1,7 +1,6 @@
 --25/11/2014--
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
-@118 @storefront Feature: Add Multiple to Basket from Product Details
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
@@ -13,6 +12,7 @@
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
 @33	 @storefront Feature: Autofill functionality when searching
+@118 @storefront Feature: Add Multiple to Basket from Product Details
 
 ---------------------------- Done ----------------------------
 
