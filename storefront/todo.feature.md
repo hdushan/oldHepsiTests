@@ -2,7 +2,6 @@
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 @118 @storefront Feature: Add Multiple to Basket from Product Details
-@33	 @storefront Feature: Autofill functionality when searching
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
@@ -14,6 +13,8 @@
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
 @97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
+@33	 @storefront Feature: Autofill functionality when searching
+
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
