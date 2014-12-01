@@ -96,13 +96,14 @@ Feature: Product page is as expected
     Given I select a product with SKU 1210704100152BEY
     Then I should see 1 color variants
 
-  @330 @390 @632
+  @330 @390 @632 @423
   Scenario: Clicking an Exposed Color Changes the Product Image
     Given I select a product with SKU AYKP38462CGBBZ37
     And I see the default product image 
     When I select the color Sarı
     And I wait for all Ajax requests to complete
     Then I see a different image
+    And Renk1 is selected
 
   @658
   Scenario: Window resize

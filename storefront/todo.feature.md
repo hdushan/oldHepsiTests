@@ -3,9 +3,7 @@
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
-@295 @storefront Feature: Indicate which filter is on  --- needs clarification
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
-@167 @storefront Feature: Shorten product name   -- Mobile Only
 @183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
 @221 @storefront Feature: Display merchant offers on details page
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
@@ -76,6 +74,7 @@
 @264 @storefront Feature: Manually remove toast messages (mobile only)
 @698 @storefront Feature: Track when an Andorid user clicks on the smart banner app (mobile only)
 @665 @storefront Feature: Smart app banners for mobile site
+@167 @storefront Feature: Shorten product name
 
 
 -- Other elements could not be tested --
@@ -92,6 +91,9 @@
 @263 @storefront Feature: Turn off native auto suggest
 
 --- Testing difficult due to insufficient information in the Mingle story or not relevant acceptance / regression test ---
+
+-- 21/08/14 --
+@295 @storefront Feature: Indicate which filter is on
 
 -- 07/10/14 --
 @492 @storefront Feature: Fixing top exception
