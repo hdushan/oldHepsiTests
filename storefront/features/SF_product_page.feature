@@ -103,7 +103,7 @@ Feature: Product page is as expected
     When I select the color Sarı
     And I wait for all Ajax requests to complete
     Then I see a different image
-    And Renk1 is selected
+    And element with id Renk1 is selected
 
   @658
   Scenario: Window resize

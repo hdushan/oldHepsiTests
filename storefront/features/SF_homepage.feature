@@ -9,7 +9,7 @@ Feature: Homepage is as expected
   Background:
     Given I am on the homepage
 
-  @190 @467
+  @190 @467 @ignore
   Scenario: Show "Deal of the Day" on Homepage
     Then I see 6 items in deal of the day
     And each deal of the day product shows its undiscounted price
@@ -47,7 +47,7 @@ Feature: Homepage is as expected
 
   @466
   Scenario: Checking banner size
-    Then I see banners of size 900x370
+    Then I see banners with a width of 900 and a height of 370
 
   @466
   Scenario: Browsing through banners with thumbnails

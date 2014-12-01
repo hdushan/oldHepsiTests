@@ -64,8 +64,10 @@ Then(/^I can see at least (\d) static banners/) do | minimum_number_of_static_ba
   expect(all('.static-banners li').count).to be >= minimum_number_of_static_banners.to_i
 end
 
-Then(/^I see banners of size 900x370/) do
-  carousel_item = page.find_by_id('carousel').first('.owl-item')
-  carousel_item.native.css_value('width').should eq('900px')
-  carousel_item.native.css_value('height').should eq('370px')
+Then(/^I see banners with a width of (\d+) and a height of (\d+)/) do | expected_width, expected_height |
+  banner_src = page.find_by_id('carousel').first('.owl-item').find('.product-image')[:src]
+  banner_width = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].width")
+  banner_height = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].height")
+  banner_width.should eq expected_width.to_i
+  banner_height.should eq expected_height.to_i
 end
