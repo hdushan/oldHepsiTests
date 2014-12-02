@@ -91,10 +91,17 @@ Feature: Homepage is as expected
     When I press the down arrow
     Then I see a visual indication that an auto complete suggestion is selected
 
-  @33 @this
+  @33
   Scenario: Selecting a search suggestion takes me to the corresponding search results
     Given I have input samsung into search
     And I see the auto complete suggestions
     And I see suggestions based on samsung
     When I click on the first search suggestion
     Then I see products relating to samsung
+
+  @33
+  Scenario: Searching without selecting a suggestion
+    Given I have input samsung into search
+    And I do not like any of the auto complete suggestions
+    When I invoke search on my own keywords
+    Then I am taken to results based on my own keyword samsung

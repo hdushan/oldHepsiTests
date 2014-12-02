@@ -136,3 +136,16 @@ Then /^I see products relating to (.*)/ do | key_term |
     search_item.find('.product-title').text.should match(/#{key_term}/i)
   end
 end
+
+And /^I do not like any of the auto complete suggestions/ do
+end
+
+When /^I invoke search on my own keywords/ do
+  find_by_id('productSearch').native.send_keys :enter
+end
+
+Then /^I am taken to results based on my own keyword (.*)/ do  | key_term |
+  page.all('.search-item').each do | search_item |
+    search_item.find('.product-title').text.should match(/#{key_term}/i)
+  end
+end
