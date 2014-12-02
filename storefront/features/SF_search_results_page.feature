@@ -56,3 +56,12 @@ Feature: Search page is as expected
   Scenario: See free shipping on search results
     When I search for EVPH42PFK6109
     Then I see an indicator of free shipping associated with the item
+
+  @253
+  Scenario: Seeing second level subcategories
+    When I choose the category Bilgisayar 
+    Then the results are updated to reflect items in the category
+    And I see one or more second level categories
+    And the second level categories have the number of items within the first level category
+    And I no longer see the other first level categories
+    And I have the action to return to the first level categories

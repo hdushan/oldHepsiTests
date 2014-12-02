@@ -4,7 +4,6 @@
 
 --02/12/2014--
 @735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
-@253 @storefront Feature: Filter search results by subcategories
 @94 @storefront Feature: Display suggested products on product details page
 
 -- Other --
@@ -22,6 +21,8 @@
 @739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
 
 @30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
+
+@253 @storefront Feature: Filter search results by subcategories
 
 ---------------------------- Done ----------------------------
 
