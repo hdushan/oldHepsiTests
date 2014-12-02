@@ -15,7 +15,6 @@
 
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
-@33	 @storefront Feature: Autofill functionality when searching
 @253 @storefront Feature: Filter search results by subcategories
 
 @118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
@@ -69,6 +68,7 @@
 @259 @storefront Feature: Show filters applied and allow them to be cleared individually
 @113 @storefront Feature: Add a product to cart from the results page
 @97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
+@33	 @storefront Feature: Autofill functionality when searching
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
