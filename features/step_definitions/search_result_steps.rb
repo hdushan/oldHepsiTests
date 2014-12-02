@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 Given /^I select a product from search results$/ do
   # product_links = all(:xpath, "//li[@class = 'search-item'][.//@class = 'product-price']")
   # product = product_links[rand(product_links.length)]
@@ -71,6 +73,7 @@ Then /^I see an indicator of free shipping associated with the item$/ do
   page.find('.shipping-status').should have_content("Kargo Bedava")
 end
 
+<<<<<<< HEAD:storefront/features/step_definitions/search_result_steps.rb
 When /^I choose the category (.*)$/ do | category |
   page.find_by_id('categoryList').find('label', :text=> category).click
 end
@@ -96,4 +99,12 @@ end
 
 And /^I have the action to return to the first level categories$/ do 
 
+=======
+When(/^I search for an item that is in stock and has fast delivery configured$/) do
+  steps %{When I search for "TELCEPSAMI9060-B"}
+end
+
+Then(/^I see an indicator of fast delivery associated with the first item$/) do
+  page.find('.shipping-status').should have_content("Süper Hızlı")
+>>>>>>> 7a6173ab23775832844c97e41fe5b5e8290483ef:features/step_definitions/search_result_steps.rb
 end

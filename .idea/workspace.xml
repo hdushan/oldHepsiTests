@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="819e9982-63b8-4113-938d-9cd777c8b820" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/700.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/739.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assumptions.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/support/env.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo.feature.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/windows_setup.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.rbenv-gemset" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/assumptions.md" afterPath="$PROJECT_DIR$/assumptions.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/config/cucumber.yml" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/700.feature" afterPath="$PROJECT_DIR$/features/700.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/739.feature" afterPath="$PROJECT_DIR$/features/739.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_beta_feedback.feature" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_category_page.feature" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_category_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_homepage.feature" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_login.feature" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_navigation.feature" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_product_page.feature" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_sorting_results.feature" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/pages/homepage.rb" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/account_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/category_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/filter_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/functions.rb" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/globals.rb" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/homepage_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/journey_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/navigation_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/page_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/product_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/sorting_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/helpers/page_helper.rb" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/stories-with-outstanding-questions.md" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/todo.feature.md" afterPath="$PROJECT_DIR$/todo.feature.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/windows_setup.md" afterPath="$PROJECT_DIR$/windows_setup.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
+    <ignored path="acceptance-tests.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="acceptance-tests" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="cucumber.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Rakefile" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/storefront/features/pages/homepage.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/step_definitions/navigation_steps.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/step_definitions/page_steps.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/700.feature" />
+        <option value="$PROJECT_DIR$/storefront/features/step_definitions/journey_steps.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_filter_results.feature" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_homepage.feature" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_product_page.feature" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_sorting_results.feature" />
+        <option value="$PROJECT_DIR$/storefront/support/env.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/support/env.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" />
+      </list>
+    </option>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="configurable.group.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/storefront/features" />
+      <recent name="$PROJECT_DIR$/storefront" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
+      <predefined_log_file id="RUBY_RSPEC" enabled="true" />
+      <module name="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_RUNNER_PATH" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*_spec.rb" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_EXAMPLE_NAME" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPEC_ARGS" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_SPEC_RUNNER" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RSPEC_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberRunConfigurationType" factoryName="Cucumber">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs />
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="819e9982-63b8-4113-938d-9cd777c8b820" name="Default" comment="" />
+      <created>1417507286459</created>
+      <option name="number" value="Default" />
+      <updated>1417507286459</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

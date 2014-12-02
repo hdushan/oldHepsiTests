@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 Given(/^I see the first level navigation bar with 9 categories/) do
   page.should have_selector('.browser-by-category')
   expect(page.all('.browser-by-category li.force-two-line').count.to_i).to eq(7)

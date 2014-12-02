@@ -29,12 +29,12 @@ Feature: Homepage is as expected
 
   @16
   Scenario: Searching, with results
-    When I search for iPhone
+    When I search for "iPhone"
     Then I should see a list of iPhone results
 
   @16
   Scenario: Searching, with no results
-    When I search for iPhonethatdoesnotexist
+    When I search for "iPhonethatdoesnotexist"
     Then I should see no results page
 
   @523
@@ -77,8 +77,10 @@ Feature: Homepage is as expected
   @33
   Scenario: Search suggestions update as user enters in more or less into search
     Given I have input sa into search
-    Then I see suggestions based on sa
-    Given I append m into search
+    And I see the auto complete suggestions
+    And I see suggestions based on sa
+    When I append m into search
+    And I wait for auto complete results to update
     Then I see suggestions based on sam
 
   @33
@@ -87,4 +89,19 @@ Feature: Homepage is as expected
     And I see the auto complete suggestions
     And I see no visual indication of auto complete selection
     When I press the down arrow
-    Then I see visual indication that I have selected an auto complete suggestion
+    Then I see a visual indication that an auto complete suggestion is selected
+
+  @33
+  Scenario: Selecting a search suggestion takes me to the corresponding search results
+    Given I have input samsung into search
+    And I see the auto complete suggestions
+    And I see suggestions based on samsung
+    When I click on the first search suggestion
+    Then I see products relating to samsung
+
+  @33
+  Scenario: Searching without selecting a suggestion
+    Given I have input samsung into search
+    And I do not like any of the auto complete suggestions
+    When I invoke search on my own keywords
+    Then I see products relating to samsung

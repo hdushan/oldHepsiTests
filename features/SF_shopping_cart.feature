@@ -5,7 +5,7 @@ Feature: Add to basket from details page
     Given I am on the homepage
     And I have an empty cart
     And I see the cart item count is 0
-    When I search for MTSUNOCKE03
+    When I search for "MTSUNOCKE03"
     Then I select a product from search results
 
   @67
@@ -38,11 +38,11 @@ Feature: Add to basket from details page
 
   @113
   Scenario: Adding to basket from results page when product does not have variants
-    Given I search for TELCEPIPH5S6GBSI-N
+    Given I search for "TELCEPIPH5S6GBSI-N"
     When I click the 'add to basket' button on results page
     Then I see the cart item count is 1
 
   @113
   Scenario: Cannot add to basket from results page when product has variants
-    Given I search for AYKP38462CGBBZ37
+    Given I search for "AYKP38462CGBBZ37"
     Then I do not see the 'add to basket' button

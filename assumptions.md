@@ -90,3 +90,7 @@
 
 @118 We assume that testing for the ID and default value for the quantity spinner are sufficient to test for the ability
      to indicate the product quantity the customer wants. 
+
+@33  There is an acceptance criteria stating "Search should still work without search suggestions if FredHopper is 
+     unavailable". This has not been tested due to not being able to easily programmatically disable Fredhopper and 
+     manually intercepting the Ajax was deemed to much work for the reward with other functionality requiring testing.

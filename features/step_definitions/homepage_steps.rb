@@ -89,8 +89,8 @@ When /^I press the down arrow/ do
 end
 
 Then /^I see suggestions based on (.*)$/ do | search_term |
-    page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
-      expect(suggestion.text).to match(/#{search_term}/i)
+  page.find('.autocomplete-suggestions', :visible => true).all('.autocomplete-suggestion').each do | suggestion |
+    expect(suggestion.text).to match(/#{search_term}/i)
   end
 end
 
@@ -104,7 +104,7 @@ Given /^I append (.*) into search$/ do | search_term |
    find_field('productSearch').native.send_keys(search_term)
 end
 
-Then /^I see visual indication that I have selected an auto complete suggestion/ do
+Then /^I see a visual indication that an auto complete suggestion is selected/ do
   first_auto_complete_suggestion = find('.autocomplete-suggestions').first('.autocomplete-suggestion')
   expect(first_auto_complete_suggestion.native.style('background-color')).to eq('rgba(233, 233, 233, 1)')
 end
@@ -117,4 +117,35 @@ end
 
 Given /^I see the auto complete suggestions/ do
   expect(page).to have_selector('.autocomplete-suggestions', :visible => true)
+  @initial_auto_complete_suggestions = page.find('.autocomplete-suggestions').first('.autocomplete-suggestion').text
+end
+
+And /^I wait for auto complete results to update/ do
+  Timeout.timeout(Capybara.default_wait_time) do
+    loop until page.find('.autocomplete-suggestions', :visible => true).first('.autocomplete-suggestion', :visible => true).text != @initial_auto_complete_suggestions
+  end
+end
+
+When /^I click on the first search suggestion/ do
+  page.find('.autocomplete-suggestions', :visible => true).first('.autocomplete-suggestion', :visible => true).click
+  sleep 10
+end
+
+Then /^I see products relating to (.*)/ do | key_term |
+  page.all('.search-item').each do | search_item |
+    search_item.find('.product-title').text.should match(/#{key_term}/i)
+  end
+end
+
+And /^I do not like any of the auto complete suggestions/ do
+end
+
+When /^I invoke search on my own keywords/ do
+  find_by_id('productSearch').native.send_keys :enter
+end
+
+Then /^I am taken to results based on my own keyword (.*)/ do  | key_term |
+  page.all('.search-item').each do | search_item |
+    search_item.find('.product-title').text.should match(/#{key_term}/i)
+  end
 end
