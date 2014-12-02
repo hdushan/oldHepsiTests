@@ -66,3 +66,7 @@ end
 Then /^I should not see the discount badge$/ do
   page.should_not have_selector('.discount-badge')
 end
+
+Then /^I see an indicator of free shipping associated with the item$/ do
+  page.find('.shipping-status').should have_content("Kargo Bedava")
+end

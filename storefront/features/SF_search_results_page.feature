@@ -51,3 +51,8 @@ Feature: Search page is as expected
   Scenario: Display if a product has more variants on the results page
     When I search for 1210704100152BEY
     Then I should not see the variants message for the product
+
+  @30
+  Scenario: See free shipping on search results
+    When I search for EVPH42PFK6109
+    Then I see an indicator of free shipping associated with the item
