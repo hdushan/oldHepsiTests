@@ -94,3 +94,5 @@
 @33  There is an acceptance criteria stating "Search should still work without search suggestions if FredHopper is 
      unavailable". This has not been tested due to not being able to easily programmatically disable Fredhopper and 
      manually intercepting the Ajax was deemed to much work for the reward with other functionality requiring testing.
+     
+@384 AC for the sitemap xml story requires the file to be validated by Google tools making automated testing troublesome.

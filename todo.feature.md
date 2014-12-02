@@ -1,5 +1,4 @@
 --25/11/2014--
-@384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 
 --02/12/2014--
@@ -142,6 +141,7 @@
 
 -- 28/11/14 --
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
+@384 @storefront Feature: Create XML Sitemaps
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
