@@ -6,25 +6,15 @@
 @735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 @94 @storefront Feature: Display suggested products on product details page
 
--- Other --
-@423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
-@312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
-@183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
-@221 @storefront Feature: Display merchant offers on details page
-@488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
-
 ------------------------ In Progress -------------------------
-@417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
-@253 @storefront Feature: Filter search results by subcategories
-
 @118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
-@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
+
+@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages -- Lack of categories makes this difficult
 @30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
 
 @253 @storefront Feature: Filter search results by subcategories - acceptance criteria 2 almost finished apart from last step
 
 ---------------------------- Done ----------------------------
-
 @16 @storefront Feature: Basic search
 @18 @storefront Feature: Display one product price on result
 @19 @storefront Feature: Show image for products in results
@@ -152,3 +142,11 @@
 
 -- 28/11/14 --
 @695 @storefront Feature: Include query parameters in new URL structure of brand filtered pages
+
+-- Other --
+@423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
+@312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
+@183 @storefront Feature: Allow Customers to Buy Merchant Offers on Details Page -- Merchant offer is dependant on Marketplace - needs clarification
+@221 @storefront Feature: Display merchant offers on details page
+@488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
+@417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this URL doesn't match the acceptance criteria
