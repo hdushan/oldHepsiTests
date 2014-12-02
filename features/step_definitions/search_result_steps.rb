@@ -86,8 +86,8 @@ And /^I see one or more second level categories$/ do
   page.all('.category-level-1').count.should > 1
 end
 
-And /^the second level categories have the number of items within the first level category$/ do
-  page.all('.category-level-1').each do | category | 
+And /^the category level (\d+) has the number of items$/ do | category_level |
+  page.all('.category-level-' + category_level).each do | category | 
      expect(category.find(:css, 'label.filter-label span').text).should_not eq('')
   end
 end
