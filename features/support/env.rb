@@ -9,8 +9,6 @@ require 'capybara-screenshot'
 require 'capybara-screenshot/cucumber'
 require 'capybara-page-object'
 
-puts "Hellooooo"
-
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 Capybara.run_server = false
 Capybara.default_driver = :selenium
