@@ -56,3 +56,11 @@ Feature: Search page is as expected
   Scenario: See free shipping on search results
     When I search for EVPH42PFK6109
     Then I see an indicator of free shipping associated with the item
+
+  @30
+  Scenario: See free shipping on campaigns on CLP
+    #TODO
+
+  @30
+  Scenario: See free shipping on category results
+    #TODO
