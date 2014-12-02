@@ -90,3 +90,11 @@ Feature: Homepage is as expected
     And I see no visual indication of auto complete selection
     When I press the down arrow
     Then I see a visual indication that an auto complete suggestion is selected
+
+  @33 @this
+  Scenario: Selecting a search suggestion takes me to the corresponding search results
+    Given I have input samsung into search
+    And I see the auto complete suggestions
+    And I see suggestions based on samsung
+    When I click on the first search suggestion
+    Then I see products relating to samsung

@@ -125,3 +125,14 @@ And /^I wait for auto complete results to update/ do
     loop until page.find('.autocomplete-suggestions', :visible => true).first('.autocomplete-suggestion', :visible => true).text != @initial_auto_complete_suggestions
   end
 end
+
+When /^I click on the first search suggestion/ do
+  page.find('.autocomplete-suggestions', :visible => true).first('.autocomplete-suggestion', :visible => true).click
+  sleep 10
+end
+
+Then /^I see products relating to (.*)/ do | key_term |
+  page.all('.search-item').each do | search_item |
+    search_item.find('.product-title').text.should match(/#{key_term}/i)
+  end
+end
