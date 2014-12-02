@@ -21,6 +21,8 @@
 @739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
 @30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
 
+@253 @storefront Feature: Filter search results by subcategories - acceptance criteria 2 almost finished apart from last step
+
 ---------------------------- Done ----------------------------
 
 @16 @storefront Feature: Basic search
