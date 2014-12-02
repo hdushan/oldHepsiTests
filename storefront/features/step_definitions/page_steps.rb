@@ -2,7 +2,7 @@ When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
 end
 
-When /^I search for (.*)$/  do | search_term |
+When /^I search for "(.*)"$/  do | search_term |
   fill_in 'productSearch', :with => "#{search_term}"
   page.find_by_id('buttonProductSearch').click
 end

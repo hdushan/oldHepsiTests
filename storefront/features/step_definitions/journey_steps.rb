@@ -1,4 +1,4 @@
-#encoding: UTF-8
+SF_search_results_page#encoding: UTF-8
 
 Given(/^I visit main page$/) do
   visit ''
@@ -7,11 +7,6 @@ end
 Then(/^I am at main page$/) do
   page.should have_selector "#carousel"
   page.should have_selector "ul.static-banners"
-end
-
-When(/^I search for a product with title "([^"]*)"$/) do |arg|
-  fill_in "productSearch" , :with => arg
-  find_by_id("buttonProductSearch").click
 end
 
 Then(/^There are some results available$/) do

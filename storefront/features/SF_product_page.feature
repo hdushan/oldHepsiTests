@@ -77,7 +77,7 @@ Feature: Product page is as expected
 
   @138
   Scenario: Display original price on search page
-    Given I search for KIMGE033
+    Given I search for "KIMGE033"
     Then I see the original price 6,30 TL on the product with sku KIMGE033
 
   @140

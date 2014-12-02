@@ -4,7 +4,7 @@ Feature: Sorting Search Results
 
   Background:
     Given I am on the homepage
-    And I search for cd
+    And I search for "cd"
 
   @31
   Scenario: Sort by bestseller

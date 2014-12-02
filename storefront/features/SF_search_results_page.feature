@@ -6,7 +6,7 @@ Feature: Search page is as expected
 
   Background:
     Given I am on the homepage
-    When I search for Samsung
+    When I search for "Samsung"
 
   @143 @18
   Scenario: Display product prices
@@ -31,7 +31,7 @@ Feature: Search page is as expected
 
   @42
   Scenario: Do not display discount percentage for an undiscounted product
-    When I search for OYUNAR522
+    When I search for "OYUNAR522"
     Then I should not see the discount badge
 
   @429
@@ -49,12 +49,12 @@ Feature: Search page is as expected
 
   @137
   Scenario: Display if a product has more variants on the results page
-    When I search for 1210704100152BEY
+    When I search for "1210704100152BEY"
     Then I should not see the variants message for the product
 
   @30
   Scenario: See free shipping on search results
-    When I search for EVPH42PFK6109
+    When I search for "EVPH42PFK6109"
     Then I see an indicator of free shipping associated with the item
 
   @30
@@ -64,3 +64,8 @@ Feature: Search page is as expected
   @30
   Scenario: See free shipping on category results
     #TODO
+
+  @36
+  Scenario: See fast delivery on search results
+    When I search for an item that is in stock and has fast delivery configured
+    Then I see an indicator of fast delivery associated with the first item

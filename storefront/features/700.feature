@@ -7,7 +7,7 @@ Feature: Discounts and top sellers not shown on category landing pages
     Then I am at main page
 
   Scenario: Open a product detail
-    Given I search for a product with "EAKSAN1MP-VP80V0"
+    Given I search for "EAKSAN1MP-VP80V0"
     When I open search result no "1"
     Then I am on product details
     And The discount is "75" percent on details
