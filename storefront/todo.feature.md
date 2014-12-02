@@ -6,7 +6,6 @@
 @735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 @253 @storefront Feature: Filter search results by subcategories
 @94 @storefront Feature: Display suggested products on product details page
-@30 @storefront Feature: Display free shipping on category and search results page
 
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
@@ -21,6 +20,8 @@
 @118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
 
 @739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
+
+@30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
 
 ---------------------------- Done ----------------------------
 
