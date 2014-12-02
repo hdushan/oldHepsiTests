@@ -2,84 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819e9982-63b8-4113-938d-9cd777c8b820" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/700.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/739.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assumptions.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/support/env.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo.feature.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/windows_setup.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.rbenv-gemset" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/assumptions.md" afterPath="$PROJECT_DIR$/assumptions.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/config/cucumber.yml" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/700.feature" afterPath="$PROJECT_DIR$/features/700.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/739.feature" afterPath="$PROJECT_DIR$/features/739.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_beta_feedback.feature" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_category_page.feature" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_category_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_homepage.feature" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_login.feature" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_navigation.feature" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_product_page.feature" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_sorting_results.feature" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/pages/homepage.rb" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/account_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/category_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/filter_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/functions.rb" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/globals.rb" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/homepage_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/journey_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/navigation_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/page_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/product_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/sorting_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/helpers/page_helper.rb" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/stories-with-outstanding-questions.md" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/todo.feature.md" afterPath="$PROJECT_DIR$/todo.feature.md" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/windows_setup.md" afterPath="$PROJECT_DIR$/windows_setup.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/700.feature" afterPath="$PROJECT_DIR$/features/700.feature" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/acceptance-tests.iml" afterPath="$PROJECT_DIR$/.idea/acceptance-tests.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="acceptance-tests.iws" />
@@ -93,22 +20,66 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/acceptance-tests@700__acceptance_tests.coverage" NAME="700: acceptance-tests Coverage Results" MODIFIED="1417532209173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="acceptance-tests" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="acceptance-tests" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="cucumber.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cucumber.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="700.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/700.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8967033" vertical-offset="0" max-vertical-offset="510">
+              <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_result_steps.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/step_definitions/search_result_steps.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1449" max-vertical-offset="1938">
+              <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="env.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/support/env.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="journey_steps.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/step_definitions/journey_steps.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3455" max-vertical-offset="3910">
+              <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,6 +109,10 @@
         <option value="$PROJECT_DIR$/storefront/features/support/env.rb" />
         <option value="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" />
         <option value="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" />
+        <option value="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+        <option value="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
+        <option value="$PROJECT_DIR$/features/support/env.rb" />
+        <option value="$PROJECT_DIR$/features/700.feature" />
       </list>
     </option>
   </component>
@@ -145,9 +120,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="773" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1552" />
+    <option name="height" value="802" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -172,6 +148,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -200,21 +177,53 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="features" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="support" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acceptance-tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="configurable.group.appearance" />
+    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -226,7 +235,46 @@
       <recent name="$PROJECT_DIR$/storefront" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Cucumber.700: acceptance-tests">
+    <configuration default="false" name="700: acceptance-tests" type="CucumberRunConfigurationType" factoryName="Cucumber" temporary="true">
+      <predefined_log_file id="RUBY_CUCUMBER" enabled="true" />
+      <module name="acceptance-tests" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="false" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov">
+        <COVERAGE_PATTERN ENABLED="true">
+          <PATTERN REGEXPS="/.rvm/" INCLUDED="false" />
+        </COVERAGE_PATTERN>
+      </EXTENSION>
+      <EXTENSION ID="org.jetbrains.plugins.ruby.motion.run.MotionSimulatorRunExtension" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/*.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/features/700.feature" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_TAGS_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="TEST_NAME_FILTER" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_ARGS" VALUE="--color -r features" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_VERSION" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="FULL_BACKTRACE" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="VERBOSE_OPTION" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="CUCUMBER_RUNNER_PATH" VALUE="" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="USE_CUSTOM_RUNNER" VALUE="false" />
+      <CUCUMBER_RUN_CONFIG_SETTINGS_ID NAME="SETTINGS_VERSION" VALUE="2" />
+      <RunnerSettings RunnerId="RubyRunner" />
+      <ConfigurationWrapper RunnerId="RubyRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="RSpecRunConfigurationType" factoryName="RSpec">
       <predefined_log_file id="RUBY_RSPEC" enabled="true" />
       <module name="" />
@@ -326,11 +374,26 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <pass-parent-envs>true</pass-parent-envs>
+      <envs />
       <method />
     </configuration>
-    <list size="0" />
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Cucumber.700: acceptance-tests" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Cucumber.700: acceptance-tests" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="819e9982-63b8-4113-938d-9cd777c8b820" name="Default" comment="" />
@@ -341,28 +404,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
+    <frame x="-8" y="-8" width="1552" height="802" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32823366" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -388,8 +451,48 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
       <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
+      <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/search_result_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1449" max-vertical-offset="1938">
+          <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/step_definitions/journey_steps.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3455" max-vertical-offset="3910">
+          <caret line="221" column="0" selection-start-line="221" selection-start-column="0" selection-end-line="221" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/support/env.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/700.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8967033" vertical-offset="0" max-vertical-offset="510">
+          <caret line="24" column="27" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
           <folding />
         </state>
       </provider>
