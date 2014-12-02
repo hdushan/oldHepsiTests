@@ -4,7 +4,7 @@ Feature: Filter search results
 
   Background:
     Given I am on the homepage
-    When I search for iPhone
+    When I search for "iPhone"
     And I can see the results
 
   @141
@@ -58,7 +58,7 @@ Feature: Filter search results
 
   @416
   Scenario: Canonical for Multiple filtered brands
-    Given I search for TV
+    Given I search for "TV"
     When I filter for LG
     And I filter for Samsung
 

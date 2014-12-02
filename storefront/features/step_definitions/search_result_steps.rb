@@ -70,3 +70,11 @@ end
 Then /^I see an indicator of free shipping associated with the item$/ do
   page.find('.shipping-status').should have_content("Kargo Bedava")
 end
+
+When(/^I search for an item that is in stock and has fast delivery configured$/) do
+  steps %{When I search for "TELCEPSAMI9060-B"}
+end
+
+Then(/^I see an indicator of fast delivery associated with the first item$/) do
+  pending
+end

@@ -1,0 +1,5 @@
+# config/cucumber.yml
+##YAML Template
+---
+regression: --format progress --format junit --out=report --tags @regression
+html: --format html --out=report.html --tags @regression

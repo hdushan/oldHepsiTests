@@ -9,11 +9,6 @@ Then(/^I am at main page$/) do
   page.should have_selector "ul.static-banners"
 end
 
-When(/^I search for a product with title "([^"]*)"$/) do |arg|
-  fill_in "productSearch" , :with => arg
-  find_by_id("buttonProductSearch").click
-end
-
 Then(/^There are some results available$/) do
   results = find_by_id "productresults"
   set_wait_time 3
