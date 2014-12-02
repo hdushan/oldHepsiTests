@@ -1,4 +1,4 @@
-SF_search_results_page#encoding: UTF-8
+#encoding: UTF-8
 
 Given(/^I visit main page$/) do
   visit ''
