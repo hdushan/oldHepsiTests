@@ -6,27 +6,31 @@ Feature: Search page is as expected
 
   Background:
     Given I am on the homepage
-    When I search for "Samsung"
 
   @143 @18
   Scenario: Display product prices
+    When I search for "Samsung"
     Then I see either a price or an unavailable statement for each result
 
   @19
   Scenario: Display product images
+    When I search for "Samsung"
     Then I see a product image for each result
 
   @17
   Scenario: View results page
+    When I search for "Samsung"
     Then I should see 20 visible results
 
   @17
   Scenario: Clicking more results
+    When I search for "Samsung"
     When I click load more results
     Then I should see 40 visible results
 
   @42
   Scenario: Display discount percentage for a discounted product
+    When I search for "Samsung"
     Then I should see the discount badge
 
   @42
@@ -36,15 +40,18 @@ Feature: Search page is as expected
 
   @429
   Scenario: Do not show breadcrumb trail when searching or filtering
+    When I search for "Samsung"
     Then I do not see a breadcrumb trail
 
   @249
   Scenario: Display breadcrumbs on product details
+    When I search for "Samsung"
     When I click on a product from the search results
     Then I should see a breadcrumb trail
 
   @137
   Scenario: Display if a product has more variants on the results page
+    When I search for "Samsung"
     Then I should see the variants message for the product
 
   @137
@@ -61,3 +68,8 @@ Feature: Search page is as expected
   Scenario: See fast delivery on search results
     When I search for an item that is in stock and has fast delivery configured
     Then I see an indicator of fast delivery associated with the first item
+
+  @36
+  Scenario: Dont show Fast delivery if not in stock
+    When I search for an item that is not in stock and has fast delivery configured
+    Then I should not see an indicator of fast delivery associated with the first item

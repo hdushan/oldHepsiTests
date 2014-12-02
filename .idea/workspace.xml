@@ -2,14 +2,85 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="819e9982-63b8-4113-938d-9cd777c8b820" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.rbenv-gemset" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Gemfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/cucumber.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storefront/support/env.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/windows_setup.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/700.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/739.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Rakefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assumptions.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/support/env.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/todo.feature.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/windows_setup.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/.rbenv-gemset" afterPath="$PROJECT_DIR$/.rbenv-gemset" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/Rakefile" afterPath="$PROJECT_DIR$/Rakefile" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/assumptions.md" afterPath="$PROJECT_DIR$/assumptions.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/config/cucumber.yml" afterPath="$PROJECT_DIR$/config/cucumber.yml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/700.feature" afterPath="$PROJECT_DIR$/features/700.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/739.feature" afterPath="$PROJECT_DIR$/features/739.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_beta_feedback.feature" afterPath="$PROJECT_DIR$/features/SF_beta_feedback.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_category_page.feature" afterPath="$PROJECT_DIR$/features/SF_category_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_category_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_category_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_filter_results.feature" afterPath="$PROJECT_DIR$/features/SF_filter_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_homepage.feature" afterPath="$PROJECT_DIR$/features/SF_homepage.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_login.feature" afterPath="$PROJECT_DIR$/features/SF_login.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_navigation.feature" afterPath="$PROJECT_DIR$/features/SF_navigation.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_product_page.feature" afterPath="$PROJECT_DIR$/features/SF_product_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" afterPath="$PROJECT_DIR$/features/SF_search_results_page.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature" afterPath="$PROJECT_DIR$/features/SF_shopping_cart.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/SF_sorting_results.feature" afterPath="$PROJECT_DIR$/features/SF_sorting_results.feature" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/pages/homepage.rb" afterPath="$PROJECT_DIR$/features/pages/homepage.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/account_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/account_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/category_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/category_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/filter_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/filter_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/functions.rb" afterPath="$PROJECT_DIR$/features/step_definitions/functions.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/globals.rb" afterPath="$PROJECT_DIR$/features/step_definitions/globals.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/homepage_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/homepage_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/journey_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/journey_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/navigation_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/navigation_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/page_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/page_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/product_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/product_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/search_result_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/step_definitions/sorting_steps.rb" afterPath="$PROJECT_DIR$/features/step_definitions/sorting_steps.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/features/support/env.rb" afterPath="$PROJECT_DIR$/features/support/env.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/helpers/page_helper.rb" afterPath="$PROJECT_DIR$/helpers/page_helper.rb" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/stories-with-outstanding-questions.md" afterPath="$PROJECT_DIR$/stories-with-outstanding-questions.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/todo.feature.md" afterPath="$PROJECT_DIR$/todo.feature.md" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/storefront/windows_setup.md" afterPath="$PROJECT_DIR$/windows_setup.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="acceptance-tests.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,100 +104,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SF_search_results_page.feature" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_search_results_page.feature">
+      <file leaf-file-name="cucumber.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.77922076" vertical-offset="694" max-vertical-offset="1156">
-              <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="search_result_steps.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="983" max-vertical-offset="1445">
-              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="env.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/support/env.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="646">
-              <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_shopping_cart.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="901">
-              <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_sorting_results.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_sorting_results.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-              <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="700.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/700.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_filter_results.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_filter_results.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="1326">
-              <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_homepage.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_homepage.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="1904">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_product_page.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_product_page.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2499">
-              <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SF_category_page.feature" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storefront/features/SF_category_page.feature">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -151,12 +132,12 @@
         <option value="$PROJECT_DIR$/storefront/features/SF_filter_results.feature" />
         <option value="$PROJECT_DIR$/storefront/features/SF_homepage.feature" />
         <option value="$PROJECT_DIR$/storefront/features/SF_product_page.feature" />
-        <option value="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" />
         <option value="$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature" />
         <option value="$PROJECT_DIR$/storefront/features/SF_sorting_results.feature" />
-        <option value="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" />
         <option value="$PROJECT_DIR$/storefront/support/env.rb" />
         <option value="$PROJECT_DIR$/storefront/features/support/env.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb" />
+        <option value="$PROJECT_DIR$/storefront/features/SF_search_results_page.feature" />
       </list>
     </option>
   </component>
@@ -208,10 +189,6 @@
               <option name="myItemId" value="acceptance-tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storefront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -220,50 +197,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="acceptance-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storefront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acceptance-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acceptance-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storefront" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acceptance-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="acceptance-tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="storefront" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -279,12 +212,16 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="configurable.group.appearance" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/storefront/features" />
       <recent name="$PROJECT_DIR$/storefront" />
     </key>
@@ -405,7 +342,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -418,7 +355,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -449,178 +386,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storefront/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/pages/homepage.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
-          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/config/cucumber.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="4" column="5" selection-start-line="4" selection-start-column="5" selection-end-line="4" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
-          <caret line="3" column="13" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/step_definitions/navigation_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
-          <caret line="16" column="84" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/739.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_filter_category_results.feature">
+    <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_login.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_navigation.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="731">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/step_definitions/page_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="799">
-          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/step_definitions/journey_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3910">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_beta_feedback.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="462">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_category_page.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_filter_results.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="864" max-vertical-offset="1326">
-          <caret line="60" column="27" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_homepage.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="577" max-vertical-offset="1904">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_product_page.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1189" max-vertical-offset="2499">
-          <caret line="79" column="33" selection-start-line="79" selection-start-column="33" selection-end-line="79" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_shopping_cart.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="439" max-vertical-offset="901">
-          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_sorting_results.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/700.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/step_definitions/search_result_steps.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="983" max-vertical-offset="1445">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/support/env.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="646">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storefront/features/SF_search_results_page.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77922076" vertical-offset="694" max-vertical-offset="1156">
-          <caret line="62" column="24" selection-start-line="62" selection-start-column="24" selection-end-line="62" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 Given /^I select a product from search results$/ do
   # product_links = all(:xpath, "//li[@class = 'search-item'][.//@class = 'product-price']")
   # product = product_links[rand(product_links.length)]
@@ -76,5 +78,5 @@ When(/^I search for an item that is in stock and has fast delivery configured$/)
 end
 
 Then(/^I see an indicator of fast delivery associated with the first item$/) do
-  pending
+  page.find('.shipping-status').should have_content("Süper Hızlı")
 end
