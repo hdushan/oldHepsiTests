@@ -2,6 +2,10 @@
 @384 @storefront Feature: Create XML Sitemaps
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 
+--02/12/2014--
+@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
+@94 @storefront Feature: Display suggested products on product details page
+
 -- Other --
 @423 @storefront Feature: "Keeping the ""Closest Match"" Functionality on Variants"  --- needs clarification
 @312 @storefront Feature: Include deactive state for clear -- On Mobile the buttons are only inactive if you do not hover on them
@@ -12,7 +16,11 @@
 ------------------------ In Progress -------------------------
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this (filtered URL doesn't match that of one in the Mingle story)
 @33	 @storefront Feature: Autofill functionality when searching
-@118 @storefront Feature: Add Multiple to Basket from Product Details
+@253 @storefront Feature: Filter search results by subcategories
+
+@118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
+@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
+@30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
 
 ---------------------------- Done ----------------------------
 

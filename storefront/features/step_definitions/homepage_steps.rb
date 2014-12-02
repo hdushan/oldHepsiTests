@@ -94,6 +94,12 @@ Then /^I see suggestions based on (.*)$/ do | search_term |
   end
 end
 
+Then /^I see updated suggestions based on (.*)$/ do | search_term |
+  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+    expect(suggestion.text).to match(/#{search_term}/i)
+  end
+end
+
 Given /^I append (.*) into search$/ do | search_term | 
    find_field('productSearch').native.send_keys(search_term)
 end
