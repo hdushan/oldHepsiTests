@@ -104,4 +104,4 @@ Feature: Homepage is as expected
     Given I have input samsung into search
     And I do not like any of the auto complete suggestions
     When I invoke search on my own keywords
-    Then I am taken to results based on my own keyword samsung
+    Then I see products relating to samsung
