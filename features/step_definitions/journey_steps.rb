@@ -222,3 +222,13 @@ When(/^I change the variant to "([^"]*)"$/) do |arg|
   first('label.price-label', :text=> arg).click
   wait_for_ajax
 end
+
+
+And(/^I store breadcrumbs$/) do
+  ul = find('ul.breadcrumbs')
+  $arr = ul.all('li').collect(&:text)
+end
+
+Then(/^breadcrumbs should be available on page$/) do
+  p "here"
+end
