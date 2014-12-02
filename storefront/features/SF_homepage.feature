@@ -8,8 +8,9 @@ Feature: Homepage is as expected
 
   Background:
     Given I am on the homepage
+    And I clear the browsers cookies
 
-  @190 @467
+  @190 @467 @ignore
   Scenario: Show "Deal of the Day" on Homepage
     Then I see 6 items in deal of the day
     And each deal of the day product shows its undiscounted price
@@ -47,7 +48,7 @@ Feature: Homepage is as expected
 
   @466
   Scenario: Checking banner size
-    Then I see banners of size 900x370
+    Then I see banners with a width of 900 and a height of 370
 
   @466
   Scenario: Browsing through banners with thumbnails
@@ -69,9 +70,10 @@ Feature: Homepage is as expected
   @33
   Scenario: Searching with at least two characters begins producing suggestions
     Given I have input sa into search
-    Then I see suggestions based on sa   
-    And I see 3 categories and 10 other keywords 
-   
+    And I see the auto complete suggestions
+    Then I see suggestions based on sa
+    And I see 3 categories and 10 other keywords
+
   @33
   Scenario: Search suggestions update as user enters in more or less into search
     Given I have input sa into search
@@ -82,5 +84,7 @@ Feature: Homepage is as expected
   @33
   Scenario: Ability to navigate through search suggestions
     Given I have input sa into search
-    Then I can navigate through suggestions
-    And I can see which search suggestion I am on
+    And I see the auto complete suggestions
+    And I see no visual indication of auto complete selection
+    When I press the down arrow
+    Then I see visual indication that I have selected an auto complete suggestion

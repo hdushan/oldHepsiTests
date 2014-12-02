@@ -184,7 +184,7 @@ And(/^I see the discount percentage of (.*)$/) do | discount |
 end
 
 Then(/^I do not see a discount price$/) do
-  page.should_not have_css('del#originalPrice')
+  page.should have_css('del#originalPrice', :visible => false)
 end
 
 Then(/^there are (\d*) variants displayed$/) do | number |
@@ -247,7 +247,7 @@ Then /^I see (.*) in the (.*) dropdown box$/ do | dropdown_value, dropdown_name 
   page.find_by_id(dropdown_name).value.should eq(dropdown_value)
 end
 
-And /^(.*) is selected$/ do | variant_name |
+And /^element with id (.*) is selected$/ do | variant_name |
   page.find_by_id(variant_name).should be_checked
 end
 

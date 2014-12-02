@@ -1,14 +1,20 @@
 # encoding: UTF-8
 Then(/^I see (\d+) items in discounted products$/) do |items|
-  expect(page.all('.discounted-product-container li').count.to_s).to eq items
+  expect(page.find('.discounted-product-container')).to have_content('İndirimli ürünler')
+  expect(page.find('.discounted-product-container').all('.search-item').count).to be == items.to_i
 end
 
-Then(/^I see (\d+) items in top sellers$/) do |items|
-  expect(page.all('.top-seller-container li').count.to_s).to eq items
+And /^I click the bestsellers tab/ do
+  find_by_id('bestSelling').click
+end
+
+Then(/^I see at least (\d+) items in top sellers$/) do |items|
+  expect(page.find('.top-seller-container')).to have_content('En çok satanlar')
+  expect(page.find('.top-seller-container').all('.search-item').count).to be == items.to_i
 end
 
 Then(/^the first discounted product displays the expected fields$/) do
-  first_discounted_product_entry = page.first('.discounted-product-container li')
+  first_discounted_product_entry = page.find('.discounted-product-container').first('.search-item')
 
   expect(first_discounted_product_entry).to have_selector('.product-title')
   expect(first_discounted_product_entry).to have_selector('.product-image-wrapper')
@@ -19,7 +25,7 @@ Then(/^the first discounted product displays the expected fields$/) do
 end
 
 Then(/^the first top seller product displays the expected fields$/) do
-  first_top_seller_entry = page.first('.top-seller-container li')
+  first_top_seller_entry = page.find('.top-seller-container').first('.search-item')
 
   expect(first_top_seller_entry).to have_selector('.product-title')
   expect(first_top_seller_entry).to have_selector('.product-image-wrapper')

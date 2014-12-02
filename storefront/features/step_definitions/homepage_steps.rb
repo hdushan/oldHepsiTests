@@ -64,10 +64,11 @@ Then(/^I can see at least (\d) static banners/) do | minimum_number_of_static_ba
   expect(all('.static-banners li').count).to be >= minimum_number_of_static_banners.to_i
 end
 
-Then(/^I see banners of size 900x370/) do
-  carousel_item = page.find_by_id('carousel').first('.owl-item')
-  carousel_item.native.css_value('width').should eq('900px')
-  carousel_item.native.css_value('height').should eq('370px')
+Then(/^I see banners with a width of (\d+) and a height of (\d+)/) do | expected_width, expected_height |
+  banner_width = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].width")
+  banner_height = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].height")
+  banner_width.should eq expected_width.to_i
+  banner_height.should eq expected_height.to_i
 end
 
 Given /^I have input (.*) into search$/ do | search_term |
@@ -75,7 +76,7 @@ Given /^I have input (.*) into search$/ do | search_term |
 end
 
 Then /^I see no suggestions based on my inputs$/ do
-  page.find('.autocomplete-suggestions')['style'].should include('display: none')
+  expect(page).to have_selector('.autocomplete-suggestions', :visible => false)
 end
 
 And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
@@ -83,20 +84,37 @@ And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, ke
   expect(page).to have_selector('.autocomplete-suggestion', count:total_of_search_terms)
 end
 
+When /^I press the down arrow/ do
+  find_by_id('productSearch').native.send_keys :arrow_down
+end
+
 Then /^I see suggestions based on (.*)$/ do | search_term |
     page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
       expect(suggestion.text).to match(/#{search_term}/i)
   end
-end 
+end
+
+Then /^I see updated suggestions based on (.*)$/ do | search_term |
+  page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | suggestion |
+    expect(suggestion.text).to match(/#{search_term}/i)
+  end
+end
 
 Given /^I append (.*) into search$/ do | search_term | 
    find_field('productSearch').native.send_keys(search_term)
 end
 
-Then /^I can navigate through suggestions$/ do
-   page.find('.autocomplete-suggestions').all('.autocomplete-suggestion').first.trigger(:mouseover)
+Then /^I see visual indication that I have selected an auto complete suggestion/ do
+  first_auto_complete_suggestion = find('.autocomplete-suggestions').first('.autocomplete-suggestion')
+  expect(first_auto_complete_suggestion.native.style('background-color')).to eq('rgba(233, 233, 233, 1)')
 end
 
-And /^I can see which search suggestion I am on$/ do
-   page.find('.autocomplete-selected')
+Given /^I see no visual indication of auto complete selection/ do
+  find('.autocomplete-suggestions').all('.autocomplete-suggestion').each do | auto_complete_suggestion |
+    expect(auto_complete_suggestion.native.style('background-color')).to eq('rgba(255, 255, 255, 1)')
+  end
+end
+
+Given /^I see the auto complete suggestions/ do
+  expect(page).to have_selector('.autocomplete-suggestions', :visible => true)
 end

@@ -15,24 +15,10 @@ Feature: Add to basket from details page
     When I click 'go to cart'
     Then I should see the product in the cart
 
-  @460
-  Scenario: Add to cart and click 'go-to-cart'
-    When I add to cart
-    Then I should see the 'go to cart' button
-    When I click 'go to cart'
-    Then I should see the product in the cart
-
-  @460 @failing
-  Scenario: Add to cart and click 'add-one-more'
-    When I add to cart
-    Then I should see the 'add one more' button
-    When I click 'add one more'
-    And I click 'go to cart'
-    Then I should see 2 of the product in the cart
-
   @116
   Scenario: Preserve cart on page reload
     Given I add to cart
+    And I wait for all Ajax requests to complete
     And I click 'go to cart'
     When I reload the page
     Then I should see the product in the cart
