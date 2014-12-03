@@ -266,3 +266,7 @@ end
 Then(/^I should see an invalid message notification$/) do
   find_by_id('notification').should have_content("Eklemek istediğiniz ürünün adedi geçerli değildir.")
 end
+
+Then /^I should see the installments section$/ do
+  expect(find('#productPaymentInstallment'))
+end

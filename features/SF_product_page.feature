@@ -146,3 +146,8 @@ Feature: Product page is as expected
     And I enter a quantity of -1
     When I add to cart
     Then I should see an invalid message notification
+
+  @139
+  Scenario: I see the instalments on a valid product
+    Given I select a product with SKU MTHOTARWMF903EU
+    Then I should see the installments section
