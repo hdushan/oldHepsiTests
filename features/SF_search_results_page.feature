@@ -85,7 +85,7 @@ Feature: Search page is as expected
     And the category level 1 has the number of items
     And I can return to the first level category Bilgisayar
 
-  @36 @inprogress
+  @36
   Scenario: See fast delivery on search results
     When I search for an item "TELCEPSAMI9060-B" that is in stock and has fast delivery configured
     Then I see an indicator of fast delivery associated with the item

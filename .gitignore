@@ -3,3 +3,4 @@ screenshots/*
 .DS_Store
 .idea/acceptance-tests.iml
 .idea/workspace.xml
+results.html
