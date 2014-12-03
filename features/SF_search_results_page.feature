@@ -65,18 +65,25 @@ Feature: Search page is as expected
     Then I see an indicator of free shipping associated with the item
 
   @253
+  Scenario: Filter by categories
+    When I search for "Samsung"
+    Then I see an area for filtering by category
+    And the category level 0 has the number of items
+ 
+  @253
   Scenario: Seeing second level subcategories
+    When I search for "Samsung"
     When I choose the category Bilgisayar 
     Then the results are updated to reflect items in the category
     And I see one or more second level categories
-    And the second level categories have the number of items within the first level category
+    And the category level 1 has the number of items
     And I no longer see the other first level categories
     And I have the action to return to the first level categories
 
   @36
   Scenario: See fast delivery on search results
-    When I search for an item that is in stock and has fast delivery configured
-    Then I see an indicator of fast delivery associated with the first item
+    When I search for an item "TELCEPSAMI9060-B" that is in stock and has fast delivery configured
+    Then I see an indicator of fast delivery associated with the item
 
   @36
   Scenario: Dont show Fast delivery if not in stock
