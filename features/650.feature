@@ -16,4 +16,4 @@
       And I store breadcrumbs
 
     Scenario: Check if breadcrumbs are properly displayed in Structured Data Tool
-      Then breadcrumbs should be available on page
+      Then breadcrumbs should be available on google webtools
