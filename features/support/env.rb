@@ -5,9 +5,8 @@ require 'capybara/rspec'
 require 'capybara/poltergeist'
 require 'selenium-webdriver'
 require 'faker'
-require 'capybara-screenshot'
-require 'capybara-screenshot/cucumber'
 require 'capybara-page-object'
+require 'pry'
 
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 Capybara.run_server = false

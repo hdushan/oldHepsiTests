@@ -222,3 +222,23 @@ When(/^I change the variant to "([^"]*)"$/) do |arg|
   first('label.price-label', :text=> arg).click
   wait_for_ajax
 end
+
+
+And(/^I store breadcrumbs$/) do
+  ul = find('ul.breadcrumbs')
+  $breadcrumbs = ul.all('li').collect(&:text)
+  $html_code = find('div.breadcrumbs-wrapper')['innerHTML']
+end
+
+Then(/^breadcrumbs should be available on google webtools$/) do
+  visit 'http://www.google.com/webmasters/tools/richsnippets'
+  find_by_id("tab-html").click
+
+  fill_in("html-input", :with => $html_code)
+
+  find_by_id('html-preview-button').click
+  div = find_by_id("extracted-data-google")
+  items = div.all('tbody', :text=> 'breadcrumb')
+  $breadcrumbs.should == items.map{ |x| x.first('a')}.collect(&:text)
+end
+
