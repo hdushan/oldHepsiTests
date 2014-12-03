@@ -270,3 +270,7 @@ end
 Then /^I should see the installments section$/ do
   expect(find('#productPaymentInstallment'))
 end
+
+Then /^I should not see the installments section$/ do
+  expect(page).to_not have_content('#productPaymentInstallment')
+end
