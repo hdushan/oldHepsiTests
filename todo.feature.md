@@ -6,8 +6,6 @@
 @94 @storefront Feature: Display suggested products on product details page
 
 ------------------------ In Progress -------------------------
-@118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
-
 @739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages -- Lack of categories makes this difficult
 @30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
 
@@ -60,6 +58,7 @@
 @113 @storefront Feature: Add a product to cart from the results page
 @97	 @storefront Feature: Display "Top Selling Products" in Lowest Product Subcategory on Product Details Page
 @33	 @storefront Feature: Autofill functionality when searching
+@118 @storefront Feature: Add Multiple to Basket from Product Details - need product details page up and running to continue
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
