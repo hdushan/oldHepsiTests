@@ -97,6 +97,7 @@ And /^I no longer see the other first level categories$/ do
 end
 
 And /^I have the action to return to the first level categories$/ do 
+
 end
 
 When(/^I search for an item that is in stock and has fast delivery configured$/) do

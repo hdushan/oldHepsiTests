@@ -74,6 +74,7 @@ Feature: Search page is as expected
   Scenario: Seeing second level subcategories
     When I search for "Samsung"
     When I choose the category Bilgisayar 
+    When I choose the category Aksesuarlar
     Then the results are updated to reflect items in the category
     And I see one or more second level categories
     And the category level 1 has the number of items
