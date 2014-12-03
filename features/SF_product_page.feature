@@ -151,3 +151,8 @@ Feature: Product page is as expected
   Scenario: I see the instalments on a valid product
     Given I select a product with SKU MTHOTARWMF903EU
     Then I should see the installments section
+
+  @139
+  Scenario: I should not see the installments section on an invalid product
+    Given I select a product with SKU EAKSERELEKTBAT
+    Then I should not see the installments section

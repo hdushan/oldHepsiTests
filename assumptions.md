@@ -96,3 +96,7 @@
      manually intercepting the Ajax was deemed to much work for the reward with other functionality requiring testing.
      
 @384 AC for the sitemap xml story requires the file to be validated by Google tools making automated testing troublesome.
+
+@139 We assume that testing for the presence or absence of the installments section is sufficient for the time being. Another
+     test will need to be added to test the "highlighting" of the cheapest and therefore the best installment option for
+     the customer. 
