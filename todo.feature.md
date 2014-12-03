@@ -1,6 +1,3 @@
---25/11/2014--
-@139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
-
 --02/12/2014--
 @735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 @94 @storefront Feature: Display suggested products on product details page
@@ -8,8 +5,8 @@
 ------------------------ In Progress -------------------------
 @739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages -- Lack of categories makes this difficult
 @30 @storefront Feature: Display free shipping on category and search results page - first and second acceptance criteria to do
-
 @253 @storefront Feature: Filter search results by subcategories - acceptance criteria 2 almost finished apart from last step
+@139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 
 ---------------------------- Done ----------------------------
 @16 @storefront Feature: Basic search
