@@ -12,3 +12,4 @@ gem 'faker'
 gem 'capybara-screenshot', :group => :test
 gem 'capybara-page-object'
 gem 'rake'
+gem 'pry'
