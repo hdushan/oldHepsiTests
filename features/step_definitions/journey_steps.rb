@@ -226,6 +226,7 @@ end
 
 And(/^I store breadcrumbs$/) do
   ul = find('ul.breadcrumbs')
+  $breadcrumbs.clear
   $breadcrumbs = ul.all('li').collect(&:text)
   $html_code = find('div.breadcrumbs-wrapper')['innerHTML']
 end
