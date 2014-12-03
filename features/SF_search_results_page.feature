@@ -84,12 +84,8 @@ Feature: Search page is as expected
     And I see one or more second level categories
     And the category level 1 has the number of items
     And I can return to the first level category Bilgisayar
-  @36
+
+  @36 @inprogress
   Scenario: See fast delivery on search results
     When I search for an item "TELCEPSAMI9060-B" that is in stock and has fast delivery configured
     Then I see an indicator of fast delivery associated with the item
-
-  @36
-  Scenario: Dont show Fast delivery if not in stock
-    When I search for an item that is not in stock and has fast delivery configured
-    Then I should not see an indicator of fast delivery associated with the first item
