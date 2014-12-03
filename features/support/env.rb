@@ -8,6 +8,11 @@ require 'faker'
 require 'capybara-page-object'
 require 'pry'
 
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end
+
+Capybara.current_driver  = :selenium
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 Capybara.run_server = false
 Capybara.default_driver = :selenium

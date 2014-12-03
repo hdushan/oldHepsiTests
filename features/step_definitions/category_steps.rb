@@ -53,3 +53,17 @@ Then(/^I see a pop up with category title and some SEO text$/) do
   page.should have_selector('#categoryTitle')
   page.should have_content('Bilgisayar Fiyatları ve Modelleri')
 end
+
+
+Then(/^I should see Fast Shipping offered for product "(.*?)"$/) do |product_name|
+  matching_product=nil
+  products = page.all("#productResult .product-detail")
+  products.each do |curr_product|
+    curr_product_name = curr_product.find("h3").text
+    if curr_product_name == product_name
+      matching_product=curr_product
+      break
+    end
+  end
+  matching_product.all(".shipping-status", :text=>/Süper Hızlı/).size.should == 1
+end

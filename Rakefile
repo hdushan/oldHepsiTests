@@ -5,6 +5,6 @@ Cucumber::Rake::Task.new(:regression) do |t|
   t.cucumber_opts = "features --format pretty"
 end
 
-Cucumber::Rake::Task.new(:run36) do |t|
-  t.cucumber_opts = "features --format pretty --tags @36"
+Cucumber::Rake::Task.new(:inprogress) do |t|
+  t.cucumber_opts = "features --format pretty --tags @inprogress"
 end

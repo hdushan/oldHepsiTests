@@ -9,11 +9,22 @@
       Given I visit main page
       Then I am at main page
 
-    Scenario: Go to product details page for viewing breadcrums
+    Scenario: Go to product details page for viewing breadcrumbs and check them in GWT
       Given I search for "EAKMETGM153-90190"
       When I open search result no "1"
-      Then I am on product details
       And I store breadcrumbs
-
-    Scenario: Check if breadcrumbs are properly displayed in Structured Data Tool
       Then breadcrumbs should be available on google webtools
+
+    Scenario Outline: Go to catalog landing pages and check the breadcrumbs in GWT
+      Given I visit main page
+      When I navigate to Category
+      | <cat1> | <cat2> |
+      And I store breadcrumbs
+      Then breadcrumbs should be available on google webtools
+      Examples:
+      | cat1                   | cat2                  |
+      | Kozmetik Kişisel Bakım | Duş ve Banyo Ürünleri |
+      | Spor Outdoor           | Spor Branşları        |
+      | Ev, Yaşam Ofis         | Ev Tekstili           |
+
+
