@@ -1,5 +1,3 @@
---02/12/2014--
-@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 @94 @storefront Feature: Display suggested products on product details page
 
 ------------------------ In Progress -------------------------
@@ -146,3 +144,4 @@
 @221 @storefront Feature: Display merchant offers on details page
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this URL doesn't match the acceptance criteria
+@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis -- Looks like a cron job that isn't for functional testing
