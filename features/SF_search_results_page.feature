@@ -64,7 +64,7 @@ Feature: Search page is as expected
     When I search for "EVPH42PFK6109"
     Then I see an indicator of free shipping associated with the item
 
-  @30 @this
+  @30
   Scenario: See free shipping on campaigns on CLP
     Given I navigate to the computers category landing page
     Then I see an indicator of free shipping associated with at least one item
