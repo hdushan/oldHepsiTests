@@ -1,3 +1,11 @@
+Given /^I navigate to the computers category landing page/ do
+  visit 'http://storefront.qa.hepsiburada.com/bilgisayar-c-2147483646'
+end
+
+Then /^I see an indicator of free shipping associated with at least one item/ do
+  expect(page.find_by_id('productresults', :visible => true)).to have_content('Kargo Bedava')
+end
+
 When(/^I click the feedback button$/) do
   click_button 'btnSendFeedback'
 end

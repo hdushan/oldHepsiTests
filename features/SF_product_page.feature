@@ -136,6 +136,18 @@ Feature: Product page is as expected
   @118
   Scenario: I can add multiple items to basket at once
     Given I select a product with SKU EAKSERELEKTBAT
-    And I increase the quantity to 5
+    And I enter a quantity of 5
     When I add to cart
     Then I should see a notification of 5 items added to my basket
+
+  @118
+  Scenario: I cannot add a negative quantity of items to basket
+    Given I select a product with SKU EAKSERELEKTBAT
+    And I enter a quantity of -1
+    When I add to cart
+    Then I should see an invalid message notification
+
+  @139
+  Scenario: I see the instalments on a valid product
+    Given I select a product with SKU MTHOTARWMF903EU
+    Then I should see the installments section

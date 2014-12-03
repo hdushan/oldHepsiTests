@@ -6,10 +6,10 @@ Given(/^I have an empty cart$/) do
   visit url
 end
 
-When /^I select a product with SKU (.*)$/ do |sku|
+Given /^I select a product with SKU (.*)$/ do |sku|
   steps %{
     Given I am on the homepage
-    Given I search for #{sku}
+    Given I search for "#{sku}"
     Given I select a product from search results
   }
 end
@@ -37,15 +37,11 @@ When /^I make the page half as wide/ do
   Capybara.page.driver.browser.manage.window.resize_to(window_size[0]/2, window_size[1])
 end
 
-When /^I should see a notification of (.*) items added to my basket$/ do | quantity |
-  find_by_id('notification').should have_content(quantity + " Ürün başarılı bir şekilde sepete eklenmiştir.")
-end
-
 When /^I load the page on a 1280x1024 monitor/ do
   Capybara.page.driver.browser.manage.window.resize_to(1280, 1024)
 end
 
-And /^I increase the quantity to (.*)$/ do | item_quantity |
+And /^I enter a quantity of (.*)$/ do | item_quantity |
   fill_in 'quantity', with: item_quantity
 end
 
@@ -261,4 +257,16 @@ end
 
 Then /^I should see the quantity box with a default of 1$/ do
   expect(page.find_by_id('quantity')[:value]).to eq "1"
+end
+
+Then(/^I should see a notification of (.*) items added to my basket$/) do | quantity |
+  find_by_id('notification').should have_content(quantity + " Ürün başarılı bir şekilde sepete eklenmiştir.")
+end
+
+Then(/^I should see an invalid message notification$/) do
+  find_by_id('notification').should have_content("Eklemek istediğiniz ürünün adedi geçerli değildir.")
+end
+
+Then /^I should see the installments section$/ do
+  expect(find('#productPaymentInstallment'))
 end
