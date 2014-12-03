@@ -99,10 +99,10 @@ end
 And /^I have the action to return to the first level categories$/ do 
 end
 
-When(/^I search for an item that is in stock and has fast delivery configured$/) do
-  steps %{When I search for "TELCEPSAMI9060-B"}
+When(/^I search for an item "(.*?)".*$/) do  |item|
+  steps %{When I search for "#{item}"}
 end
 
-Then(/^I see an indicator of fast delivery associated with the first item$/) do
+Then(/^I see an indicator of fast delivery associated with the item$/) do
   page.find('.shipping-status').should have_content("Süper Hızlı")
 end
