@@ -78,9 +78,7 @@ Feature: Search page is as expected
     Then the results are updated to reflect items in the category
     And I see one or more second level categories
     And the category level 1 has the number of items
-    And I no longer see the other first level categories
-    And I have the action to return to the first level categories
-
+    And I can return to the first level category Bilgisayar
   @36
   Scenario: See fast delivery on search results
     When I search for an item "TELCEPSAMI9060-B" that is in stock and has fast delivery configured

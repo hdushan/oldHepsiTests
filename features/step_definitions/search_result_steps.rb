@@ -85,19 +85,19 @@ end
 And /^I see one or more second level categories$/ do
   page.all('.category-level-1').count.should > 1
 end
-
+	
 And /^the category level (\d+) has the number of items$/ do | category_level |
   page.all('.category-level-' + category_level).each do | category | 
      expect(category.find(:css, 'label.filter-label span').text).should_not eq('')
   end
 end
 
-And /^I no longer see the other first level categories$/ do
-  page.all('.category-level-0').count.should == 1
+And /^I can return to the first level category (.*)$/ do | category |  
+  page.find('.category-level-0').find('label', :text=> category).click
 end
 
-And /^I have the action to return to the first level categories$/ do 
-
+Then /^I see an area for filtering by category$/ do
+  page.should have_selector('.filters-container')
 end
 
 When(/^I search for an item "(.*?)".*$/) do  |item|
