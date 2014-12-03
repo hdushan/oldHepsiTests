@@ -83,8 +83,8 @@ Feature: Search page is as expected
 
   @36
   Scenario: See fast delivery on search results
-    When I search for an item that is in stock and has fast delivery configured
-    Then I see an indicator of fast delivery associated with the first item
+    When I search for an item "TELCEPSAMI9060-B" that is in stock and has fast delivery configured
+    Then I see an indicator of fast delivery associated with the item
 
   @36
   Scenario: Dont show Fast delivery if not in stock
