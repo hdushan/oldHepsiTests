@@ -156,3 +156,16 @@ Feature: Product page is as expected
   Scenario: I should not see the installments section on an invalid product
     Given I select a product with SKU EAKSERELEKTBAT
     Then I should not see the installments section
+
+  @94
+  Scenario: Display suggested products when available and selecting a product takes me to the details page
+    Given I select a product with SKU BD601126-B
+    Then I see a maximum of 10 products in the suggestions area
+    And I see a picture associated with each product
+    And when I select the first suggested product
+    Then I see the product details page
+
+  @94
+  Scenario: If the product has no suggestions, there should not be a section
+    Given I select a product with SKU SPORFLAKS69GM
+    Then I do not see suggestions

@@ -1,7 +1,7 @@
-@94 @storefront Feature: Display suggested products on product details page
+--02/12/2014--
+@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 
 ------------------------ In Progress -------------------------
-@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages -- Lack of categories makes this difficult
 
 ---------------------------- Done ----------------------------
 @16 @storefront Feature: Basic search
@@ -54,6 +54,8 @@
 @30 @storefront Feature: Display free shipping on category and search results page
 @253 @storefront Feature: Filter search results by subcategories
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
+@94 @storefront Feature: Display suggested products on product details page
+@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
