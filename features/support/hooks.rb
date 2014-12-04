@@ -30,6 +30,16 @@ Before ('@discounts_and_topsellers_disabled') do
   end
 end
 
+Before ('@mobile_discounts_and_topsellers_disabled') do
+  visit '/m/protected/feature'
+  check = find_by_id "TopSellersOnCategoryPageFeature"
+  if check['checked']
+    find('label', :text=> 'TopSellersOnCategoryPageFeature').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
 Before ('@discounts_and_topsellers_enabled') do
   visit '/protected/feature'
   check = find_by_id "TopSellersOnCategoryPageFeature"
