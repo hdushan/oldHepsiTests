@@ -67,3 +67,8 @@ Then(/^I should see Fast Shipping offered for product "(.*?)"$/) do |product_nam
   end
   matching_product.all(".shipping-status", :text=>/Süper Hızlı/).size.should == 1
 end
+
+Then(/^I should not see adult item "(.*?)" on CLP$/) do |adult_item_sku|
+  page.find('#totalItems')
+  page.should have_no_content (adult_item_sku)
+end
