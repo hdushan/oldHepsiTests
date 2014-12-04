@@ -185,7 +185,7 @@ end
 
 Then(/^there are (\d*) variants displayed$/) do | number |
     within('.product-variants-wrapper') do
-      page.all('.variant-container').count.should eql(number.to_i)
+      page.all('.select-styled').count.should eql(number.to_i)
     end
   end
 

@@ -8,7 +8,7 @@ Given /^I select a product from search results$/ do
   # click_link(@product_name)
   search_item = find_by_id('productresults').first('.search-item')
   @product_name = search_item.first('.product-title').text
-  @product_image = search_item.first('.product-image-wrapper img')['src'].split('/').last
+  #@product_image = search_item.first('.product-image-wrapper img')['src'].split('/').last
   click_link(@product_name)
 end
 
