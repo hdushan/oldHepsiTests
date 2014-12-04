@@ -243,3 +243,51 @@ Then(/^breadcrumbs should be available on google webtools$/) do
   $breadcrumbs.should == items.map{ |x| x.first('a')}.collect(&:text)
 end
 
+
+When(/^I hover on menu item "([^"]*)"$/) do |arg|
+  el = find('ul.browser-by-category').first('a', :text=> arg)
+  el.hover
+end
+
+Then(/^There are campaign banners$/) do
+  container = find('div.nav-home-wrapper', :visible=> true)
+  banner_div = container.find "div.flyout-campaign-wrapper"
+  small_banners = banner_div.find "div.small"
+  big_banner = banner_div.find "div.big"
+  small_banners.all('img').size.should == 2
+  big_banner.all('img').size.should == 1
+end
+
+When(/^I click on first small banner$/) do
+  container = find('div.nav-home-wrapper', :visible=> true)
+  banner_div = container.find "div.flyout-campaign-wrapper"
+  small_banners = banner_div.find "div.small"
+  small_banners.all('img')[0].click
+end
+
+When(/^I click on second small banner$/) do
+  container = find('div.nav-home-wrapper', :visible=> true)
+  banner_div = container.find "div.flyout-campaign-wrapper"
+  small_banners = banner_div.find "div.small"
+  small_banners.all('img')[1].click
+end
+
+When(/^I click on big banner$/) do
+  container = find('div.nav-home-wrapper', :visible=> true)
+  banner_div = container.find "div.flyout-campaign-wrapper"
+  big_banner = banner_div.find "div.big"
+  big_banner.first('img').click
+end
+
+And(/^I unhover$/) do
+  find_by_id("productSearch").hover
+end
+
+Then(/^I don't get the error page$/) do
+  begin
+    page.should have_no_selector 'img[src="/Content/images/error.jpg"]'
+  rescue RSpec::Expectations::ExpectationNotMetError
+    visit ''
+    fail "Page not found error!!!"
+  end
+end
