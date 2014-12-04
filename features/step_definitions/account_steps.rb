@@ -1,3 +1,4 @@
+# encoding: UTF-8
 When(/^I click the account icon$/) do
   click_link "myAccount"
 end

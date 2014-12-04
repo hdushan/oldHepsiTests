@@ -1,3 +1,4 @@
+# encoding: UTF-8
 Given /^I navigate to the computers category landing page/ do
   visit 'http://storefront.qa.hepsiburada.com/bilgisayar-c-2147483646'
 end

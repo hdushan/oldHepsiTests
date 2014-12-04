@@ -1,5 +1,4 @@
 #encoding: UTF-8
-
 Before ('@merchant_disabled') do
   visit '/protected/feature'
   check = find_by_id "MarketplaceFeaturedOnProductPage"

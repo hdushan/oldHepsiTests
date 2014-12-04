@@ -1,5 +1,6 @@
 #encoding: UTF-8
 
+
   Feature: Discounts and top sellers not shown on mobile category landing pages
 
     @mobile_discounts_and_topsellers_disabled

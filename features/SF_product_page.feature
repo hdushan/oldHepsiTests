@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront @product
 Feature: Product page is as expected
   As a buyer

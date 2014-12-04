@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront
 @212
 Feature: Sorting Search Results

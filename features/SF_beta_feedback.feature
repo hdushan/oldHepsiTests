@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront
 
 Feature: Feedback mechanism for beta

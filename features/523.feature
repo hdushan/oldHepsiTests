@@ -1,9 +1,8 @@
 #encoding: UTF-8
-
-Feature: I should see breadcrums in search engine optimisation tools
-  As a SEO manager
-  I want breadcrumb information to be visible as part of search engine microdata
-  So that I maximise Hepsiburada’s crawlability
+Feature: See campaign banners on menu flyers
+  As a product owner
+  I want to see campaign banners in flyout menu
+  So that i can annouce shiny campaings to my visitors
 
   Scenario: Go to main page
     Given I visit main page

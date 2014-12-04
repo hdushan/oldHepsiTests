@@ -1,5 +1,4 @@
 #encoding: UTF-8
-
 @storefront
 Feature: Filter category results
 

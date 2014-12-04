@@ -1,5 +1,4 @@
 # encoding: UTF-8
-
 @page = ""
 
 Given /^I am on the homepage$/ do

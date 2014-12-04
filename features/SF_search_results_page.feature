@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront
 Feature: Search page is as expected
   As a buyer

@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront @navigation
 Feature: Navigation by categories is as expected
   As a buyer

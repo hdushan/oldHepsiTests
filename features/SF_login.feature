@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront
 
 Feature: Login using email and password

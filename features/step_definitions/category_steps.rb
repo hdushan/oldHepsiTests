@@ -1,4 +1,5 @@
 # encoding: UTF-8
+
 Then(/^I see (\d+) items in discounted products$/) do |items|
   expect(page.find('.discounted-product-container')).to have_content('İndirimli ürünler')
   expect(page.find('.discounted-product-container').all('.search-item').count).to be == items.to_i

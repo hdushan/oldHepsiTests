@@ -1,3 +1,4 @@
+# encoding: UTF-8
 original_result= ""
 
 And(/^I can see the results$/) do

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 When(/^I sort by bestseller$/) do
   click_link 'bestSelling'
 end

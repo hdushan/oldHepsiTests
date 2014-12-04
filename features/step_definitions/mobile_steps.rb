@@ -1,4 +1,5 @@
 #encoding: UTF-8
+
 Given(/^I visit mobile main page$/) do
   visit "/m/"
 end

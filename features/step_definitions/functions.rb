@@ -1,5 +1,4 @@
 #encoding: UTF-8
-
 def set_wait_time seconds
   Capybara.default_wait_time = seconds.to_i
 end

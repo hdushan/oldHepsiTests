@@ -1,3 +1,4 @@
+#encoding: UTF-8
 @storefront @cart
 Feature: Add to basket from details page
 
