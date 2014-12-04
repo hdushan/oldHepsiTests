@@ -237,7 +237,7 @@ Then(/^breadcrumbs should be available on google webtools$/) do
 
   fill_in("html-input", :with => $html_code)
 
-  find_by_id('html-preview-button').click
+  find_by_id('html-preview-button').first('div.goog-inline-block').click
   div = find_by_id("extracted-data-google")
   items = div.all('tbody', :text=> 'breadcrumb')
   $breadcrumbs.should == items.map{ |x| x.first('a')}.collect(&:text)
