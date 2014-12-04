@@ -65,10 +65,10 @@ Then(/^I can see at least (\d) static banners/) do | minimum_number_of_static_ba
 end
 
 Then(/^I see banners with a width of (\d+) and a height of (\d+)/) do | expected_width, expected_height |
-  banner_width = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].width")
-  banner_height = page.evaluate_script("$(\"img[src='//images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite/Samsung_fotomakina.png']\")[0].height")
-  banner_width.should eq expected_width.to_i
-  banner_height.should eq expected_height.to_i
+  banner_width = page.evaluate_script("$(\"img[src*='http://images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite']\")[0].width")
+  banner_height = page.evaluate_script("$(\"img[src*='http://images.hepsiburada.net/assets/ThematicContent/Mobil/desktopsite']\")[0].height")
+  banner_width.should be > expected_width.to_i
+  banner_height.should be > expected_height.to_i
 end
 
 Given /^I have input (.*) into search$/ do | search_term |

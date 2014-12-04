@@ -46,7 +46,7 @@ Feature: Homepage is as expected
   Scenario: View the static banners
     Then I can see at least 2 static banners
 
-  @466
+  @466 @inprogress
   Scenario: Checking banner size
     Then I see banners with a width of 900 and a height of 370
 
