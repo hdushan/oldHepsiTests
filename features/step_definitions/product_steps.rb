@@ -274,3 +274,27 @@ end
 Then /^I should not see the installments section$/ do
   expect(page).to_not have_content('#productPaymentInstallment')
 end
+
+Then /^I see a maximum of 10 products in the suggestions area$/ do 
+  page.find_by_id('recommendedProductsCarousel').all('.owl-item').count.should <= 10
+end
+
+And /^I see a picture associated with each product$/ do
+  page.find_by_id('recommendedProductsCarousel').all('.owl-item').each do | suggested_product |
+    suggested_product.should have_selector('.product-image-wrapper')
+  end
+end
+
+And /^when I select the first suggested product$/ do
+  @product_url = current_url
+  page.find_by_id('recommendedProductsCarousel').first('.product-image-wrapper').click
+end 
+
+Then /^I see the product details page$/ do
+  new_product_url = current_url
+  @product_url.should_not eq(new_product_url)
+end
+
+Then /^I do not see suggestions$/ do
+  expect(page).to_not have_content('.recommended-products-container')
+end
