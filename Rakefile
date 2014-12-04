@@ -18,3 +18,5 @@ task :story, [:storynum] do |t, args|
   end
   Rake::Task[:cucumber].invoke()
 end
+
+task :default => [:regression]
