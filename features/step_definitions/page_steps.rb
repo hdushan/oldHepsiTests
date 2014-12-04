@@ -35,7 +35,6 @@ end
 Then(/^I see the social icons in the footer$/) do
   expect(find('footer .icon-facebook'))
   expect(find('footer .icon-twitter'))
-  expect(find('footer .icon-linkedin'))
   expect(find('footer .icon-google-plus'))
   expect(find('footer .icon-pinterest'))
   expect(find('footer .icon-instagram'))

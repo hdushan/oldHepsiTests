@@ -2,7 +2,6 @@
 @735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis
 
 ------------------------ In Progress -------------------------
-@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages -- Lack of categories makes this difficult
 
 ---------------------------- Done ----------------------------
 @16 @storefront Feature: Basic search
@@ -56,6 +55,7 @@
 @253 @storefront Feature: Filter search results by subcategories
 @139 @storefront Feature: Show the best instalment option prominently to the customer on product details page
 @94 @storefront Feature: Display suggested products on product details page
+@739 @storefront Feature: Do not show 'Topsellers' and 'Discounted Product' lists on Category Landing Pages
 
 -- Some scenarios not tested due to data--
 @17 @storefront Feature: Display more search results -- Cannot test 'more' button disappearing due to data
@@ -146,3 +146,4 @@
 @221 @storefront Feature: Display merchant offers on details page
 @488 @storefront Feature: Display Tax Added Price for On Sale Products --- Just check that product page for discounted product shows original and discounted price?  Can't easily check whether includes tax from front end
 @417 @storefront Feature: Clean URL structure for brand filtered category pages - bug in this URL doesn't match the acceptance criteria
+@735 @storefront Feature: Sync master color mappings to Storefront database on a regular basis -- Looks like a cron job that isn't for functional testing

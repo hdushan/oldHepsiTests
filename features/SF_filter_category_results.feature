@@ -11,7 +11,7 @@ Feature: Filter category results
     When I filter by material type
     Then I should only see products that fall under my preset range
 
-  @36  @inprogress
+  @36
   Scenario: Show fast shipping indicator in category results page for product that offers fast shipping
     Given I am on the homepage
     And I navigate to Category
