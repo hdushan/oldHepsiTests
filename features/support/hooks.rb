@@ -77,3 +77,25 @@ Before ('@recommended_products_on_product_detail_page_disabled') do
     sleep 1.5
   end
 end
+
+Before '@chrome' do
+  Capybara.register_driver :chrome do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  end
+
+  Capybara.current_driver  = :chrome
+  Capybara.default_driver = :chrome
+  Capybara.javascript_driver = :chrome
+  Capybara.page.driver.browser.manage.window.maximize
+end
+
+Before '~@chrome' do
+  Capybara.register_driver :firefox do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  end
+
+  Capybara.current_driver  = :firefox
+  Capybara.default_driver = :firefox
+  Capybara.javascript_driver = :firefox
+  Capybara.page.driver.browser.manage.window.maximize
+end

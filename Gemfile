@@ -13,3 +13,4 @@ gem 'capybara-screenshot', :group => :test
 gem 'capybara-page-object'
 gem 'rake'
 gem 'pry'
+gem 'rest-client'
