@@ -1,5 +1,5 @@
 #encoding: UTF-8
-Feature: Discounts and top sellers not shown on category landing pages
+Feature: 700 - Discounts and top sellers not shown on category landing pages
 
   Scenario: Go to main page
     Given I visit main page

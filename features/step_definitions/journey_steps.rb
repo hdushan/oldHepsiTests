@@ -306,3 +306,20 @@ And(/^These filters are present on page "(.*)"$/) do |arg|
   filters = div.all('li.appliedFilter').collect(&:text)
   filters.each { |x| brands.include?(x).should == true }
 end
+
+When(/^I search for the stored product$/) do
+  fill_in 'productSearch' , :with => $prod['productId']
+  find_by_id('buttonProductSearch').click
+end
+
+And(/^Discounted price is displayed correctly$/) do
+  price = format_price find_by_id('offering-price').text
+  $prod['price']['value'].should == price
+  $prod['price']['taxIncluded'].should == true
+  $prod['discountRate'].should_not == 0
+end
+
+Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
+  resp = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
+  $prod = JSON.parse resp
+end
