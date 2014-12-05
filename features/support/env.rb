@@ -1,4 +1,5 @@
 # encoding: UTF-8
+
 require 'rubygems'
 require 'capybara'
 require 'capybara/dsl'
@@ -20,7 +21,7 @@ Capybara.default_driver = :selenium
 Capybara.javascript_driver = :selenium
 Capybara.page.driver.browser.manage.window.maximize
 Capybara.default_selector = :css
-Capybara.default_wait_time = 15 #default wait time for ajax
+Capybara.default_wait_time = 60 #default wait time for ajax
 Capybara.ignore_hidden_elements = false #ignore hidden elements when testing, make helpful when you hide or show elements using javascript
 Capybara.save_and_open_page_path = "screenshots/"
 

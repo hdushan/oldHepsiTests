@@ -1,4 +1,5 @@
 #encoding: UTF-8
+
 Given(/^I visit main page$/) do
   visit ''
 end
