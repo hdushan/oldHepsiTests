@@ -24,43 +24,17 @@ Feature: See campaign banners on menu flyers
     | Kitap, Müzik Film, Oyun |
     | Giyim, Takı Aksesuar    |
 
-  Scenario Outline: Click on first small banner and go to product details
+  Scenario Outline: Click on banners and go to relevant pages
     Given I hover on menu item "<item>"
     When I click on first small banner
     Then I don't get the error page
-    Examples:
-    | item                    |
-    | Elektronik Beyaz Eşya   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
-    | Giyim, Takı Aksesuar    |
-
-  Scenario Outline: Click on first small banner and go to product details
     Given I hover on menu item "<item>"
     When I click on second small banner
     Then I don't get the error page
-     Examples:
-     | item                    |
-     | Elektronik Beyaz Eşya   |
-     | Ev, Yaşam Ofis          |
-     | Oto, Bahçe Yapı Market  |
-     | Anne, Bebek Oyuncak     |
-     | Spor Outdoor            |
-     | Kozmetik Kişisel Bakım  |
-     | Süpermarket Petshop     |
-     | Kitap, Müzik Film, Oyun |
-     | Giyim, Takı Aksesuar    |
-
-  Scenario Outline: Click on first small banner and go to product details
     Given I hover on menu item "<item>"
     When I click on big banner
     Then I don't get the error page
-  Examples:
+    Examples:
     | item                    |
     | Elektronik Beyaz Eşya   |
     | Ev, Yaşam Ofis          |

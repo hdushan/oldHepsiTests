@@ -244,7 +244,7 @@ end
 
 
 When(/^I hover on menu item "([^"]*)"$/) do |arg|
-  el = find('ul.browser-by-category').first('a', :text=> arg)
+  el = find('ul.browser-by-category').first('li', :text=> arg)
   el.hover
 end
 
@@ -284,8 +284,11 @@ end
 
 Then(/^I don't get the error page$/) do
   begin
+    set_wait_time 5
     page.should have_no_selector 'img[src="/Content/images/error.jpg"]'
+    revert_to_default_wait_time
   rescue RSpec::Expectations::ExpectationNotMetError
+    revert_to_default_wait_time
     visit ''
     fail "Page not found error!!!"
   end
