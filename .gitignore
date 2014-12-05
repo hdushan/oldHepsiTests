@@ -4,3 +4,4 @@ screenshots/*
 .idea/acceptance-tests.iml
 .idea/workspace.xml
 results.html
+results_cucumber.html
