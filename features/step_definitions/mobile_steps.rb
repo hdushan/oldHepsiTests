@@ -18,6 +18,22 @@ Given(/^I navigate to Mobile_Category$/) do |table|
   }
 end
 
+When(/^I am on results mobile page$/) do
+  find_by_id "productresults"
+end
 
+When(/^I use this link form old site to access mobile site "([^"]*)"$/) do |arg|
+  visit '/m' + arg
+end
 
+And(/^These filters are present on mobile page "(.*)"$/) do |arg|
+  brands = arg.split "-"
+  brands.map!{ |x| x.strip }
+  find_by_id('showFilterOptions').click
 
+  lis = find_by_id('brandList').all('li')
+  clean = lis.select{ |x| x['class'] != "more-brands" && x['class'] != "hide"}
+  filters = clean.select{|x| x.first('input').selected? == true }.collect(&:text)
+  filters.map!{ |x|  delete_last_word x}
+  filters.each { |x| brands.include?(x).should == true }
+end

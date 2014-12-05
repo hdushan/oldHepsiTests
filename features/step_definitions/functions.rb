@@ -55,3 +55,7 @@ def price_from_string(string)
   string.gsub!(/[^0-9 ,]/, '')
   string.gsub!(/,/, '.').to_f
 end
+
+def delete_last_word str
+  return str[0...str.rindex(' ')]
+end
