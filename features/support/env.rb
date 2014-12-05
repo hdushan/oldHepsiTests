@@ -34,5 +34,3 @@ module Helpers
 end
 
 World(Capybara::DSL, Helpers)
-
-puts "Hello"

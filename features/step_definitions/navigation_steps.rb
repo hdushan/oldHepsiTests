@@ -21,11 +21,11 @@ Given /^I navigate to the RAM sub-category/ do
 end
 
 When(/^I hover over the electronic appliances navigation bar entry/) do
-  page.find('.browser-by-category').find('a', :text=> 'Elektronik Beyaz Eşya').hover
+  page.find('.browser-by-category').find('#elektronik-beyaz-esya').click
 end
 
 When(/^I click on the second level category tablet computers/) do
-  page.find('.browser-by-category li.active .nav-home-wrapper').find('a', :text=> 'Bilgisayar Tablet').click
+  page.find('.browser-by-category').find('a', :text=> 'Bilgisayar Tablet').click
 end
 
 When(/^I click on the computer components category/) do

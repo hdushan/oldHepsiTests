@@ -16,6 +16,7 @@ When(/^I click the 'add to basket' button on results page$/) do
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |
+  @total_items = page.find_by_id('totalItems').text
   expect(first('.search-item a')).to have_content search_term
 end
 
@@ -41,7 +42,9 @@ Then(/^I see ratings for all products$/) do
 end
 
 Then(/^I do not see a breadcrumb trail$/) do
-  page.should_not have_selector('.breadcrumbs-wrapper')
+  set_wait_time 3
+  expect(page).not_to have_selector('.breadcrumbs-wrapper')
+  revert_to_default_wait_time
 end
 
 When /^I click on a product from the search results$/ do

@@ -16,14 +16,17 @@ Feature: Homepage is as expected
 
   @248
   Scenario: Show social icons in footer
+    Given I visit mobile main page
     Then I see the social icons in the footer
 
   @248
   Scenario: Show security logo in footer
+    Given I visit mobile main page
     Then I see the security logo in the footer
 
   @248
   Scenario: Show copyright in the footer
+    Given I visit mobile main page
     Then I see the copyright message in the footer
 
   @16
@@ -45,7 +48,7 @@ Feature: Homepage is as expected
   Scenario: View the static banners
     Then I can see at least 2 static banners
 
-  @466 @inprogress
+  @466
   Scenario: Checking banner size
     Then I see banners with a width of 900 and a height of 370
 

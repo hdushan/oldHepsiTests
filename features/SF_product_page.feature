@@ -108,13 +108,13 @@ Feature: Product page is as expected
 
   @658
   Scenario: Window resize
-    Given I select a product with SKU 1210704100152BEY
+    Given I select a product with SKU TELCEPIP6P16GBGO-N
     When I make the page half as wide
     Then I see no horizontal scroll bar
 
   @658
   Scenario: low resolution monitor
-    Given I select a product with SKU 1210704100152BEY
+    Given I select a product with SKU TELCEPIP6P16GBGO-N
     When I load the page on a 1280x1024 monitor
     Then I see no horizontal scroll bar
 

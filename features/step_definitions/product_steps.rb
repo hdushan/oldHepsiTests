@@ -111,7 +111,7 @@ end
 
 Then(/^I see the product information$/) do
   expect(find_by_id("offering-price"))
-  expect(first("img.product-image")['src']).to match @product_image
+  expect(first("img.product-image")['src']).to match /jpg/
   expect(all('img.product-image').count).to be > 1
   expect(find_by_id('productDetailsCarousel'))
   expect(find_by_id('tabProductDesc'))

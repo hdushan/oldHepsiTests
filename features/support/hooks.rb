@@ -20,13 +20,7 @@ Before ('@merchant_enabled') do
 end
 
 Before ('@discounts_and_topsellers_disabled') do
-  visit '/protected/feature'
-  check = find_by_id "TopSellersOnCategoryPageFeature"
-  if check['checked']
-    find('label', :text=> 'TopSellersOnCategoryPageFeature').click
-    find('button', :text=> "Save").click
-    sleep 1.5
-  end
+  disable_discounts_and_topsellers
 end
 
 Before ('@mobile_discounts_and_topsellers_disabled') do
@@ -47,6 +41,20 @@ Before ('@discounts_and_topsellers_enabled') do
     find('button', :text=> "Save").click
     sleep 1.5
   end
+end
+
+def disable_discounts_and_topsellers
+  visit '/protected/feature'
+  check = find_by_id "TopSellersOnCategoryPageFeature"
+  if check['checked']
+    find('label', :text=> 'TopSellersOnCategoryPageFeature').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
+After ('@discounts_and_topsellers_enabled') do
+  disable_discounts_and_topsellers
 end
 
 
