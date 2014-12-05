@@ -1,5 +1,5 @@
 #encoding: UTF-8
-Feature: See campaign banners on menu flyers
+Feature: 523 - See campaign banners on menu flyers
   As a product owner
   I want to see campaign banners in flyout menu
   So that i can annouce shiny campaings to my visitors

@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 
-  Feature: Discounts and top sellers not shown on mobile category landing pages
+  Feature: 739 - Discounts and top sellers not shown on mobile category landing pages
 
     @mobile_discounts_and_topsellers_disabled
     Scenario: Go to mobile main page
