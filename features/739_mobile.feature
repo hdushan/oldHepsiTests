@@ -16,7 +16,6 @@
       Then There are some results available
       And Top sellers an discount items are not visible
 
-
     Scenario: Go to mobile main page
       Given I visit mobile main page
       Then I am at mobile main page
