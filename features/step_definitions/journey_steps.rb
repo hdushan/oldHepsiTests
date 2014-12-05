@@ -294,3 +294,15 @@ Then(/^I don't get the error page$/) do
     fail "Page not found error!!!"
   end
 end
+
+When(/^I use this link form old site to access new site "([^"]*)"$/) do |arg|
+  visit arg
+end
+
+And(/^These filters are present on page "(.*)"$/) do |arg|
+  brands = arg.split "-"
+  brands.map!{ |x| x.strip }
+  div = find_by_id('productresults').find('div.filter-container')
+  filters = div.all('li.appliedFilter').collect(&:text)
+  filters.each { |x| brands.include?(x).should == true }
+end
