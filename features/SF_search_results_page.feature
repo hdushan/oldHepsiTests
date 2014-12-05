@@ -57,7 +57,7 @@ Feature: Search page is as expected
 
   @137
   Scenario: Display if a product has more variants on the results page
-    When I search for "1210704100152BEY"
+    When I search for "EVSAM32H5373"
     Then I should not see the variants message for the product
 
   @30

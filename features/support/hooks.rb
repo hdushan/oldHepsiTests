@@ -48,3 +48,24 @@ Before ('@discounts_and_topsellers_enabled') do
     sleep 1.5
   end
 end
+
+
+Before ('@recommended_products_on_product_detail_page_enabled') do
+  visit '/protected/feature'
+  check = find_by_id "RecommendedProductsFeaturedOnProductPage"
+  unless check['checked']
+    find('label', :text=> 'RecommendedProductsFeaturedOnProductPage').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
+Before ('@recommended_products_on_product_detail_page_disabled') do
+  visit '/protected/feature'
+  check = find_by_id "RecommendedProductsFeaturedOnProductPage"
+  if check['checked']
+    find('label', :text=> 'RecommendedProductsFeaturedOnProductPage').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end

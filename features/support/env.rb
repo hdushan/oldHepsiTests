@@ -10,7 +10,7 @@ require 'capybara-page-object'
 require 'pry'
 
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
 end
 
 Capybara.current_driver  = :selenium
@@ -33,3 +33,5 @@ module Helpers
 end
 
 World(Capybara::DSL, Helpers)
+
+puts "Hello"

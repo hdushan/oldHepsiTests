@@ -158,7 +158,7 @@ Feature: Product page is as expected
     Given I select a product with SKU EAKSERELEKTBAT
     Then I should not see the installments section
 
-  @94
+  @94 @recommended_products_on_product_detail_page_enabled
   Scenario: Display suggested products when available and selecting a product takes me to the details page
     Given I select a product with SKU BD601126-B
     Then I see a maximum of 10 products in the suggestions area
@@ -168,5 +168,5 @@ Feature: Product page is as expected
 
   @94
   Scenario: If the product has no suggestions, there should not be a section
-    Given I select a product with SKU SPORFLAKS69GM
+    Given I select a product with SKU SPORVPU410SKG-375
     Then I do not see suggestions
