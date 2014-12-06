@@ -329,3 +329,20 @@ Then(/^There should be "([^"]*)" banners next to carousel$/) do |arg|
   banner_area = find('div.home-container').first('div.container').first('ul.static-banners', :visible=>true)
   banner_area.all('img', :visible => true).size.should == count
 end
+
+When(/^There is a feedback button on current page$/) do
+  page.should have_selector("div.usabilla_live_button_container", :visible=>true)
+end
+
+Then(/^I should be able to give feedback$/) do
+  find_by_id("btnSendFeedback").click
+  sleep 5
+  frm = all('iframe', :visible=>true).select{ |x| x['data-tags']==nil }[0]
+  within_frame frm do
+    page.should have_content "Özel geri bildirim"
+    page.should have_content "Bu sayfayla ilgili belirli bir alan hakkında geri bildirimde bulunmak istiyorum."
+    page.should have_content "Genel geri bildirim"
+    page.should have_content "Tüm web sitesi hakkında geri bildirimde bulunmak istiyorum."
+    page.find_by_id('contents').find('a.close').click
+  end
+end
