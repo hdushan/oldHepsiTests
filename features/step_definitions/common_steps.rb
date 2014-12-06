@@ -323,3 +323,9 @@ Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
   resp = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
   $prod = JSON.parse resp
 end
+
+Then(/^There should be "([^"]*)" banners next to carousel$/) do |arg|
+  count = arg.to_i
+  banner_area = find('div.home-container').first('div.container').first('ul.static-banners', :visible=>true)
+  banner_area.all('img', :visible => true).size.should == count
+end
