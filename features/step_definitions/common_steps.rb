@@ -346,3 +346,18 @@ Then(/^I should be able to give feedback$/) do
     page.find_by_id('contents').find('a.close').click
   end
 end
+
+When(/^There are some items in deal of the day carousel$/) do
+  find_by_id('dealOfTheDayCarousel').all('div.owl-item.active', :visible => true).size.should > 0
+end
+
+Then(/^Original prices should be displayed in deal of the day items$/) do
+  items = find_by_id('dealOfTheDayCarousel').all('div.owl-item.active', :visible => true)
+  items.each{ |x|
+    price = format_price x.find('span.product-price').text
+    org_price = format_price x.find('del.product-old-price').text
+    price.should_not == 0.0
+    org_price.should_not == 0.0
+    org_price.should > price
+  }
+end
