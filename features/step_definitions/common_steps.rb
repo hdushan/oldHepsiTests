@@ -290,8 +290,9 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
   rescue RSpec::Expectations::ExpectationNotMetError
     revert_to_default_wait_time
+    url = page.current_url
     visit ''
-    fail "Page not found error!!!"
+    fail "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -359,5 +360,31 @@ Then(/^Original prices should be displayed in deal of the day items$/) do
     price.should_not == 0.0
     org_price.should_not == 0.0
     org_price.should > price
+  }
+end
+
+Then(/^There are items in the menu content$/) do
+  content = find('div.nav-home-wrapper', :visible=>true)
+  groups = content.all('ul.nav-home', :visible => true)
+  groups.each { |x|
+    links = x.all('a', :visible => true).select{|x| x['href'] != nil}
+    links.size.should > 0
+  }
+end
+
+When(/^I store links from this menu item$/) do
+  content = find('div.nav-home-wrapper', :visible=>true)
+  groups = content.all('ul.nav-home', :visible => true)
+  $links = Array.new
+  groups.each { |x|
+    links = x.all('a', :visible => true).select{|x| x['href'] != nil}
+    links.each{ |x| $links.push x['href']}
+  }
+end
+
+Then(/^I visit these links without an error page$/) do
+  $links.each{|x|
+    visit x
+    steps %{ Then I don't get the error page }
   }
 end
