@@ -388,3 +388,15 @@ Then(/^I visit these links without an error page$/) do
     steps %{ Then I don't get the error page }
   }
 end
+
+And(/^I store filter results$/) do
+  div = find_by_id "productresults"
+  $search_results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
+end
+
+Then(/^I should have same items in the results$/) do
+  div = find_by_id "productresults"
+  results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
+  $search_results.size.should == results.size
+  results.each{|x| $search_results.include?(x).should == true }
+end

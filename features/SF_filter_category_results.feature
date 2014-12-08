@@ -19,3 +19,25 @@ Feature: Filter category results
     | Markalar            | Samsung   |
     | İşletim Türü        | Android   |
     Then I should see Fast Shipping offered for product "Samsung i9060 Galaxy Grand Neo"
+
+
+  @745 
+  Scenario: Sorting CLP results when applied filter
+    Given I am on the homepage
+    And I navigate to Category
+      | Giyim, Takı Aksesuar | Çocuk Giyim |
+    When I apply a filter
+      | Markalar  | Köstebek  |
+      | Beden     | 5 Yaş |
+    And There are some results available
+    And I store filter results
+    And I sort with "most-selling" filter
+    Then I should have same items in the results
+    When I sort with "lowest-price" filter
+    Then I should have same items in the results
+    When I sort with "highest-price" filter
+    Then I should have same items in the results
+    When I sort with "bestMatching" filter
+    Then I should have same items in the results
+
+
