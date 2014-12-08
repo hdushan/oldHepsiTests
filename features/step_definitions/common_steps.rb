@@ -99,8 +99,8 @@ Given(/^I select a sub category in browsing$/) do |table|
     if index == i
       break
     end
-    $current_level.first('ul.children-category')
-    $current_level = $current_level.first('li.expanded')
+    $current_level.first('ul.children-category', :visible=>true)
+    $current_level = $current_level.first('li.expanded', :visible=>true)
   }
 end
 
@@ -393,7 +393,6 @@ And(/^I store filter results$/) do
   div = find_by_id "productresults"
   $search_results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
 end
-
 
 Then(/^I should have same items in the results$/) do
   div = find_by_id "productresults"
