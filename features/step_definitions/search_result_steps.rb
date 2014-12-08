@@ -125,3 +125,20 @@ And(/^I should see (\d+) related search categories for "([^"]*)"$/) do |num_expe
     expect(related_category.text.downcase).to include(search_term.downcase)
   end
 end
+
+And(/^On clicking a related keyword "(.*?)"$/) do |related_keyword|
+  page.find_by_id('related-keywords').find('a', :text=>related_keyword).click
+end
+
+Then(/^I should see search results of that keyword "(.*?)"$/) do |related_keyword|
+  expect(page.find_by_id('productSearch').value.downcase).to eq(related_keyword.downcase)
+end
+
+And(/^On clicking a related category "(.*?)"$/) do |related_category|
+  page.find_by_id('related-categories').find('a', :text=>related_category).click
+end
+
+Then(/^I should see search results with each result having the word "(.*?)" in the product name$/) do |keyword|
+  results = page.find_by_id('productresults').all('li.search-item').map{|x| x.find('h3.product-title').text.downcase }
+  results.each{|x| expect(x).to include(keyword.downcase) }
+end

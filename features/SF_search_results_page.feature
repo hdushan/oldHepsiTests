@@ -56,10 +56,18 @@ Feature: Search page is as expected
     Then I should see the variants message for the product
 
   @442
-  Scenario: Display if a product has more variants on the results page
+  Scenario: Show related keywords for a search in the results page
     When I search for "samsung"
     Then I should see 3 related search keywords for "samsung"
-    And I should see 1 related search categories for "samsung"
+    And On clicking a related keyword "samsung s5"
+    Then I should see search results of that keyword "samsung s5"
+
+  @442
+  Scenario: Show related categories for a search in the results page
+    When I search for "samsung"
+    Then I should see 1 related search categories for "samsung"
+    And On clicking a related category "ampanyalar / Samsung"
+    Then I should see search results with each result having the word "samsung" in the product name
 
   @137
   Scenario: Display if a product has more variants on the results page
