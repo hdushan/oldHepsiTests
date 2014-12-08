@@ -134,14 +134,14 @@ Feature: Product page is as expected
     Given I select a product with SKU EAKSERELEKTBAT
     Then I should see the quantity box with a default of 1
 
-  @118
+  @118 @flaky
   Scenario: I can add multiple items to basket at once
     Given I select a product with SKU EAKSERELEKTBAT
     And I enter a quantity of 5
     When I add to cart
     Then I should see a notification of 5 items added to my basket
 
-  @118
+  @118 @flaky
   Scenario: I cannot add a negative quantity of items to basket
     Given I select a product with SKU EAKSERELEKTBAT
     And I enter a quantity of -1

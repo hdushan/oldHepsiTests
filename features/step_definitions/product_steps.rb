@@ -71,7 +71,9 @@ Then(/^I should see the 'add one more' button$/) do
 end
 
 Then(/^I should see an empty cart$/) do
+  set_wait_time 5
   expect(page).to_not have_selector '.cart-item'
+  revert_to_default_wait_time
 end
 
 Then(/^I see the details page for the selected product$/) do
@@ -127,9 +129,11 @@ end
 
 Then(/^I see no variant with prices is selected$/) do
   variant_container = find('.variant-container-with-prices')
+  set_wait_time 5
   variant_container.all('input[type=radio]').each do | radio_button |
     radio_button.should_not be_checked
   end
+  revert_to_default_wait_time
 end
 
 Then(/^I see an error message asking me to make a selection$/) do
@@ -191,7 +195,9 @@ Then(/^there are (\d*) variants displayed$/) do | number |
 
 And(/^the variants should have no default$/) do
   page.all('.radio-variant').each do | variant |
+    set_wait_time 5
     variant.should_not be_checked
+    revert_to_default_wait_time
   end
 end
 
@@ -223,7 +229,9 @@ end
 
 Then /^I see a different image$/ do
   new_image = page.find('.owl-item.active').find('.product-image')['src']
+  set_wait_time 5
   expect(@default_image_src).to_not eq(new_image)
+  revert_to_default_wait_time
 end
 
 Then /^I see no horizontal scroll bar/ do
@@ -248,7 +256,9 @@ And /^element with id (.*) is selected$/ do | variant_name |
 end
 
 Then /^I do not see the 'add to basket' button/ do
+  set_wait_time 5
   expect(page).to_not have_selector('button.add-to-basket.button-like-link')
+  revert_to_default_wait_time
 end
 
 Then /^I should see the bestseller section$/ do
@@ -272,7 +282,9 @@ Then /^I should see the installments section$/ do
 end
 
 Then /^I should not see the installments section$/ do
+  set_wait_time 5
   expect(page).to_not have_content('#productPaymentInstallment')
+  revert_to_default_wait_time
 end
 
 Then /^I see a maximum of 10 products in the suggestions area$/ do 
@@ -292,9 +304,13 @@ end
 
 Then /^I see the product details page$/ do
   new_product_url = current_url
+  set_wait_time 5
   @product_url.should_not eq(new_product_url)
+  revert_to_default_wait_time
 end
 
 Then /^I do not see suggestions$/ do
+  set_wait_time 5
   expect(page).to_not have_content('.recommended-products-container')
+  revert_to_default_wait_time
 end
