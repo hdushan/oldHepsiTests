@@ -26,7 +26,7 @@ Feature: Navigation by categories is as expected
     Given I navigate to the second level category tablet computers
     Then I can see the third level categories
 
-  @428 @429
+  @428 @429 @flaky
   Scenario: I can browse to the fourth level categories to buy RAM
     Given I navigate to the RAM sub-category
     Then I can see the RAM breadcrumb

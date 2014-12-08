@@ -20,6 +20,7 @@
       Given I visit mobile main page
       Then I am at mobile main page
 
+    @flaky
     Scenario: Hide discount and top seller fields if they are disabled for Telefon
       Given I navigate to Mobile_Category
         | Telefon |

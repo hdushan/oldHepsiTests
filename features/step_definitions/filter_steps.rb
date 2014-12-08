@@ -58,7 +58,9 @@ When(/^I clear active filters$/) do
 end
 
 Then(/^I should only see products that fall under my preset range$/) do
+  set_wait_time 5
   expect(find("#totalItems")).to_not have_content original_result
+  revert_to_default_wait_time
 end
 
 Then(/^I should see all results$/) do
@@ -71,6 +73,8 @@ end
 
 Then(/^I should not see any selected filters$/) do
   all('#filterResults li input').each do |input|
+    set_wait_time 5
     expect(input).to_not be_checked
+    revert_to_default_wait_time
   end
 end

@@ -24,7 +24,7 @@ Feature: Sorting Search Results
     And I click load more results
     Then I see the bestseller button is selected
 
-  @31
+  @31 @flaky
   Scenario: Change sort mode
     Given I sort by bestseller
     When I sort by lowest price
@@ -41,7 +41,7 @@ Feature: Sorting Search Results
     Then I see the lowest price button is selected
     And I see results lowest price first
 
-  @26
+  @26 @flaky
   Scenario: Sort by highest
     When I sort by highest price
     Then I see the highest price button is selected

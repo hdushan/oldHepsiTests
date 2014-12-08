@@ -20,7 +20,9 @@ end
 
 Then /^I see a different banner/ do
   second_banner = page.find_by_id('carousel').find('.owl-item.active').find('.product-image')['src']
+  set_wait_time 5
   expect(@first_banner_src).to_not eq(second_banner)
+  revert_to_default_wait_time
 end
 
 Then(/^I see (\d+) items in deal of the day$/) do |items|
