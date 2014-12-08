@@ -292,7 +292,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit ''
-    fail "Page not found error!!! on\n#{url}"
+    p "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -389,14 +389,40 @@ Then(/^I visit these links without an error page$/) do
   }
 end
 
-And(/^I store filter results$/) do
-  div = find_by_id "productresults"
-  $search_results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
+When(/^There are items in carousel$/) do
+  carousel = find_by_id("carousel")
+  items = carousel.all('div.owl-item')
+  items.select{|x| x['class'].include?("cloned")==false}.size.should > 0
 end
 
-Then(/^I should have same items in the results$/) do
-  div = find_by_id "productresults"
-  results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
-  $search_results.size.should == results.size
-  results.each{|x| $search_results.include?(x).should == true }
+Then(/^I should cycle through all of them and visit links$/) do
+  carousel = find_by_id("carousel")
+  items = carousel.all('div.owl-dot', :visible => true)
+  $links = Array.new
+  items.each { |x|
+    x.click
+    $links.push carousel.find('div.owl-item.active').first('a')['href']
+  }
+  $links.each{|x|
+    uri = URI.parse(URI.encode(x.strip))
+    visit uri
+    steps %{ Then I don't get the error page }
+  }
+end
+
+And(/^I see the price on search item no "([^"]*)"$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    item = find_by_id('productresults').all('li.search-item', :visible=> true)[i]
+    $price = format_price item.find('span.product-price').text
+  end
+end
+
+Then(/^price is listed correctly in details$/) do
+  price = format_price find_by_id('offering-price').text
+  price.should == $price
+end
+
+And(/^I click breadcrumb "([^"]*)"$/) do |arg|
+  find('ul.breadcrumbs').find('span', :text=>arg).click
 end
