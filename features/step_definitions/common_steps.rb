@@ -292,7 +292,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit ''
-    p "Page not found error!!! on\n#{url}"
+    fail "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -389,10 +389,17 @@ Then(/^I visit these links without an error page$/) do
   }
 end
 
-When(/^There are items in carousel$/) do
-  carousel = find_by_id("carousel")
-  items = carousel.all('div.owl-item')
-  items.select{|x| x['class'].include?("cloned")==false}.size.should > 0
+And(/^I store filter results$/) do
+  div = find_by_id "productresults"
+  $search_results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
+end
+
+
+Then(/^I should have same items in the results$/) do
+  div = find_by_id "productresults"
+  results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
+  $search_results.size.should == results.size
+  results.each{|x| $search_results.include?(x).should == true }
 end
 
 Then(/^I should cycle through all of them and visit links$/) do
