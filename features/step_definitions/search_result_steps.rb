@@ -109,3 +109,19 @@ end
 Then(/^I see an indicator of fast delivery associated with the item$/) do
   page.find('.shipping-status').should have_content("Süper Hızlı")
 end
+
+Then(/^I should see (\d+) related search keywords for "(.*?)"$/) do |num_expected_keywords, search_term|
+  related_keywords = page.find_by_id('related-keywords').all('a')
+  expect(related_keywords.size).to eq(num_expected_keywords.to_i)
+  related_keywords.each do |related_keyword|
+    expect(related_keyword.text.downcase).to include(search_term.downcase)
+  end
+end
+
+And(/^I should see (\d+) related search categories for "([^"]*)"$/) do |num_expected_categories, search_term|
+  related_categories = page.find_by_id('related-categories').all('a')
+  expect(related_categories.size).to eq(num_expected_categories.to_i)
+  related_categories.each do |related_category|
+    expect(related_category.text.downcase).to include(search_term.downcase)
+  end
+end
