@@ -9,6 +9,16 @@ Before ('@merchant_disabled') do
   end
 end
 
+Before ('@mobile_merchant_disabled') do
+  visit '/m/protected/feature'
+  check = find_by_id "MarketplaceFeaturedOnProductPage"
+  if check['checked']
+    find('label', :text=> 'MarketplaceFeaturedOnProductPage').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
 Before ('@merchant_enabled') do
   visit '/protected/feature'
   check = find_by_id "MarketplaceFeaturedOnProductPage"

@@ -37,3 +37,16 @@ And(/^These filters are present on mobile page "(.*)"$/) do |arg|
   filters.map!{ |x|  delete_last_word x}
   filters.each { |x| brands.include?(x).should == true }
 end
+
+When(/^I click the Hepsiburada logo$/) do
+  find('a.logo-hepsiburada').click
+end
+
+Then(/^I should be redirected to mobile Homepage$/) do
+  page.should have_selector "#productSearch"
+  page.should have_selector "#dealOfTheDayCarousel"
+end
+
+And(/^I click on the checkout$/) do
+  click_link 'shoppingCart'
+end
