@@ -23,6 +23,6 @@ Feature: 637 - Use legacy site urls in mobile site
     Then I am on results page
     And These filters are present on mobile page "<brand-list>"
   Examples:
-    | link                                                                                                                 | brand-list |
-    | /liste/bilgisayarlar/department.aspx?categoryId=3000500&qs=%2fbrand%3d%7bdark%3btoshiba%7d                           | Dark - Toshiba       |
-    | /liste/fotograf-makinesi-cantalari/department.aspx?categoryId=81481&qs=%2fbrand%3d%7bvanguard%3blowepro%3bsamsung%7d | Lowepro - Vanguard - Samsung  |
+    | link                                                                                                                 | brand-list                     |
+    | /liste/bilgisayarlar/department.aspx?categoryId=3000500&qs=%2fbrand%3d%7bdark%3btoshiba%7d                           | Dark - Toshiba                 |
+    | /liste/fotograf-makinesi-cantalari/department.aspx?categoryId=81481&qs=%2fbrand%3d%7bvanguard%3blowepro%3bsamsung%7d | Lowepro - Vanguard - Samsung   |
