@@ -292,7 +292,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit ''
-    fail "Page not found error!!! on\n#{url}"
+    p "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -385,6 +385,27 @@ end
 Then(/^I visit these links without an error page$/) do
   $links.each{|x|
     visit x
+    steps %{ Then I don't get the error page }
+  }
+end
+
+When(/^There are items in carousel$/) do
+  carousel = find_by_id("carousel")
+  items = carousel.all('div.owl-item')
+  items.select{|x| x['class'].include?("cloned")==false}.size.should > 0
+end
+
+Then(/^I should cycle through all of them and visit links$/) do
+  carousel = find_by_id("carousel")
+  items = carousel.all('div.owl-dot', :visible => true)
+  $links = Array.new
+  items.each { |x|
+    x.click
+    $links.push carousel.find('div.owl-item.active').first('a')['href']
+  }
+  $links.each{|x|
+    uri = URI.parse(URI.encode(x.strip))
+    visit uri
     steps %{ Then I don't get the error page }
   }
 end
