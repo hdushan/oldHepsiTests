@@ -150,3 +150,27 @@ Then /^I am taken to results based on my own keyword (.*)/ do  | key_term |
     search_item.find('.product-title').text.should match(/#{key_term}/i)
   end
 end
+
+Then(/^I see link "(.*?)" that navigates to "(.*?)" in a "(.*?)" if required and with the right SEO attribute "(.*?)"$/) do |link_text, link, new_tab, seo_attribute|
+  div = find('div.footer-middle')
+  #temp = div.find('a', :text => link_text, :exact => true)
+  temp = div.find('a', :text => /\A#{Regexp.quote(link_text)}\z/)
+  expect(temp['href']).to include(link)
+  if new_tab =="Y"
+    expect(temp['target']).to eq("_blank")
+  else if new_tab =="N"
+         set_wait_time(5)
+         expect(temp).to_not have_content(['_blank'])
+         revert_to_default_wait_time
+       end
+  end
+  if seo_attribute=="Y"
+    expect(temp['rel']).to eq("nofollow")
+  else if seo_attribute =="N"
+         set_wait_time(5)
+         #expect(temp).to_not have_content(['nofollow'])
+         expect(temp).to_not have_content(['nofollow'])
+         revert_to_default_wait_time
+       end
+  end
+  end
