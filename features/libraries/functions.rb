@@ -59,3 +59,8 @@ end
 def delete_last_word str
   return str[0...str.rindex(' ')]
 end
+
+def format_link str
+  uri = URI.parse(URI.encode(str.strip))
+  return uri
+end

@@ -433,3 +433,29 @@ end
 And(/^I click breadcrumb "([^"]*)"$/) do |arg|
   find('ul.breadcrumbs').find('span', :text=>arg).click
 end
+
+Given(/^I make a google search with "([^"]*)"$/) do |arg|
+  visit 'http://www.google.com'
+  fill_in "gbqfq" , :with=>arg
+  click_button "gbqfb"
+end
+
+When(/^I click on google result no "([^"]*)"$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    results = find_by_id('rso').all('li.g')
+    results[i].first('h3.r').click
+  end
+end
+
+And(/^I click on logo$/) do
+  find('a.headerLogoLink').click
+end
+
+When(/^I visit link "([^"]*)"$/) do |arg|
+  visit format_link arg
+end
+
+Then(/^I get error page$/) do
+  first("img", :visible => true)['src'].should == Capybara.app_host + "/Content/images/error.jpg"
+end
