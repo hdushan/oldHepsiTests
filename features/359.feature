@@ -1,6 +1,5 @@
 #encoding: UTF-8
-
-  @merchant_disabled
+@merchant_disabled
 Feature: 359 - Handling All 404 Pages Properly on Storefront
   As a QA
   I want all 404 pages on storefront to be handled properly
