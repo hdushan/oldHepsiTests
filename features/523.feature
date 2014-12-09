@@ -12,7 +12,6 @@ Feature: 523 - See campaign banners on menu flyers
   Scenario Outline: Hover an menu items and check for campaign banners
     When I hover on menu item "<item>"
     Then There are campaign banners
-    And I unhover
     Examples:
     | item                    |
     | Elektronik Beyaz Eşya   |

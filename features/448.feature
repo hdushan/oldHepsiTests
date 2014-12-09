@@ -12,7 +12,6 @@ Feature: 448 - Mega flyout menu for desktop
   Scenario Outline: Hover an menu items and check content
     When I hover on menu item "<item>"
     Then There are items in the menu content
-    And I unhover
   Examples:
     | item                    |
     | Elektronik Beyaz Eşya   |

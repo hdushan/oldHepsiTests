@@ -247,11 +247,11 @@ end
 
 When(/^I hover on menu item "([^"]*)"$/) do |arg|
   el = find('ul.browser-by-category').first('li', :text=> arg)
-  el.hover
+  $container = el.find('div.nav-home-wrapper')
 end
 
 Then(/^There are campaign banners$/) do
-  container = find('div.nav-home-wrapper', :visible=> true)
+  container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   small_banners = banner_div.find "div.small"
   big_banner = banner_div.find "div.big"
@@ -260,24 +260,24 @@ Then(/^There are campaign banners$/) do
 end
 
 When(/^I click on first small banner$/) do
-  container = find('div.nav-home-wrapper', :visible=> true)
+  container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   small_banners = banner_div.find "div.small"
-  small_banners.all('img')[0].click
+  visit small_banners.all('a')[0]['href']
 end
 
 When(/^I click on second small banner$/) do
-  container = find('div.nav-home-wrapper', :visible=> true)
+  container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   small_banners = banner_div.find "div.small"
-  small_banners.all('img')[1].click
+  visit small_banners.all('a')[1]['href']
 end
 
 When(/^I click on big banner$/) do
-  container = find('div.nav-home-wrapper', :visible=> true)
+  container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   big_banner = banner_div.find "div.big"
-  big_banner.first('img').click
+  visit big_banner.first('a')['href']
 end
 
 And(/^I unhover$/) do
@@ -365,20 +365,20 @@ Then(/^Original prices should be displayed in deal of the day items$/) do
 end
 
 Then(/^There are items in the menu content$/) do
-  content = find('div.nav-home-wrapper', :visible=>true)
-  groups = content.all('ul.nav-home', :visible => true)
+  content = $container
+  groups = content.all('ul.nav-home')
   groups.each { |x|
-    links = x.all('a', :visible => true).select{|x| x['href'] != nil}
+    links = x.all('a').select{|x| x['href'] != nil}
     links.size.should > 0
   }
 end
 
 When(/^I store links from this menu item$/) do
-  content = find('div.nav-home-wrapper', :visible=>true)
-  groups = content.all('ul.nav-home', :visible => true)
+  content = $container
+  groups = content.all('ul.nav-home')
   $links = Array.new
   groups.each { |x|
-    links = x.all('a', :visible => true).select{|x| x['href'] != nil}
+    links = x.all('a').select{|x| x['href'] != nil}
     links.each{ |x| $links.push x['href']}
   }
 end
