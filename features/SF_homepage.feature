@@ -107,3 +107,36 @@ Feature: Homepage is as expected
     And I do not like any of the auto complete suggestions
     When I invoke search on my own keywords
     Then I see products relating to samsung
+
+  @437 @inprogress
+  Scenario Outline: Storefront footer check
+    Then I see link "<link_text>" that navigates to "<link>" in a "<new_tab>" if required and with the right SEO attribute "<seo_attribute>"
+  Examples:
+    | link_text                         | link                                                                        | new_tab | seo_attribute |
+  # Hepsiburada.com
+    | Hakkımızda                        | http://storefront.qa.hepsiburada.com/hakkimizda                             |   N     |       Y       |
+    | Bize Ulaşın                       | http://storefront.qa.hepsiburada.com/bize-ulasin                            |   N     |       Y       |
+    | İletişim                          | http://storefront.qa.hepsiburada.com/iletisim                               |   N     |       Y       |
+    | Hesabım                           | http://www.hepsiburada.com/hesabim                                          |   N     |       Y       |
+    | Yardım                            | http://www.hepsiburada.com/yardim                                           |   N     |       Y       |
+    | Hepsiburada.com Twitter Destek    | https://twitter.com/HBAysenur                                               |   Y     |       Y       |
+    | Mobil Uygulamalar                 | http://www.hepsiburada.com/mobil-uygulamalar                                |   N     |       N       |
+  # Kariyer
+    | Kariyer Fırsatları                | javascript:bizimleCalismakIsterMisiniz()                                    |   N     |       Y       |
+    | Yenibiris.com                     | http://yenibiris.com/                                                       |   Y     |       Y       |
+  # Ödeme
+    | Ödeme Seçenekleri                 | http://storefront.qa.hepsiburada.com/odeme-secenekleri                      |   N     |       Y       |
+    | Banka Kampanyaları                | http://storefront.qa.hepsiburada.com/banka-kampanyalari                     |   N     |       Y       |
+  #Kurumsal
+    | İş Ortaklığı                      | http://b2b.hepsiburada.com                                                  |   N     |       Y       |
+    | Kurumsal Satış                    | http://www.hepsiburada.com/KurumsalSatis.aspx                               |   N     |       Y       |
+   #Bizi Takip Edin
+    | Facebook                          | https://www.facebook.com/Hepsiburada                                        |   Y     |       Y       |
+    | Twitter                           | https://twitter.com/hepsiburada                                             |   Y     |       Y       |
+    | LinkedIn                          | https://www.linkedin.com/company/hepsiburada.com                            |   Y     |       Y       |
+    | Google+                           | https://plus.google.com/+hepsiburada                                        |   Y     |       Y       |
+    | Pinterest                         | http://www.pinterest.com/hepsiburada/                                       |   Y     |       Y       |
+    | Instagram                         | http://instagram.com/hepsiburada                                            |   Y     |       Y       |
+    | YouTube                           | https://www.youtube.com/hepsiburada                                         |   Y     |       Y       |
+   #Mobil Uygulamalar
+

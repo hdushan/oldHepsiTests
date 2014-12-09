@@ -9,13 +9,13 @@ Feature: Mobile Homepage is as expected
   Background:
     Given I visit mobile main page
 
-  @10 @inprogress
+  @10
   Scenario: Clicking around Storefront
     Given I am at mobile main page
     When I click the Hepsiburada logo
     Then I should be redirected to mobile Homepage
 
-  @10 @inprogress
+  @10
   Scenario: Navigating back Storefront
     Given I am at mobile main page
     And I navigate to Mobile_Category
