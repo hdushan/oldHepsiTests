@@ -96,6 +96,7 @@ Given(/^I select a sub category in browsing$/) do |table|
   values.each_with_index { |x, index|
     cat = $current_level.first('a', :text => x)
     cat.click
+    sleep 2
     if index == i
       break
     end
