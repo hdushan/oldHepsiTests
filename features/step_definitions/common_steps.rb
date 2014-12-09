@@ -92,11 +92,13 @@ Given(/^I select a sub category in browsing$/) do |table|
   # table is a table.hashes.keys # => [:Çevre Birimleri, :Mouse]
   values = table.raw[0]
   i = values.size - 1
+  wait_for_ajax
   $current_level =  find('ul.nav-browse', :visible => true)
   values.each_with_index { |x, index|
     cat = $current_level.first('a', :text => x)
     cat.click
-    sleep 2
+    wait_for_ajax
+    sleep 1
     if index == i
       break
     end
