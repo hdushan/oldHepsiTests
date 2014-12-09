@@ -459,3 +459,17 @@ end
 Then(/^I get error page$/) do
   first("img", :visible => true)['src'].should == Capybara.app_host + "/Content/images/error.jpg"
 end
+
+Given(/^I test things$/) do
+
+end
+
+When(/^I click go to desktop version link$/) do
+  first('footer', :visible => true).find('a.icon-desktop-link').click
+end
+
+Then(/^I am on old hepsiburada mainpage$/) do
+  page.current_url.should == "http://www.hepsiburada.com/"
+  page.should have_content "hepsiburada.com"
+  page.should have_selector "#divMainPageSliderContainer"
+end
