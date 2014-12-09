@@ -28,12 +28,10 @@ def wait_for_ajax
 end
 
 def calculate_discount
-  i = format_price find_by_id("offering-price").first('span').text
+  i = format_price find_by_id("offering-price").text
   k = format_price find_by_id('originalPrice').text
-  p i
-  p k
-  p (i/k)
-  return (100 - ((i/k)*100).to_i).to_i
+  diff = k - i
+  return ((diff/k)*100.0).round
 end
 
 def wait_for_visibility(page, selector, visible)

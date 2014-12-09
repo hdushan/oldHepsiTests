@@ -215,8 +215,8 @@ end
 And(/^The discount is "([^"]*)" percent on details$/) do |arg|
   discount = find_by_id("product-discount-rate").first('del').text.to_i
   discount.should == arg.to_i
-  # d = calculate_discount
-  # discount.should == d
+  d = calculate_discount
+  discount.should == d
 end
 
 When(/^I change the variant to "([^"]*)"$/) do |arg|
@@ -461,7 +461,9 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-
+  p find("span[itemprop=priceCurrency]").text
+  el = find_by_id "originalPrice"
+  p el.text.split(" ")[1]
 end
 
 When(/^I click go to desktop version link$/) do

@@ -12,9 +12,8 @@ When(/^I click the feedback button$/) do
 end
 
 When /^I search for "(.*)"$/  do | search_term |
-  fill_in 'productSearch', :with => "#{search_term}"
+  fill_in 'productSearch', :with => search_term
   page.find_by_id('buttonProductSearch').click
-  #@total_items = page.find_by_id('totalItems').text
 end
 
 Then(/^I see a feedback window$/) do
