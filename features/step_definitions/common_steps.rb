@@ -538,3 +538,9 @@ Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
 
   end
 end
+
+When(/^There are items in carousel$/) do
+  div = find_by_id("carousel").find('div.owl-stage')
+  div.find('div.owl-item', match: :first)
+  div.all('div.owl-item').size.should > 0
+end
