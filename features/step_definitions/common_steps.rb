@@ -95,7 +95,7 @@ Given(/^I select a sub category in browsing$/) do |table|
   wait_for_ajax
   $current_level =  find('ul.nav-browse', :visible => true)
   values.each_with_index { |x, index|
-    cat = $current_level.first('a', :text => x)
+    cat = $current_level.find('a', :text => x, match: :first)
     cat.click
     wait_for_ajax
     sleep 1
@@ -131,7 +131,8 @@ Given(/^I select a sub category in search$/) do |table|
   list = find_by_id "categoryList"
   $level = 0
   values.each { |x|
-    list.first("li.category-level-#{$level.to_s}", :text => x).click
+    li = list.find("li.category-level-#{$level.to_s}", :text=> x, match: :first)
+    li.find('label', text: x, match: :first).click
     list = find_by_id "categoryList"
     $level += 1
   }
