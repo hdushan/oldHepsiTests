@@ -40,8 +40,8 @@ Then(/^I add "([^"]*)" product\(s\) to cart$/) do |arg|
     $p_quantity = i
     fill_in "quantity", :with=> i
     find_by_id("addToCart").click
-    find_by_id('notification').should have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
-    sleep 2
+    page.should have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
+    page.should have_selector("#notification", visible: :hidden)
   end
 end
 
