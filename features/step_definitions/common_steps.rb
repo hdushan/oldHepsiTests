@@ -464,9 +464,8 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  p find("span[itemprop=priceCurrency]").text
-  el = find_by_id "originalPrice"
-  p el.text.split(" ")[1]
+  str = "alper mermer (123)"
+  p clean_string str
 end
 
 When(/^I click go to desktop version link$/) do
@@ -477,4 +476,65 @@ Then(/^I am on old hepsiburada mainpage$/) do
   page.current_url.should == "http://www.hepsiburada.com/"
   page.should have_content "hepsiburada.com"
   page.should have_selector "#divMainPageSliderContainer"
+end
+
+
+Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
+  div = find('div.reviews-main')
+  found = false
+  case arg.upcase
+    when "MALE"
+      while true
+        div.find('li.review-item', match: :first)
+        users = div.all('li.review-item').collect{|x| clean_string x.find('span.user-info').text }
+        if users.include? "Erkek"
+          found = true
+          break
+        else
+          more_comments = find('div.load-more-comments')
+          if more_comments.visible?
+            more_comments.find_by_id('showMoreComments').click
+          else
+            break
+          end
+        end
+      end
+      found.should == true
+    when "FEMALE"
+      while true
+        div.find('li.review-item', match: :first)
+        users = div.all('li.review-item').collect{|x| clean_string x.find('span.user-info').text }
+        if users.include? "Bayan"
+          found = true
+          break
+        else
+          more_comments = find('div.load-more-comments')
+          if more_comments.visible?
+            more_comments.find_by_id('showMoreComments').click
+          else
+            break
+          end
+        end
+      end
+      found.should == true
+    when "NORMAL"
+      while true
+        div.find('li.review-item', match: :first)
+        users = div.all('li.review-item').collect{|x| clean_string x.find('span.user-info').text }
+        if (users - ["Erkek" , "Kadın"]).any?
+          found = true
+          break
+        else
+          more_comments = find('div.load-more-comments')
+          if more_comments.visible?
+            more_comments.find_by_id('showMoreComments').click
+          else
+            break
+          end
+        end
+      end
+      found.should == true
+  else
+
+  end
 end

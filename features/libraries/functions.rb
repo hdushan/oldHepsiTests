@@ -11,6 +11,10 @@ def extract_number str
   str.gsub(/[^0-9]/, '').to_i
 end
 
+def clean_string str
+  str.gsub(/[0-9\(\)]/, '').strip
+end
+
 def get_result_count
   extract_number(find_by_id('totalItems').text)
 end
@@ -61,4 +65,12 @@ end
 def format_link str
   uri = URI.parse(URI.encode(str.strip))
   return uri
+end
+
+def array_has_item_without arr
+  self.each { |x|
+    arr.each { |y|
+
+    }
+  }
 end
