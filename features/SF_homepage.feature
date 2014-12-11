@@ -117,8 +117,8 @@ Feature: Homepage is as expected
     | Hakkımızda                        | http://www.hepsiburada.com/hakkimizda                                       |   N     |       Y       |
     | Bize Ulaşın                       | http://www.hepsiburada.com/bize-ulasin                                      |   N     |       Y       |
     | İletişim                          | http://www.hepsiburada.com/iletisim                                         |   N     |       Y       |
-    | Hesabım                           | http://www.hepsiburada.com/hesabim                                          |   N     |       Y       |
-    | Yardım                            | http://www.hepsiburada.com/yardim                                           |   N     |       Y       |
+    | Hesabım                           | https://www.hepsiburada.com/ayagina-gelsin/giris?ReturnUrl=/liste/MyPage/   |   N     |       Y       |
+    | Yardım                            | http://www.hepsiburada.com/liste/MyPage/Yardim                              |   N     |       Y       |
     | Hepsiburada.com Twitter Destek    | https://twitter.com/HBAysenur                                               |   Y     |       Y       |
     | Mobil Uygulamalar                 | http://www.hepsiburada.com/mobil-uygulamalar                                |   N     |       N       |
   # Kariyer
