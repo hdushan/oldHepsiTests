@@ -108,25 +108,25 @@ Feature: Homepage is as expected
     When I invoke search on my own keywords
     Then I see products relating to samsung
 
-  @437 @inprogress
+  @437
   Scenario Outline: Storefront footer check
     Then I see link "<link_text>" that navigates to "<link>" in a "<new_tab>" if required and with the right SEO attribute "<seo_attribute>"
   Examples:
     | link_text                         | link                                                                        | new_tab | seo_attribute |
   # Hepsiburada.com
-    | Hakkımızda                        | http://storefront.qa.hepsiburada.com/hakkimizda                             |   N     |       Y       |
-    | Bize Ulaşın                       | http://storefront.qa.hepsiburada.com/bize-ulasin                            |   N     |       Y       |
-    | İletişim                          | http://storefront.qa.hepsiburada.com/iletisim                               |   N     |       Y       |
+    | Hakkımızda                        | http://www.hepsiburada.com/hakkimizda                                       |   N     |       Y       |
+    | Bize Ulaşın                       | http://www.hepsiburada.com/bize-ulasin                                      |   N     |       Y       |
+    | İletişim                          | http://www.hepsiburada.com/iletisim                                         |   N     |       Y       |
     | Hesabım                           | http://www.hepsiburada.com/hesabim                                          |   N     |       Y       |
     | Yardım                            | http://www.hepsiburada.com/yardim                                           |   N     |       Y       |
     | Hepsiburada.com Twitter Destek    | https://twitter.com/HBAysenur                                               |   Y     |       Y       |
     | Mobil Uygulamalar                 | http://www.hepsiburada.com/mobil-uygulamalar                                |   N     |       N       |
   # Kariyer
-    | Kariyer Fırsatları                | javascript:bizimleCalismakIsterMisiniz()                                    |   N     |       Y       |
+    #| Kariyer Fırsatları                | javascript:bizimleCalismakIsterMisiniz()                                    |   N     |       Y       |
     | Yenibiris.com                     | http://yenibiris.com/                                                       |   Y     |       Y       |
   # Ödeme
-    | Ödeme Seçenekleri                 | http://storefront.qa.hepsiburada.com/odeme-secenekleri                      |   N     |       Y       |
-    | Banka Kampanyaları                | http://storefront.qa.hepsiburada.com/banka-kampanyalari                     |   N     |       Y       |
+    | Ödeme Seçenekleri                 | http://www.hepsiburada.com/odeme-secenekleri                                |   N     |       Y       |
+    | Banka Kampanyaları                | http://www.hepsiburada.com/banka-kampanyalari                               |   N     |       Y       |
   #Kurumsal
     | İş Ortaklığı                      | http://b2b.hepsiburada.com                                                  |   N     |       Y       |
     | Kurumsal Satış                    | http://www.hepsiburada.com/KurumsalSatis.aspx                               |   N     |       Y       |
