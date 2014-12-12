@@ -90,11 +90,11 @@ Feature: Product page is as expected
   @330
   Scenario: Expose Color Variants as Thumbnails on Details Page
     Given I select a product with SKU AYKP38462CGBBZ37
-    Then I should see 2 color variants
+    Then I should see 3 color variants
 
   @330
   Scenario: Expose One Color Variant as Thumbnail on Details Page
-    Given I select a product with SKU 1210704100152BEY
+    Given I select a product with SKU AYKIT5KITA0008BO36
     Then I should see 1 color variants
 
   @330 @390 @632 @423
@@ -104,7 +104,7 @@ Feature: Product page is as expected
     When I select the color Sarı
     And I wait for all Ajax requests to complete
     Then I see a different image
-    And element with id Renk1 is selected
+    And element with id Renk2 is selected
 
   @658
   Scenario: Window resize

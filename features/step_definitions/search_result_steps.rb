@@ -30,11 +30,11 @@ Then(/^I should see (.*) visible results$/) do | amount_of_visible_results |
 end
 
 Then(/^I see either a price or an unavailable statement for each result$/) do
-  expect(all('.product-price').count + all('.procurement-status').count).to eq all('.search-item').count
+  expect(all('.price-container').count + all('.procurement-status').count).to eq all('.search-item').count
 end
 
 Then(/^I see a product image for each result$/) do
-  expect(all('.product-image-wrapper').count).to eq all('.search-item').count
+  expect(all('.product-image').count).to eq all('.search-item').count
 end
 
 Then(/^I see ratings for all products$/) do
@@ -48,7 +48,7 @@ Then(/^I do not see a breadcrumb trail$/) do
 end
 
 When /^I click on a product from the search results$/ do
-  page.all('.product-image-wrapper').first.click
+  page.all('.product-image').first.click
 end
 
 Then /^I should see a breadcrumb trail$/ do

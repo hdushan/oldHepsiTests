@@ -21,11 +21,9 @@ Given /^I navigate to the RAM sub-category/ do
 end
 
 When(/^I hover over the electronic appliances navigation bar entry/) do
-  page.find('.browser-by-category').find('#elektronik-beyaz-esya').click
-end
-
-When(/^I click on the second level category tablet computers/) do
-  page.find('.browser-by-category').find('a', :text=> 'Bilgisayar Tablet').click
+  cat1 = find('ul.browser-by-category').first('li', :text=> 'Elektronik Beyaz Eşya')
+  cat1.click
+  find('.navigation ul.menu > li:hover')
 end
 
 When(/^I click on the computer components category/) do
@@ -40,7 +38,7 @@ And(/^I select the RAM sub-category/) do
 end
 
 Then(/^I can see the second level categories/) do
-  expect(page).to have_selector('.browser-by-category li.active .nav-home-wrapper')
+  expect(page).to have_selector('.browser-by-category li:hover .nav-home-wrapper', visible: :visible)
 end
 
 Then(/^I can see the third level categories/) do

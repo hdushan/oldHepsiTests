@@ -66,7 +66,7 @@ Feature: Search page is as expected
   Scenario: Show related categories for a search in the results page
     When I search for "samsung"
     Then I should see 1 related search categories for "samsung"
-    And On clicking a related category "ampanyalar / Samsung"
+    And On clicking a related category "Kampanyalar / Samsung"
     Then I should see search results with each result having the word "samsung" in the product name
 
   @137
