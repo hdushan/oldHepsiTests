@@ -187,7 +187,6 @@ Feature: Product page is as expected
     When I open search result no "2"
     Then I am on product details
 
-<<<<<<< HEAD
   @318
   Scenario: Add to basket
     Given I visit main page
