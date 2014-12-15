@@ -314,3 +314,18 @@ Then /^I do not see suggestions$/ do
   expect(page).to_not have_content('.recommended-products-container')
   revert_to_default_wait_time
 end
+
+Then(/^Add to cart button is not available on product details$/) do
+  div = find('div.product-price-wrapper')
+  div.should have_content "Bu ürün geçici olarak temin edilememektedir."
+  div.should have_selector("#addToCart", visible: :hidden)
+end
+
+And(/^I am able to select different variants$/) do
+  div = find('div.variant-container-with-prices')
+  i = div.all('label').size
+  for i in 1..size
+    div.find('div.label', match: :first)
+    div.all('label')[i-1].click
+  end
+end

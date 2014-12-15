@@ -142,3 +142,14 @@ Then(/^I should see search results with each result having the word "(.*?)" in t
   results = page.find_by_id('productresults').all('li.search-item').map{|x| x.find('h3.product-title').text.downcase }
   results.each{|x| expect(x).to include(keyword.downcase) }
 end
+
+Then(/^Add to cart button is not available on result no "([^"]*)"$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    res = find_by_id('productresults')
+    res.find('li.search-item', match: :first)
+    item = res.all('li.search-item')[i]
+    item.should have_content "Bu ürün geçici olarak temin edilememektedir."
+    item.should have_no_selector "button.add-to-basket"
+  end
+end
