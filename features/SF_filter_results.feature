@@ -63,7 +63,7 @@ Feature: Filter search results
     When I filter for LG
     And I filter for Samsung
 
-  @256
+  @259
   Scenario: Clearing an individual filter from the result page updates the results
     And I should see all results
     And I filter for Ozaki
