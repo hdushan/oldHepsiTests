@@ -171,7 +171,7 @@ Feature: Product page is as expected
     Given I select a product with SKU SPORVPU410SKG-375
     Then I do not see suggestions
 
-    @323 @chrome
+  @323 @chrome
   Scenario: Remove add to cart from product details when item is out of stock
     Given I visit main page
     When I search for "BD800472"
@@ -187,6 +187,7 @@ Feature: Product page is as expected
     When I open search result no "2"
     Then I am on product details
 
+<<<<<<< HEAD
   @318
   Scenario: Add to basket
     Given I visit main page
@@ -240,3 +241,9 @@ Feature: Product page is as expected
     And I am on product details
     When I click product specs tab
     Then I get the product specs
+
+  @726 @ignore
+  Scenario: see the timer on Deal of the Day product detail pages
+    Given I visit main page
+    And I open deal of the day no "1"
+    Then I see a timer on product details page that shows when the deal ends

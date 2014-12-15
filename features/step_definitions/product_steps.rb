@@ -315,6 +315,10 @@ Then /^I do not see suggestions$/ do
   revert_to_default_wait_time
 end
 
+Then(/^I see a timer on product details page that shows when the deal ends$/) do
+  expect(page.find('.sale-end-timer').text).should_not eq("")
+  end
+
 Then(/^Add to cart button is not available on product details$/) do
   div = find('div.product-price-wrapper')
   div.should have_content "Bu ürün geçici olarak temin edilememektedir."

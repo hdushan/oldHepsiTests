@@ -173,8 +173,15 @@ Then(/^I see link "(.*?)" that navigates to "(.*?)" in a "(.*?)" if required and
          revert_to_default_wait_time
        end
   end
-  end
 
-Then(/^The page title is "([^"]*)"$/) do |arg|
-  page.title.should == arg
+  Then(/^The page title is "([^"]*)"$/) do |arg|
+    page.title.should == arg
+  end
+end
+
+And(/^I open deal of the day no "([^"]*)"$/) do |arg|
+  i = arg.to_i - 1
+  unless i<0
+    page.all('#dealOfTheDay .product a')[i].click()
+  end
 end
