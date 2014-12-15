@@ -186,3 +186,57 @@ Feature: Product page is as expected
     And There are some results available
     When I open search result no "2"
     Then I am on product details
+
+  @318
+  Scenario: Add to basket
+    Given I visit main page
+    And I search for "MTARCELIK6230BULAS"
+    And I open search result no "1"
+    And I am on product details
+    When I add "1" product(s) to cart
+    Then Cart icon should have an indication of "1"
+
+  @318
+  Scenario: Adding to basket without selecting a variant
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    When I open search result no "1"
+    And I am on product details
+    Then I should not be able to add to cart without a variant
+
+  @318
+  Scenario: Comments
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    And I open search result no "1"
+    When I am on product details
+    And There are "3" comments on details
+    And I click on more comments button
+    Then There are "6" comments on details
+
+  @318
+  Scenario: The return policy
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    And I open search result no "1"
+    And I am on product details
+    When I click return policy link
+    Then I get the return policy description
+
+  @318
+  Scenario: Clicking through description
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    And I open search result no "1"
+    And I am on product details
+    When I click product description tab
+    Then I get the product description
+
+  @318
+  Scenario: Clicking through technical specs
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    And I open search result no "1"
+    And I am on product details
+    When I click product specs tab
+    Then I get the product specs

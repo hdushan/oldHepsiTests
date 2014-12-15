@@ -329,3 +329,49 @@ And(/^I am able to select different variants$/) do
     div.all('label')[i-1].click
   end
 end
+
+Then(/^Cart icon should have an indication of "([^"]*)"$/) do |arg|
+  find_by_id('cartItemCount').text.to_i.should == arg.to_i
+end
+
+Then(/^I should not be able to add to cart without a variant$/) do
+  fill_in "quantity", :with=> 1
+  find_by_id("addToCart").click
+  page.should have_content("Lütfen bir seçim yapınız.")
+  page.should have_selector("#notification", visible: :hidden)
+end
+
+And(/^There are "([^"]*)" comments on details$/) do |arg|
+  div = find_by_id('reviews')
+  div.find('li.review-item', match: :first)
+  comments = div.all('li.review-item')
+  comments.size.should == arg.to_i
+end
+
+And(/^I click on more comments button$/) do
+  find_by_id('showMoreComments').click
+end
+
+When(/^I click return policy link$/) do
+  find_by_id('productReturnPolicy').click
+end
+
+Then(/^I get the return policy description$/) do
+  find_by_id('returnPolicy').should have_content('İade Koşulları')
+end
+
+When(/^I click product description tab$/) do
+  find_by_id('productDescription').click
+end
+
+Then(/^I get the product description$/) do
+  find_by_id('tabProductDesc')
+end
+
+When(/^I click product specs tab$/) do
+  find_by_id('productTechSpec').click
+end
+
+Then(/^I get the product specs$/) do
+  find_by_id('tabTechSpec')
+end
