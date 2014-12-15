@@ -124,3 +124,28 @@ Feature: Search page is as expected
     Given I visit main page
     When I search for "BD800472"
     Then Add to cart button is not available on result no "1"
+
+  @319
+  Scenario: Number of results
+    Given I visit main page
+    When I search for "deterjan"
+    Then There are more than "20" results
+    And There are "20" results displayed
+
+  @319
+  Scenario: Number of results
+    Given I visit main page
+    And I search for "bebek bezi"
+    And There are more than "20" results
+    And There are "20" results displayed
+    When I click load more results
+    Then There are "40" results displayed
+    And I click load more results
+    And There are "40" results displayed
+
+  @319
+  Scenario: No results
+    Given I visit main page
+    When I search for "ahndarabberete"
+    Then I should see no results page
+

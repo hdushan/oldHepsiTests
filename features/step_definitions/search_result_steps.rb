@@ -22,6 +22,7 @@ end
 
 Then(/^I should see no results page$/) do
   expect(find(".no-results-container"))
+  page.should have_content "Üzgünüz, aramanızla eşleşen ürün bulunamadı. Lütfen ürünün adını doğru girdiğinizden emin olunuz. Ana sayfaya dönebilirsiniz ve kategoriler aracılığıyla ürünlere göz gezdirebilirsiniz."
 end
 
 Then(/^I should see (.*) visible results$/) do | amount_of_visible_results |
@@ -152,4 +153,16 @@ Then(/^Add to cart button is not available on result no "([^"]*)"$/) do |arg|
     item.should have_content "Bu ürün geçici olarak temin edilememektedir."
     item.should have_no_selector "button.add-to-basket"
   end
+end
+
+Then(/^There are more than "([^"]*)" results$/) do |arg|
+  i = extract_number find_by_id('totalItems').text
+  i.should > arg.to_i
+end
+
+Then(/^There are "([^"]*)" results displayed$/) do |arg|
+  res = find_by_id('productresults')
+  res.find('li.search-item', match: :first)
+  items = res.all('li.search-item')
+  items.size.should == arg.to_i
 end

@@ -11,9 +11,8 @@ end
 
 Then(/^There are some results available$/) do
   results = find_by_id "productresults"
-  set_wait_time 3
-  results.should have_selector "div.sort-controls-container"
-  revert_to_default_wait_time
+  find('li.search-item', match: :first)
+  expect(results.all("li.search-item").count).to be > 0
 end
 
 Given(/^I open search result no "([^"]*)"$/) do |arg|

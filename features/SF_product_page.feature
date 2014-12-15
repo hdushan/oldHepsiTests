@@ -178,3 +178,11 @@ Feature: Product page is as expected
     And I open search result no "1"
     Then Add to cart button is not available on product details
 #    And I am able to select different variants
+
+  @319
+  Scenario: Clicking through to a product
+    Given I visit main page
+    And I search for "yüzük"
+    And There are some results available
+    When I open search result no "2"
+    Then I am on product details
