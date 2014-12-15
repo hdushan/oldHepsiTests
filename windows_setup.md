@@ -12,12 +12,6 @@ Install ruby devkit
     
     choco install ruby.devkit
 
-Install phantom js
-
-    choco install PhantomJS
-
-Add phantomjs to path
-
 Install required gems 
 
 	gem install bundler
@@ -32,4 +26,4 @@ After getting into the directory, all you need to do is just installing the gems
 
 To run your test cases with tags ;
 
-    cucumber --tag @regression storefront
+    cucumber  --tags @regression
