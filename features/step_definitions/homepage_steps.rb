@@ -174,3 +174,7 @@ Then(/^I see link "(.*?)" that navigates to "(.*?)" in a "(.*?)" if required and
        end
   end
   end
+
+Then(/^The page title is "([^"]*)"$/) do |arg|
+  page.title.should == arg
+end
