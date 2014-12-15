@@ -14,7 +14,7 @@ Given(/^I navigate to Mobile_Category$/) do |table|
   find('a.icon-hamburger').click
   values.each { |x|  x
   ul = find('ul.nav-home')
-  ul.first('a', :text=> x).click
+  ul.find('a', :text=> x, match: :first).click
   }
 end
 
@@ -49,4 +49,39 @@ end
 
 And(/^I click on the checkout$/) do
   click_link 'shoppingCart'
+end
+
+
+Then(/^Clear button in filter should be disabled$/) do
+  find_by_id('showFilterOptions').click
+  button = find_by_id('btnClearFilters')
+  button['disabled'].should == "true"
+  find_by_id('showFilterOptions').click
+end
+
+And(/^I apply a filter on mobile$/) do |table|
+  # table is a table.hashes.keys # => [:Markalar, :Philips]
+  values = table.raw
+  find_by_id('showFilterOptions').click
+  filter_tab = find_by_id "filterResults"
+  $result_stack.push get_result_count
+  values.each { |x|
+    filter_tab.first('li', :text=> /^#{x[0]}/ )
+    if x[0] == "Değerlendirme Puanı"
+      str = "star_" + (extract_number x[1]).to_s
+      filter_tab.find("label[for='#{str}']").click
+    else
+      filter_tab.first('label', :text=> /^#{x[1]}/).click
+    end
+    filter_tab = find_by_id "filterResults"
+    $result_stack.push get_result_count
+  }
+  find_by_id('btnApplyFilters').click
+end
+
+Then(/^Clear button in filter should be enabled$/) do
+  find_by_id('showFilterOptions').click
+  button = find_by_id('btnClearFilters')
+  button['disabled'].should == nil
+  find_by_id('showFilterOptions').click
 end
