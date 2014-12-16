@@ -171,5 +171,21 @@ When(/^There are "([^"]*)" brands in brand filter$/) do |arg|
   i = arg.to_i
   list = find_by_id('brandList')
   list.find('label.filter-label', visible: :true, match: :first)
-  list.all('label.filter-label').size.should == i
+  list.all('li').select{|x| x['class'] != "hide" && x['class'] != "more-brands"}.size.should == i
+end
+
+And(/^There is more brands button$/) do
+  find_by_id('moreBrandsInFilters')
+end
+
+Then(/^I press more brands button$/) do
+  find_by_id('moreBrandsInFilters').click
+end
+
+And(/^There are more than "([^"]*)" brands in the filter area$/) do |arg|
+  i = arg.to_i
+  list = find_by_id('brandList')
+  list['class'].include?("show-all-brands").should == false
+  list.find('label.filter-label', visible: :true, match: :first)
+  list.all('label.filter-label', visible: :true).size.should > i
 end

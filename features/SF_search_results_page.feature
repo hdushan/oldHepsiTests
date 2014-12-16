@@ -161,3 +161,9 @@ Feature: Search page is as expected
 
   @256
   Scenario: More brands button on search results
+    Given I visit main page
+    And I search for "kitap"
+    When There are "10" brands in brand filter
+    And There is more brands button
+    Then I press more brands button
+    And There are more than "10" brands in the filter area
