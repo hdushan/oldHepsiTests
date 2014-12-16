@@ -190,3 +190,21 @@ And(/^There are more than "([^"]*)" brands in the filter area$/) do |arg|
   list.find('label.filter-label', visible: :true, match: :first)
   list.all('label.filter-label', visible: :true).size.should > i
 end
+
+And(/^I store search result count$/) do
+  $search_result_count = extract_number find_by_id('totalItems').text
+end
+
+And(/^I store filtered search result count$/) do
+  $filtered_result_count = extract_number find_by_id('totalItems').text
+end
+
+Then(/^Current search results count should be same as the first one$/) do
+  i = extract_number find_by_id('totalItems').text
+  i.should == $search_result_count
+end
+
+Then(/^Current filtered results count should be same as the first one$/) do
+  i = extract_number find_by_id('totalItems').text
+  i.should == $filtered_result_count
+end

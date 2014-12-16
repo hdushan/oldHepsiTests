@@ -85,3 +85,55 @@ Then(/^Clear button in filter should be enabled$/) do
   button['disabled'].should == nil
   find_by_id('showFilterOptions').click
 end
+
+And(/^I clear filters on mobile$/) do
+  find_by_id('showFilterOptions').click
+  find_by_id('btnClearFilters').click
+end
+
+And(/^Apply button in filter should be enabled$/) do
+  find_by_id('showFilterOptions').click
+  button = find_by_id('btnApplyFilters')
+  button['disabled'].should == nil
+  find_by_id('showFilterOptions').click
+end
+
+When(/^I remove filters on mobile$/) do |table|
+  # table is a table.hashes.keys # => [:Markalar, :Twigy]
+  values = table.raw
+  find_by_id('showFilterOptions').click
+  filter_tab = find_by_id "filterResults"
+  $result_stack.push get_result_count
+  values.each { |x|
+    filter_tab.first('li', :text=> /^#{x[0]}/ )
+    if x[0] == "Değerlendirme Puanı"
+      li = find('li', text: x[0], match: :first)
+      li.find('a.remove-filter').click
+    else
+      filter_tab.first('label', :text=> /^#{x[1]}/).click
+    end
+    filter_tab = find_by_id "filterResults"
+    $result_stack.push get_result_count
+  }
+  find_by_id('btnApplyFilters').click
+end
+
+
+When(/^I uncheck filters on mobile$/) do |table|
+  # table is a table.hashes.keys # => [:Markalar, :Victorinox]
+  values = table.raw
+  find_by_id('showFilterOptions').click
+  filter_tab = find_by_id "filterResults"
+  $result_stack.push get_result_count
+  values.each { |x|
+    filter_tab.first('li', :text=> /^#{x[0]}/ )
+    if x[0] == "Değerlendirme Puanı"
+      str = "star_" + (extract_number x[1]).to_s
+      filter_tab.find("label[for='#{str}']").click
+    else
+      filter_tab.first('label', :text=> /^#{x[1]}/).click
+    end
+    filter_tab = find_by_id "filterResults"
+    $result_stack.push get_result_count
+  }
+end

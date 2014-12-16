@@ -5,7 +5,6 @@ Feature: Search and apply a filter to find a product
   I want to be able to search for a product and apply a filter
   In order to add it to cart
 
-  @merchant_enabled
   Scenario: Visit site
     Given I visit main page
     Then I am at main page
@@ -30,7 +29,7 @@ Feature: Search and apply a filter to find a product
 
   Scenario: Go to checkout
     Given I go to checkout
-    When I am on new checkout screen
+    When I am on checkout screen
     Then Product is listed in the checkout screen
 
   Scenario: End Test

@@ -5,7 +5,6 @@ Feature: Make a search and test both sorting and filter clearing
   I want to be able to clear filters and sort results
   In order to have a more refined result set
 
-  @merchant_enabled
   Scenario: Visit site
     Given I visit main page
     Then I am at main page
