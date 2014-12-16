@@ -560,3 +560,7 @@ When(/^There are items in carousel$/) do
   div.find('div.owl-item', match: :first)
   div.all('div.owl-item').size.should > 0
 end
+
+And(/^I clear sessions$/) do
+  Capybara.reset_sessions!
+end

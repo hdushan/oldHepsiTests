@@ -12,7 +12,7 @@ Given /^I select a product from search results$/ do
 end
 
 When(/^I click the 'add to basket' button on results page$/) do
-  find('button.add-to-basket.button-like-link').click
+  find('button.add-to-basket', match: :first).click
 end
 
 Then(/^I should see a list of (.*) results$/) do | search_term |

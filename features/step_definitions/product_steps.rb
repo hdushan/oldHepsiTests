@@ -184,7 +184,7 @@ And(/^I see the discount percentage of (.*)$/) do | discount |
 end
 
 Then(/^I do not see a discount price$/) do
-  page.should have_css('del#originalPrice', :visible => false)
+  page.should have_css('del#originalPrice', :visible => :hidden)
 end
 
 Then(/^there are (\d*) variants displayed$/) do | number |
