@@ -198,3 +198,8 @@ Feature: Search page is as expected
     | saat   |
     | silgi  |
 
+  @957
+  Scenario: Handling empty search
+    Given I visit main page
+    When I search for ""
+    Then I don't get the error page

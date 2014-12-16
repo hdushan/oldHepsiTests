@@ -5,12 +5,24 @@ Feature: Homepage is as expected
   I want to be able to see things on the homepage
   So that I can navigate the site to purchase items
 
-  @190 @467 @ignore
-  Scenario: Show "Deal of the Day" on Homepage
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Then I see 6 items in deal of the day
-    And each deal of the day product shows its undiscounted price
+  @190
+  Scenario: Displaying deals on homepage
+    Given I visit main page
+    When There are some items in deal of the day carousel
+    Then Original prices should be displayed in deal of the day items
+    And Deal of the day items have titles
+
+  @190
+  Scenario: Displaying discounted prices on deal of the day products
+    Given I visit main page
+    When There are some items in deal of the day carousel
+    Then Discounted prices should be displayed in deal of the day items
+
+  @190
+  Scenario: Clicking through on a deal
+    Given I visit main page
+    When There are some items in deal of the day carousel
+    Then I should be able to visit every item in deal of the day carousel
 
   @248
   Scenario: Show social icons in footer
@@ -186,3 +198,4 @@ Feature: Homepage is as expected
   Scenario: Include favicon on mobile
     Given I visit mobile main page
     Then Favicon should be on mobile page
+

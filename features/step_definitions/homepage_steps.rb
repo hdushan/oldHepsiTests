@@ -196,3 +196,23 @@ Then(/^Favicon should be on mobile page$/) do
   path = "/m/Content/images/favicon.ico"
   find('head').find("link[href='#{path}']", )
 end
+
+And(/^Deal of the day items have titles$/) do
+  items = find_by_id('dealOfTheDayCarousel').all('div.owl-item')
+  items.each{ |x|
+    title = format_price x.find('h3.title').text
+    title.should_not == nil
+  }
+end
+
+Then(/^Discounted prices should be displayed in deal of the day items$/) do
+  steps %{ Then Original prices should be displayed in deal of the day items }
+end
+
+Then(/^I should be able to visit every item in deal of the day carousel$/) do
+  links = find_by_id('dealOfTheDayCarousel').all('div.owl-item').collect{|x| x.first('a')['href']}
+  links.each{ |x|
+    visit x
+    steps %{ Then I don't get the error page }
+  }
+end

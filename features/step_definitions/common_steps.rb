@@ -373,10 +373,10 @@ When(/^There are some items in deal of the day carousel$/) do
 end
 
 Then(/^Original prices should be displayed in deal of the day items$/) do
-  items = find_by_id('dealOfTheDayCarousel').all('div.owl-item.active', :visible => true)
+  items = find_by_id('dealOfTheDayCarousel').all('div.owl-item')
   items.each{ |x|
-    price = format_price x.find('span.product-price').text
-    org_price = format_price x.find('del.product-old-price').text
+    price = format_price x.find('span.price').text
+    org_price = format_price x.find('del.price.old').text
     price.should_not == 0.0
     org_price.should_not == 0.0
     org_price.should > price
