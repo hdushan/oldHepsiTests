@@ -387,3 +387,7 @@ And(/^I should be able to visit every link on breadcrumb trail$/) do
     steps %{ Then I don't get the error page }
   }
 end
+
+Then(/^I don't see a text indicating that free shipping is available$/) do
+  page.should have_no_content "Kargo Bedava"
+end

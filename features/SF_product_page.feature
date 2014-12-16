@@ -45,6 +45,11 @@ Feature: Product page is as expected
     Then I see text indicating that free shipping is available
     Then I see the returns policy
 
+  @103
+  Scenario: No free shipping on details
+    Given I select a product with SKU BD800476
+    Then I don't see a text indicating that free shipping is available
+
   @144
   Scenario: Display variants with price on the details page
     Given I select a product with SKU TELCEPSAMI8200-B
