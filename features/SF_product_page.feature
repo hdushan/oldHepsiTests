@@ -5,7 +5,7 @@ Feature: Product page is as expected
   I want to be able to see things on the product page
   So that I can decide on whether to purchase the item
 
-  @143 @60 @19 @61 @62 @83
+  @143 @60 @19 @61 @62
   Scenario: Display Product information
     Given I select a product with SKU TELCEPNOKLU925-B
     Then I see the product information
@@ -251,3 +251,20 @@ Feature: Product page is as expected
     Given I visit main page
     And I open deal of the day no "1"
     Then I see a timer on product details page that shows when the deal ends
+
+  @83
+  Scenario: Ratings of a product on details page
+    Given I visit main page
+    When I search for "TELCEPSAMN9000-B"
+    And I open search result no "1"
+    Then I am on product details
+    And There are "3" comments on details
+    And I see the number of reviews
+
+  @83
+  Scenario: No ratings
+    Given I visit main page
+    When I search for "TELKULSENN10109"
+    And I open search result no "1"
+    Then I am on product details
+    And There are no comments on details

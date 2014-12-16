@@ -391,3 +391,12 @@ end
 Then(/^I don't see a text indicating that free shipping is available$/) do
   page.should have_no_content "Kargo Bedava"
 end
+
+And(/^I see the number of reviews$/) do
+  count = find('span[itemprop="reviewCount"]').text.to_i
+  count.should > 0
+end
+
+And(/^There are no comments on details$/) do
+  page.should have_no_selector "#reviews"
+end

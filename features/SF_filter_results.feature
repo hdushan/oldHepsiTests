@@ -13,7 +13,7 @@ Feature: Filter search results
     Given I filter by shipping style
     Then I should only see products that fall under my preset range
 
-  @25 @83
+  @25
   Scenario: Filter by 'Rating'
     Given I filter by rating
     Then I should only see products that fall under my preset range
