@@ -262,7 +262,7 @@ Then /^I do not see the 'add to basket' button/ do
 end
 
 Then /^I should see the bestseller section$/ do
-  page.should have_selector('.top-seller')
+  page.should have_selector('section.top-seller')
 end
 
 Then /^I should see the quantity box with a default of 1$/ do
