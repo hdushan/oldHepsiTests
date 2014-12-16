@@ -208,3 +208,10 @@ Then(/^Current filtered results count should be same as the first one$/) do
   i = extract_number find_by_id('totalItems').text
   i.should == $filtered_result_count
 end
+
+Then(/^Sub categories are displayed in filters section$/) do
+  find_by_id('btnExpandCategories').text.should == "Kategoriler"
+  list = find_by_id('categoryList')
+  list.find('li.category-level-0', match: :first)
+  list.all('li.category-level-0').size.should > 0
+end

@@ -183,3 +183,18 @@ Feature: Search page is as expected
     When I open search result no "1"
     Then I should see a breadcrumb trail
     And I should be able to visit every link on breadcrumb trail
+
+  @229
+  Scenario Outline: Filter by category
+    Given I visit main page
+    When I search for "<item>"
+    And There are some results available
+    Then Sub categories are displayed in filters section
+    Examples:
+    | item   |
+    | kitap  |
+    | defter |
+    | kalem  |
+    | saat   |
+    | silgi  |
+
