@@ -215,3 +215,12 @@ Then(/^Sub categories are displayed in filters section$/) do
   list.find('li.category-level-0', match: :first)
   list.all('li.category-level-0').size.should > 0
 end
+
+And(/^Store image name on search result no "([^"]*)"$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    res = find_by_id("productresults")
+    res.find('li.search-item', match: :first)
+    $file_name = get_file_name res.all('li.search-item')[i].first('img')['src']
+  end
+end

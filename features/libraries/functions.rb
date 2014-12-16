@@ -74,3 +74,7 @@ def array_has_item_without arr
     }
   }
 end
+
+def get_file_name str
+  return str.split("/").last
+end

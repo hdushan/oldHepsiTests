@@ -71,7 +71,7 @@ Then(/^I cannot click the clear filters button$/) do
   expect(find('#btnClearFilters')[:disabled]).to eq 'true'
 end
 
-Then(/^I should not see any selected filters$/) do
+Then /^I should not see any selected filters$/ do
   all('#filterResults li input').each do |input|
     set_wait_time 5
     expect(input).to_not be_checked

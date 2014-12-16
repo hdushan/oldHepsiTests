@@ -108,7 +108,7 @@ end
 Then(/^I see the super fast delivery flag$/) do
   # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
   # how to match encoded string correctly
-  expect(first('#fastShipping').text).to match 'per H'
+  expect(first('#fastShipping').text).to match 'Süper Hızlı, Bugün Teslimat'
 end
 
 Then(/^I see the product information$/) do
@@ -406,4 +406,13 @@ Then(/^There is no installment option for this product$/) do
   div = find_by_id('tabPaymentInstallment')
   div.should have_content "Yeni yasal düzenleme gereği; telekomünikasyon, kuyum, yemek ve gıda alımlarında 1 Şubat 2014 itibariyle taksit uygulanamamaktadır."
   div.find('img[alt="Taksit Yok"]')
+end
+
+Then(/^I don't see the super fast delivery flag$/) do
+  page.should have_no_selector "#fastShipping"
+end
+
+Then(/^I should see the stored image in product details$/) do
+  link = find_by_id('productDetailsCarousel').find('div.owl-item.active').find('img')['src']
+  link.include?($file_name).should == true
 end

@@ -5,7 +5,7 @@ Feature: Product page is as expected
   I want to be able to see things on the product page
   So that I can decide on whether to purchase the item
 
-  @143 @60 @19 @61 @62
+  @143 @60 @19 @62
   Scenario: Display Product information
     Given I select a product with SKU TELCEPNOKLU925-B
     Then I see the product information
@@ -275,3 +275,18 @@ Feature: Product page is as expected
     When I search for "TELCEPSAMN9000-B"
     And I open search result no "1"
     Then There is no installment option for this product
+
+  @65
+  Scenario: Open details for an item which doesn't have super fast shipping
+    Given I visit main page
+    When I search for "KTIMAS43484"
+    And I open search result no "1"
+    Then I don't see the super fast delivery flag
+
+  @61
+  Scenario: Search result image should exist in product details
+    Given I visit main page
+    When I search for "BD800476"
+    And Store image name on search result no "1"
+    And I open search result no "1"
+    Then I should see the stored image in product details
