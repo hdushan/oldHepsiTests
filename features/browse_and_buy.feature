@@ -16,7 +16,7 @@ Feature: Browse categories to find a product
     Then There are some results available
 
   Scenario: Go to product details and add to cart
-    Given I open search result no "2"
+    Given I open search result no "1"
     When I am on product details
     Then I add "2" product(s) to cart
 
