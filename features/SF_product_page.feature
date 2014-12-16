@@ -268,3 +268,10 @@ Feature: Product page is as expected
     And I open search result no "1"
     Then I am on product details
     And There are no comments on details
+
+  @68
+  Scenario: No installment
+    Given I visit main page
+    When I search for "TELCEPSAMN9000-B"
+    And I open search result no "1"
+    Then There is no installment option for this product

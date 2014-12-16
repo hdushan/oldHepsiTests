@@ -400,3 +400,10 @@ end
 And(/^There are no comments on details$/) do
   page.should have_no_selector "#reviews"
 end
+
+Then(/^There is no installment option for this product$/) do
+  find_by_id('productPaymentInstallment').click
+  div = find_by_id('tabPaymentInstallment')
+  div.should have_content "Yeni yasal düzenleme gereği; telekomünikasyon, kuyum, yemek ve gıda alımlarında 1 Şubat 2014 itibariyle taksit uygulanamamaktadır."
+  div.find('img[alt="Taksit Yok"]')
+end
