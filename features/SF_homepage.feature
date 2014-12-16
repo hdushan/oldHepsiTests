@@ -176,3 +176,13 @@ Feature: Homepage is as expected
   Scenario: Check page title
     Given I visit main page
     Then The page title is "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com"
+
+  @223
+  Scenario: Include favicon on desktop
+    Given I visit main page
+    Then Favicon should be on page
+
+  @223
+  Scenario: Include favicon on mobile
+    Given I visit mobile main page
+    Then Favicon should be on mobile page

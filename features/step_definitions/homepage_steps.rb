@@ -185,3 +185,14 @@ And(/^I open deal of the day no "([^"]*)"$/) do |arg|
     page.all('#dealOfTheDay .product a')[i].click()
   end
 end
+
+
+Then(/^Favicon should be on page$/) do
+  path = "/Content/images/favicon.ico"
+  find('head').find("link[href='#{path}']", )
+end
+
+Then(/^Favicon should be on mobile page$/) do
+  path = "/m/Content/images/favicon.ico"
+  find('head').find("link[href='#{path}']", )
+end
