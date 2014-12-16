@@ -1,10 +1,11 @@
 #encoding: UTF-8
-@reliable
+
 Feature: 483 - Check campaign banners next to carousel
   As a browser
   I want to see campaing banners next to carousel
   So that i can easily see recent campaings
 
+  @reliable
   Scenario: Go to main page
     Given I visit main page
     Then I am at main page
