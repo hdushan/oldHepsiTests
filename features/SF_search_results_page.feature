@@ -167,3 +167,11 @@ Feature: Search page is as expected
     And There is more brands button
     Then I press more brands button
     And There are more than "10" brands in the filter area
+
+  @253
+  Scenario: Filtering results within subcategories (second to third, third to fourth levels)
+    Given I visit main page
+    And I search for "ayakkabı"
+    When I select a sub category in search
+    | Giyim / Ayakkabı | Erkek | Erkek Ayakkabı | Erkek Bot |
+    Then There are some results available
