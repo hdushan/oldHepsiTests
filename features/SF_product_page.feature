@@ -17,7 +17,7 @@ Feature: Product page is as expected
 
   @84
   Scenario: Display product reviews
-    Given I select a product with SKU TELCEPNOKLU925-B
+    Given I select a product with SKU SPORALTISSD5000
     Then I see at least 3 reviews
     And I can see the 'More Reviews' button
 
