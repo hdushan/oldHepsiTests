@@ -54,6 +54,7 @@ end
 
 Then /^I should see a breadcrumb trail$/ do
   page.should have_selector('.breadcrumbs-wrapper')
+  find('div.breadcrumbs-wrapper').all('li[itemtype="http://data-vocabulary.org/Breadcrumb"]').size.should > 0
 end
 
 Then /^I should see the variants message for the product$/ do

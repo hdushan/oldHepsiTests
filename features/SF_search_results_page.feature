@@ -175,3 +175,11 @@ Feature: Search page is as expected
     When I select a sub category in search
     | Giyim / Ayakkabı | Erkek | Erkek Ayakkabı | Erkek Bot |
     Then There are some results available
+
+  @249
+  Scenario: Navigation using breadcrumbs
+    Given I visit main page
+    And I search for "bebek bezi"
+    When I open search result no "1"
+    Then I should see a breadcrumb trail
+    And I should be able to visit every link on breadcrumb trail

@@ -379,3 +379,11 @@ end
 Then(/^I get the product specs$/) do
   find_by_id('tabTechSpec')
 end
+
+And(/^I should be able to visit every link on breadcrumb trail$/) do
+  links = find('ul.breadcrumbs').all('li[itemtype="http://data-vocabulary.org/Breadcrumb"]').collect{|x| x.first('a')['href']}
+  links.each { |x|
+    visit x
+    steps %{ Then I don't get the error page }
+  }
+end
