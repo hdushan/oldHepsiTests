@@ -1,5 +1,5 @@
 #encoding: UTF-8
-
+@reliable
 Feature: 637 - Use legacy site urls in new site
   As a campaign manager
   I want to redirect old websites brand filtered urls to new website

@@ -1,3 +1,4 @@
+@reliable
 Feature: 456 - Using Legacy site links on mobile page
   As a mobile user
   I should be able to use original site links

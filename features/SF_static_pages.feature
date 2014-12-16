@@ -1,6 +1,6 @@
 #encoding: UTF-8
 
-@storefront
+@storefront @reliable
 Feature: Static pages
 
   @660

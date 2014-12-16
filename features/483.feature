@@ -1,5 +1,5 @@
 #encoding: UTF-8
-
+@reliable
 Feature: 483 - Check campaign banners next to carousel
   As a browser
   I want to see campaing banners next to carousel

@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@storefront
+@storefront @reliable
 
 Feature: Feedback mechanism for beta
   As a product owner

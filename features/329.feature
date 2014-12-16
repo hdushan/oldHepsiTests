@@ -1,5 +1,6 @@
 #encoding: UTF-8
 
+  @reliable
 Feature: 329 - Anonymize Comments with Gender Names for Privacy of Customer
   As a Hepsiburada customer
   I want to hide my name in the comments

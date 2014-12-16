@@ -166,3 +166,10 @@ Then(/^There are "([^"]*)" results displayed$/) do |arg|
   items = res.all('li.search-item')
   items.size.should == arg.to_i
 end
+
+When(/^There are "([^"]*)" brands in brand filter$/) do |arg|
+  i = arg.to_i
+  list = find_by_id('brandList')
+  list.find('label.filter-label', visible: :true, match: :first)
+  list.all('label.filter-label').size.should == i
+end

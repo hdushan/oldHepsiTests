@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@storefront
+@storefront @reliable
 
 Feature: Login using email and password
   As a returning Hepsiburada customer

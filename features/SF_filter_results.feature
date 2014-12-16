@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@storefront
+@storefront @reliable
 
 Feature: Filter search results
 

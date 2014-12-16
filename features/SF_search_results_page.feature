@@ -149,3 +149,15 @@ Feature: Search page is as expected
     When I search for "ahndarabberete"
     Then I should see no results page
 
+  @256
+  Scenario: More brands button on CLP
+    Given I visit main page
+    And I navigate to Category
+    | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+    When There are "10" brands in brand filter
+    And There is more brands button
+    Then I press more brands button
+    And There are more than "10" brands in the filter area
+
+  @256
+  Scenario: More brands button on search results
