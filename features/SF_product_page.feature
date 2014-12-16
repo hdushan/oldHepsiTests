@@ -10,11 +10,6 @@ Feature: Product page is as expected
     Given I select a product with SKU TELCEPNOKLU925-B
     Then I see the product information
 
-  @56
-  Scenario: Page title contains product name
-    Given I select a product with SKU TELCEPNOKLU925-B
-    Then the page title contains the product name
-
   @84
   Scenario: Display product reviews
     Given I select a product with SKU SPORALTISSD5000
@@ -305,3 +300,17 @@ Feature: Product page is as expected
     When I search for "OUTPA80156"
     And I open search result no "1"
     Then There is only one image in details
+
+  @56
+  Scenario: Product title should be included in details page
+    Given I visit main page
+    And I search for "PTTROPP-1710"
+    When I open search result no "1"
+    Then Product title is displayed in details
+
+  @56
+  Scenario: Product sku should be included in url
+    Given I visit main page
+    And I search for "PTTROPP-1710"
+    When I open search result no "1"
+    Then Product sku is contained in the url

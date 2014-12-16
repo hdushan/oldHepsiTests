@@ -448,3 +448,11 @@ Then(/^There is only one image in details$/) do
   size = div.all('div.owl-item').size
   size.should == 1
 end
+
+Then(/^Product title is displayed in details$/) do
+  page.should have_content $p_title
+end
+
+Then(/^Product sku is contained in the url$/) do
+  page.current_url.include?($p_id).should == true
+end

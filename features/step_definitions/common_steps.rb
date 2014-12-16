@@ -21,6 +21,7 @@ Given(/^I open search result no "([^"]*)"$/) do |arg|
   if i >= 0 and i<RESULTS_PER_PAGE
     res = results.all('li.search-item')[i]
     $p_id = res['id']
+    $p_title = res.find('h3.product-title').text
     res.find('h3.product-title').click
   end
 end
