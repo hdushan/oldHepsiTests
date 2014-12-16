@@ -416,3 +416,35 @@ Then(/^I should see the stored image in product details$/) do
   link = find_by_id('productDetailsCarousel').find('div.owl-item.active').find('img')['src']
   link.include?($file_name).should == true
 end
+
+Then(/^There are multiple images in details$/) do
+  div = find_by_id('productDetailsCarousel')
+  div.find('div.owl-item', match: :first)
+  size = div.all('div.owl-item').size
+  size.should > 1
+end
+
+And(/^I cycle through thumbnails in details$/) do
+  div = find_by_id('productDetailsCarousel')
+  div.find('div.owl-item', match: :first)
+  size = div.all('div.owl-item').size
+  (size - 1).times do
+    find('div.owl-next').click
+    sleep 1
+  end
+  (size - 1).times do
+    find('div.owl-prev').click
+    sleep 1
+  end
+  all('div.owl-dot').each { |x|
+    x.find('img').click
+    sleep 1
+  }
+end
+
+Then(/^There is only one image in details$/) do
+  div = find_by_id('productDetailsCarousel')
+  div.find('div.owl-item', match: :first)
+  size = div.all('div.owl-item').size
+  size.should == 1
+end
