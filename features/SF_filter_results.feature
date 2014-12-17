@@ -4,12 +4,14 @@
 Feature: Filter search results
 
   @141
-  Scenario: Filter by 'Only'
-    Given I am on the homepage
-    When I search for "iPhone"
-    And I can see the results
-    Given I filter by shipping style
-    Then I should only see products that fall under my preset range
+  Scenario: Filter by 'Only' free shipping
+    Given I visit main page
+    When I search for "altın"
+    And I store search result count
+    And I apply a filter
+    | Sadece | Kargo Bedava Ürünler |
+    Then I should have a different result count
+
 
   @25 @reliable
   Scenario: Filter by 'Rating'
