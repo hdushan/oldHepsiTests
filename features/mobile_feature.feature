@@ -24,6 +24,12 @@ Feature: Mobile Homepage is as expected
     When I click the Hepsiburada logo
     Then I should be redirected to mobile Homepage
 
+  @10
+  Scenario: Toggling desktop from m.dot
+    Given I visit mobile main page
+    When I click go to desktop version link
+    Then I am on the homepage
+
   @312
   Scenario: Clear filters button should be disabled
     Given I visit mobile main page
