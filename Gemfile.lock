@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/hdushan/jmeter-test-runner.git
+  revision: 4d9dc8727ae7d2cb5c397537ac9284e8a892bbdb
+  specs:
+    jmeter-test-runner (0.0.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -122,6 +128,7 @@ DEPENDENCIES
   cucumber
   faker
   headless
+  jmeter-test-runner!
   poltergeist
   pry
   rake

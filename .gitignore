@@ -5,3 +5,4 @@ screenshots/*
 .idea/workspace.xml
 results.html
 results_cucumber.html
+build/
