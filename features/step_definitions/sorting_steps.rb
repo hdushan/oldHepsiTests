@@ -1,13 +1,16 @@
 # encoding: UTF-8
 When(/^I sort by bestseller$/) do
+  find('i.icon-shevron-down').click
   click_link 'bestSelling'
 end
 
 When(/^I sort by lowest price$/) do
+  find('i.icon-shevron-down').click
   click_link 'lowestPrice'
 end
 
 When(/^I sort by highest price$/) do
+  find('i.icon-shevron-down').click
   click_link 'highestPrice'
 end
 
