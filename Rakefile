@@ -30,13 +30,12 @@ task :performance do |t |
   time_now=Time.now
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".jtl"
-  system("java -version")
-  puts "Placeholder: Eventually this will run the test #{loadtest_script} and write results into #{result_file}"
-  run_load_test(loadtest_script, result_file, "xml")
+  result_file_html = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".html"
+  run_load_test(loadtest_script, result_file, "xml", result_file_html)
 end
 
-def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format)
-  testRunner = JmeterTestRunner::Test.new(loadtest_path, loadtest_result_path, loadtest_result_format)
+def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path)
+  testRunner = JmeterTestRunner::Test.new(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path)
   testRunner.start()
 end
 

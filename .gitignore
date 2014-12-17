@@ -6,3 +6,6 @@ screenshots/*
 results.html
 results_cucumber.html
 build/
+jmeter.log
+loadtest_results*
+jmeter.log
