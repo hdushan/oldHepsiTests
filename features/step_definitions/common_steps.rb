@@ -160,7 +160,7 @@ Then(/^I remove these filters$/) do |table|
   values = table.raw
   $result_stack.pop
   values.each { |x|
-    find('div.filter-container').first('li', :text => x[1]).first('a').click
+    find('div.applied-filter-container').first('li', :text => x[1]).first('a').click
     sleep 2
     i = $result_stack.pop
     get_result_count.should == i
@@ -324,7 +324,7 @@ end
 And(/^These filters are present on page "(.*)"$/) do |arg|
   brands = arg.split "-"
   brands.map!{ |x| x.strip }
-  div = find_by_id('productresults').find('div.filter-container')
+  div = find_by_id('productresults').find('div.applied-filter-container')
   filters = div.all('li.appliedFilter').collect(&:text)
   filters.each { |x| brands.include?(x).should == true }
 end
