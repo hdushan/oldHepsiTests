@@ -106,7 +106,7 @@ Given(/^I select a sub category in browsing$/) do |table|
   values = table.raw[0]
   i = values.size - 1
   wait_for_ajax
-  $current_level =  find('ul.nav-browse', :visible => true)
+  $current_level =  find('ol.category-list-items', :visible => true)
   values.each_with_index { |x, index|
     cat = $current_level.find('a', :text => x, match: :first)
     cat.click
