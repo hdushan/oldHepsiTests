@@ -226,3 +226,8 @@ And(/^Store image name on search result no "([^"]*)"$/) do |arg|
     $file_name = get_file_name res.all('li.search-item')[i].first('img')['src']
   end
 end
+
+Then(/^I should have a different result count$/) do
+  i = extract_number find_by_id('totalItems').text
+  i.should <= $search_result_count
+end

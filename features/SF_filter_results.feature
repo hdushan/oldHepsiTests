@@ -11,7 +11,7 @@ Feature: Filter search results
     Given I filter by shipping style
     Then I should only see products that fall under my preset range
 
-  @25
+  @25 @reliable
   Scenario: Filter by 'Rating'
     Given I am on the homepage
     When I search for "iPhone"
@@ -20,7 +20,7 @@ Feature: Filter search results
     Then I should only see products that fall under my preset range
     And I see ratings for all products
 
-  @28
+  @28 @reliable
   Scenario: Filter by 'Brand'
     Given I am on the homepage
     When I search for "iPhone"

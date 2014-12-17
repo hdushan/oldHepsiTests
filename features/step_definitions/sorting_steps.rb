@@ -15,23 +15,33 @@ When(/^I sort by highest price$/) do
 end
 
 Then(/^I see the bestseller button is not selected$/) do
+  find('i.icon-shevron-down').click
   expect(find('#bestSelling')[:class]).to_not include 'selected'
+  find('i.icon-shevron-down').click
 end
 
 Then(/^I see the lowest price button is selected$/) do
+  find('i.icon-shevron-down').click
   expect(find('#lowestPrice')[:class]).to include 'selected'
+  find('i.icon-shevron-down').click
 end
 
 Then(/^I see the bestseller button is selected$/) do
+  find('i.icon-shevron-down').click
   expect(find('#bestSelling')[:class]).to include 'selected'
+  find('i.icon-shevron-down').click
 end
 
 Then(/^I see the best matching button is selected$/) do
+  find('i.icon-shevron-down').click
   expect(find('#bestMatching')[:class]).to include 'selected'
+  find('i.icon-shevron-down').click
 end
 
 Then(/^I see the highest price button is selected$/) do
+  find('i.icon-shevron-down').click
   expect(find('#highestPrice')[:class]).to include 'selected'
+  find('i.icon-shevron-down').click
 end
 
 Then(/^I see results lowest price first$/) do

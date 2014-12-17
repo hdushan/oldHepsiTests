@@ -210,3 +210,23 @@ Feature: Search page is as expected
     When I search for "bebek bezi"
     And I open search result no "1"
     Then Top sellers section should include super fast delivery items
+
+  @24
+  Scenario: Filter by promotions in search results
+    Given I visit main page
+    When I search for "köpek maması"
+    And I store search result count
+    And I apply a filter
+    | Sadece | İndirimli Ürünler |
+    Then I should have a different result count
+
+
+  @24
+  Scenario: Filter by promotions in CLP
+    Given I visit main page
+    When I navigate to Category
+    | Spor Outdoor | Spor Branşları |
+    And I store search result count
+    And I apply a filter
+    | Sadece | Yeni Ürünler |
+    Then I should have a different result count
