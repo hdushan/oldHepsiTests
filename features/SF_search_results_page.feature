@@ -220,7 +220,6 @@ Feature: Search page is as expected
     | Sadece | İndirimli Ürünler |
     Then I should have a different result count
 
-
   @24
   Scenario: Filter by promotions in CLP
     Given I visit main page

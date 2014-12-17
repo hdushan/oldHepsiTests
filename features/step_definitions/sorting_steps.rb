@@ -45,11 +45,13 @@ Then(/^I see the highest price button is selected$/) do
 end
 
 Then(/^I see results lowest price first$/) do
+  find('.search-item', match: :first)
   price_list = prices_to_list(all('.search-item'))
   expect(price_list).to eq price_list.sort
 end
 
 Then(/^I see results highest price first$/) do
+  find('.search-item', match: :first)
   price_list = prices_to_list(all('.search-item'))
   expect(price_list).to eq price_list.sort{ |x,y| y <=> x }
 end

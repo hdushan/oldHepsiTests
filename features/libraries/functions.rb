@@ -49,7 +49,7 @@ end
 
 def prices_to_list(items)
   items.map { |item|
-    price_from_string(item.find('.product-price').text)
+    price_from_string(item.find('span.price').text)
   }
 end
 
