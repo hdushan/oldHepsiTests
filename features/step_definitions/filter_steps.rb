@@ -51,6 +51,7 @@ end
 
 When(/^I click load more results$/) do
   click_button "moreResult"
+  wait_for_ajax
 end
 
 When(/^I clear active filters$/) do

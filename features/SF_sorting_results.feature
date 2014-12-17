@@ -64,3 +64,31 @@ Feature: Sorting Search Results
     When I click load more results
     Then I should see 40 visible results
     And I see results lowest price first
+
+  @23
+  Scenario: Clicking more results
+    Given I visit main page
+    When I search for "kedi maması"
+    And I apply a filter
+    | Fiyat Aralığı | 0 TL - 25 TL |
+    Then I click load more results
+    And There are "40" results displayed
+
+  @23
+  Scenario: Sorting the results ascending
+    Given I visit main page
+    When I search for "kedi maması"
+    And I apply a filter
+      | Fiyat Aralığı | 0 TL - 25 TL |
+    And I sort by lowest price
+    Then I see results lowest price first
+
+  @23
+  Scenario: Clicking more results descending
+    Given I visit main page
+    When I search for "kedi maması"
+    And I apply a filter
+      | Fiyat Aralığı | 0 TL - 25 TL |
+    And I sort by highest price
+    Then I see results highest price first
+
