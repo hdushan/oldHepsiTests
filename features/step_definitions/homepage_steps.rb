@@ -77,7 +77,7 @@ Given /^I have input (.*) into search$/ do | search_term |
 end
 
 Then /^I see no suggestions based on my inputs$/ do
-  expect(page).to have_selector('.autocomplete-suggestions', :visible => false)
+  expect(page).to have_selector('.autocomplete-suggestions', :visible => :hidden)
 end
 
 And /^I see (\d+) categories and (\d+) other keywords$/ do | category_number, keyword_number |
@@ -106,8 +106,11 @@ Given /^I append (.*) into search$/ do | search_term |
 end
 
 Then /^I see a visual indication that an auto complete suggestion is selected/ do
-  first_auto_complete_suggestion = find('.autocomplete-suggestions').first('.autocomplete-suggestion')
-  expect(first_auto_complete_suggestion.native.style('background-color')).to eq('rgba(233, 233, 233, 1)')
+  list = find('.autocomplete-suggestions').all('.autocomplete-suggestion')
+  el1 = list[0]
+  el2 = list[1]
+  el1.native.style('background-color').should_not == el2.native.style('background-color')
+  # expect(first_auto_complete_suggestion.native.style('background-color')).to eq('rgba(233, 233, 233, 1)')
 end
 
 Given /^I see no visual indication of auto complete selection/ do

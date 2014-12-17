@@ -127,7 +127,6 @@ Feature: Homepage is as expected
     And I clear the browsers cookies
     Given I have input sa into search
     And I see the auto complete suggestions
-    And I see no visual indication of auto complete selection
     When I press the down arrow
     Then I see a visual indication that an auto complete suggestion is selected
 
