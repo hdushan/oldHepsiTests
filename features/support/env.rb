@@ -11,6 +11,9 @@ require 'pry'
 require 'rest-client'
 
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
+if ENV['host']
+  Capybara.app_host = ENV['host']
+end
 Capybara.run_server = false
 Capybara.default_driver = :firefox
 Capybara.default_selector = :css

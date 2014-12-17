@@ -70,7 +70,9 @@ Then /^I should see the discount badge$/ do
 end
 
 Then /^I should not see the discount badge$/ do
+  set_wait_time 5
   page.should_not have_selector('.discount-badge')
+  revert_to_default_wait_time
 end
 
 Then /^I see an indicator of free shipping associated with the item$/ do

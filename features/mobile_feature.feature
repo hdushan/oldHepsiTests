@@ -100,3 +100,9 @@ Feature: Mobile Homepage is as expected
       | Değerlendirme Puanı | 4 yıldız |
       | Kategori            | Çakı - Bıçak |
     Then Current search results count should be same as the first one
+
+  @51
+  Scenario: Go to login page on mobile
+    Given I visit mobile main page
+    When I click my account button on mobile
+    Then I am on mobile login page

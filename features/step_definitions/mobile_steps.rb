@@ -137,3 +137,12 @@ When(/^I uncheck filters on mobile$/) do |table|
     $result_stack.push get_result_count
   }
 end
+
+When(/^I click my account button on mobile$/) do
+  find('a.icon-hamburger').click
+  find('div.hamburger-content').find_by_id('myAccount').click
+end
+
+Then(/^I am on mobile login page$/) do
+  find('div.login-container')
+end
