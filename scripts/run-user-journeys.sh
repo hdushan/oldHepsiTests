@@ -15,4 +15,5 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+chmod -R 777 .
 killall -9 Xvfb
