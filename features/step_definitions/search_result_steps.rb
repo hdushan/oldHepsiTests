@@ -76,7 +76,7 @@ Then /^I should not see the discount badge$/ do
 end
 
 Then /^I see an indicator of free shipping associated with the item$/ do
-  page.find('.shipping-status').should have_content("Kargo Bedava")
+  find_by_id('productresults', :visible => true).should have_content("Kargo Bedava")
 end
 
 When /^I choose the category (.*)$/ do | category |

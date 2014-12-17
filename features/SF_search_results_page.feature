@@ -86,7 +86,7 @@ Feature: Search page is as expected
   @30
   Scenario: See free shipping on search results
     Given I am on the homepage
-    When I search for "EVPH42PFK6109"
+    When I search for "usb bellek"
     Then I see an indicator of free shipping associated with the item
 
   @30
