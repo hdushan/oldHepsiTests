@@ -456,3 +456,7 @@ end
 Then(/^Product sku is contained in the url$/) do
   page.current_url.include?($p_id).should == true
 end
+
+Then(/^Top sellers section should include super fast delivery items$/) do
+  find('section.top-seller').should have_content "Süper Hızlı"
+end

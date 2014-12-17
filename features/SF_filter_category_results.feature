@@ -20,7 +20,6 @@ Feature: Filter category results
     | İşletim Türü        | Android   |
     Then I should see Fast Shipping offered for product "Samsung i9060 Galaxy Grand Neo"
 
-
   @745 
   Scenario: Sorting CLP results when applied filter
     Given I am on the homepage

@@ -203,3 +203,10 @@ Feature: Search page is as expected
     Given I visit main page
     When I search for ""
     Then I don't get the error page
+
+  @36
+  Scenario: See super fast shipping on topsellers on product details page
+    Given I visit main page
+    When I search for "bebek bezi"
+    And I open search result no "1"
+    Then Top sellers section should include super fast delivery items
