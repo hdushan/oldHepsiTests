@@ -26,16 +26,12 @@ end
 desc "Run Jmeter Performance Tests"
 task :performance do |t |
   require_relative 'performance/jmeter-test-runner'
-  require 'capybara'
-  require 'capybara/dsl'
-  require 'capybara/rspec'
-  require 'selenium-webdriver'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
   run_load_test(loadtest_script, result_file, "xml", result_file_html)
-  check_for_errors(result_file_html, 100)
+  check_for_errors(result_file_html, 98)
 end
 
 def check_for_errors(result_file_html, threshold)
@@ -44,7 +40,7 @@ def check_for_errors(result_file_html, threshold)
   puts page.text.include?("Test Results")
   pass_percent = page.css(".details")[0].css("td")[2].text.split("%")[0].to_i
   if pass_percent < threshold
-    puts "Pass percentage (#{pass_percent}%) is less than the threashold (#{threshold}%)"
+    puts "\n\nFAIL!!!!!!\nPass percentage of http requests (#{pass_percent}%) is less than the expected threshold (#{threshold}%)\n\n"
     raise
   end  
 end
