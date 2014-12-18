@@ -441,7 +441,7 @@ And(/^I see the price on search item no "([^"]*)"$/) do |arg|
   i = arg.to_i - 1
   unless i < 0
     item = find_by_id('productresults').all('li.search-item', :visible=> true)[i]
-    $price = format_price item.find('span.product-price').text
+    $price = format_price item.find('span.price').text
   end
 end
 
