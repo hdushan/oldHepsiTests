@@ -26,14 +26,27 @@ end
 desc "Run Jmeter Performance Tests"
 task :performance do |t |
   require_relative 'performance/jmeter-test-runner'
+  require 'capybara'
+  require 'capybara/dsl'
+  require 'capybara/rspec'
+  require 'selenium-webdriver'
   puts "Running Load Test"
-  #time_now=Time.now
   loadtest_script = "performance/loadtest.jmx"
-  #result_file = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".jtl"
-  #result_file_html = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".html"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
   run_load_test(loadtest_script, result_file, "xml", result_file_html)
+  check_for_errors(result_file_html, 100)
+end
+
+def check_for_errors(result_file_html, threshold)
+  require 'nokogiri'
+  page = Nokogiri::HTML(open(result_file_html)) 
+  puts page.text.include?("Test Results")
+  pass_percent = page.css(".details")[0].css("td")[2].text.split("%")[0].to_i
+  if pass_percent < threshold
+    puts "Pass percentage (#{pass_percent}%) is less than the threashold (#{threshold}%)"
+    raise
+  end  
 end
 
 def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path)
