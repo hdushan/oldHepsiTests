@@ -314,3 +314,10 @@ Feature: Product page is as expected
     And I search for "PTTROPP-1710"
     When I open search result no "1"
     Then Product sku is contained in the url
+
+  @859
+  Scenario: Top sellers on product details
+    Given I visit main page
+    When I search for "AILEBNDBL2401"
+    And I open search result no "1"
+    Then There is a top sellers section
