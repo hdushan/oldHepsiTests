@@ -25,12 +25,14 @@ end
 
 desc "Run Jmeter Performance Tests"
 task :performance do |t |
-  require 'jmeter-test-runner'
+  require_relative 'performance/jmeter-test-runner'
   puts "Running Load Test"
-  time_now=Time.now
+  #time_now=Time.now
   loadtest_script = "performance/loadtest.jmx"
-  result_file = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".jtl"
-  result_file_html = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".html"
+  #result_file = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".jtl"
+  #result_file_html = "loadtest_results_" + time_now.strftime("%d%m%y_%H%M%S") + ".html"
+  result_file = "loadtest_results.jtl"
+  result_file_html = "loadtest_results.html"
   run_load_test(loadtest_script, result_file, "xml", result_file_html)
 end
 
