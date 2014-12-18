@@ -491,7 +491,7 @@ end
 
 Then(/^I am on old hepsiburada mainpage$/) do
   page.current_url.should == "http://www.hepsiburada.com/"
-  page.should have_content "hepsiburada.com"
+  page.should have_content "Hepsiburada.com, Bir Doğan Online Markasıdır."
   page.should have_selector "#divMainPageSliderContainer"
 end
 

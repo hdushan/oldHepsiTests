@@ -219,3 +219,42 @@ Then(/^I should be able to visit every item in deal of the day carousel$/) do
     steps %{ Then I don't get the error page }
   }
 end
+
+Given(/^I visit legacy home page$/) do
+  visit "http://www.hepsiburada.com"
+end
+
+When(/^I see opt\-in bar$/) do
+  bar = find_by_id('betaRedirectionDiv')
+  bar.find('button', text: "Evet, yönlendir")
+  bar.find('a', text: "Tekrar gösterme")
+end
+
+And(/^I click opt\-in button$/) do
+  bar = find_by_id('betaRedirectionDiv')
+  bar.find('button', text: "Evet, yönlendir").click
+end
+
+And(/^I see opt\-out bar$/) do
+  bar = find('.header-beta')
+  bar.find_by_id('btnSendFeedback')
+  bar.find_by_id('btnOptoutBeta')
+end
+
+When(/^I click opt\-out button$/) do
+  bar = find('.header-beta')
+  bar.find_by_id('btnOptoutBeta').click
+end
+
+
+And(/^I click never show link$/) do
+  find('a', text: "Tekrar gösterme").click
+end
+
+Then(/^I don't see the opt\-in bar$/) do
+  page.should have_selector("#betaRedirectionDiv", visible: :hidden)
+end
+
+And(/^I refresh page$/) do
+  visit current_url
+end

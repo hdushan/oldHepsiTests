@@ -229,3 +229,9 @@ Feature: Search page is as expected
     And I apply a filter
     | Sadece | Yeni Ürünler |
     Then I should have a different result count
+
+  @342
+  Scenario: Show product not available indication on results page
+    Given I visit main page
+    When I search for "sennheiser"
+    Then There should be an indication that some items are not available
