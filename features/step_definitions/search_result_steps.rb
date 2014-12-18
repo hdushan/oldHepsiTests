@@ -231,3 +231,12 @@ Then(/^I should have a different result count$/) do
   i = extract_number find_by_id('totalItems').text
   i.should <= $search_result_count
 end
+
+And(/^There is an indication on search result no "([^"]*)" about variants$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    res = find_by_id "productresults"
+    res.find('.search-item', match: :first)
+    res.all('.search-item')[i].should have_content "Bu ürünün farklı seçenekleri bulunmaktadır."
+  end
+end
