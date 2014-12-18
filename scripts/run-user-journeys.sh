@@ -7,7 +7,11 @@ export DISPLAY=:1
 sleep 3
 xhost +
 
-/usr/local/bin/cucumber features --format pretty --format html --out results.html --format junit --out results.xml --tags @journey
+echo "Running tests against http://$1" | /usr/games/cowsay
+
+
+/usr/local/bin/cucumber features --format pretty --format html --out results.html --format junit --out results.xml --tags @journey host=http://$1
+
 rc=$?
 
 if [[ $rc != 0 ]] ; then
