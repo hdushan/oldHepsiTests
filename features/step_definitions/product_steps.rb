@@ -16,9 +16,7 @@ end
 
 When /^I add to cart$/ do
   within "#addToCartForm" do
-    sleep 10
     click_button "addToCart"
-    sleep 10
   end
 end
 
