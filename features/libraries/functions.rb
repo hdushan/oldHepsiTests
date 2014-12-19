@@ -78,3 +78,11 @@ end
 def get_file_name str
   return str.split("/").last
 end
+
+def visit_main_page
+  begin
+    visit ''
+  rescue Timeout::Error
+    visit ''
+  end
+end

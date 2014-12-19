@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 Given(/^I visit main page$/) do
-  visit ''
+  visit_main_page
 end
 
 Then(/^I am at main page$/) do
@@ -313,7 +313,7 @@ Then(/^I don't get the error page$/) do
   rescue RSpec::Expectations::ExpectationNotMetError
     revert_to_default_wait_time
     url = page.current_url
-    visit ''
+    visit_main_page
     fail "Page not found error!!! on\n#{url}"
   end
 end
