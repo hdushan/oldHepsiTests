@@ -124,6 +124,7 @@ When(/^I apply a filter$/) do |table|
   # table is a table.hashes.keys # => [:Markalar, :Everest]
   values = table.raw
   filter_tab = find_by_id "filterResults"
+  $result_stack.clear
   $result_stack.push get_result_count
   values.each { |x|
     filter_tab.first('li', :text=> /^#{x[0]}/ )
@@ -434,7 +435,6 @@ Then(/^I should cycle through all of them and visit links$/) do
   }
   $links.each{|x|
     uri = URI.parse(URI.encode(x.strip))
-    p uri
     visit uri
     steps %{ Then I don't get the error page }
   }
