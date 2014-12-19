@@ -21,3 +21,9 @@ After getting into the directory, all you need to do is just installing the gems
 To run your test cases with tags ;
 
     cucumber features --format pretty
+
+### Running on a different host
+
+When you'd like to change the environment that the tests are running against
+
+cucumber features host=<your_desired_host>
