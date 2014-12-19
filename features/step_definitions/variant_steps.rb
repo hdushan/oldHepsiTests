@@ -5,7 +5,7 @@ Then(/^There are "([^"]*)" select box variant groups$/) do |arg|
   variants = all('.variant-container')
   variants.size.should == i
   variants.each { |x|
-    x.all('div').select{ |x| x['class'].include?('radio-variant') == false }.size.should == 0
+    x.all('div').select{|y| y['class'] != ""}.select{ |y| y['class'].include?('radio-variant') == false }.size.should == 0
   }
 end
 
@@ -15,7 +15,7 @@ Then(/^There are "([^"]*)" radio button variant groups$/) do |arg|
   variants = all('.variant-container-with-prices')
   variants.size.should == i
   variants.each { |x|
-    x.all('label').select{ |x| x['class'].include?('price-label') == false }.size.should == 0
+    x.all('label').select{|y| y['class'] != ""}.select{ |x| x['class'].include?('price-label') == false }.size.should == 0
   }
 end
 

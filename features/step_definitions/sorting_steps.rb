@@ -1,47 +1,47 @@
 # encoding: UTF-8
 When(/^I sort by bestseller$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   click_link 'bestSelling'
 end
 
 When(/^I sort by lowest price$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   click_link 'lowestPrice'
 end
 
 When(/^I sort by highest price$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   click_link 'highestPrice'
 end
 
 Then(/^I see the bestseller button is not selected$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   expect(find('#bestSelling')[:class]).to_not include 'selected'
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
 end
 
 Then(/^I see the lowest price button is selected$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   expect(find('#lowestPrice')[:class]).to include 'selected'
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
 end
 
 Then(/^I see the bestseller button is selected$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   expect(find('#bestSelling')[:class]).to include 'selected'
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
 end
 
 Then(/^I see the best matching button is selected$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   expect(find('#bestMatching')[:class]).to include 'selected'
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
 end
 
 Then(/^I see the highest price button is selected$/) do
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
   expect(find('#highestPrice')[:class]).to include 'selected'
-  find('i.icon-shevron-down').click
+  find('button.button.light').click
 end
 
 Then(/^I see results lowest price first$/) do

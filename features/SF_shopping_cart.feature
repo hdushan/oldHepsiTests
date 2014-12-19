@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@storefront @cart @merchant_enabled
+@storefront @cart
 Feature: Add to basket from details page
 
   @67
@@ -45,9 +45,11 @@ Feature: Add to basket from details page
 
   @304
   Scenario: Number of items in cart increases after adding an item from product details page
-    Given I clear sessions
-    And I am on the homepage
-    And I have an empty cart
+#    Given I clear sessions
+#    And I am on the homepage
+#    And I have an empty cart
+    Given I visit main page
+    And Clear cart items
     And I see the cart item count is 0
     When I search for "MTSUNOCKE03"
     Then I select a product from search results
