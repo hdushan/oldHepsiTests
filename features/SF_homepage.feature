@@ -59,40 +59,11 @@ Feature: Homepage is as expected
     When I search for "iPhonethatdoesnotexist"
     Then I should see no results page
 
-  @523
-  Scenario: Viewing the fly-out menu
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Given I hover over the electronic appliances navigation bar entry
-    Then I see the fly-out menu
-
   @189
   Scenario: View the static banners
     Given I am on the homepage
     And I clear the browsers cookies
     Then I can see at least 2 static banners
-
-  @466
-  Scenario: Checking banner size
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Then I see banners with a width of 900 and a height of 370
-
-  @466
-  Scenario: Browsing through banners with thumbnails
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Given I click on the first banner thumbnail
-    And I see the first banner
-    When I click on the second thumbnail
-    Then I see a different banner
-
-  @466
-  Scenario: Clicking on banners leads to a new page
-    Given I am on the homepage
-    And I clear the browsers cookies
-    When I click on the current banner
-    Then I am no longer on the homepage
 
   @33
   Scenario: Searching with one character does not produce suggestions

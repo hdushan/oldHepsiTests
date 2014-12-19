@@ -432,6 +432,7 @@ Then(/^I should cycle through all of them and visit links$/) do
   }
   $links.each{|x|
     uri = URI.parse(URI.encode(x.strip))
+    p uri
     visit uri
     steps %{ Then I don't get the error page }
   }
@@ -564,4 +565,29 @@ end
 
 And(/^I clear sessions$/) do
   Capybara.reset_sessions!
+end
+
+And(/^Clear cart items$/) do
+  find_by_id('shoppingCart').click
+  sleep 5
+  header = first('h1.cart-title')
+  table = first('table.cart-items')
+  if header == nil && table == nil
+    empty = first('div.empty-cart')
+    if empty == nil
+      fail "Cart not found"
+    end
+  elsif header == nil
+    find_by_id('clearCart').click
+    sleep 2
+  elsif table == nil
+    button = first('a.btn-delete')
+    while button != nil
+      button.click
+      wait_for_ajax
+      sleep 1
+      button = first('a.btn-delete')
+    end
+  end
+  visit ''
 end

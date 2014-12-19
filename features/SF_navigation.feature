@@ -5,34 +5,18 @@ Feature: Navigation by categories is as expected
   I want to be able to navigate by categories and sub-categories
   So that I can purchase items
 
-  Background:
-    Given I am on the homepage
-
-  @47 @448 @flaky
-  Scenario: Browsing through mega flyout menu on desktop
-    And I see the first level navigation bar with 9 categories
-    When I hover over the electronic appliances navigation bar entry
-    #Then I can see the second level categories
-
   @48 @448
   Scenario: I want to navigate to the second level category tablet computers
+    Given I am on the homepage
     And I see the first level navigation bar with 9 categories
     When I navigate to Category
       | Elektronik Beyaz Eşya | Bilgisayar Tablet |
     Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 
-  @305
-  Scenario: I can see the third level categories
-    Given I navigate to the second level category tablet computers
-    Then I can see the third level categories
-
-  @428 @429 @flaky
-  Scenario: I can browse to the fourth level categories to buy RAM
-    Given I navigate to the RAM sub-category
-    Then I can see the RAM breadcrumb
-
   @429
-  Scenario: Enable a consumer to navigate using the breadcrumb trail
-    Given I navigate to the RAM sub-category
-    When I click the breadcrumb with ID breadcrumbFor-8
-    Then I see the page with the title Bilgisayar Parçaları ve Bilgisayar Kasası | Bilgisayar Bileşenleri
+  Scenario: Navigation using breadcrumbs in CLP
+    Given I visit main page
+    When I navigate to Category
+    | Kozmetik Kişisel Bakım | Saç Bakım Ürünleri |
+    Then I should see a breadcrumb trail
+    And I should be able to visit every link on breadcrumb trail

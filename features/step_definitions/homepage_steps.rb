@@ -11,7 +11,7 @@ Given /^I click on the first banner thumbnail/ do
 end
 
 And /^I see the first banner/ do
-  @first_banner_src = page.find_by_id('carousel').find('.owl-item.active').find('.product-image')['src']
+  @first_banner_src = page.find_by_id('carousel').find('.owl-item.active').find('a')['src']
 end
 
 When /^I click on the second thumbnail/ do

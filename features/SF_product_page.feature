@@ -7,7 +7,7 @@ Feature: Product page is as expected
 
   @143 @19 @62
   Scenario: Display Product information
-    Given I select a product with SKU TELCEPNOKLU925-B
+    Given I select a product with SKU TELCEPSAMN910-B
     Then I see the product information
 
   @84
@@ -18,14 +18,14 @@ Feature: Product page is as expected
 
   @78
   Scenario: Display returns policy
-    Given I select a product with SKU TELCEPNOKLU925-B
+    Given I select a product with SKU TELCEPSAMN910-B
     And I see to link to view the returns policy
     When I click on the returns policy link
     Then I see the returns policy
 
   @73
   Scenario: Display product tech specs
-    Given I select a product with SKU TELCEPNOKLU925-B
+    Given I select a product with SKU TELCEPSAMN910-B
     Then I can view the product tech specs
 
   @68
@@ -59,12 +59,6 @@ Feature: Product page is as expected
     When I select the first variant with price
     Then I see the the variant with price is checked
 
-  @301
-  Scenario: Display variants on details page for multi-variant product
-    Given I select a product with SKU GYPI22R5R14AMAM
-    Then there are 2 variants displayed
-    And the variants should have no default
-
   @138
   Scenario: Display original price on details page for discounted product
     Given I select a product with SKU KIMGE033
@@ -87,16 +81,6 @@ Feature: Product page is as expected
     When I click on the returns policy link
     Then I see product return information specific to media
 
-  @330
-  Scenario: Expose Color Variants as Thumbnails on Details Page
-    Given I select a product with SKU AYKP38462CGBBZ37
-    Then I should see 3 color variants
-
-  @330
-  Scenario: Expose One Color Variant as Thumbnail on Details Page
-    Given I select a product with SKU AYKIT5KITA0008BO36
-    Then I should see 1 color variants
-
   @330 @390 @632 @423
   Scenario: Clicking an Exposed Color Changes the Product Image
     Given I select a product with SKU AYKP38462CGBBZ37
@@ -104,7 +88,7 @@ Feature: Product page is as expected
     When I select the color Sarı
     And I wait for all Ajax requests to complete
     Then I see a different image
-    And element with id Renk2 is selected
+    And element with id Renk1 is selected
 
   @658
   Scenario: Window resize
@@ -117,12 +101,6 @@ Feature: Product page is as expected
     Given I select a product with SKU TELCEPIP6P16GBGO-N
     When I load the page on a 1280x1024 monitor
     Then I see no horizontal scroll bar
-
-  @390 @632
-  Scenario: Change the value of a dropdown box
-    Given I select a product with SKU OUTOP001200S
-    When I select the value XL from the v-beden dropdown
-    Then I see XL in the v-beden dropdown box
 
   @97
   Scenario: Bestseller section
@@ -168,10 +146,10 @@ Feature: Product page is as expected
 
   @94
   Scenario: If the product has no suggestions, there should not be a section
-    Given I select a product with SKU SPORVPU410SKG-375
+    Given I select a product with SKU OUTFEY51113
     Then I do not see suggestions
 
-  @323 @chrome
+  @323
   Scenario: Remove add to cart from product details when item is out of stock
     Given I visit main page
     When I search for "BD800472"
@@ -190,6 +168,7 @@ Feature: Product page is as expected
   @318
   Scenario: Add to basket
     Given I visit main page
+    And Clear cart items
     And I search for "MTARCELIK6230BULAS"
     And I open search result no "1"
     And I am on product details
@@ -241,11 +220,11 @@ Feature: Product page is as expected
     When I click product specs tab
     Then I get the product specs
 
-  @726 @ignore
-  Scenario: see the timer on Deal of the Day product detail pages
-    Given I visit main page
-    And I open deal of the day no "1"
-    Then I see a timer on product details page that shows when the deal ends
+#  @726 @ignore
+#  Scenario: see the timer on Deal of the Day product detail pages
+#    Given I visit main page
+#    And I open deal of the day no "1"
+#    Then I see a timer on product details page that shows when the deal ends
 
   @83
   Scenario: Ratings of a product on details page

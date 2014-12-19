@@ -51,7 +51,8 @@ Feature: Filter search results
     Given I am on the homepage
     When I search for "iPhone"
     And I can see the results
-    Given I filter by super fast delivery
+    Given I apply a filter
+    | Sadece | Süper Hızlı Gönderidekiler |
     When I select a product from search results
     Then I see the super fast delivery flag
 
