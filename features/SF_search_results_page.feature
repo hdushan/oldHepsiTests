@@ -141,7 +141,7 @@ Feature: Search page is as expected
     When I click load more results
     Then There are "40" results displayed
     And I click load more results
-    And There are "40" results displayed
+    And There are "60" results displayed
 
   @319
   Scenario: No results

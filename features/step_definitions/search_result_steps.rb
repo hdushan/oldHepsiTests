@@ -94,7 +94,7 @@ end
 	
 And /^the category level (\d+) has the number of items$/ do | category_level |
   page.all('.category-level-' + category_level).each do | category | 
-     expect(category.find(:css, 'label.filter-label span').text).should_not eq('')
+     expect(category.find(:css, 'label span').text).should_not eq('')
   end
 end
 
@@ -115,7 +115,7 @@ Then(/^I see an indicator of fast delivery associated with the item$/) do
 end
 
 Then(/^I should see (\d+) related search keywords for "(.*?)"$/) do |num_expected_keywords, search_term|
-  related_keywords = page.find_by_id('related-keywords').all('a')
+  related_keywords = page.find_by_id('relatedKeywords').all('a')
   expect(related_keywords.size).to eq(num_expected_keywords.to_i)
   related_keywords.each do |related_keyword|
     expect(related_keyword.text.downcase).to include(search_term.downcase)
@@ -123,7 +123,7 @@ Then(/^I should see (\d+) related search keywords for "(.*?)"$/) do |num_expecte
 end
 
 And(/^I should see (\d+) related search categories for "([^"]*)"$/) do |num_expected_categories, search_term|
-  related_categories = page.find_by_id('related-categories').all('a')
+  related_categories = page.find_by_id('relatedCategories').all('a')
   expect(related_categories.size).to eq(num_expected_categories.to_i)
   related_categories.each do |related_category|
     expect(related_category.text.downcase).to include(search_term.downcase)
@@ -131,7 +131,7 @@ And(/^I should see (\d+) related search categories for "([^"]*)"$/) do |num_expe
 end
 
 And(/^On clicking a related keyword "(.*?)"$/) do |related_keyword|
-  page.find_by_id('related-keywords').find('a', :text=>related_keyword).click
+  page.find_by_id('relatedKeywords').find('a', :text=>related_keyword).click
 end
 
 Then(/^I should see search results of that keyword "(.*?)"$/) do |related_keyword|
@@ -139,7 +139,7 @@ Then(/^I should see search results of that keyword "(.*?)"$/) do |related_keywor
 end
 
 And(/^On clicking a related category "(.*?)"$/) do |related_category|
-  page.find_by_id('related-categories').find('a', :text=>related_category).click
+  page.find_by_id('relatedCategories').find('a', :text=>related_category).click
 end
 
 Then(/^I should see search results with each result having the word "(.*?)" in the product name$/) do |keyword|
@@ -173,7 +173,7 @@ end
 When(/^There are "([^"]*)" brands in brand filter$/) do |arg|
   i = arg.to_i
   list = find_by_id('brandList')
-  list.find('label.filter-label', visible: :true, match: :first)
+  list.find('label', visible: :true, match: :first)
   list.all('li').select{|x| x['class'] != "hide" && x['class'] != "more-brands"}.size.should == i
 end
 
@@ -189,8 +189,8 @@ And(/^There are more than "([^"]*)" brands in the filter area$/) do |arg|
   i = arg.to_i
   list = find_by_id('brandList')
   list['class'].include?("show-all-brands").should == false
-  list.find('label.filter-label', visible: :true, match: :first)
-  list.all('label.filter-label', visible: :true).size.should > i
+  list.find('label', visible: :true, match: :first)
+  list.all('label', visible: :true).size.should > i
 end
 
 And(/^I store search result count$/) do
@@ -212,7 +212,6 @@ Then(/^Current filtered results count should be same as the first one$/) do
 end
 
 Then(/^Sub categories are displayed in filters section$/) do
-  find_by_id('btnExpandCategories').text.should == "Kategoriler"
   list = find_by_id('categoryList')
   list.find('li.category-level-0', match: :first)
   list.all('li.category-level-0').size.should > 0

@@ -378,8 +378,10 @@ Then(/^Original prices should be displayed in deal of the day items$/) do
   items.each{ |x|
     price = format_price x.find('span.price').text
     org_price = format_price x.find('del.price.old').text
+    discount = extract_number x.find('span.badge.highlight').text
     price.should_not == 0.0
     org_price.should_not == 0.0
+    discount.should > 0
     org_price.should > price
   }
 end
