@@ -343,7 +343,7 @@ And(/^Discounted price is displayed correctly$/) do
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
-  resp = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
+  resp = HTTParty.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
   $prod = JSON.parse resp
 end
 
@@ -575,7 +575,7 @@ And(/^Clear cart items$/) do
   header = first('h1.cart-title')
   table = first('table.cart-items')
   if header == nil && table == nil
-    empty = first('div.empty-cart')
+    empty = find('div.empty-cart')
     if empty == nil
       fail "Cart not found"
     end
@@ -591,5 +591,5 @@ And(/^Clear cart items$/) do
       button = first('a.btn-delete')
     end
   end
-  visit ''
+  visit_main_page
 end
