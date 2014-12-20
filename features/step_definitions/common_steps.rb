@@ -343,7 +343,7 @@ And(/^Discounted price is displayed correctly$/) do
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
-  resp = HTTParty.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
+  resp = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
   $prod = JSON.parse resp
 end
 
