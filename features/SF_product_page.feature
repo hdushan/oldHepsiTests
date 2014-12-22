@@ -62,8 +62,8 @@ Feature: Product page is as expected
   @138
   Scenario: Display original price on details page for discounted product
     Given I select a product with SKU KIMGE033
-    Then I see the original price 6,30 TL on the product details page
-    And I see the discount percentage of 11
+    Then I see the original price 7,00 TL on the product details page
+    And I see the discount percentage of 10
 
   @138
   Scenario:Do not display original price on details page for non discounted product
@@ -88,7 +88,7 @@ Feature: Product page is as expected
     When I select the color Sarı
     And I wait for all Ajax requests to complete
     Then I see a different image
-    And element with id Renk1 is selected
+    And element with id Renk2 is selected
 
   @658
   Scenario: Window resize

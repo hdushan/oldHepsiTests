@@ -65,14 +65,14 @@ Feature: Homepage is as expected
     And I clear the browsers cookies
     Then I can see at least 2 static banners
 
-  @33 @chrome
+  @33
   Scenario: Searching with one character does not produce suggestions
     Given I am on the homepage
     And I clear the browsers cookies
     Given I have input s into search
     Then I see no suggestions based on my inputs
 
-  @33 @chrome
+  @33
   Scenario: Searching with at least two characters begins producing suggestions
     Given I am on the homepage
     And I clear the browsers cookies
@@ -81,7 +81,7 @@ Feature: Homepage is as expected
     Then I see suggestions based on sa
     And I see 3 categories and 10 other keywords
 
-  @33 @chrome
+  @33
   Scenario: Search suggestions update as user enters in more or less into search
     Given I am on the homepage
     And I clear the browsers cookies
@@ -92,7 +92,7 @@ Feature: Homepage is as expected
     And I wait for auto complete results to update
     Then I see suggestions based on sam
 
-  @33 @chrome
+  @33
   Scenario: Ability to navigate through search suggestions
     Given I am on the homepage
     And I clear the browsers cookies
@@ -111,7 +111,7 @@ Feature: Homepage is as expected
     When I click on the first search suggestion
     Then I see products relating to samsung
 
-  @33 @chrome
+  @33
   Scenario: Searching without selecting a suggestion
     Given I am on the homepage
     And I clear the browsers cookies
