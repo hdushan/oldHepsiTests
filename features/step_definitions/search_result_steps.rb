@@ -243,3 +243,22 @@ end
 Then(/^There should be an indication that some items are not available$/) do
   find_by_id('productresults').should have_content "Bu ürün geçici olarak temin edilememektedir."
 end
+
+When(/^I click discounted items global filter$/) do
+  find_by_id('discounted-products-global-filter').find('span').click
+end
+
+Then(/^I should be able to click show more products multiple times$/) do
+  res = find_by_id('productresults')
+  res.find('.search-item', match: :first)
+  results = res.all('.search-item')
+  results.size.should == RESULTS_PER_PAGE
+
+  for i in 2..5
+    find_by_id('moreResult').click
+    wait_for_ajax
+    res.find('.search-item', match: :first)
+    results = res.all('.search-item')
+    results.size.should == RESULTS_PER_PAGE * i
+  end
+end

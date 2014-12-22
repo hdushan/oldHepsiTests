@@ -235,3 +235,9 @@ Feature: Search page is as expected
     Given I visit main page
     When I search for "sennheiser"
     Then There should be an indication that some items are not available
+
+  @992
+  Scenario: Click show more results button more than once
+    Given I visit main page
+    When I click discounted items global filter
+    Then I should be able to click show more products multiple times
