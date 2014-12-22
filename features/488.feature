@@ -17,7 +17,7 @@ Feature: 488 - Display tax included prices in
       And Discounted price is displayed correctly
       Examples:
       | id                |
-      | OYUNSONYPLAYS4    |
+      | OYUNSHI90050-K100 |
       | KTIMAS43484       |
       | SPORP355568091-28 |
       | BD802112          |
