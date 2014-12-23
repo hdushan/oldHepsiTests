@@ -122,6 +122,13 @@ Before '~@chrome' do
   Capybara.page.driver.browser.manage.window.maximize
 end
 
+After  do |scenario|
+  if scenario.failed?
+    page.save_screenshot(Capybara.save_and_open_page_path + "/#{scenario.name}-#{$screenshot_counter.to_s}-failed.png")
+    $screenshot_counter += 1
+  end
+end
+
 # scenario_times = {}
 #
 # Around() do |scenario, block|

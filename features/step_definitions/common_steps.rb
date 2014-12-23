@@ -484,8 +484,7 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  str = "alper mermer (123)"
-  p clean_string str
+  p File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots"))
 end
 
 When(/^I click go to desktop version link$/) do
