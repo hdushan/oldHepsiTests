@@ -25,7 +25,7 @@ end
 
 desc "Run Jmeter Performance Tests"
 task :performance do |t |
-  require_relative 'performance/jmeter-test-runner'
+  require 'jmeter-test-runner'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
