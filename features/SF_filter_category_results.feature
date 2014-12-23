@@ -5,7 +5,8 @@ Feature: Filter category results
   @343
   Scenario: Filter by specific attribute
     Given I am on the homepage
-    And I visit the telephones category page
+    And I navigate to Category
+    | Elektronik Beyaz Eşya | Telefon |
     And I can see the results
     When I filter by material type
     Then I should only see products that fall under my preset range

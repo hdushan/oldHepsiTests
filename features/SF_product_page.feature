@@ -90,18 +90,6 @@ Feature: Product page is as expected
     Then I see a different image
     And element with id Renk2 is selected
 
-  @658
-  Scenario: Window resize
-    Given I select a product with SKU TELCEPIP6P16GBGO-N
-    When I make the page half as wide
-    Then I see no horizontal scroll bar
-
-  @658
-  Scenario: low resolution monitor
-    Given I select a product with SKU TELCEPIP6P16GBGO-N
-    When I load the page on a 1280x1024 monitor
-    Then I see no horizontal scroll bar
-
   @97
   Scenario: Bestseller section
     Given I select a product with SKU EAKSERELEKTBAT
