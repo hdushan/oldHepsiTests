@@ -32,7 +32,7 @@ def wait_for_ajax
 end
 
 def calculate_discount
-  i = format_price find_by_id("offering-price").text
+  i = format_price find('section.detail-main').find("span.price").text
   k = format_price find_by_id('originalPrice').text
   diff = k - i
   return ((diff/k)*100.0).round

@@ -164,7 +164,7 @@ Then(/^I can view the product tech specs$/) do
 end
 
 Then(/^I see text indicating that free shipping is available$/) do
-  expect(find('#fastShipping').text).to match "Kargo Bedava"
+  find('span.ProductDashboard_button_heading')
 end
 
 Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
@@ -180,7 +180,7 @@ Then(/^I see product return information specific to media/) do
 end
 
 And(/^I see the discount percentage of (.*)$/) do | discount |
-  find('#product-discount-rate del').should have_content discount
+  find('#product-discount-rate').should have_content discount
 end
 
 Then(/^I do not see a discount price$/) do

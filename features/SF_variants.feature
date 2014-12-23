@@ -75,7 +75,7 @@
 
   Scenario: Check if unprocurable variants are exposed in price field
     Given I visit main page
-    When I search for "TELCEPSAMI8200-M"
+    When I search for "TELCEPLGG316G-G"
     And There is an indication on search result no "1" about variants
     And I open search result no "1"
     Then There are "1" radio button variant groups

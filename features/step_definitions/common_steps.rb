@@ -235,7 +235,7 @@ Given(/^I search for a product with "([^"]*)"$/) do |arg|
 end
 
 And(/^The discount is "([^"]*)" percent on details$/) do |arg|
-  discount = find_by_id("product-discount-rate").first('del').text.to_i
+  discount = extract_number find("span.discount-amount").text
   discount.should == arg.to_i
   d = calculate_discount
   discount.should == d
@@ -337,7 +337,7 @@ When(/^I search for the stored product$/) do
 end
 
 And(/^Discounted price is displayed correctly$/) do
-  price = format_price find_by_id('offering-price').text
+  price = format_price find('section.detail-main').find('span.price').text
   $prod['price']['value'].should == price
   $prod['price']['taxIncluded'].should == true
   $prod['discountRate'].should_not == 0
@@ -450,7 +450,7 @@ And(/^I see the price on search item no "([^"]*)"$/) do |arg|
 end
 
 Then(/^price is listed correctly in details$/) do
-  price = format_price find_by_id('offering-price').text
+  price = format_price find('section.detail-main').find('span.price').text
   price.should == $price
 end
 
