@@ -108,7 +108,7 @@ end
 Then(/^I see the super fast delivery flag$/) do
   # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
   # how to match encoded string correctly
-  expect(first('#fastShipping').text).to match 'Süper Hızlı, Bugün Teslimat'
+  expect(first('#fastShipping').text).to match 'Süper Hızlı'
 end
 
 Then(/^I see the product information$/) do

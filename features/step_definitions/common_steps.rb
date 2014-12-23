@@ -493,7 +493,7 @@ When(/^I click go to desktop version link$/) do
 end
 
 Then(/^I am on old hepsiburada mainpage$/) do
-  page.current_url.should == "http://www.hepsiburada.com/"
+  page.current_url.include?("http://www.hepsiburada.com/").should == true
   page.should have_content "Hepsiburada.com, Bir Doğan Online Markasıdır."
   page.should have_selector "#divMainPageSliderContainer"
 end

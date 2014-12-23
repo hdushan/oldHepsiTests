@@ -36,7 +36,7 @@ Feature: Product page is as expected
 
   @103
   Scenario: Display free shipping tag
-    Given I select a product with SKU SPORALTISSD5000
+    Given I select a product with SKU TELSARJXIAOMI10400
     Then I see text indicating that free shipping is available
     Then I see the returns policy
 
@@ -47,7 +47,7 @@ Feature: Product page is as expected
 
   @144
   Scenario: Display variants with price on the details page
-    Given I select a product with SKU TELCEPSAMI8200-B
+    Given I select a product with SKU TELCEPHTCM8-G
     Then I see the option to select a variant with prices
     And I see no variant with prices is selected
     When I add to cart
@@ -55,7 +55,7 @@ Feature: Product page is as expected
 
   @144
   Scenario: Select variant on results page
-    Given I select a product with SKU TELCEPSAMI8200-B
+    Given I select a product with SKU TELCEPNOKLU620-B
     When I select the first variant with price
     Then I see the the variant with price is checked
 
