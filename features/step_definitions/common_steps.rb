@@ -30,7 +30,8 @@ When(/^I am on product details$/) do
   $p_name = find_by_id("product-name").text
   $p_price = find_by_id("offering-price").text.to_i
   page.should have_selector "#quantity"
-  page.should have_selector "div.quantity-changer"
+  page.should have_selector ".btn-decrease"
+  page.should have_selector ".btn-increase"
   page.should have_selector "#addToCart"
 end
 
