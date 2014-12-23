@@ -1,17 +1,17 @@
 GIT
   remote: http://gitlab.hepsiburada.com/everyone/jmeter-test-runner.git
-  revision: 254eaec804256349fe0e4aca325ef5ed962a1f41
+  revision: 1d557d8f6784c4c2b9d97e81309fe90d8287aa1d
   specs:
-    jmeter-test-runner (0.0.5)
+    jmeter-test-runner (0.0.6)
 
 GEM
   remote: http://rubygems.org/
   specs:
-    activesupport (4.1.8)
-      i18n (~> 0.6, >= 0.6.9)
+    activesupport (4.2.0)
+      i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
-      thread_safe (~> 0.1)
+      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.3.6)
     builder (3.2.2)
@@ -43,13 +43,10 @@ GEM
     faker (1.4.3)
       i18n (~> 0.5)
     ffi (1.9.6)
-    ffi (1.9.6-x86-mingw32)
     gherkin (2.12.2)
       multi_json (~> 1.3)
-    gherkin (2.12.2-x86-mingw32)
-      multi_json (~> 1.3)
     headless (1.0.2)
-    i18n (0.6.11)
+    i18n (0.7.0)
     json (1.8.1)
     launchy (2.4.3)
       addressable (~> 2.3)
@@ -62,8 +59,6 @@ GEM
     netrc (0.10.2)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
-    nokogiri (1.6.5-x86-mingw32)
-      mini_portile (~> 0.6.0)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -73,20 +68,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    pry (0.10.1-x86-mingw32)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
-      win32console (~> 1.3)
-    rack (1.5.2)
+    rack (1.6.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.4.2)
     rest-client (1.7.2)
-      mime-types (>= 1.16, < 3.0)
-      netrc (~> 0.7)
-    rest-client (1.7.2-x86-mingw32)
-      ffi (~> 1.9)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rspec (3.1.0)
@@ -115,13 +101,11 @@ GEM
     websocket-driver (0.5.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.1)
-    win32console (1.3.2-x86-mingw32)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   capybara
