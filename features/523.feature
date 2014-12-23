@@ -1,5 +1,4 @@
 #encoding: UTF-8
-@chrome
 Feature: 523 - See campaign banners on menu flyers
   As a product owner
   I want to see campaign banners in flyout menu

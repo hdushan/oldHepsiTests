@@ -1,5 +1,4 @@
 #encoding: UTF-8
-@chrome
 Feature: 448 - Mega flyout menu for desktop
   As a user
   I want to browse easily through categories

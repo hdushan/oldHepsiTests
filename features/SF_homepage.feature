@@ -101,7 +101,7 @@ Feature: Homepage is as expected
     When I press the down arrow
     Then I see a visual indication that an auto complete suggestion is selected
 
-  @33 @chrome
+  @33
   Scenario: Selecting a search suggestion takes me to the corresponding search results
     Given I am on the homepage
     And I clear the browsers cookies

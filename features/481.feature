@@ -1,5 +1,4 @@
 #encoding: UTF-8
-@chrome
 Feature: 481 - User should have a way to give feedback
   As a product owner
   I want to gather feedbacks from users about my new website
