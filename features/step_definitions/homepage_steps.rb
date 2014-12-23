@@ -2,7 +2,7 @@
 @page = ""
 
 Given /^I am on the homepage$/ do
-  @page = Pages::Homepage.visit
+  visit_main_page
   @homepage_url = current_url
 end
 
