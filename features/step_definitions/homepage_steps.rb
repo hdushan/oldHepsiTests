@@ -258,3 +258,15 @@ end
 And(/^I refresh page$/) do
   visit current_url
 end
+
+And(/^There are "([^"]*)" items in top sellers section$/) do |arg|
+  find('.widget.TopSellerList').all('div.box.product').size.should == arg.to_i
+end
+
+Then(/^I should be able to cycle all topsellers$/) do
+  links = find('.widget.TopSellerList').all('.box.product').collect{|x| x.first('a')['href']}
+  links.each { |x|
+    visit x
+    steps %{ Then I don't get the error page }
+  }
+end

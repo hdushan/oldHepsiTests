@@ -462,7 +462,7 @@ Then(/^Top sellers section should include super fast delivery items$/) do
 end
 
 Then(/^There is a top sellers section$/) do
-  sect = find('section.top-seller')
+  sect = find('.widget.TopSellerList')
   sect.find('div.box.product', match: :first)
   sect.all('div.box.product').size.should > 0
 end

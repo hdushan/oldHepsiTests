@@ -190,3 +190,10 @@ Feature: Homepage is as expected
     And I visit link "http://www.google.com"
     And I visit legacy home page
     And I don't see the opt-in bar
+
+  @950
+  Scenario: See top sellers on homepage
+    Given I visit main page
+    When There is a top sellers section
+    And There are "11" items in top sellers section
+    Then I should be able to cycle all topsellers
