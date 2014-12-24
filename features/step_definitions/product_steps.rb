@@ -354,6 +354,8 @@ end
 
 And(/^I click on more comments button$/) do
   find_by_id('showMoreComments').click
+  wait_for_ajax
+  sleep 2
 end
 
 When(/^I click return policy link$/) do
