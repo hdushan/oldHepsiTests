@@ -97,6 +97,7 @@ Given(/^I navigate to Category$/) do |table|
   cat1 = find('ul.browser-by-category').first('li', :text=> values[0])
   link = cat1.find('div.nav-home-wrapper').first('a', :text=> values[1])['href']
   visit link
+  $current_results = extract_number find_by_id('totalItems').text
 end
 
 When(/^I am on results page$/) do
@@ -120,6 +121,7 @@ Given(/^I select a sub category in browsing$/) do |table|
     $current_level.first('ul.children-category', :visible=>true)
     $current_level = $current_level.first('li.expanded', :visible=>true)
   }
+  $current_results = extract_number find_by_id('totalItems').text
 end
 
 When(/^I apply a filter$/) do |table|
@@ -139,6 +141,7 @@ When(/^I apply a filter$/) do |table|
     filter_tab = find_by_id "filterResults"
     $result_stack.push get_result_count
   }
+  $current_results = extract_number find_by_id('totalItems').text
 end
 
 Given(/^I select a sub category in search$/) do |table|
@@ -152,6 +155,7 @@ Given(/^I select a sub category in search$/) do |table|
     list = find_by_id "categoryList"
     $level += 1
   }
+  $current_results = extract_number find_by_id('totalItems').text
 end
 
 And(/^print result stack$/) do
