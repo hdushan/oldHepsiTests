@@ -209,11 +209,13 @@ Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
       find_by_id('bestSelling')['class'].include?('selected').should == true
     when 'lowest-price'
       find_by_id('lowestPrice')['class'].include?('selected').should == true
-      prices = all('span.product-price').collect(&:text).map!{ |x| format_price x }
+      products = all('.price-container').select{|x| x['style'] != "display: none;"}
+      prices = products.collect{|x| format_price x.find('span.product-price').text}
       prices.should == prices.sort
     when 'highest-price'
       find_by_id('highestPrice')['class'].include?('selected').should == true
-      prices = all('span.product-price').collect(&:text).map!{ |x| format_price x }
+      products = all('.price-container').select{|x| x['style'] != "display: none;"}
+      prices = products.collect{|x| format_price x.find('span.product-price').text}
       prices.should == (prices.sort).reverse
   end
 end

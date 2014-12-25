@@ -1,20 +1,22 @@
-# encoding: UTF-8
+#encoding: UTF-8
   Feature: Global Filters
     As a user
     I'd like to apply global filters
     In order to navigate results easier
 
-  @722
-  Scenario: Show superfast shipping filter on homepage
+  @722 @857
+  Scenario: Show global filter on homepage
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
+    And I should see "İndirimli Ürünler" global filter on main page
 
-  @722
-  Scenario Outline: Show superfast shipping filter on CLP
+  @722 @857
+  Scenario Outline: Show global filter on CLP
     Given I visit main page
     When I navigate to Category
     | <category> | <sub_category> |
     Then I should see "Süper hızlı gönderiler" global filter on CLP
+    And I should see "İndirimli ürünler" global filter on CLP
     Examples:
     | category               | sub_category       |
     | Elektronik Beyaz Eşya  | Isıtma ve Soğutma  |
@@ -22,12 +24,12 @@
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
-  @722
-  Scenario: Use superfast shipping filter from within a category
+  @722 @857
+  Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
     | Süpermarket Petshop | İçecek Ürünleri |
-    When I apply global filter "Süper hızlı gönderiler" on "CLP"
+    When I apply global filter "<filter>" on "CLP"
     Then There are some results available
     And I select a sub category in search
     | Süpermarket | İçecek Ürünleri | Çaylar | Demlik / Dökme Çaylar |
@@ -37,25 +39,33 @@
     | Fiyat Aralığı       | 0 TL - 25 TL |
     And I sort with "lowest-price" filter
     And Results are sorted according to "lowest-price" filter
-    And I see "Süper hızlı gönderiler" global filter actively selected
+    And I see "<filter>" global filter actively selected
+    Examples:
+    | filter                 |
+    | Süper hızlı gönderiler |
+    | İndirimli ürünler      |
 
-  @722
-  Scenario: Stay on the same results when you click on super fast shipping
+  @722 @857
+  Scenario Outline: Stay on the same results when you click on global filter
     Given I visit main page
     And I navigate to Category
       | Oto, Bahçe Yapı Market | Hırdavat |
-    When I apply global filter "Süper hızlı gönderiler" on "CLP"
+    When I apply global filter "<filter>" on "CLP"
     And There are some results available
     And I apply a filter
-    | Markalar | 3M   |
+    | Markalar | Hafele   |
     And I store search result count
-    And I apply global filter "Süper hızlı gönderiler" on "CLP"
+    And I apply global filter "<filter>" on "CLP"
     Then Current search results count should be same as the first one
+    Examples:
+    | filter                 |
+    | Süper hızlı gönderiler |
+    | İndirimli ürünler      |
 
-  @722
-  Scenario: Use superfast shipping filter from homepage
+  @722 @857
+  Scenario Outline: Use global filter from homepage
     Given I visit main page
-    When I apply global filter "Süper Hızlı Gönderiler" on "homepage"
+    When I apply global filter "<filter>" on "homepage"
     Then There are some results available
     And I select a sub category in search
       | Spor Outdoor | Spor / Fitness | Fitness - Kondisyon | Kondisyon Aletleri |
@@ -64,25 +74,37 @@
       | Markalar       | Delta   |
     And I sort with "highest-price" filter
     And Results are sorted according to "highest-price" filter
-    And I see "Süper hızlı gönderiler" global filter actively selected
-    
-  @722
-  Scenario: Page title and description with super fast shipping global filter on homepage
-    Given I visit main page
-    When I apply global filter "Süper Hızlı Gönderiler" on "homepage"
-    Then The page title is "Süper Hızlı Logolu Ürünler 24 Saatte Kargoda"
-    And Page description contains "Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da."
+    And I see "<filter_on_results>" global filter actively selected
+    Examples:
+    | filter                 | filter_on_results      |
+    | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
+    | İndirimli Ürünler      | İndirimli ürünler      |
 
-  @722
-  Scenario: Page title and description with super fast shipping global filter on CLP
+  @722 @857
+  Scenario Outline: Page title and description with super fast shipping global filter on CLP
+    Given I visit main page
+    When I apply global filter "<filter>" on "homepage"
+    Then The page title is "<title>"
+    And Page description contains "<description>"
+  Examples:
+    | filter                 | title | description |
+    | Süper Hızlı Gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
+    | İndirimli Ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
+
+    @722 @857
+  Scenario Outline: Page title and description with super fast shipping global filter on CLP
     Given I visit main page
     And I navigate to Category
     | Ev, Yaşam Ofis | Elektrikli Ev Aletleri |
-    When I apply global filter "Süper hızlı gönderiler" on "CLP"
-    Then The page title is "Süper Hızlı Logolu Ürünler 24 Saatte Kargoda"
-    And Page description contains "Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da."
+    When I apply global filter "<filter>" on "CLP"
+    Then The page title is "<title>"
+    And Page description contains "<description>"
+   Examples:
+    | filter                 | title | description |
+    | Süper hızlı gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
+    | İndirimli ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
 
-  @987
+    @987
   Scenario: Clear filters on global filter
     Given I visit main page
     And I navigate to Category

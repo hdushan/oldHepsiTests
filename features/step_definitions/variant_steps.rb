@@ -7,6 +7,9 @@ Then(/^There are "([^"]*)" select box variant groups$/) do |arg|
   variants.each { |x|
     x.all('div').select{|y| y['class'] != ""}.select{ |y| y['class'].include?('radio-variant') == false }.size.should == 0
   }
+  labels = find('.product-variants-wrapper').all('label.question')
+  labels.size.should >= i
+  labels.each { |x| x.text.should_not == "" }
 end
 
 Then(/^There are "([^"]*)" radio button variant groups$/) do |arg|
@@ -17,6 +20,9 @@ Then(/^There are "([^"]*)" radio button variant groups$/) do |arg|
   variants.each { |x|
     x.all('label').select{|y| y['class'] != ""}.select{ |x| x['class'].include?('price-label') == false }.size.should == 0
   }
+  labels = find('.product-variants-wrapper').all('label.question')
+  labels.size.should >= i
+  labels.each { |x| x.text.should_not == "" }
 end
 
 Then(/^There are "([^"]*)" dropdown variant groups$/) do |arg|
@@ -26,7 +32,11 @@ Then(/^There are "([^"]*)" dropdown variant groups$/) do |arg|
   variants.size.should == i
   variants.each { |x|
     x.find('select').all('option').size.should > 1
+    x.find('select').all('option').select{|x| x.selected? }[0].text.should == "Seçiniz"
   }
+  labels = find('.product-variants-wrapper').all('label.question')
+  labels.size.should >= i
+  labels.each { |x| x.text.should_not == "" }
 end
 
 And(/^I should be able to cycle through variants$/) do
