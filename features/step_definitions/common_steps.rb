@@ -210,12 +210,12 @@ Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
     when 'lowest-price'
       find_by_id('lowestPrice')['class'].include?('selected').should == true
       products = all('.price-container').select{|x| x['style'] != "display: none;"}
-      prices = products.collect{|x| format_price x.find('span.product-price').text}
+      prices = products.collect{|x| format_price x.find('span.price').text}
       prices.should == prices.sort
     when 'highest-price'
       find_by_id('highestPrice')['class'].include?('selected').should == true
       products = all('.price-container').select{|x| x['style'] != "display: none;"}
-      prices = products.collect{|x| format_price x.find('span.product-price').text}
+      prices = products.collect{|x| format_price x.find('span.price').text}
       prices.should == (prices.sort).reverse
   end
 end
@@ -492,7 +492,8 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  p File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots"))
+  client = TinyTds::Client.new username: 'amermer', password: 'Aa123456', host: 'euclide2.hepsiburada.dmz'
+  p client.dead?
 end
 
 When(/^I click go to desktop version link$/) do
