@@ -10,7 +10,7 @@ And /^I click the bestsellers tab/ do
 end
 
 Then(/^I see at least (\d+) items in top sellers$/) do |items|
-  expect(page.find('.widget.TopSellerList')).to have_content('En çok satanlar')
+  expect(page.find('.widget.TopSellerList')).to have_content('Çok Satanlar')
   expect(page.find('.widget.TopSellerList').all('.box.product').count).to be == items.to_i
 end
 

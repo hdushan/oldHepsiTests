@@ -7,7 +7,7 @@ Feature: Login using email and password
   So that I can make a purchase or interact with anything in "My Account"
 
   @51
-  Scenario:
+  Scenario: Login using email and password
     Given I am on the homepage
     When I click the account icon
     Then I should be redirected to a log-in page

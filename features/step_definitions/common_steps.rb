@@ -512,7 +512,8 @@ end
 
 
 Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
-  div = find('div.reviews-main')
+  find_by_id('productReviewsTab').click
+  div = find('div.reviews-main', visible: :true)
   found = false
   case arg.upcase
     when "MALE"

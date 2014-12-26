@@ -89,6 +89,7 @@ Then(/^the page title contains the product name$/) do
 end
 
 Then(/^I see at least (\d+) reviews$/) do |num|
+  find_by_id('productReviewsTab').click
   wait_for_visibility(page, '.review-item', true)
   expect(all('.review-item').count).to be >= num.to_i
 end
@@ -102,7 +103,7 @@ Then(/^I see to link to view the returns policy$/) do
 end
 
 Then(/^I see the returns policy$/) do
-  expect(find('#productReturnPolicyText'))
+  expect(find('section.product-detail-container').find('#productReturnPolicyText'))
 end
 
 Then(/^I see the super fast delivery flag$/) do
@@ -176,7 +177,7 @@ Then(/^I see the original price (.*) on the product details page$/) do | price |
 end
 
 Then(/^I see product return information specific to media/) do
-  find_by_id('productReturnPolicyText').should have_content("İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7.")
+  find('section.product-detail-container').find_by_id('productReturnPolicyText').should have_content("İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7.")
 end
 
 And(/^I see the discount percentage of (.*)$/) do | discount |
@@ -346,6 +347,7 @@ Then(/^I should not be able to add to cart without a variant$/) do
 end
 
 And(/^There are "([^"]*)" comments on details$/) do |arg|
+  find_by_id('productReviewsTab').click
   div = find_by_id('reviews')
   div.find('li.review-item', match: :first)
   comments = div.all('li.review-item')
@@ -353,6 +355,7 @@ And(/^There are "([^"]*)" comments on details$/) do |arg|
 end
 
 And(/^I click on more comments button$/) do
+  find_by_id('productReviewsTab').click
   find_by_id('showMoreComments').click
   wait_for_ajax
   sleep 2
@@ -363,7 +366,7 @@ When(/^I click return policy link$/) do
 end
 
 Then(/^I get the return policy description$/) do
-  find_by_id('returnPolicy').should have_content('İade Koşulları')
+  find('section.product-detail-container').find_by_id('returnPolicy').should have_content('İade Koşulları')
 end
 
 When(/^I click product description tab$/) do

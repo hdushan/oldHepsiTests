@@ -67,12 +67,14 @@ And(/^I apply a filter on mobile$/) do |table|
   $result_stack.push get_result_count
   values.each { |x|
     filter_tab.first('li', :text=> /^#{x[0]}/ )
+    filter_tab.find('button', :text=> /^#{x[0]}$/).click
     if x[0] == "Değerlendirme Puanı"
       str = "star_" + (extract_number x[1]).to_s
       filter_tab.find("label[for='#{str}']").click
     else
       filter_tab.first('label', :text=> /^#{x[1]}/).click
     end
+    filter_tab.find('button', :text=> /^#{x[0]}$/).click
     filter_tab = find_by_id "filterResults"
     $result_stack.push get_result_count
   }
@@ -106,6 +108,7 @@ When(/^I remove filters on mobile$/) do |table|
   $result_stack.push get_result_count
   values.each { |x|
     filter_tab.first('li', :text=> /^#{x[0]}/ )
+    filter_tab.find('button', :text=> /^#{x[0]}$/).click
     if x[0] == "Değerlendirme Puanı"
       li = find('li', text: x[0], match: :first)
       li.find('a.remove-filter').click
@@ -114,6 +117,7 @@ When(/^I remove filters on mobile$/) do |table|
     end
     filter_tab = find_by_id "filterResults"
     $result_stack.push get_result_count
+    filter_tab.find('button', :text=> /^#{x[0]}$/).click
   }
   find_by_id('btnApplyFilters').click
 end
