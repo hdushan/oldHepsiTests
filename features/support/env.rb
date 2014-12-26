@@ -9,6 +9,8 @@ require 'faker'
 require 'capybara-page-object'
 require 'pry'
 require 'rest-client'
+require 'tiny_tds'
+require 'time_diff'
 
 Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 if ENV['host']

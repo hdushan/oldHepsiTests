@@ -86,3 +86,15 @@ def visit_main_page
     visit ''
   end
 end
+
+def execute_sql str
+  mssql = TinyTds::Client.new(
+      :dataserver => 'euclide2.hepsiburada.dmz',
+      :port => '1433',
+      :username => 'DMARKET\amermer',
+      :password => 'Aa123456',
+      :database => 'HBDB_TEST'
+  )
+  results = mssql.execute(str)
+  return results
+end

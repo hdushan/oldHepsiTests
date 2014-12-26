@@ -492,8 +492,12 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  client = TinyTds::Client.new username: 'amermer', password: 'Aa123456', host: 'euclide2.hepsiburada.dmz'
-  p client.dead?
+  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='FTKAMEVERST1'"
+  t = Time.new
+  now = Time.now - 3600
+  p now
+  result.each{|x| t = Time.parse x['SaleEnd'].to_s}
+  p Time.diff(t, now, '%y, %d and %h:%m:%s')
 end
 
 When(/^I click go to desktop version link$/) do
