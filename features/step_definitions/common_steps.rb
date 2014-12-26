@@ -494,7 +494,7 @@ end
 Given(/^I test things$/) do
   result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='FTKAMEVERST1'"
   t = Time.new
-  now = Time.now - 3600
+  now = Time.now - 10800
   p now
   result.each{|x| t = Time.parse x['SaleEnd'].to_s}
   p Time.diff(t, now, '%y, %d and %h:%m:%s')

@@ -469,18 +469,22 @@ Then(/^There is a top sellers section$/) do
   sect.all('div.box.product').size.should > 0
 end
 
-Then(/^I should see deal of the day counter$/) do
+Then(/^I should see deal of the day counter for "([^"]*)"$/) do |arg|
   page.should have_selector(".timer-box.sale-end-timer-days", text: "GÜN")
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "SAAT")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "DK")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "SN")
-  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='FTKAMEVERST1'"
+  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{arg}'"
   t = Time.new
   result.each{|x| t =  x['SaleEnd']}
   p t
 end
 
 
-Then(/^I should see stock left for deal of the day items$/) do
+Then(/^I should see stock left for deal of the day items for "([^"]*)"$/) do |arg|
   page.should have_selector(".timer-box", text: "ÜRÜN")
+  item_count = extract_number find(".timer-box", text: "ÜRÜN").text
+  result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{arg}'"
+  i = result.first['StockQty'].to_i
+  item_count.should == i
 end

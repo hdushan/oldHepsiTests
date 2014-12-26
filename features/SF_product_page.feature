@@ -292,11 +292,11 @@ Feature: Product page is as expected
      Given I visit main page
      When I search for "FTKAMEVERST1"
      And I open search result no "1"
-     Then I should see deal of the day counter
+     Then I should see deal of the day counter for "FTKAMEVERST1"
 
   @727
   Scenario: See stock left for Deal of the Day items
     Given I visit main page
     When I search for "FTKAMEVERST1"
     And I open search result no "1"
-    Then I should see stock left for deal of the day items
+    Then I should see stock left for deal of the day items for "FTKAMEVERST1"

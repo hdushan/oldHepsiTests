@@ -1,9 +1,3 @@
-GIT
-  remote: git@gitlab.hepsiburada.com:everyone/jmeter-test-runner.git
-  revision: 1d557d8f6784c4c2b9d97e81309fe90d8287aa1d
-  specs:
-    jmeter-test-runner (0.0.6)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -109,6 +103,11 @@ GEM
       websocket (~> 1.0)
     slop (3.6.0)
     thread_safe (0.3.4)
+    time_diff (0.3.0)
+      activesupport
+      i18n
+    tiny_tds (0.6.2)
+    tiny_tds (0.6.2-x86-mingw32)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     websocket (1.2.1)
@@ -130,10 +129,11 @@ DEPENDENCIES
   cucumber
   faker
   headless
-  jmeter-test-runner!
   poltergeist
   pry
   rake
   rest-client
   rspec
   selenium-webdriver
+  time_diff
+  tiny_tds
