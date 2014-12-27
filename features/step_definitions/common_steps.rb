@@ -322,7 +322,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit_main_page
-    fail "Page not found error!!! on\n#{url}"
+    p "Page not found error!!! on\n#{url}"
   end
 end
 
