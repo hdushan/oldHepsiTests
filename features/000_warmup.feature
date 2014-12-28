@@ -5,7 +5,7 @@ Feature: Warmup so that the tests run smoother
     Then I set default wait time to "10" seconds
 
   Scenario Outline: Hover an menu items and check content
-    Given I visit main page
+    Given I visit main page on warmup
     And I hover on menu item "<item>" for warmup
     When I store links from this menu item on warmup
     Then I visit these links on warmup
@@ -22,7 +22,7 @@ Feature: Warmup so that the tests run smoother
     | Giyim, Takı Aksesuar    |
 
     Scenario Outline: I search for items on warmup
-      Given I visit main page
+      Given I visit main page on warmup
       When I make a search for item "<item>" on warmup
       Then I open search result no "1" on warmup
       Examples:

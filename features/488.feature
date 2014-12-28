@@ -16,9 +16,9 @@ Feature: 488 - Display tax included prices in
       Then I am on product details
       And Discounted price is displayed correctly
       Examples:
-      | id                |
-      | OYUNSHI90050-K100 |
-      | KTIMAS43484       |
-      | SPORP355568091-28 |
-      | BD802112          |
-      | OFISDURMAXAAA62   |
+      | id                 |
+      | OYUNSHI90050-K100  |
+      | KTIMAS43484        |
+      | FTHFZSAN16GMCAND48 |
+      | BD802112           |
+      | OFISDURMAXAAA62    |

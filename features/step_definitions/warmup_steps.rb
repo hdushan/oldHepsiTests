@@ -60,3 +60,11 @@ Then(/^I open search result no "([^"]*)" on warmup$/) do |arg|
     p "something went wrong in warmup"
   end
 end
+
+Given(/^I visit main page on warmup$/) do
+  begin
+    visit_main_page
+  rescue
+    p "something went wrong in warmup"
+  end
+end
