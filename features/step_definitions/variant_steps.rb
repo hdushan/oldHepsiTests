@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: UTF-8
 Then(/^There are "([^"]*)" select box variant groups$/) do |arg|
   i = arg.to_i
   find('.variant-container', match: :first)

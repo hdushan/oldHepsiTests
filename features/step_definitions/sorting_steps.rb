@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: UTF-8
 When(/^I sort by bestseller$/) do
   find('button.button.light').click
   click_link 'bestSelling'

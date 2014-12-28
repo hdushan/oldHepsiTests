@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: UTF-8
 When(/^I click the account icon$/) do
   find_by_id('myAccount').first('span').click
   find_by_id('login').click

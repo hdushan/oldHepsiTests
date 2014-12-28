@@ -322,7 +322,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit_main_page
-    p "Page not found error!!! on\n#{url}"
+    fail "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -605,4 +605,12 @@ And(/^Clear cart items$/) do
     end
   end
   visit_main_page
+end
+
+Then(/^I set default wait time to "([^"]*)" seconds$/) do |arg|
+  set_wait_time arg
+end
+
+Then(/^I revert to default wait time$/) do
+  revert_to_default_wait_time
 end

@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: UTF-8
 Given(/^I have an empty cart$/) do
   url = current_url
   click_link "shoppingCart"

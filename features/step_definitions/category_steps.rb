@@ -1,4 +1,4 @@
-# encoding: UTF-8
+#encoding: UTF-8
 
 Then(/^I see (\d+) items in discounted products$/) do |items|
   expect(page.find('.widget.DiscountedProducts')).to have_content('İndirimli ürünler')
