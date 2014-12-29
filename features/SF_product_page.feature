@@ -124,7 +124,7 @@ Feature: Product page is as expected
 
   @94 @recommended_products_on_product_detail_page_enabled
   Scenario: Display suggested products when available and selecting a product takes me to the details page
-    Given I select a product with SKU BD601126-B
+    Given I select a product with SKU TELCEPSAMN9000-B
     Then I see a maximum of 10 products in the suggestions area
     And I see a picture associated with each product
     And when I select the first suggested product
