@@ -12,7 +12,7 @@ sudo xhost +
 echo "Running tests against http://$1" | /usr/games/cowsay
 
 
-/usr/local/bin/cucumber features"$2" --format pretty --format html --out results.html --format junit --out results.xml --tags @journey host=http://"$1"
+sudo /usr/local/bin/cucumber features"$2" --format pretty --format html --out results.html --format junit --out results.xml --tags @journey host=http://"$1"
 
 rc=$?
 
