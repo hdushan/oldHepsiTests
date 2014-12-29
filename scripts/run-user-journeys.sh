@@ -1,5 +1,7 @@
 #!/bin/bash
 
+/usr/local/bin/bundle install --verbose
+
 killall -9 Xvfb
 
 Xvfb :1 -screen 0 1024x768x24 2>&1 >/dev/null &
