@@ -23,4 +23,4 @@ fi
 
 chmod -R 777 .
 killall -9 Xvfb
-chown go:users .
+chown -R go:users .
