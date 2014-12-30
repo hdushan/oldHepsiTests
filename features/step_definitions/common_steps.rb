@@ -79,7 +79,7 @@ When(/^I am on checkout screen$/) do
   # page.should have_selector "#clearCart"
 
   sleep 5
-  header = first('h1.cart-title')
+  header = first('header.box-header', visible: true)
   table = first('table.cart-items')
 
   if header == nil && table == nil
@@ -492,12 +492,8 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='FTKAMEVERST1'"
-  t = Time.new
-  now = Time.now - 10800
-  p now
-  result.each{|x| t = Time.parse x['SaleEnd'].to_s}
-  p Time.diff(t, now, '%y, %d and %h:%m:%s')
+  x = 5
+  x.should == 4
 end
 
 When(/^I click go to desktop version link$/) do
@@ -524,9 +520,9 @@ Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
           found = true
           break
         else
-          more_comments = find('div.load-more-comments')
+          more_comments = find_by_id('showMoreComments')
           if more_comments.visible?
-            more_comments.find_by_id('showMoreComments').click
+            find_by_id('showMoreComments').click
           else
             break
           end
@@ -541,9 +537,9 @@ Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
           found = true
           break
         else
-          more_comments = find('div.load-more-comments')
+          more_comments = find_by_id('showMoreComments')
           if more_comments.visible?
-            more_comments.find_by_id('showMoreComments').click
+            find_by_id('showMoreComments').click
           else
             break
           end
@@ -558,9 +554,9 @@ Then(/^I should see a comment made by a "([^"]*)" person$/) do |arg|
           found = true
           break
         else
-          more_comments = find('div.load-more-comments')
+          more_comments = find_by_id('showMoreComments')
           if more_comments.visible?
-            more_comments.find_by_id('showMoreComments').click
+            find_by_id('showMoreComments').click
           else
             break
           end
@@ -585,7 +581,7 @@ end
 And(/^Clear cart items$/) do
   find_by_id('shoppingCart').click
   sleep 5
-  header = first('h1.cart-title')
+  header = first('header.box-header', visible: true)
   table = first('table.cart-items')
   if header == nil && table == nil
     empty = find('div.empty-cart')
@@ -596,12 +592,12 @@ And(/^Clear cart items$/) do
     find_by_id('clearCart').click
     sleep 2
   elsif table == nil
-    button = first('a.btn-delete')
+    button = first('a', text: "Sil")
     while button != nil
       button.click
       wait_for_ajax
       sleep 1
-      button = first('a.btn-delete')
+      button = first('a', text: "Sil")
     end
   end
   visit_main_page

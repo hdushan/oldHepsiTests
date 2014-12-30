@@ -59,12 +59,6 @@ Feature: Homepage is as expected
     When I search for "iPhonethatdoesnotexist"
     Then I should see no results page
 
-  @189
-  Scenario: View the static banners
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Then I can see at least 2 static banners
-
   @33
   Scenario: Searching with one character does not produce suggestions
     Given I am on the homepage
@@ -197,3 +191,94 @@ Feature: Homepage is as expected
     When There is a top sellers section
     And There are "11" items in top sellers section
     Then I should be able to cycle all topsellers
+
+  @326 @merchant_enabled
+  Scenario: Searching for a product
+    Given I visit main page
+    When I search for "ayakkabı"
+    Then There are some results available
+
+  @326 @merchant_enabled
+  Scenario: Going to checkout
+    Given I visit main page
+    When I search for "kulaklık"
+    And I open search result no "4"
+    And I add "3" product(s) to cart
+    Then I go to checkout
+    And Product is listed in the checkout screen
+
+  @326 @merchant_enabled
+  Scenario: Check menu on the details page
+    Given I visit main page
+    When I search for "saat"
+    And I open search result no "3"
+    Then I am on product details
+
+  @326 @merchant_enabled
+  Scenario Outline: Menu should be available on details page
+    Given I visit main page
+    When I hover on menu item "<item>"
+    Then There are items in the menu content
+  Examples:
+    | item                    |
+    | Elektronik Beyaz Eşya   |
+    | Ev, Yaşam Ofis          |
+    | Oto, Bahçe Yapı Market  |
+    | Anne, Bebek Oyuncak     |
+    | Spor Outdoor            |
+    | Kozmetik Kişisel Bakım  |
+    | Süpermarket Petshop     |
+    | Kitap, Müzik Film, Oyun |
+    | Giyim, Takı Aksesuar    |
+
+  @326 @merchant_enabled
+  Scenario: Check menu on the CLP
+    Given I visit main page
+    When I navigate to Category
+      | Kitap, Müzik Film, Oyun | Müzik Enstrümanları |
+    Then There are some results available
+
+  @326 @merchant_enabled
+  Scenario Outline: Menu should be available on CLP
+    Given I visit main page
+    When I hover on menu item "<item>"
+    Then There are items in the menu content
+  Examples:
+    | item                    |
+    | Elektronik Beyaz Eşya   |
+    | Ev, Yaşam Ofis          |
+    | Oto, Bahçe Yapı Market  |
+    | Anne, Bebek Oyuncak     |
+    | Spor Outdoor            |
+    | Kozmetik Kişisel Bakım  |
+    | Süpermarket Petshop     |
+    | Kitap, Müzik Film, Oyun |
+    | Giyim, Takı Aksesuar    |
+
+    @467
+  Scenario: Check for original prices on deal of the day carousel
+    Given I visit main page
+    And I am at main page
+    When There are some items in deal of the day carousel
+    Then Original prices should be displayed in deal of the day items
+
+  @481
+  Scenario: Check for feedback button on homepage
+    Given I visit main page
+    When There is a feedback button on current page
+    Then I should be able to give feedback
+
+  @481
+  Scenario: Check for feedback button on CLP
+    Given I visit main page
+    And I navigate to Category
+      | Anne, Bebek Oyuncak | Bebek Güvenlik |
+    When There is a feedback button on current page
+    Then I should be able to give feedback
+
+  @481
+  Scenario: Check for feedback button on product details page
+    Given I visit main page
+    And I search for "SGBABYLISS087307"
+    When There is a feedback button on current page
+    Then I should be able to give feedback

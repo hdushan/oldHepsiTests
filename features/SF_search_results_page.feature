@@ -241,3 +241,25 @@ Feature: Search page is as expected
     Given I visit main page
     When I click discounted items global filter
     Then I should be able to click show more products multiple times
+
+  @343
+  Scenario: Specific filters should appear on search results
+    Given I visit main page
+    Given I search for "Michelin lastik"
+    When I apply a filter
+      | Jant Çapı       | 17    |
+      | Kullanım Türü   | Binek |
+      | Taban Genişliği | 225mm |
+    Then There are some results available
+
+  @343
+  Scenario: Specific filters should appear on browsing results
+    Given I visit main page
+    And I navigate to Category
+      | Süpermarket Petshop | Petshop |
+    And I select a sub category in browsing
+      | Kedi | Kedi Mamaları | Tümünü Gör |
+    When I apply a filter
+      | Yaş           | 1-7 Yaş  |
+      | Ürün Kilogram | 10-15 kg |
+    Then There are some results available

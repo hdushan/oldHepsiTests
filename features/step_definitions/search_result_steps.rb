@@ -135,7 +135,7 @@ And(/^On clicking a related keyword "(.*?)"$/) do |related_keyword|
 end
 
 Then(/^I should see search results of that keyword "(.*?)"$/) do |related_keyword|
-  expect(page.find_by_id('productSearch').value.downcase).to eq(related_keyword.downcase)
+  expect(page.find_by_id('relatedKeywords')).to have_content(related_keyword.downcase)
 end
 
 And(/^On clicking a related category "(.*?)"$/) do |related_category|

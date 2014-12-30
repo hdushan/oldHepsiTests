@@ -300,3 +300,84 @@ Feature: Product page is as expected
     When I search for "FTKAMEVERST1"
     And I open search result no "1"
     Then I should see stock left for deal of the day items for "FTKAMEVERST1"
+
+  @168
+  Scenario: Search for gold
+    Given I visit main page
+    And I search for "çeyrek altın"
+    And I see the price on search item no "3"
+    When I open search result no "3"
+    Then price is listed correctly in details
+
+  @168
+  Scenario: Browse to gold category
+    Given I visit main page
+    And I navigate to Category
+      | Giyim, Takı Aksesuar | Altın/Takı/Mücevher |
+    And I click breadcrumb "Altın / Takı / Mücevher"
+    And I select a sub category in browsing
+      | Külçe, Ziynet, Cumhuriyet Altını | Tümünü Gör |
+    And I see the price on search item no "2"
+    When I open search result no "2"
+    Then price is listed correctly in details
+
+  @329
+  Scenario: Anonymizing comments - male
+    Given I visit main page
+    When I search for "ZYPYON2897"
+    And I open search result no "1"
+    Then I should see a comment made by a "male" person
+
+  @329
+  Scenario: Anonymizing comments - female
+    Given I visit main page
+    When I search for "ZYPYON2897"
+    And I open search result no "1"
+    Then I should see a comment made by a "female" person
+
+  @329
+  Scenario: Adhering to the existing commenting structure
+    Given I visit main page
+    When I search for "ZYPYON2897"
+    And I open search result no "1"
+    Then I should see a comment made by a "normal" person
+
+  @488
+  Scenario Outline: Check some products for their discounts
+    Given I visit main page
+    And I retrieve details from product service with id "<id>"
+    When I search for the stored product
+    And I open search result no "1"
+    Then I am on product details
+    And Discounted price is displayed correctly
+  Examples:
+    | id                 |
+    | OYUNSHI90050-K100  |
+    | KTIMAS43484        |
+    | FTHFZSAN16GMCAND48 |
+    | BD802112           |
+    | OFISDURMAXAAA62    |
+
+  @700
+  Scenario: Open a product detail
+    Given I visit main page
+    And I search for "EAKMETGM153-90190"
+    When I open search result no "1"
+    Then I am on product details
+    And The discount is "56" percent on details
+
+  @700
+  Scenario Outline: Different variants of the product should have different discount values
+    Given I visit main page
+    And I search for "EAKMETGM153-90190"
+    And I open search result no "1"
+    And I am on product details
+    When I change the variant to "<variant>"
+    Then The discount is "<discount>" percent on details
+  Examples:
+    | variant  | discount |
+    | 90x190   | 56       |
+    | 90x200   | 53       |
+    | 140x190  | 39       |
+    | 150x200  | 41       |
+    | 160x200  | 34       |

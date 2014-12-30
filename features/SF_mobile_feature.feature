@@ -112,3 +112,64 @@ Feature: Mobile Homepage is as expected
     Given I visit mobile main page
     When I click my account button on mobile
     Then I am on mobile login page
+
+  @355
+  Scenario: Testing
+    Given I visit mobile main page
+    When I click go to desktop version link
+    Then I am on old hepsiburada mainpage
+
+  @456_mobile
+  Scenario Outline: Visit mobile site with links from legacy site
+    Given I visit mobile main page
+    When I use this link form old site to access mobile site "<link>"
+    Then I don't get the error page
+  Examples:
+    | link |
+    | /liste/sony-playstation-4-500-gb-oyun-konsolu/productDetails.aspx?productId=oyunsonyplays4&categoryId=60003892&SKU=OYUNSONYPLAYS4 |
+    | /liste/prima-bebek-bezi-aktif-bebek-aylik-paketi-cesitleri-prima-islak-havlu-hediyeli-/productDetails.aspx?productId=zypyon2897&categoryId=60001049&SKU=ZYPYON2897 |
+    | /liste/petlas-175-70-r13-82t-snow-master-w601-kis-oto-lastigi-uretim-yili-2014-/productDetails.aspx?productId=otozsu20550&categoryId=259720&SKU=OTOZSU20550 |
+    | /liste/mini-masallar-seti-3-10-kitap/productDetails.aspx?productId=ktimas43484&categoryId=9928&SKU=KTIMAS43484 |
+    | /liste/ceyrek-altin-kulplu/productDetails.aspx?productId=eakszynt7&categoryId=16032976&SKU=EAKSZYNT7 |
+
+  @637_mobile
+  Scenario Outline: Use some single brand filtered links from old site on new site
+    Given I visit mobile main page
+    When I use this link form old site to access mobile site "<link>"
+    Then I am on results mobile page
+    And These filters are present on mobile page "<brand-list>"
+  Examples:
+    | link                                                                                                             | brand-list |
+    | /liste/dark-bilgisayarlar/department.aspx?categoryId=3000500&qs=%2fbrand%3d%7bdark%7d                            | Dark       |
+    | /liste/matras-erkek/department.aspx?categoryId=12087177&qs=%2fbrand%3d%7bmatra015f%7d                            | Matraş     |
+
+  @637_mobile
+  Scenario Outline: Use multiple brand filtered links from old site on mobile site
+    Given I visit mobile main page
+    When I use this link form old site to access mobile site "<link>"
+    Then I am on results page
+    And These filters are present on mobile page "<brand-list>"
+  Examples:
+    | link                                                                                                                 | brand-list                     |
+    | /liste/bilgisayarlar/department.aspx?categoryId=3000500&qs=%2fbrand%3d%7bdark%3btoshiba%7d                           | Dark - Toshiba                 |
+    | /liste/fotograf-makinesi-cantalari/department.aspx?categoryId=81481&qs=%2fbrand%3d%7bvanguard%3blowepro%3bsamsung%7d | Lowepro - Vanguard - Samsung   |
+
+  @739 @mobile_discounts_and_topsellers_disabled
+  Scenario: Hide discount and top seller fields if they are disabled for Spor Outdoor
+    Given I visit mobile main page
+    And I navigate to Mobile_Category
+      | Spor Outdoor |
+    When I select a sub category in browsing
+      | Spor / Fitness | Spor Branşları | Tümünü Gör |
+    Then There are some results available
+    And Top sellers an discount items are not visible
+
+  @739 @mobile_discounts_and_topsellers_disabled
+  Scenario: Hide discount and top seller fields if they are disabled for Telefon
+    Given I visit mobile main page
+    And I navigate to Mobile_Category
+      | Telefon |
+    When I select a sub category in browsing
+      | Cep Telefonu ve SmartPhone | Tümünü Gör |
+    Then There are some results available
+    And Top sellers an discount items are not visible
