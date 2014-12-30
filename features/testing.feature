@@ -1,5 +1,5 @@
 
 Feature: Test
-  @ignore
+  @warmup
   Scenario: Test things
     Given I test things

@@ -4,7 +4,7 @@ Given(/^I hover on menu item "([^"]*)" for warmup$/) do |arg|
   begin
     el = find('ul.browser-by-category').first('li', :text=> arg)
     $container = el.find('div.nav-home-wrapper')
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end
@@ -18,7 +18,7 @@ When(/^I store links from this menu item on warmup$/) do
       links = x.all('a').select{|x| x['href'] != nil}
       links.each{ |x| $links.push x['href']}
     }
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end
@@ -29,7 +29,7 @@ Then(/^I visit these links on warmup$/) do
       visit x
       steps %{ Then I don't get the error page }
     }
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end
@@ -41,7 +41,7 @@ Given(/^I make a search for item "([^"]*)" on warmup$/) do |arg|
     if arg.strip != ""
       $current_results = extract_number find_by_id('totalItems').text
     end
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end
@@ -56,7 +56,7 @@ Then(/^I open search result no "([^"]*)" on warmup$/) do |arg|
       $p_title = res.find('h3.product-title').text
       res.find('h3.product-title').click
     end
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end
@@ -64,7 +64,7 @@ end
 Given(/^I visit main page on warmup$/) do
   begin
     visit_main_page
-  rescue
+  rescue Exception => e
     p "something went wrong in warmup"
   end
 end

@@ -129,6 +129,13 @@ After  do |scenario|
   end
 end
 
+After('@warmup') do |scenario|
+  begin
+    p scenario.name
+  rescue
+    p "Something went wrong in warmup"
+  end
+end
 # scenario_times = {}
 #
 # Around() do |scenario, block|
