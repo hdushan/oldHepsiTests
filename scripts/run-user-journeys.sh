@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/local/bin/bundle install --verbose
+sudo -u root /usr/local/bin/bundle install --verbose
 
 killall -9 Xvfb
 
@@ -23,4 +23,3 @@ fi
 
 chmod -R 777 .
 killall -9 Xvfb
-chown -R go:users .
