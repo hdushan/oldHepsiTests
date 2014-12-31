@@ -72,6 +72,6 @@ end
 Then(/^I should not see adult item "(.*?)" on CLP$/) do |adult_item_sku|
   page.find('#totalItems')
   set_wait_time 5
-  page.should have_no_content (adult_item_sku)
+  find_by_id('productresults').should have_no_content (adult_item_sku)
   revert_to_default_wait_time
 end

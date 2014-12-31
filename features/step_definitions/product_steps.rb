@@ -293,14 +293,14 @@ Then /^I see a maximum of 10 products in the suggestions area$/ do
 end
 
 And /^I see a picture associated with each product$/ do
-  page.find_by_id('recommendedProductsCarousel').all('.owl-item').each do | suggested_product |
+  page.find('.recommended-products').all('.owl-item').each do | suggested_product |
     suggested_product.should have_selector('.product-image-wrapper')
   end
 end
 
 And /^when I select the first suggested product$/ do
   @product_url = current_url
-  page.find_by_id('recommendedProductsCarousel').first('.product-image-wrapper').click
+  page.find('.recommended-products').first('.product-image-wrapper').click
 end 
 
 Then /^I see the product details page$/ do
@@ -312,7 +312,7 @@ end
 
 Then /^I do not see suggestions$/ do
   set_wait_time 5
-  expect(page).to_not have_content('.recommended-products-container')
+  expect(page).to_not have_content('.recommended-products')
   revert_to_default_wait_time
 end
 
@@ -366,7 +366,7 @@ When(/^I click return policy link$/) do
 end
 
 Then(/^I get the return policy description$/) do
-  find('section.product-detail-container').find_by_id('returnPolicy').should have_content('İade Koşulları')
+  find('section.product-detail-container').find_by_id('returnPolicy').should have_content('İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız')
 end
 
 When(/^I click product description tab$/) do

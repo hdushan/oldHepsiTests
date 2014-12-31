@@ -492,12 +492,7 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  begin
-    x = 5
-    x.should == 4
-  rescue Exception => e
 
-  end
 end
 
 When(/^I click go to desktop version link$/) do

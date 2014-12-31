@@ -69,18 +69,14 @@ Before ('@discounts_and_topsellers_disabled') do
   end
 end
 
-def disable_discounts_and_topsellers
+Before ('@discounts_and_topsellers_enabled') do
   visit '/protected/feature'
   check = find_by_id "TopSellersOnCategoryPageFeature"
-  if check['checked']
+  unless check['checked']
     find('label', :text=> 'TopSellersOnCategoryPageFeature').click
     find('button', :text=> "Save").click
     sleep 1.5
   end
-end
-
-After ('@discounts_and_topsellers_enabled') do
-  disable_discounts_and_topsellers
 end
 
 

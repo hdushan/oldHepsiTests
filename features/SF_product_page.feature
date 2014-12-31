@@ -128,7 +128,7 @@ Feature: Product page is as expected
     Then I see a maximum of 10 products in the suggestions area
     And I see a picture associated with each product
     And when I select the first suggested product
-    Then I see the product details page
+    Then I am on product details
 
   @94
   Scenario: If the product has no suggestions, there should not be a section
