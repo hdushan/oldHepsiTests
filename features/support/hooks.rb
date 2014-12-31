@@ -112,14 +112,22 @@ Before '@chrome' do
   Capybara.current_driver  = :chrome
   Capybara.default_driver = :chrome
   Capybara.javascript_driver = :chrome
-  Capybara.page.driver.browser.manage.window.maximize
+  begin
+    Capybara.page.driver.browser.manage.window.maximize
+  rescue Exception => e
+    p "Unable to maximize window!!!"
+  end
 end
 
 Before '~@chrome' do
   Capybara.current_driver  = :firefox
   Capybara.default_driver = :firefox
   Capybara.javascript_driver = :firefox
-  Capybara.page.driver.browser.manage.window.maximize
+  begin
+    Capybara.page.driver.browser.manage.window.maximize
+  rescue Exception => e
+    p "Unable to maximize window!!!"
+  end
 end
 
 After  do |scenario|

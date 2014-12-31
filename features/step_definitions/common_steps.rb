@@ -18,7 +18,7 @@ end
 Given(/^I open search result no "([^"]*)"$/) do |arg|
   results = find_by_id "productresults"
   i = arg.to_i - 1
-  if i >= 0 and i<RESULTS_PER_PAGE
+  if i >= 0
     res = results.all('li.search-item')[i]
     $p_id = res['id']
     $p_title = res.find('h3.product-title').text
@@ -582,7 +582,7 @@ And(/^I clear sessions$/) do
   Capybara.reset_sessions!
 end
 
-And(/^Clear cart items$/) do
+And(/^I clear cart items$/) do
   find_by_id('shoppingCart').click
   sleep 5
   header = first('header.box-header', visible: true)
@@ -604,7 +604,6 @@ And(/^Clear cart items$/) do
       button = first('a', text: "Sil")
     end
   end
-  visit_main_page
 end
 
 Then(/^I set default wait time to "([^"]*)" seconds$/) do |arg|

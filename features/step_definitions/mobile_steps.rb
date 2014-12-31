@@ -150,3 +150,16 @@ end
 Then(/^I am on mobile login page$/) do
   find('div.login-container')
 end
+
+And(/^I add search result no "([^"]*)" to cart from search results$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    find('.search-item', match: :first)
+    item = all('.search-item')[i]
+    item.find('button', text: "Sepete Ekle").click
+    wait_for_ajax
+    page.should have_selector("#notification", :visible => true)
+    page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
+    page.should have_selector("#notification", visible: :hidden)
+  end
+end

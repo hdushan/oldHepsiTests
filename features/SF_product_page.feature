@@ -154,7 +154,8 @@ Feature: Product page is as expected
   @318
   Scenario: Add to basket
     Given I visit main page
-    And Clear cart items
+    And I clear cart items
+    And I visit main page
     And I search for "MTARCELIK6230BULAS"
     And I open search result no "1"
     And I am on product details
@@ -361,23 +362,23 @@ Feature: Product page is as expected
   @700
   Scenario: Open a product detail
     Given I visit main page
-    And I search for "EAKMETGM153-90190"
+    And I search for "EAKSAN1MP-VP80V0"
     When I open search result no "1"
     Then I am on product details
-    And The discount is "56" percent on details
+    And The discount is "79" percent on details
 
   @700
   Scenario Outline: Different variants of the product should have different discount values
     Given I visit main page
-    And I search for "EAKMETGM153-90190"
+    And I search for "EAKSAN1MP-VP80V0"
     And I open search result no "1"
     And I am on product details
     When I change the variant to "<variant>"
     Then The discount is "<discount>" percent on details
   Examples:
     | variant  | discount |
-    | 90x190   | 56       |
-    | 90x200   | 53       |
-    | 140x190  | 39       |
-    | 150x200  | 41       |
-    | 160x200  | 34       |
+    | 90x190   | 72       |
+    | 90x200   | 72       |
+    | 140x190  | 67       |
+    | 150x200  | 66       |
+    | 160x200  | 69       |

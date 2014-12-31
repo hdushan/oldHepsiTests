@@ -108,9 +108,7 @@ end
 Then /^I see a visual indication that an auto complete suggestion is selected/ do
   list = find('.autocomplete-suggestions').all('.autocomplete-suggestion')
   el1 = list[0]
-  el2 = list[1]
-  el1.native.style('background-color').should_not == el2.native.style('background-color')
-  # expect(first_auto_complete_suggestion.native.style('background-color')).to eq('rgba(233, 233, 233, 1)')
+  el1[:class].include?('autocomplete-selected').should == true
 end
 
 Given /^I see no visual indication of auto complete selection/ do
@@ -260,11 +258,11 @@ And(/^I refresh page$/) do
 end
 
 And(/^There are "([^"]*)" items in top sellers section$/) do |arg|
-  find('.widget.TopSellerList').all('div.box.product').size.should == arg.to_i
+  find('.top-seller').all('div.box.product').size.should == arg.to_i
 end
 
 Then(/^I should be able to cycle all topsellers$/) do
-  links = find('.widget.TopSellerList').all('.box.product').collect{|x| x.first('a')['href']}
+  links = find('.top-seller').all('.box.product').collect{|x| x.first('a')['href']}
   links.each { |x|
     visit x
     steps %{ Then I don't get the error page }

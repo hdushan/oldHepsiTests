@@ -188,8 +188,8 @@ end
 And(/^There are more than "([^"]*)" brands in the filter area$/) do |arg|
   i = arg.to_i
   list = find_by_id('brandList')
-  list['class'].include?("show-all-brands").should == false
   list.find('label', visible: :true, match: :first)
+  list.all('li.hide').size.should == 0
   list.all('label', visible: :true).size.should > i
 end
 
