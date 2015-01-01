@@ -7,7 +7,7 @@ Feature: Feedback mechanism for beta
   So that I can measure my new websites performance
 
   @481
-  Scenario:
+  Scenario: Open feedback window
     Given I am on the homepage
     When I click the feedback button
     Then I see a feedback window
