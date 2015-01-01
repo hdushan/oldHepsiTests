@@ -35,9 +35,6 @@ Before ('@merchant_enabled') do
   end
 end
 
-Before ('@discounts_and_topsellers_disabled') do
-  disable_discounts_and_topsellers
-end
 
 Before ('@mobile_discounts_and_topsellers_disabled') do
   visit '/m/protected/feature'
@@ -68,17 +65,6 @@ Before ('@discounts_and_topsellers_disabled') do
     sleep 1.5
   end
 end
-
-Before ('@discounts_and_topsellers_enabled') do
-  visit '/protected/feature'
-  check = find_by_id "TopSellersOnCategoryPageFeature"
-  unless check['checked']
-    find('label', :text=> 'TopSellersOnCategoryPageFeature').click
-    find('button', :text=> "Save").click
-    sleep 1.5
-  end
-end
-
 
 Before ('@recommended_products_on_product_detail_page_enabled') do
   visit '/protected/feature'
