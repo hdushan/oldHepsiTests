@@ -19,11 +19,11 @@ Feature: Search and apply a filter to find a product
     And There are some results available
     When I apply a filter
       | Markalar            | DecoTown |
-      | Fiyat Aralığı       | 25 TL - 50 TL |
+      | Fiyat Aralığı       | 50 TL - 100 TL |
     Then There are some results available
 
   Scenario: Go to product details and add to cart
-    Given I open search result no "1"
+    Given I open search result no "2"
     When I am on product details
     Then I add "3" product(s) to cart
 
