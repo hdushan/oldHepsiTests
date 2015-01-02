@@ -609,3 +609,32 @@ end
 Then(/^I revert to default wait time$/) do
   revert_to_default_wait_time
 end
+
+Then(/^I see product description$/) do
+  find_by_id('productDescription').click
+end
+
+And(/^I see product reviews$/) do
+  find_by_id('productReviews').click
+  find('.review-item', match: :first)
+  all('.review-item').size.should > 0
+end
+
+And(/^I see compatible products$/) do
+  find_by_id('compatibleProducts').click
+  find('.compatible-product-group', match: :first)
+  all('.compatible-product-group').size.should > 0
+end
+
+And(/^I see return policy$/) do
+  find_by_id('productReturnPolicy').click
+  find_by_id('productReturnPolicyText')
+end
+
+And(/^I see product specifications$/) do
+  find_by_id('productTechSpec').click
+end
+
+And(/^I return to previous page$/) do
+  page.evaluate_script('window.history.back()')
+end

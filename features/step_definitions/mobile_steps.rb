@@ -66,7 +66,6 @@ And(/^I apply a filter on mobile$/) do |table|
   filter_tab = find_by_id "filterResults"
   $result_stack.push get_result_count
   values.each { |x|
-    filter_tab.first('li', :text=> /^#{x[0]}/ )
     filter_tab.find('button', :text=> /^#{x[0]}$/).click
     if x[0] == "Değerlendirme Puanı"
       str = "star_" + (extract_number x[1]).to_s
@@ -161,5 +160,113 @@ And(/^I add search result no "([^"]*)" to cart from search results$/) do |arg|
     page.should have_selector("#notification", :visible => true)
     page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
     page.should have_selector("#notification", visible: :hidden)
+    visit current_url
+  end
+end
+
+And(/^I should see indicators for "([^"]*)"$/) do |arg|
+  case arg
+    when "Kargo Bedavalar"
+      find_by_id('productresults').find('.search-item', match: :first)
+      items = find_by_id('productresults').all(".search-item")
+      items.each { |x|
+        x.should have_content "Kargo Bedava"
+      }
+    when "Süper Hızlı Gönderiler"
+      find_by_id('productresults').find('.search-item', match: :first)
+      items = find_by_id('productresults').all(".search-item")
+      items.each { |x|
+        x.should have_content "Süper Hızlı"
+      }
+    when "İndirimli Ürünler"
+      find_by_id('productresults').find('.search-item', match: :first)
+      items = find_by_id('productresults').all(".search-item")
+      items.each { |x|
+        x.should have_selector ".discount-badge"
+      }
+    else
+
+  end
+end
+
+And(/^I am still on mobile page$/) do
+  page.current_url.include?("storefront.qa.hepsiburada.com/m/")
+end
+
+Then(/^There is a top sellers section in mobile$/) do
+  sect = find('.top-seller')
+  sect.find('li.search-item', match: :first)
+  sect.all('li.search-item').size.should > 0
+end
+
+And(/^There is a recommended products section in mobile$/) do
+  div = find("div.ProductList", text: "İlginizi Çekebilecek Ürünler")
+  div.all(".search-item").size.should <=10
+end
+
+And(/^I see related search keywords on search result page$/) do |table|
+  # table is a table.hashes.keys # => [:bebek bezi, :bebek arabası, :bebek beşikleri]
+  keywords = find_by_id("relatedKeywords")
+  values = table.raw[0]
+  values.each { |x| keywords.should have_content x}
+  end
+
+
+And(/^I see related search categories on search result page$/) do |table|
+  # table is a table.hashes.keys # => [:Süpermarket / Bebek Bezleri ve Alt Açma]
+  categories = find_by_id("relatedCategories")
+  values = table.raw[0]
+  values.each { |x| categories.should have_content x}
+end
+
+When(/^I sort with "([^"]*)" filter on mobile$/) do |arg|
+  case arg
+    when 'smart'
+      find_by_id('showSortOptions').click
+      find_by_id('bestMatching').click
+      sleep 2
+      wait_for_ajax
+    when 'most-selling'
+      find_by_id('showSortOptions').click
+      find_by_id('bestSelling').click
+      sleep 2
+      wait_for_ajax
+    when 'lowest-price'
+      find_by_id('showSortOptions').click
+      find_by_id('lowestPrice').click
+      sleep 2
+      wait_for_ajax
+    when 'highest-price'
+      find_by_id('showSortOptions').click
+      find_by_id('highestPrice').click
+      sleep 2
+      wait_for_ajax
+  end
+end
+
+Then(/^Results are sorted according to "([^"]*)" filter on mobile$/) do |arg|
+  case arg
+    when 'smart'
+      find_by_id('showSortOptions').click
+      find_by_id('bestMatching')['class'].include?('selected').should == true
+      find_by_id('showSortOptions').click
+    when 'most-selling'
+      find_by_id('showSortOptions').click
+      find_by_id('bestSelling')['class'].include?('selected').should == true
+      find_by_id('showSortOptions').click
+    when 'lowest-price'
+      find_by_id('showSortOptions').click
+      find_by_id('lowestPrice')['class'].include?('selected').should == true
+      find_by_id('showSortOptions').click
+      products = all('.product-price-wrapper')
+      prices = products.collect{|x| format_price x.find('.product-price').text}
+      prices.should == prices.sort
+    when 'highest-price'
+      find_by_id('showSortOptions').click
+      find_by_id('highestPrice')['class'].include?('selected').should == true
+      find_by_id('showSortOptions').click
+      products = all('.product-price-wrapper')
+      prices = products.collect{|x| format_price x.find('.product-price').text}
+      prices.should == (prices.sort).reverse
   end
 end

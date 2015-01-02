@@ -15,6 +15,7 @@ Given /^I select a product with SKU (.*)$/ do |sku|
 end
 
 When /^I add to cart$/ do
+  $p_quantity = find_by_id('quantity').value
   within "#addToCartForm" do
     click_button "addToCart"
   end
@@ -153,6 +154,7 @@ end
 
 Then(/^I view the payment installments information$/) do
   first('#productPaymentInstallment').click
+  find('.paymentInstallmentTable', match: :first)
 end
 
 Then(/^I see at least one payment installment table$/) do
@@ -272,6 +274,7 @@ end
 
 Then(/^I should see a notification of (.*) items added to my basket$/) do | quantity |
   find_by_id('notification').should have_content(quantity + " Ürün başarılı bir şekilde sepete eklenmiştir.")
+  page.should have_selector("#notification", visible: :hidden)
 end
 
 Then(/^I should see an invalid message notification$/) do
@@ -490,4 +493,32 @@ Then(/^I should see stock left for deal of the day items for "([^"]*)"$/) do |ar
   result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{arg}'"
   i = result.first['StockQty'].to_i
   item_count.should == i
+end
+
+When(/^I select a variant$/) do |table|
+  # table is a table.hashes.keys # => [:renk, :kirmizi-siyah-ekose]
+  values = table.raw
+  find('div.product-variants-wrapper', visible: true)
+  values.each { |x|
+    div = all('div.variants-wrapper').select{|y| y.first('label').text == x[0]}.first
+    cls = "v-" + x[1]
+    div.find("div.#{cls}").first('label').click
+    wait_for_ajax
+  }
+end
+
+And(/^I increase item count by "([^"]*)"$/) do |arg|
+  button = find('.btn-increase')
+  i = arg.to_i
+  i.times do
+    button.click
+  end
+end
+
+And(/^I decrease item count by "([^"]*)"$/) do |arg|
+  button = find('.btn-decrease')
+  i = arg.to_i
+  i.times do
+    button.click
+  end
 end
