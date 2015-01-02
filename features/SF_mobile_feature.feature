@@ -154,7 +154,7 @@ Feature: Mobile Homepage is as expected
     | /liste/bilgisayarlar/department.aspx?categoryId=3000500&qs=%2fbrand%3d%7bdark%3btoshiba%7d                           | Dark - Toshiba                 |
     | /liste/fotograf-makinesi-cantalari/department.aspx?categoryId=81481&qs=%2fbrand%3d%7bvanguard%3blowepro%3bsamsung%7d | Lowepro - Vanguard - Samsung   |
 
-  @739 @mobile_discounts_and_topsellers_disabled
+  @739
   Scenario: Hide discount and top seller fields if they are disabled for Spor Outdoor
     Given I visit mobile main page
     And I navigate to Mobile_Category
@@ -164,7 +164,7 @@ Feature: Mobile Homepage is as expected
     Then There are some results available
     And Top sellers an discount items are not visible
 
-  @739 @mobile_discounts_and_topsellers_disabled
+  @739
   Scenario: Hide discount and top seller fields if they are disabled for Telefon
     Given I visit mobile main page
     And I navigate to Mobile_Category

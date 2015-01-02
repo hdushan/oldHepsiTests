@@ -135,7 +135,7 @@ Feature: Navigation by categories is as expected
     | Spor Outdoor           | Spor Branşları        |
     | Ev, Yaşam Ofis         | Ev Tekstili           |
 
-  @739 @discounts_and_topsellers_disabled
+  @739
   Scenario Outline: Hide discount an top seller fields if they are disabled
     Given I visit main page
     And I navigate to Category
