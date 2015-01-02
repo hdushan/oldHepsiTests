@@ -45,6 +45,7 @@ Then(/^I add "([^"]*)" product\(s\) to cart$/) do |arg|
     page.should have_selector("#notification", :visible => true)
     page.should have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
     page.should have_selector("#notification", visible: :hidden)
+    visit current_url
   end
 end
 

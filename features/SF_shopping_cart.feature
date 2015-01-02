@@ -54,7 +54,7 @@ Feature: Add to basket from details page
     And I see the cart item count is 0
     When I search for "MTSUNOCKE03"
     Then I select a product from search results
-    When I add to cart
+    When I add "1" product(s) to cart
     Then I see the cart item count is 1
 
   @113
@@ -65,6 +65,7 @@ Feature: Add to basket from details page
     And I see the cart item count is 0
     Given I search for "BD800476"
     When I click the 'add to basket' button on results page
+    And I refresh page
     Then I see the cart item count is 1
 
   @113
