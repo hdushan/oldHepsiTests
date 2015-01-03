@@ -2,6 +2,7 @@
   @journey
   Feature: Browse and buy for mobile
 
+    @mobile_merchant_disabled
     Scenario: Browse to a category
       Given I visit mobile main page
       And I clear cart items
