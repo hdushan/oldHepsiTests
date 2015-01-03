@@ -160,7 +160,6 @@ And(/^I add search result no "([^"]*)" to cart from search results$/) do |arg|
     page.should have_selector("#notification", :visible => true)
     page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
     page.should have_selector("#notification", visible: :hidden)
-    visit current_url
   end
 end
 
