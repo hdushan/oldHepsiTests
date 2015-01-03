@@ -147,3 +147,15 @@ Feature: Navigation by categories is as expected
     | cat1         | cat2           |
     | Spor Outdoor | Spor Branşları |
     | Oto, Bahçe   | Banyo          |
+
+  @958
+  Scenario: Show thumbnails on carousel
+    Given I visit main page
+    When There are items in carousel
+    Then I see thumbnails on carousel
+
+  @962
+  Scenario: See deal of the day counter on homepage
+    Given I visit main page
+    When There are some items in deal of the day carousel
+    Then I should see the counter on deal of the day items

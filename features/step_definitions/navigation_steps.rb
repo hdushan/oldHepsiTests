@@ -52,3 +52,32 @@ end
 When /^I click the breadcrumb with ID (.*)/ do | element_id |
   page.find_by_id(element_id).click
 end
+
+Then(/^I see thumbnails on carousel$/) do
+  thumbs = find_by_id('carousel').find('.owl-dots').all('.owl-dot')
+  thumbs.each { |x|
+    x.find('img', match: :first)
+    x.click
+    sleep 1
+  }
+end
+
+Then(/^I should see the counter on deal of the day items$/) do
+  carousel = find_by_id('dealOfTheDayCarousel')
+  back = carousel.find('.owl-prev')
+  forward = carousel.find('.owl-next')
+  while back['class'].include?('disabled') == false
+    back.click
+    sleep 1
+  end
+  while forward['class'].include?('disabled') == false
+    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-days', text: "GÜN")
+    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-hours', text: "SAAT")
+    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-minutes', text: "DK")
+    forward.click
+    sleep 1
+  end
+  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-days', text: "GÜN")
+  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-hours', text: "SAAT")
+  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-minutes', text: "DK")
+end

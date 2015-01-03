@@ -4,19 +4,21 @@
     I'd like to apply global filters
     In order to navigate results easier
 
-  @722 @857
+  @722 @857 @854
   Scenario: Show global filter on homepage
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
     And I should see "İndirimli Ürünler" global filter on main page
+    And I should see "Çok Satanlar" global filter on main page
 
-  @722 @857
+  @722 @857 @854
   Scenario Outline: Show global filter on CLP
     Given I visit main page
     When I navigate to Category
     | <category> | <sub_category> |
     Then I should see "Süper hızlı gönderiler" global filter on CLP
     And I should see "İndirimli ürünler" global filter on CLP
+    And I should see "Çok Satanlar" global filter on CLP
     Examples:
     | category               | sub_category       |
     | Elektronik Beyaz Eşya  | Isıtma ve Soğutma  |
@@ -24,7 +26,7 @@
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
-  @722 @857
+  @722 @857 @854
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
@@ -44,8 +46,9 @@
     | filter                 |
     | Süper hızlı gönderiler |
     | İndirimli ürünler      |
+    | Çok Satanlar           |
 
-  @722 @857
+  @722 @857 @854
   Scenario Outline: Stay on the same results when you click on global filter
     Given I visit main page
     And I navigate to Category
@@ -61,8 +64,9 @@
     | filter                 |
     | Süper hızlı gönderiler |
     | İndirimli ürünler      |
+    | Çok Satanlar           |
 
-  @722 @857
+  @722 @857 @854
   Scenario Outline: Use global filter from homepage
     Given I visit main page
     When I apply global filter "<filter>" on "homepage"
@@ -79,6 +83,7 @@
     | filter                 | filter_on_results      |
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
+    | Çok Satanlar           | Çok Satanlar           |
 
   @722 @857
   Scenario Outline: Page title and description with super fast shipping global filter on CLP
@@ -116,3 +121,4 @@
       | Değerlendirme Puanı | 3 yıldız |
     And I clear filters
     Then Current search results count should be same as the first one
+
