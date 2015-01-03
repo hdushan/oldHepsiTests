@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@mobile_journey
+@journey
   Feature: Navigate for mobile
 
     Scenario: Search for a product

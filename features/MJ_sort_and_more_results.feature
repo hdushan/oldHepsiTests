@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@mobile_journey
+@journey
   Feature: Sort and more results for mobile
 
     Scenario: Browse to a category

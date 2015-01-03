@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@mobile_journey
+@journey
 
   Feature: Using Global Filters in Mobile
 

@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@mobile_journey
+@journey
   Feature: Search and filter for mobile
 
     Scenario: Search products and filter an item

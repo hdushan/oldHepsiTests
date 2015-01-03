@@ -1,5 +1,5 @@
 #encoding: UTF-8
-@mobile_journey
+@journey
   Feature: Search and buy for mobile
 
     Scenario: Search products and buy an item
