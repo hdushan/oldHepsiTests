@@ -268,3 +268,34 @@ Then(/^I should be able to cycle all topsellers$/) do
     steps %{ Then I don't get the error page }
   }
 end
+
+When(/^There is the products of the week widget$/) do
+  div = find('.ProductsOfTheWeek')
+  div.should have_content('Haftanın Ürünleri')
+end
+
+Then(/^These are items in products of the week$/) do
+  div = find('.ProductsOfTheWeek')
+  items = div.all('.owl-item')
+  items.size.should > 0
+end
+
+And(/^I am able to cycle through products of the week$/) do
+  div = find('.ProductsOfTheWeek')
+  dots = div.all('.owl-dot')
+  old_list = Array.new
+  new_list = Array.new
+  dots.each { |x|
+    x.click
+    sleep 1
+    x['class'].include?('active').should == true
+    new_list = div.all('.owl-item.active').collect{|y| y.find('img')['src']}
+    new_list.should_not == old_list
+    old_list = new_list
+  }
+  links = div.all('.owl-item').collect{|x| x.first('a')['href']}
+  links.each { |x|
+    visit x
+    steps %{ Then I don't get the error page }
+  }
+end

@@ -159,3 +159,10 @@ Feature: Navigation by categories is as expected
     Given I visit main page
     When There are some items in deal of the day carousel
     Then I should see the counter on deal of the day items
+
+  @977
+  Scenario: See products of the week
+    Given I visit main page
+    When There is the products of the week widget
+    Then These are items in products of the week
+    And I am able to cycle through products of the week
