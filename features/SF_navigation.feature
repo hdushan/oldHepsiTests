@@ -166,3 +166,9 @@ Feature: Navigation by categories is as expected
     When There is the products of the week widget
     Then These are items in products of the week
     And I am able to cycle through products of the week
+
+  @976
+  Scenario: See 9 static banners on homepage
+    Given I visit main page
+    When There are "9" static banners on homepage
+    Then I should be able to visit every static banner
