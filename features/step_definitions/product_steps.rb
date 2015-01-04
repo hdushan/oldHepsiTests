@@ -499,12 +499,24 @@ end
 When(/^I select a variant$/) do |table|
   # table is a table.hashes.keys # => [:renk, :kirmizi-siyah-ekose]
   values = table.raw
-  find('div.product-variants-wrapper', visible: true)
+  sect = find('div.product-variants-wrapper', visible: true)
   values.each { |x|
-    div = all('div.variants-wrapper').select{|y| y.first('label').text == x[0]}.first
-    cls = "v-" + x[1]
-    div.find("div.#{cls}").first('label').click
-    wait_for_ajax
+    sect.should have_content(/#{x[1]}/i)
+    case x[0]
+      when 'box'
+        div = all('div.variants-wrapper').select{|y| y.first('label').text == x[1]}.first
+        cls = "v-" + x[2]
+        div.find("div.#{cls}").first('label').click
+        wait_for_ajax
+      when 'dd'
+        id = "v-" + x[1]
+        select_from_dd sect.find_by_id(id) , x[2]
+        wait_for_ajax
+      when 'radio'
+        div = sect.find('.variant-container-with-prices')
+        div.find('label', text: x[2]).click
+        wait_for_ajax
+    end
   }
 end
 

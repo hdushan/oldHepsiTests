@@ -22,8 +22,8 @@
       And I open search result no "1"
       And I am on product details
       When I select a variant
-      | renk  | lacivert-beyaz-ekose |
-      | beden | m                    |
+      | box | renk  | lacivert-beyaz-ekose |
+      | box | beden | m                    |
       And I increase item count by "2"
       And I decrease item count by "1"
       Then I add to cart

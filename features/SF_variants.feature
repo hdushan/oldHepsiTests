@@ -80,3 +80,9 @@
     And I open search result no "1"
     Then There are "1" radio button variant groups
     And I should be able to cycle through variants having unprocurables exposed
+
+  Scenario: Unprocurable items should not be added to basket
+    Given I visit main page
+    When I search for "gömlek"
+    And I open search result no "1"
+    And I select a variant

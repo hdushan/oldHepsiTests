@@ -98,3 +98,7 @@ def execute_sql str
   results = mssql.execute(str)
   return results
 end
+
+def select_from_dd dd, option
+  dd.find('option', text: option).select_option
+end
