@@ -445,3 +445,15 @@ Feature: Product page is as expected
     Then There is not a reviews link on details
     When I click reviews tab
     Then I see an empty reviews section
+
+  @859
+  Scenario Outline: See top sellers section on product details
+    Given I visit main page
+    When I search for "<item>"
+    And I open search result no "1"
+    Then There is a top sellers section
+    Examples:
+    | item |
+    | K2HAYY25450 |
+    | AILEBANEKSD110030 |
+    | MTTEFFC22 |
