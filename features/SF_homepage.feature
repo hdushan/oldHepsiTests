@@ -282,3 +282,8 @@ Feature: Homepage is as expected
     And I search for "SGBABYLISS087307"
     When There is a feedback button on current page
     Then I should be able to give feedback
+
+  @1024
+  Scenario: Check for new label on footer
+    Given I visit main page
+    Then There is a link in the footer with label "Özel Sayfalar"

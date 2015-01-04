@@ -299,3 +299,7 @@ And(/^I am able to cycle through products of the week$/) do
     steps %{ Then I don't get the error page }
   }
 end
+
+Then(/^There is a link in the footer with label "([^"]*)"$/) do |arg|
+  find('footer.footer-global').should have_content arg
+end
