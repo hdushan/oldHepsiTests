@@ -263,3 +263,9 @@ Feature: Search page is as expected
       | Yaş           | 1-7 Yaş  |
       | Ürün Kilogram | 10-15 kg |
     Then There are some results available
+
+  @1020
+  Scenario: Use more filters button on filter fields
+    Given I visit link "/akilli-telefon-c-371946"
+    When There are more filters button on filters
+    Then I click every more filters button and expand filters

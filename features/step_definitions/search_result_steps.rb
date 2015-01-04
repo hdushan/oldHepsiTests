@@ -262,3 +262,20 @@ Then(/^I should be able to click show more products multiple times$/) do
     results.size.should == RESULTS_PER_PAGE * i
   end
 end
+
+When(/^There are more filters button on filters$/) do
+  find('button.button.alternative.small', match: :first)
+  buttons = all('button.button.alternative.small')
+  buttons.size.should >= 1
+end
+
+Then(/^I click every more filters button and expand filters$/) do
+  list = find_by_id('filterResults').all('ol').select{|x| x.first('li.more-brands') != nil }
+  list.each { |x|
+    size1 = x.all('li').select{|y| y['class'] != "hide"}.size
+    x.find('button.button.alternative.small').click
+    wait_for_ajax
+    size2 = x.all('li').select{|y| y['class'] != "hide"}.size
+    size2.should > size1
+  }
+end

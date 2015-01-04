@@ -637,3 +637,7 @@ end
 And(/^I return to previous page$/) do
   page.evaluate_script('window.history.back()')
 end
+
+And(/^I wait for "([^"]*)" seconds$/) do |arg|
+  sleep arg.to_i
+end
