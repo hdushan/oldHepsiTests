@@ -153,7 +153,7 @@ Then(/^I see the the variant with price is checked$/) do
 end
 
 Then(/^I view the payment installments information$/) do
-  first('#productPaymentInstallment').click
+  find_by_id('productPaymentInstallment').click
   find('.paymentInstallmentTable', match: :first)
 end
 

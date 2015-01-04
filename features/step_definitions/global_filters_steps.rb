@@ -23,3 +23,24 @@ end
 And(/^Page description contains "([^"]*)"$/) do |arg|
   find('head').find("meta[name='description']")['content'].should == arg
 end
+
+Then(/^I see this global filter order on mainpage$/) do |table|
+  # table is a table.hashes.keys # => [:Kargo Bedavalar]
+  values = table.raw
+  labels = find('.global-filters').all('span').collect(&:text)
+  values.each_with_index { |x, index| x[0].should == labels[index] }
+end
+
+Then(/^I see this global filter order on GFLP$/) do |table|
+  # table is a table.hashes.keys # => [:Kargo Bedavalar]
+  values = table.raw
+  labels = find('.global-filters').all('a').collect(&:text)
+  values.each_with_index { |x, index| x[0].should == labels[index] }
+end
+
+Then(/^I see this global filter order on CLP$/) do |table|
+  # table is a table.hashes.keys # => [:Kargo Bedavalar]
+  values = table.raw
+  labels = find('.global-filters').all('a').collect(&:text)
+  values.each_with_index { |x, index| x[0].should == labels[index] }
+end

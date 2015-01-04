@@ -303,3 +303,13 @@ end
 Then(/^There is a link in the footer with label "([^"]*)"$/) do |arg|
   find('footer.footer-global').should have_content arg
 end
+
+Then(/^There are these propositions$/) do |table|
+  # table is a table.hashes.keys # => [:Kolay İade, :Aldığınız ürünü iade etmek hiç bu kadar kolay olmamıştı.]
+  values = table.raw
+  div = find('.footer-top')
+  values.each { |x|
+    div.find('span.title', text: x[0])
+    div.find('span.content', text: x[1])
+  }
+end

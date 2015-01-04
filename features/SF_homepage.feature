@@ -287,3 +287,12 @@ Feature: Homepage is as expected
   Scenario: Check for new label on footer
     Given I visit main page
     Then There is a link in the footer with label "Özel Sayfalar"
+
+  @1037
+  Scenario: Display propositions in footer
+    Given I visit main page
+    Then There are these propositions
+    | Kolay İade          | Aldığınız ürünü iade etmek hiç bu kadar kolay olmamıştı. |
+    | Bugün Teslimat      | Saat 14:00'e kadar verdiğiniz siparişler aynı gün kapınızda. |
+    | Tek Tıkla Alışveriş | Ödeme ve adres bilgilerinizi kaydedin, tek tıkla alışverişin keyfini yaşayın. |
+    | Mobil Cebinizde     | Dilediğiniz her yerden güvenli alışverişin keyfini çıkarın. |

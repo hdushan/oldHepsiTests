@@ -122,3 +122,32 @@
     And I clear filters
     Then Current search results count should be same as the first one
 
+    @1040
+    Scenario: Global filters order on mainpage
+      Given I visit main page
+      Then I see this global filter order on mainpage
+      | Kargo Bedavalar |
+      | İndirimli ürünler |
+      | Çok Satanlar      |
+      | Süper hızlı gönderiler |
+
+    @1040
+    Scenario: Global filters order on global filters landing page
+      Given I visit main page
+      When I navigate to Category
+      | Elektronik Beyaz Eşya | Foto & Kamera |
+      Then I see this global filter order on GFLP
+      | Kargo Bedavalar |
+      | İndirimli ürünler |
+      | Çok Satanlar      |
+      | Süper hızlı gönderiler |
+
+    @1040
+    Scenario: Global filters order on CLP
+      Given I visit main page
+      When I apply global filter "Çok Satanlar" on "homepage"
+      Then I see this global filter order on CLP
+      | Kargo Bedavalar |
+      | İndirimli ürünler |
+      | Çok Satanlar      |
+      | Süper hızlı gönderiler |
