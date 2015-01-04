@@ -382,3 +382,66 @@ Feature: Product page is as expected
     | 140x190  | 67       |
     | 150x200  | 66       |
     | 160x200  | 69       |
+
+  @984
+  Scenario: View reviews through reviews tab
+    Given I visit main page
+    When I search for "anakart"
+    And I open search result no "2"
+    And I click reviews tab
+    Then I see reviews tab
+
+  @984
+  Scenario: View reviews through reviews link
+    Given I visit main page
+    When I search for "EVDEMIRNITROMIXP24"
+    And I open search result no "1"
+    And I click reviews link on details
+    Then I see reviews tab
+
+  @984
+  Scenario: View more reviews
+    Given I visit main page
+    And I search for "nokia asha 501"
+    When I open search result no "1"
+    And I click reviews tab
+    Then There are "3" comments on details
+    When I click on more comments button
+    Then There are "6" comments on details
+    When I click on more comments button
+    Then There are "9" comments on details
+
+  @984
+  Scenario: Rate reviews as positive
+    Given I visit main page
+    And I search for "OTCTN115725"
+    When I open search result no "1"
+    And I click reviews link on details
+    And I mark review no "1" as "positive"
+    Then In comment no "1" some rating message appears
+    When I refresh page
+    And I click reviews tab
+    And I mark review no "1" as "negative"
+    Then In comment no "1" some rating message appears
+
+  @984
+  Scenario: Rate reviews as negative
+    Given I visit main page
+    And I search for "KPEGASUS33620"
+    When I open search result no "1"
+    And I click reviews link on details
+    And I mark review no "1" as "negative"
+    Then In comment no "1" some rating message appears
+    When I refresh page
+    And I click reviews tab
+    And I mark review no "1" as "negative"
+    Then In comment no "1" some rating message appears
+
+  @984
+  Scenario: See no reviews
+    Given I visit main page
+    When I search for "OUTSENI75507"
+    And I open search result no "1"
+    Then There is not a reviews link on details
+    When I click reviews tab
+    Then I see an empty reviews section

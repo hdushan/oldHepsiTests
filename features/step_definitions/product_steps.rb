@@ -522,3 +522,102 @@ And(/^I decrease item count by "([^"]*)"$/) do |arg|
     button.click
   end
 end
+
+And(/^I click reviews tab$/) do
+  find_by_id('productReviewsTab').click
+  wait_for_ajax
+end
+
+Then(/^I see reviews tab$/) do
+  name = find_by_id('product-name').text
+
+  i = extract_number find_by_id('productReviewsTab').text
+  i.should > 0
+
+  tab = find_by_id('tabProductReviews')
+  tab.should have_content name
+  tab.should have_selector('img')
+  tab.should have_selector('.ratings-table')
+  tab.find('.ratings-table').should have_content "Mükemmel"
+  tab.find('.ratings-table').should have_content "Çok İyi"
+  tab.find('.ratings-table').should have_content "İyi"
+  tab.find('.ratings-table').should have_content "Fena Değil"
+  tab.find('.ratings-table').should have_content "Çok Kötü"
+  tab.should have_content "Ortalama Puan"
+  tab.should have_selector('.product-rating')
+  tab.should have_selector('.rating-number')
+
+  tab.find('.rating-number').text.to_i.should > 0
+  percentages = tab.all('.rating-percentage').collect{|x| extract_number x.text}
+  percentages.reduce(:+).should >= 99
+
+  counts = tab.all('.rating-count').collect{|x| extract_number x.text}
+  counts.reduce(:+).should == i
+end
+
+And(/^I click reviews link on details$/) do
+  find('.product-featured-details').find('a.product-comments').click
+  wait_for_ajax
+end
+
+And(/^I mark review no "([^"]*)" as "([^"]*)"$/) do |arg1, arg2|
+  i = arg1.to_i - 1
+  unless i < 0
+    reviews = find_by_id('tabProductReviews').all('.review-item')
+    case arg2.downcase
+      when 'positive'
+        reviews[i].find('.answer').find('a', text: "Evet").click
+      when 'negative'
+        reviews[i].find('.answer').find('a', text: "Hayır").click
+    end
+    wait_for_ajax
+  end
+end
+
+Then(/^In comment no "([^"]*)" rating message appears "([^"]*)"$/) do |arg1, arg2|
+  i = arg1.to_i - 1
+  unless i < 0
+    reviews = find_by_id('tabProductReviews').all('.review-item')
+    reviews[i].should have_content arg2
+  end
+end
+
+Then(/^In comment no "([^"]*)" some rating message appears$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    reviews = find_by_id('tabProductReviews').all('.review-item')
+    reviews[i].should have_selector('.review-agreed-message')
+    reviews[i].find('.review-agreed-message').text.should_not == ""
+  end
+end
+
+Then(/^There is not a reviews link on details$/) do
+  find('.product-featured-details').find('.ratings-container').text.strip.should == ""
+end
+
+Then(/^I see an empty reviews section$/) do
+  name = find_by_id('product-name').text
+
+  i = extract_number find_by_id('productReviewsTab').text
+  i.should == 0
+
+  tab = find_by_id('tabProductReviews')
+  tab.should have_content name
+  tab.should have_selector('img')
+  tab.should have_selector('.ratings-table')
+  tab.find('.ratings-table').should have_content "Mükemmel"
+  tab.find('.ratings-table').should have_content "Çok İyi"
+  tab.find('.ratings-table').should have_content "İyi"
+  tab.find('.ratings-table').should have_content "Fena Değil"
+  tab.find('.ratings-table').should have_content "Çok Kötü"
+  tab.should have_content "Ortalama Puan"
+  tab.should have_selector('.product-rating')
+  tab.should have_selector('.rating-number')
+
+  tab.find('.rating-number').text.to_i.should == 0
+  percentages = tab.all('.rating-percentage').collect{|x| extract_number x.text}
+  percentages.reduce(:+).should == 0
+
+  counts = tab.all('.rating-count').collect{|x| extract_number x.text}
+  counts.reduce(:+).should == 0
+end
