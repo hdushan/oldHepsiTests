@@ -2,7 +2,7 @@
 @storefront @cart
 Feature: Add to basket from details page
 
-  @67
+  @67 @merchant_disabled
   Scenario: Add to cart
     Given I visit main page
     And I clear cart items
@@ -14,7 +14,7 @@ Feature: Add to basket from details page
     And I go to checkout
     Then Product is listed in the checkout screen
 
-  @116
+  @116 @merchant_disabled
   Scenario: Preserve cart on page reload
     Given I visit main page
     And I clear cart items
@@ -28,7 +28,7 @@ Feature: Add to basket from details page
     When I reload the page
     Then Product is listed in the checkout screen
 
-  @116
+  @116 @merchant_disabled
   Scenario: Remove cart on cookie deletion
     Given I visit main page
     And I clear cart items
@@ -43,7 +43,7 @@ Feature: Add to basket from details page
     And I reload the page
     Then I should see an empty cart
 
-  @304
+  @304 @merchant_disabled
   Scenario: Number of items in cart increases after adding an item from product details page
 #    Given I clear sessions
 #    And I am on the homepage
@@ -57,7 +57,7 @@ Feature: Add to basket from details page
     When I add "1" product(s) to cart
     Then I see the cart item count is 1
 
-  @113
+  @113 @merchant_disabled
   Scenario: Adding to basket from results page when product does not have variants
     Given I visit main page
     And I clear cart items
