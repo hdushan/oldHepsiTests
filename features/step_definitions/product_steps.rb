@@ -485,6 +485,7 @@ Then(/^I should see deal of the day counter for "([^"]*)"$/) do |arg|
   t = Time.new
   result.each{|x| t =  x['SaleEnd']}
   p t
+  p Time.now
 end
 
 
@@ -633,4 +634,27 @@ Then(/^I see an empty reviews section$/) do
 
   counts = tab.all('.rating-count').collect{|x| extract_number x.text}
   counts.reduce(:+).should == 0
+end
+
+When(/^I click on first deal of the day$/) do
+  find_by_id("dealOfTheDayCarousel").find(".owl-item.active").find("img").click
+end
+
+Then(/^I should see deal of the day counter in details$/) do
+  button = find_by_id("addToCart")
+  sku = button["data-sku"]
+  page.should have_selector(".timer-box.sale-end-timer-days", text: "GÜN")
+  page.should have_selector(".timer-box.sale-end-timer-hours", text: "SAAT")
+  page.should have_selector(".timer-box.sale-end-timer-minutes", text: "DK")
+  page.should have_selector(".timer-box.sale-end-timer-seconds", text: "SN")
+  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
+  t = Time.new
+  result.each{|x| t =  x['SaleEnd']}
+  now = Time.now - 3600
+  diff = Time.diff(now, t, '%d')
+  str = diff[:diff]
+  days = extract_number str
+  hours = diff[:hour]
+  days.should == find(".timer-box.sale-end-timer-days", text: "GÜN").find('div.digits').text.to_i
+  hours.should == find(".timer-box.sale-end-timer-hours", text: "SAAT").find('div.digits').text.to_i
 end

@@ -92,7 +92,7 @@ def execute_sql str
       :dataserver => 'euclide2.hepsiburada.dmz',
       :port => '1433',
       :username => 'DMARKET\amermer',
-      :password => 'Aa123456',
+      :password => 'Aa12345_7',
       :database => 'HBDB_TEST'
   )
   results = mssql.execute(str)
