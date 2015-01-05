@@ -71,5 +71,5 @@ Feature: Login using email and password
     And I am remain on the same page
     And my basket reflects no items
 
-  @997 @login_enabled
+  @997
   Scenario: Login to site and check account options
