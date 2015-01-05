@@ -83,6 +83,9 @@
 
   Scenario: Unprocurable items should not be added to basket
     Given I visit main page
-    When I search for "gömlek"
+    When I search for "GYPI23C134KIYL"
     And I open search result no "1"
     And I select a variant
+    | box | renk | kirmizi-yesil-ekose |
+    | box | beden| xl |
+    Then I should not be able to add to cart without a variant

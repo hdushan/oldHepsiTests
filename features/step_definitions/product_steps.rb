@@ -504,9 +504,9 @@ When(/^I select a variant$/) do |table|
     sect.should have_content(/#{x[1]}/i)
     case x[0]
       when 'box'
-        div = all('div.variants-wrapper').select{|y| y.first('label').text == x[1]}.first
+        div = all('div.variants-wrapper').select{|y| y.first('label', text: /#{x[1]}/i)}[0]
         cls = "v-" + x[2]
-        div.find("div.#{cls}").first('label').click
+        div.find("div.#{cls}").find('label',match: :first).click
         wait_for_ajax
       when 'dd'
         id = "v-" + x[1]

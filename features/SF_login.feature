@@ -70,3 +70,6 @@ Feature: Login using email and password
     Then I am logged out of the site
     And I am remain on the same page
     And my basket reflects no items
+
+  @997 @login_enabled
+  Scenario: Login to site and check account options

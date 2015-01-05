@@ -95,6 +95,17 @@ After('@warmup') do |scenario|
     p "Something went wrong in warmup"
   end
 end
+
+Before('@login_enabled') do
+  visit '/protected/feature'
+  check = find_by_id "LoginLogout"
+  unless check['checked']
+    find('label', :text=> 'LoginLogout').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
 # scenario_times = {}
 #
 # Around() do |scenario, block|
