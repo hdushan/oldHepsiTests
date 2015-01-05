@@ -456,3 +456,48 @@ Feature: Product page is as expected
     | K2HAYY25450 |
     | AILEBANEKSD110030 |
     | MTTEFFC22 |
+
+  @93
+  Scenario: Go to product details without any compatible products
+    Given I visit main page
+    And I search for "OUTBURC15395-1"
+    And I open search result no "1"
+    When I am on product details
+    Then I do not see any compatible products
+
+  @93
+  Scenario: Go to product details with one group of compatible products
+    Given I visit main page
+    And I search for "BD730092"
+    And I open search result no "1"
+    When I click on compatible products tab
+    Then I should see compatible products
+    And There should be only one compatible product group
+
+  @93
+  Scenario: Go to product details with multiple groups of compatible products
+    Given I visit main page
+    And I search for "BD131818"
+    And I open search result no "1"
+    When I click on compatible products tab
+    Then I should see compatible products
+    And There should be multiple compatible product group
+
+  @93 @merchant_disabled
+  Scenario: Add to basket from compatible products
+    Given I visit main page
+    And I clear cart items
+    And I visit main page
+    And I search for "BD800104"
+    And I open search result no "1"
+    When I click on compatible products tab
+    And I add compatible product no "3" to basket
+    Then I see the cart item count is 1
+
+  @93
+  Scenario: Go to compatible products details
+    Given I visit main page
+    And I search for "BD730092"
+    And I open search result no "1"
+    When I click on compatible products tab
+    Then All compatible products details should be accessible

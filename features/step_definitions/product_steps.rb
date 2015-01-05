@@ -658,3 +658,55 @@ Then(/^I should see deal of the day counter in details$/) do
   days.should == find(".timer-box.sale-end-timer-days", text: "GÜN").find('div.digits').text.to_i
   hours.should == find(".timer-box.sale-end-timer-hours", text: "SAAT").find('div.digits').text.to_i
 end
+
+
+Then(/^I do not see any compatible products$/) do
+  page.should have_no_selector("#compatibleProducts")
+  page.should have_no_selector("#compatibleProductTab")
+end
+
+When(/^I click on compatible products tab$/) do
+  find_by_id("compatibleProducts").click
+end
+
+Then(/^I should see compatible products$/) do
+  page.should have_selector("#compatibleProductTab")
+  page.should have_selector(".table-campatible-products")
+  tables = find_by_id('compatibleProductTab').all('.table-campatible-products')
+  tables.each { |x|
+    rows = x.first('tbody').all('tr')
+    rows.each{|y|
+      y.find('img')
+      y.find('.product-price').text.should_not == ""
+      y.find('.add-to-basket.button.small')
+    }
+  }
+end
+
+And(/^There should be only one compatible product group$/) do
+  tables = find_by_id('compatibleProductTab').all('.table-campatible-products').size.should == 1
+end
+
+And(/^There should be multiple compatible product group$/) do
+  tables = find_by_id('compatibleProductTab').all('.table-campatible-products').size.should > 1
+end
+
+And(/^I add compatible product no "([^"]*)" to basket$/) do |arg|
+  i = arg.to_i - 1
+  unless i < 0
+    find_by_id('compatibleProductTab').all(".add-to-basket.button.small")[i].click
+    wait_for_ajax
+    page.should have_selector("#notification", :visible => true)
+    page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
+    page.should have_selector("#notification", visible: :hidden)
+  end
+end
+
+Then(/^All compatible products details should be accessible$/) do
+  table = find_by_id('compatibleProductTab').find('tbody', match: :first)
+  links = table.all('tr').collect{|x| x.first('a')['href']}
+  links.each { |x|
+    visit format_link x
+    steps %{ Then I don't get the error page }
+  }
+end
