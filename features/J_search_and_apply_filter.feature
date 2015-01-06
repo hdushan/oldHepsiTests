@@ -11,16 +11,16 @@ Feature: Search and apply a filter to find a product
     Then I am at main page
 
   Scenario: Search for a product by title
-    When I search for "kitap"
+    When I search for "telefon"
     Then There are some results available
 
   Scenario: Apply Filter
     Given I select a sub category in search
-      | Ev Dekorasyon | Dekorasyon | Dekoratif Objeler | Biblolar |
+      | Telefon | Cep Telefonu ve SmartPhone | Akıllı Telefon |
     And There are some results available
     When I apply a filter
-      | Markalar            | DecoTown |
-      | Fiyat Aralığı       | 50 TL - 100 TL |
+      | Markalar            | Samsung |
+      | Fiyat Aralığı       | 250 TL - 500 TL |
     Then There are some results available
 
   Scenario: Go to product details and add to cart
