@@ -30,8 +30,13 @@ task :performance do |t |
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
-  run_load_test(loadtest_script, result_file, "xml", result_file_html)
-  check_for_errors(result_file_html, 98)
+  begin
+    run_load_test(loadtest_script, result_file, "xml", result_file_html)
+    check_for_errors(result_file_html, 98)
+  rescue => e
+    puts e.to_s
+    abort("\nLoad test not successful\n")
+  end  
 end
 
 def check_for_errors(result_file_html, threshold)
@@ -40,8 +45,7 @@ def check_for_errors(result_file_html, threshold)
   puts page.text.include?("Test Results")
   pass_percent = page.css(".details")[0].css("td")[2].text.split("%")[0].to_i
   if pass_percent < threshold
-    puts "\n\nFAIL!!!!!!\nPass percentage of http requests (#{pass_percent}%) is less than the expected threshold (#{threshold}%)\n\n"
-    raise
+    raise "\n\nFAIL!!!!!!\nPass percentage of http requests (#{pass_percent}%) is less than the expected threshold (#{threshold}%)\n\n"
   end  
 end
 
