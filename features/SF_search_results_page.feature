@@ -269,3 +269,15 @@ Feature: Search page is as expected
     Given I visit link "/akilli-telefon-c-371946"
     When There are more filters button on filters
     Then I click every more filters button and expand filters
+
+  Scenario: More results button on CLP
+    Given I visit main page
+    And I navigate to Category
+    | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+    When There are "20" results displayed
+    And I click load more results
+    Then There are "40" results displayed
+    And I click load more results
+    Then There are "60" results displayed
+    And I click load more results
+    Then There are "80" results displayed
