@@ -650,7 +650,7 @@ Then(/^I should see deal of the day counter in details$/) do
   result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
   t = Time.new
   result.each{|x| t =  x['SaleEnd']}
-  now = Time.now - 3600
+  now = Time.now - 7200
   diff = Time.diff(now, t, '%d')
   str = diff[:diff]
   days = extract_number str
