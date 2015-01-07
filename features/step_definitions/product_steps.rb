@@ -339,7 +339,7 @@ And(/^I am able to select different variants$/) do
 end
 
 Then(/^Cart icon should have an indication of "([^"]*)"$/) do |arg|
-  find_by_id('cartItemCount').text.to_i.should == arg.to_i
+  find_by_id('cartItemCount').should have_content == arg
 end
 
 Then(/^I should not be able to add to cart without a variant$/) do
