@@ -714,3 +714,9 @@ end
 Then(/^Totals in topsellers section should not be a link$/) do
   find('.top-seller').find('.title-wrapper').find('p', text: "Toplam")
 end
+
+Then(/^There are variants displayed as thumbnails$/) do
+  variants = find('.product-variants-wrapper').all('label.thumbnail')
+  variants.size.should > 1
+  variants.each { |x| x.find('img') }
+end

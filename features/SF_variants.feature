@@ -89,3 +89,15 @@
     | box | renk | kirmizi-yesil-ekose |
     | box | beden| xl |
     Then I should not be able to add to cart without a variant
+
+  @847
+  Scenario Outline: See variants as thumbnails
+    Given I visit main page
+    And I search for "<item>"
+    When I open search result no "1"
+    Then There are variants displayed as thumbnails
+    Examples:
+    | item |
+    | GYPI23R425BSES  |
+    | GYPI22S5S66BMCL |
+    | GYPI23C134KIYL  |
