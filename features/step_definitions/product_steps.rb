@@ -473,7 +473,7 @@ Then(/^There is a top sellers section$/) do
   sect = find('.top-seller')
   sect.should have_content('Çok Satanlar')
   sect.find('div.box.product', match: :first)
-  sect.all('div.box.product').size.should > 0
+  sect.all('div.box.product').size.should <= 9
 end
 
 Then(/^I should see deal of the day counter for "([^"]*)"$/) do |arg|
@@ -709,4 +709,8 @@ Then(/^All compatible products details should be accessible$/) do
     visit format_link x
     steps %{ Then I don't get the error page }
   }
+end
+
+Then(/^Totals in topsellers section should not be a link$/) do
+  find('.top-seller').find('.title-wrapper').find('p', text: "Toplam")
 end

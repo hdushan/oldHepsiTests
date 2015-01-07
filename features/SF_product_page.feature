@@ -501,3 +501,10 @@ Feature: Product page is as expected
     And I open search result no "1"
     When I click on compatible products tab
     Then All compatible products details should be accessible
+
+  @1087
+  Scenario: Totals text in top sellers should not be a link
+    Given I visit main page
+    And I search for "iphone"
+    When I open search result no "1"
+    Then Totals in topsellers section should not be a link
