@@ -13,6 +13,7 @@ Then(/^There are some results available$/) do
   results = find_by_id "productresults"
   find('li.search-item', match: :first)
   expect(results.all("li.search-item").count).to be > 0
+  results.text.include?('Sonuç bulunamadı').should == false
 end
 
 Given(/^I open search result no "([^"]*)"$/) do |arg|
