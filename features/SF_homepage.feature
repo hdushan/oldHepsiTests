@@ -70,7 +70,7 @@ Feature: Homepage is as expected
   Scenario: Searching with at least two characters begins producing suggestions
     Given I am on the homepage
     And I clear the browsers cookies
-    Given I have input sa into search
+    Given I have input sam into search
     And I see the auto complete suggestions
     Then I see suggestions based on sa
     And I see 3 categories and 10 other keywords
@@ -79,7 +79,7 @@ Feature: Homepage is as expected
   Scenario: Search suggestions update as user enters in more or less into search
     Given I am on the homepage
     And I clear the browsers cookies
-    Given I have input sa into search
+    Given I have input sam into search
     And I see the auto complete suggestions
     And I see suggestions based on sa
     When I append m into search
@@ -90,7 +90,7 @@ Feature: Homepage is as expected
   Scenario: Ability to navigate through search suggestions
     Given I am on the homepage
     And I clear the browsers cookies
-    Given I have input sa into search
+    Given I have input sam into search
     And I see the auto complete suggestions
     When I press the down arrow
     Then I see a visual indication that an auto complete suggestion is selected
