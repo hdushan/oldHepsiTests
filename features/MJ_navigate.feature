@@ -2,6 +2,7 @@
 @journey
   Feature: Navigate for mobile
 
+    @mobile_compatibles_enabled
     Scenario: Search for a product
       Given I visit mobile main page
       When I search for "anakart"
