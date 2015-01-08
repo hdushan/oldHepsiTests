@@ -27,3 +27,15 @@ To run your test cases with tags ;
 When you'd like to change the environment that the tests are running against
 
 cucumber features host=<your_desired_host>
+
+### Linux agent requirements 
+
+Linux agents require the following packages to be installed
+
+* xvfb
+* firefox
+* freetds-dev
+* ruby1.9.3
+* cowsay
+
+The bundler gem also needs to be installed.
