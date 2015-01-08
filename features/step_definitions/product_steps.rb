@@ -167,7 +167,8 @@ Then(/^I can view the product tech specs$/) do
 end
 
 Then(/^I see text indicating that free shipping is available$/) do
-  find('a.ProductDashboard_button')
+  find('a.ProductDashboard_button', match: :first)
+  find('.product-featured-details').all('img').select{|x| x['src'].include?('kargo_bedava.png')}.size.should > 0
 end
 
 Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
@@ -397,7 +398,7 @@ And(/^I should be able to visit every link on breadcrumb trail$/) do
 end
 
 Then(/^I don't see a text indicating that free shipping is available$/) do
-  page.should have_no_content "Kargo Bedava"
+  find('.product-featured-details').all('img').select{|x| x['src'].include?('kargo_bedava.png')}.size.should == 0
 end
 
 And(/^I see the number of reviews$/) do
@@ -570,7 +571,7 @@ Then(/^I see reviews tab$/) do
 end
 
 And(/^I click reviews link on details$/) do
-  find('.product-featured-details').find('a.product-comments').click
+  find('.product-featured-details').find('a.product-comments', text: "Yorumlar").click
   wait_for_ajax
 end
 
@@ -606,7 +607,7 @@ Then(/^In comment no "([^"]*)" some rating message appears$/) do |arg|
 end
 
 Then(/^There is not a reviews link on details$/) do
-  find('.product-featured-details').find('.ratings-container').text.strip.should == ""
+  find('.product-featured-details').find_by_id('productReviews').text.should == ""
 end
 
 Then(/^I see an empty reviews section$/) do
