@@ -291,7 +291,8 @@ Feature: Product page is as expected
    @726
    Scenario: See the timer on Deal of the Day product detail pages
      Given I visit main page
-     When I click on first deal of the day
+     When I search for "FTKAMEVERST1"
+     And I open search result no "1"
      Then I should see deal of the day counter in details
 
   @727

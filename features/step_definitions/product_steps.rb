@@ -219,7 +219,7 @@ Then (/^I should see (\d*) color variants$/) do | color_count |
 end
 
 And /^I see the default product image$/ do
-  @default_image_src = page.find('.owl-item.active').find('.product-image')['src']
+  @default_image_src = find_by_id('productDetailsCarousel').find('.owl-item.active').find('.product-image')['src']
 end
 
 And /^I wait for all Ajax requests to complete/ do
@@ -231,7 +231,7 @@ When(/^I select the color (.*)/) do | color |
 end
 
 Then /^I see a different image$/ do
-  new_image = page.find('.owl-item.active').find('.product-image')['src']
+  new_image = find_by_id('productDetailsCarousel').find('.owl-item.active').find('.product-image')['src']
   set_wait_time 5
   expect(@default_image_src).to_not eq(new_image)
   revert_to_default_wait_time
@@ -492,7 +492,7 @@ end
 Then(/^I should see stock left for deal of the day items for "([^"]*)"$/) do |arg|
   page.should have_selector(".timer-box", text: "ÜRÜN")
   item_count = extract_number find(".timer-box", text: "ÜRÜN").text
-  result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{arg}'"
+  result = execute_sql "select StockQty from dbo.Camera_CatalogProducts where sku='#{arg}'"
   i = result.first['StockQty'].to_i
   item_count.should == i
 end
@@ -647,9 +647,9 @@ Then(/^I should see deal of the day counter in details$/) do
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "SAAT")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "DK")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "SN")
-  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
+  result = execute_sql "select sale_end from dbo.Camera_CatalogProducts where sku='#{sku}'"
   t = Time.new
-  result.each{|x| t =  x['SaleEnd']}
+  result.each{|x| t =  x['sale_end']}
   now = Time.now - 7200
   diff = Time.diff(now, t, '%d')
   str = diff[:diff]
