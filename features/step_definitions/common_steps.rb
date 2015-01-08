@@ -209,15 +209,25 @@ Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
     when 'most-selling'
       find_by_id('bestSelling')['class'].include?('selected').should == true
     when 'lowest-price'
-      find_by_id('lowestPrice')['class'].include?('selected').should == true
-      products = all('.price-container').select{|x| x['style'] != "display: none;"}
-      prices = products.collect{|x| format_price x.find('span.price').text}
-      prices.should == prices.sort
+      begin
+        find_by_id('lowestPrice')['class'].include?('selected').should == true
+        products = all('.price-container').select{|x| x['style'] != "display: none;"}
+        prices = products.collect{|x| format_price x.find('span.price').text}
+        prices.should == prices.sort
+      rescue Exception => e
+        p 'Results are not sorted properly!!!'
+        p prices
+      end
     when 'highest-price'
-      find_by_id('highestPrice')['class'].include?('selected').should == true
-      products = all('.price-container').select{|x| x['style'] != "display: none;"}
-      prices = products.collect{|x| format_price x.find('span.price').text}
-      prices.should == (prices.sort).reverse
+      begin
+        find_by_id('highestPrice')['class'].include?('selected').should == true
+        products = all('.price-container').select{|x| x['style'] != "display: none;"}
+        prices = products.collect{|x| format_price x.find('span.price').text}
+        prices.should == (prices.sort).reverse
+      rescue Exception => e
+        p 'Results are not sorted properly!!!'
+        p prices
+      end
   end
 end
 
