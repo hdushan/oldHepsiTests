@@ -81,10 +81,10 @@ Feature: Homepage is as expected
     And I clear the browsers cookies
     Given I have input sam into search
     And I see the auto complete suggestions
-    And I see suggestions based on sa
-    When I append m into search
+    And I see suggestions based on sam
+    When I append u into search
     And I wait for auto complete results to update
-    Then I see suggestions based on sam
+    Then I see suggestions based on samu
 
   @33
   Scenario: Ability to navigate through search suggestions

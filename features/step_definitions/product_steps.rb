@@ -167,7 +167,7 @@ Then(/^I can view the product tech specs$/) do
 end
 
 Then(/^I see text indicating that free shipping is available$/) do
-  find('span.ProductDashboard_button_heading')
+  find('a.ProductDashboard_button')
 end
 
 Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
