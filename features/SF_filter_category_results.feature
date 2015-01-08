@@ -93,7 +93,7 @@ Feature: Filter category results
     And I apply a filter
       | Değerlendirme Puanı | 4 yıldız |
       | Fiyat Aralığı       | 0 TL - 25 TL |
-      | Sadece              | İndirimli Ürünler |
+      | Markalar            | Prima |
     When There are some results available
     Then I clear filters
 
