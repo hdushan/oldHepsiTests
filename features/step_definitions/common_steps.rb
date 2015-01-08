@@ -333,7 +333,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit_main_page
-    fail "Page not found error!!! on\n#{url}"
+    p "Page not found error!!! on\n#{url}"
   end
 end
 
@@ -449,7 +449,7 @@ Then(/^I should cycle through all of them and visit links$/) do
   items = carousel.all('div.owl-dot', :visible => true)
   $links = Array.new
   items.each { |x|
-    x.click
+    x.hover
     $links.push carousel.find('div.owl-item.active').first('a')['href']
   }
   $links.each{|x|
