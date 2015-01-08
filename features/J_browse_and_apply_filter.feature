@@ -23,7 +23,7 @@ Feature: Browse categories and apply a filter to find a product
     | Markalar            | Everest |
     | Değerlendirme Puanı | 4 yıldız |
     | Fiyat Aralığı       | 0 TL - 25 TL |
-    | Sadece              | Süper Hızlı Gönderidekiler |
+    | Algılama            | Laser      |
     Then There are some results available
 
   Scenario: Go to product details and add to cart

@@ -188,8 +188,7 @@ Feature: Homepage is as expected
   @950
   Scenario: See top sellers on homepage
     Given I visit main page
-    When There is a top sellers section
-    And There are "11" items in top sellers section
+    When There are "11" items in top sellers section
     Then I should be able to cycle all topsellers
 
   @326 @merchant_enabled
