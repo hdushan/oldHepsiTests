@@ -4,14 +4,15 @@
     I'd like to apply global filters
     In order to navigate results easier
 
-  @722 @857 @854
+  @722 @857 @854 @853
   Scenario: Show global filter on homepage
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
     And I should see "İndirimli Ürünler" global filter on main page
     And I should see "Çok Satanlar" global filter on main page
+    And I should see "Kargo Bedavalar" global filter on main page
 
-  @722 @857 @854
+  @722 @857 @854 @853
   Scenario Outline: Show global filter on CLP
     Given I visit main page
     When I navigate to Category
@@ -19,6 +20,7 @@
     Then I should see "Süper Hızlı Gönderiler" global filter on CLP
     And I should see "İndirimli Ürünler" global filter on CLP
     And I should see "Çok Satanlar" global filter on CLP
+    And I should see "Kargo Bedavalar" global filter on CLP
     Examples:
     | category               | sub_category       |
     | Elektronik Beyaz Eşya  | Isıtma ve Soğutma  |
@@ -26,7 +28,7 @@
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
-  @722 @857 @854
+  @722 @857 @854 @853
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
@@ -45,6 +47,7 @@
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
     | Çok Satanlar           | Çok Satanlar           |
+    | Kargo Bedavalar        | Kargo Bedavalar        |
 
 #  @722 @857 @854
 #  Scenario Outline: Stay on the same results when you click on global filter
@@ -64,7 +67,7 @@
 #    | İndirimli ürünler      |
 #    | Çok Satanlar           |
 
-  @722 @857 @854
+  @722 @857 @854 @853
   Scenario Outline: Use global filter from homepage
     Given I visit main page
     When I apply global filter "<filter>" on "homepage"
@@ -82,8 +85,9 @@
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
     | Çok Satanlar           | Çok Satanlar           |
+    | Kargo Bedavalar        | Kargo Bedavalar        |
 
-  @722 @857
+  @722 @857 @853
   Scenario Outline: Page title and description with super fast shipping global filter on CLP
     Given I visit main page
     When I apply global filter "<filter>" on "homepage"
@@ -93,8 +97,9 @@
     | filter                 | title | description |
     | Süper Hızlı Gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
     | İndirimli Ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
+    | Kargo Bedavalar        | Kargo Bedava Ürünler & Kampanyalı Fiyatlar           | Hepsiburada.com'da Kargo bedava ürünler bu sayfada. Kargoya para harcamayın, ürünler ücretsiz ayağına gelsin.                            |
 
-    @722 @857
+  @722 @857 @853
   Scenario Outline: Page title and description with super fast shipping global filter on CLP
     Given I visit main page
     And I navigate to Category
@@ -106,8 +111,9 @@
     | filter                 | title | description |
     | Süper Hızlı Gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
     | İndirimli Ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
+    | Kargo Bedavalar        | Kargo Bedava Ürünler & Kampanyalı Fiyatlar           | Hepsiburada.com'da Kargo bedava ürünler bu sayfada. Kargoya para harcamayın, ürünler ücretsiz ayağına gelsin.                            |
 
-    @987
+  @987
   Scenario: Clear filters on global filter
     Given I visit main page
     And I navigate to Category
