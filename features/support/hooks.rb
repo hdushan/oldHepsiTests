@@ -55,6 +55,16 @@ Before ('@recommended_products_on_product_detail_page_disabled') do
   end
 end
 
+Before ('@mobile_compatibles_enabled') do
+  visit '/m/protected/feature'
+  check = find_by_id "CompatibleProducts"
+  unless check['checked']
+    find('label', :text=> 'CompatibleProducts').click
+    find('button', :text=> "Save").click
+    sleep 1.5
+  end
+end
+
 Before '@chrome' do
   Capybara.register_driver :chrome do |app|
     Capybara::Selenium::Driver.new(app, :browser => :chrome)
