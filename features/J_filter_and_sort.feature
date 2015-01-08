@@ -17,10 +17,10 @@ Feature: Make a search and test both sorting and filter clearing
     Given I apply a filter
       | Değerlendirme Puanı | 4 yıldız |
       | Fiyat Aralığı       | 0 TL - 25 TL |
-      | Sadece              | İndirimli Ürünler |
+      | Markalar            | Prima |
     When There are some results available
     Then I remove these filters
-      | Sadece              | İndirimli Ürünler |
+      | Markalar            | Prima |
       | Fiyat Aralığı       | 0 TL - 25 TL |
       | Değerlendirme Puanı | 4 yıldız |
 
@@ -29,7 +29,7 @@ Feature: Make a search and test both sorting and filter clearing
     And I apply a filter
       | Değerlendirme Puanı | 4 yıldız |
       | Fiyat Aralığı       | 0 TL - 25 TL |
-      | Sadece              | İndirimli Ürünler |
+      | Markalar            | Prima |
     When There are some results available
     Then I clear filters
 
