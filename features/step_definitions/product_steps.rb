@@ -110,7 +110,7 @@ end
 Then(/^I see the super fast delivery flag$/) do
   # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
   # how to match encoded string correctly
-  expect(first('#fastShipping').text).to match 'Süper Hızlı'
+  find('.product-featured-details').find("img[alt='Süper Hızlı Gönderi']")
 end
 
 Then(/^I see the product information$/) do
@@ -417,7 +417,7 @@ Then(/^There is no installment option for this product$/) do
 end
 
 Then(/^I don't see the super fast delivery flag$/) do
-  page.should have_no_selector "#fastShipping"
+  find('.product-featured-details').should have_no_selector("img[alt='Süper Hızlı Gönderi']")
 end
 
 Then(/^I should see the stored image in product details$/) do
