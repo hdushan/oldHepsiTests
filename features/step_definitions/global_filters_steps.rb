@@ -17,7 +17,7 @@ When(/^I apply global filter "([^"]*)" on "([^"]*)"$/) do |arg1, arg2|
 end
 
 And(/^I see "([^"]*)" global filter actively selected$/) do |arg|
-  find('.global-filters').find('a', text: arg)['class'].should == 'active'
+  find('.global-filters').find('li', text: arg)['class'].should == 'active'
 end
 
 And(/^Page description contains "([^"]*)"$/) do |arg|

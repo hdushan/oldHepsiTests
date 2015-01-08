@@ -16,8 +16,8 @@
     Given I visit main page
     When I navigate to Category
     | <category> | <sub_category> |
-    Then I should see "Süper hızlı gönderiler" global filter on CLP
-    And I should see "İndirimli ürünler" global filter on CLP
+    Then I should see "Süper Hızlı Gönderiler" global filter on CLP
+    And I should see "İndirimli Ürünler" global filter on CLP
     And I should see "Çok Satanlar" global filter on CLP
     Examples:
     | category               | sub_category       |
@@ -30,41 +30,39 @@
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
-    | Süpermarket Petshop | İçecek Ürünleri |
+    | Ev, Yaşam Ofis | Mobilya |
     When I apply global filter "<filter>" on "CLP"
     Then There are some results available
     And I select a sub category in search
-    | Süpermarket | İçecek Ürünleri | Çaylar | Demlik / Dökme Çaylar |
+    | Ev Dekorasyon | Mobilya |
     And I apply a filter
-    | Markalar            | Lipton       |
     | Değerlendirme Puanı | 4 yıldız     |
-    | Fiyat Aralığı       | 0 TL - 25 TL |
     And I sort with "lowest-price" filter
     And Results are sorted according to "lowest-price" filter
-    And I see "<filter>" global filter actively selected
+    And I see "<filter_for_clp>" global filter actively selected
     Examples:
-    | filter                 |
-    | Süper hızlı gönderiler |
-    | İndirimli ürünler      |
-    | Çok Satanlar           |
+    | filter                 | filter_for_clp |
+    | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
+    | İndirimli Ürünler      | İndirimli ürünler      |
+    | Çok Satanlar           | Çok Satanlar           |
 
-  @722 @857 @854
-  Scenario Outline: Stay on the same results when you click on global filter
-    Given I visit main page
-    And I navigate to Category
-      | Oto, Bahçe Yapı Market | Hırdavat |
-    When I apply global filter "<filter>" on "CLP"
-    And There are some results available
-    And I apply a filter
-    | Markalar | Hafele   |
-    And I store search result count
-    And I apply global filter "<filter>" on "CLP"
-    Then Current search results count should be same as the first one
-    Examples:
-    | filter                 |
-    | Süper hızlı gönderiler |
-    | İndirimli ürünler      |
-    | Çok Satanlar           |
+#  @722 @857 @854
+#  Scenario Outline: Stay on the same results when you click on global filter
+#    Given I visit main page
+#    And I navigate to Category
+#      | Oto, Bahçe Yapı Market | Hırdavat |
+#    When I apply global filter "<filter>" on "CLP"
+#    And There are some results available
+#    And I apply a filter
+#    | Markalar | Hafele   |
+#    And I store search result count
+#    And I apply global filter "<filter>" on "CLP"
+#    Then Current search results count should be same as the first one
+#    Examples:
+#    | filter                 |
+#    | Süper hızlı gönderiler |
+#    | İndirimli ürünler      |
+#    | Çok Satanlar           |
 
   @722 @857 @854
   Scenario Outline: Use global filter from homepage
@@ -72,10 +70,10 @@
     When I apply global filter "<filter>" on "homepage"
     Then There are some results available
     And I select a sub category in search
-      | Spor Outdoor | Spor / Fitness | Fitness - Kondisyon | Kondisyon Aletleri |
+      | Giyim / Ayakkabı | Erkek |
     And I apply a filter
-      | Fonksiyon Tipi | El Yayı |
-      | Markalar       | Delta   |
+      | Değerlendirme Puanı | 4 yıldız  |
+      | Markalar            | Blue Pony |
     And I sort with "highest-price" filter
     And Results are sorted according to "highest-price" filter
     And I see "<filter_on_results>" global filter actively selected
@@ -106,15 +104,15 @@
     And Page description contains "<description>"
    Examples:
     | filter                 | title | description |
-    | Süper hızlı gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
-    | İndirimli ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
+    | Süper Hızlı Gönderiler | Süper Hızlı Logolu Ürünler 24 Saatte Kargoda | Sipariş ettiğiniz üründe süper hızlı logosu varsa, siparişiniz 24 saatte kargoda. Ayrıca kargo bedava ve hediye çeki fırsatı Hepsiburada.com'da. |
+    | İndirimli Ürünler      | İndirimli Kampanyalı Ürünler En Uygun Fiyatla Burada | Hepsiburada.com'da indirime giren ürünler bu sayfada. İndirimli ürünler sayfamızı ziyaret etmeden online alışveriş yapmayın.             |
 
     @987
   Scenario: Clear filters on global filter
     Given I visit main page
     And I navigate to Category
       | Kitap, Müzik Film, Oyun | Kitap & Dergi |
-    When I apply global filter "Süper hızlı gönderiler" on "CLP"
+    When I apply global filter "Süper Hızlı Gönderiler" on "CLP"
     And I store search result count
     And I apply a filter
       | Yazar               | Komisyon |
