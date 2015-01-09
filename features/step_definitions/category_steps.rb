@@ -33,3 +33,13 @@ Then(/^I should not see adult item "(.*?)" on CLP$/) do |adult_item_sku|
   find_by_id('productresults').should have_no_content (adult_item_sku)
   revert_to_default_wait_time
 end
+
+Then(/^There are some items with variant indication$/) do
+  find('.search-item', match: :first)
+  results = find_by_id('productresults').all('div.product-with-variant').select{|x| x['style'] != 'display: none;'}
+  results.size.should > 0
+  results.each { |x|
+    x.should have_content('Bu ürünün farklı seçenekleri bulunmaktadır.')
+    x.should have_no_selector('button.add-to-basket.button.small')
+  }
+end

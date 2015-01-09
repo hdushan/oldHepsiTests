@@ -241,7 +241,10 @@ And(/^There is an indication on search result no "([^"]*)" about variants$/) do 
 end
 
 Then(/^There should be an indication that some items are not available$/) do
-  find_by_id('productresults').should have_content "Bu ürün geçici olarak temin edilememektedir."
+  find('.search-item', match: :first)
+  results = find_by_id('productresults').all('div.procurement-status').select{|x| x['style'] != 'display: none;'}
+  results.size.should > 0
+  results.each { |x| x.should have_content('Bu ürün geçici olarak temin edilememektedir.') }
 end
 
 When(/^I click discounted items global filter$/) do

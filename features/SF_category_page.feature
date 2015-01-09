@@ -22,6 +22,10 @@ Feature: Category page is as expected
     Given I visit main page
     When I navigate to Category
     | Elektronik | Telefon |
+    And I select a sub category in browsing
+    | Cep Telefonu ve SmartPhone | Akıllı Telefon |
+    And I apply a filter
+    | Markalar | Apple |
     Then There should be an indication that some items are not available
 
   @448
@@ -59,3 +63,8 @@ Feature: Category page is as expected
     | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
+  Scenario: Check about variant message on CLP
+    Given I visit main page
+    When I navigate to Category
+    | Elektronik | Telefon |
+    Then There are some items with variant indication
