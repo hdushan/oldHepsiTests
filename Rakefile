@@ -39,6 +39,21 @@ task :performance do |t |
   end  
 end
 
+desc "Run Jmeter Warmup Tests"
+task :warmup do |t |
+  require 'jmeter-test-runner'
+  puts "Running Warmup Load Test"
+  loadtest_script = "performance/warmup.jmx"
+  result_file = "warmup_results.jtl"
+  result_file_html = "warmup_results.html"
+  begin
+    run_load_test(loadtest_script, result_file, "xml", result_file_html)
+  rescue => e
+    puts e.to_s
+    abort("\nWarmup Load test not successful\n")
+  end  
+end
+
 def check_for_errors(result_file_html, threshold)
   require 'nokogiri'
   page = Nokogiri::HTML(open(result_file_html)) 
