@@ -364,6 +364,12 @@ And(/^Discounted price is displayed correctly$/) do
   $prod['price']['value'].should == price
   $prod['price']['taxIncluded'].should == true
   $prod['discountRate'].should_not == 0
+  expect(str).to include?('İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:
+
+Ürünün adresinize teslim tarihinden itibaren 14 gün içinde "Sipariş Takibi" sayfasından "İade ve Geri gönderim" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz.
+
+Ürünü iade etmek için, orijinal kutusuyla ve faturasıyla birlikte Hepsiburada.com’a göndermelisiniz. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.
+')
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
@@ -508,7 +514,13 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
+  a = %(İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:
 
+Ürünün adresinize teslim tarihinden itibaren 14 gün içinde "Sipariş Takibi" sayfasından "İade ve Geri gönderim" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz.
+
+Ürünü iade etmek için, orijinal kutusuyla ve faturasıyla birlikte Hepsiburada.com’a göndermelisiniz. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.
+)
+  p a
 end
 
 When(/^I click go to desktop version link$/) do

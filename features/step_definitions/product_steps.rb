@@ -721,3 +721,24 @@ Then(/^There are variants displayed as thumbnails$/) do
   variants.size.should > 1
   variants.each { |x| x.find('img') }
 end
+
+Then(/^The return policy has text type one$/) do
+  find_by_id('productReturnPolicy').click
+  find_by_id('tabReturnPolicy').should have_content "İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:Ürünün adresinize teslim tarihinden itibaren 14 gün içinde \"Sipariş Takibi\" sayfasından \"İade ve Geri gönderim\" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz. Ürünü iade etmek için, orijinal kutusuyla ve faturasıyla birlikte Hepsiburada.com’a göndermelisiniz. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.Daha detaylı bilgi için Yardım sayfasını ziyaret edebilirsiniz.* Bedel İadesi: İade işlemi sonuçlandıktan sonra bedel ödemesi kredi kartınıza/banka hesabınıza 24 saat içinde yapılmaktadır. Ödeme işlemlerinin hesabınıza yansıma süresi bankanıza göre değişkenlik gösterebilir."
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "İade başvurusunda nasıl bulunabilirim?")
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "Yardım")
+end
+
+Then(/^The return policy has text type two$/) do
+  find_by_id('productReturnPolicy').click
+  find_by_id('tabReturnPolicy').should have_content "İncelediğiniz ürün, Mesafeli Sözleşmelere Dair Yönetmeliğin 7. maddesinde yer alan aşağıdaki hükümler gereğince iade alınmamaktadır.Tüketicinin özel istekleri veya açıkça onun kişisel ihtiyaçları doğrultusunda hazırlanan, niteliği itibariyle geri gönderilmeye elverişli olmayan, çabuk bozulma tehlikesi olan veya son kullanma tarihi geçme ihtimali olan ürünler iade edilemez.Tüketici tarafından ambalajı açılmış ise; ses veya görüntü kayıtlarına, yazılım programlarına ve bilgisayar sarf malzemelerine ilişkin ürünler (Örneğin; DVD, VCD, CD ve kasetler, toner, kartuş, şerit, vb. gibi) iade edilemez.Hijyenik ürünler (iç çamaşırı gibi), süpermarket ürünleri (gıda ürünleri gibi), gazete, dergi gibi süreli yayınlar iade edilemez.Fiyatı borsa veya teşkilatlanmış diğer piyasalarda belirlenen ürünler (altın grubu) iade edilemez.Daha detaylı bilgi için Yardım sayfasını ziyaret edebilirsiniz."
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "İade başvurusunda nasıl bulunabilirim?")
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "Yardım")
+end
+
+Then(/^The return policy has text type three$/) do
+  find_by_id('productReturnPolicy').click
+  find_by_id('tabReturnPolicy').should have_content "İncelediğiniz ürün, doğrudan üretici firma tarafından size kargoyla gönderilecektir. Bu ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:Ürünün adresinize teslim tarihinden itibaren 14 gün içinde \"Sipariş Takibi\" sayfasından \"İade ve Geri gönderim\" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz. Başvurunuz sonrasında “Hesabım” sayfasında bulunan başvuru takibi bölümünde gösterilen kargo gönderi kodu ile göndermeniz gerekmektedir. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.İade etmek istediğiniz ürün, tarafımızdan üretici firmaya ulaştırılacak ve iade işlemleriniz Hepsiburada.com tarafından takip edilecektir.Daha detaylı bilgi için Yardım sayfasını ziyaret edebilirsiniz. * Bedel İadesi: İade işlemi sonuçlandıktan sonra bedel ödemesi kredi kartınıza/banka hesabınıza 24 saat içinde yapılmaktadır. Ödeme işlemlerinin hesabınıza yansıma süresi bankanıza göre değişkenlik gösterebilir. İade başvurusunda nasıl bulunabilirim?"
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "İade başvurusunda nasıl bulunabilirim?")
+  find_by_id('tabReturnPolicy').should have_selector('a', text: "Yardım")
+end

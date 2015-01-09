@@ -509,3 +509,24 @@ Feature: Product page is as expected
     And I search for "iphone"
     When I open search result no "1"
     Then Totals in topsellers section should not be a link
+
+  @1021
+  Scenario: Go to product return policy with product a
+    Given I visit main page
+    When I search for "EVLG42UB820V"
+    And I open search result no "1"
+    Then The return policy has text type one
+
+  @1021
+  Scenario: Go to product return policy with product b
+    Given I visit main page
+    When I search for "oyunsindno5"
+    And I open search result no "1"
+    Then The return policy has text type two
+
+  @1021
+  Scenario: Go to product return policy with product c
+    Given I visit main page
+    When I search for "mbmettgm068"
+    And I open search result no "1"
+    Then The return policy has text type three
