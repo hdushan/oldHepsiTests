@@ -279,3 +279,17 @@ Then(/^I click every more filters button and expand filters$/) do
     size2.should > size1
   }
 end
+
+When(/^I go to deals of the day page$/) do
+  find_by_id('dealOfTheDay').find('a', text: "Günün Teklifi").click
+end
+
+Then(/^All deals of the day should have stock indicators$/) do
+  results = find_by_id('productresults')
+  results.find('.search-item', match: :first)
+  items = results.all('.search-item')
+  items.each { |x|
+    stock = x.find('.stock-available')
+    (extract_number stock.text).to_i.should > 0
+  }
+end

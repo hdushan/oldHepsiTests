@@ -281,3 +281,9 @@ Feature: Search page is as expected
     Then There are "60" results displayed
     And I click load more results
     Then There are "80" results displayed
+
+  @730
+  Scenario: All deal of the day items should have stock indicators
+    Given I visit main page
+    When I go to deals of the day page
+    Then All deals of the day should have stock indicators
