@@ -295,3 +295,17 @@ Feature: Homepage is as expected
     | Bugün Teslimat      | Saat 14:00'e kadar verdiğiniz siparişler aynı gün kapınızda. |
     | Tek Tıkla Alışveriş | Ödeme ve adres bilgilerinizi kaydedin, tek tıkla alışverişin keyfini yaşayın. |
     | Mobil Cebinizde     | Dilediğiniz her yerden güvenli alışverişin keyfini çıkarın. |
+
+  @1092
+  Scenario: Check deal of the day link and deal of the day main page
+    Given I visit main page
+    When I click deal of the day link
+    Then I am on deals of the day page
+
+  @1092
+  Scenario: Check details for a deal of the day
+    Given I visit main page
+    When I click deal of the day link
+    Then I am on deals of the day page
+    When I open deal of the day no "1"
+    Then Product details contain "Günün Teklifi"

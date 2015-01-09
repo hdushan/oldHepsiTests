@@ -742,3 +742,7 @@ Then(/^The return policy has text type three$/) do
   find_by_id('tabReturnPolicy').should have_selector('a', text: "İade başvurusunda nasıl bulunabilirim?")
   find_by_id('tabReturnPolicy').should have_selector('a', text: "Yardım")
 end
+
+Then(/^Product details contain "([^"]*)"$/) do |arg|
+  find('.timer-wrapper').should have_content arg
+end

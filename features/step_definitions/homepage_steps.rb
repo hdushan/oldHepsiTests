@@ -183,7 +183,7 @@ end
 And(/^I open deal of the day no "([^"]*)"$/) do |arg|
   i = arg.to_i - 1
   unless i<0
-    page.all('#dealOfTheDay .product a')[i].click()
+    find_by_id('productresults').find('.search-item', match: :first).find('img').click
   end
 end
 
@@ -312,4 +312,17 @@ Then(/^There are these propositions$/) do |table|
     div.find('span.title', text: x[0])
     div.find('span.content', text: x[1])
   }
+end
+
+When(/^I click deal of the day link$/) do
+  find_by_id('dealOfTheDay').find('a', text: "Günün Teklifi").click
+end
+
+Then(/^I am on deals of the day page$/) do
+  find('a', text: "Günün Teklifi")
+  find_by_id('carousel')
+  find_by_id('productResult').should have_content "Diğer Tekliflerimiz"
+  find_by_id('productresults').find('.search-item', match: :first)
+  find_by_id('productresults').all('.search-item').each{|x| x.should have_selector '.discount-badge'}
+  find('section.page-options')
 end
