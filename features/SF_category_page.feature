@@ -68,3 +68,21 @@ Feature: Category page is as expected
     When I navigate to Category
     | Elektronik | Telefon |
     Then There are some items with variant indication
+
+  @1043
+  Scenario Outline: Check category results count message
+    Given I visit main page
+    When I navigate to Category
+    | <cat1> | <cat2> |
+    Then I see the category results message with category name "<name>"
+    Examples:
+    | cat1                    | cat2             | name |
+    | Elektronik              | Isıtma ve Soğutma | Isıtma ve Soğutma |
+    | Ev, Yaşam Ofis          | Ofis / Kırtasiye | Kırtasiye / Ofis |
+    | Oto, Bahçe Yapı Market  | Seramik ve Yer Döşemeleri| Seramik ve Yer Döşemeleri   |
+    | Anne, Bebek Oyuncak     | Çocuk Giyim | Çocuk Giyim |
+    | Spor Outdoor            | Taraftar ürünleri | Taraftar Ürünleri |
+    | Kozmetik Kişisel Bakım  | El & Ayak ve Tırnak Bakımı | El kremleri Ve Bakım Ürünleri |
+    | Süpermarket Petshop     | Kağıt & Kozmetik | Kağıt Ürünleri |
+    | Kitap, Müzik Film, Hobi | Hobi & Oyun | Oyun & Oyun Konsolları |
+    | Giyim, Takı Aksesuar    | Altın/Takı/Mücevher | Takı & Mücevher |

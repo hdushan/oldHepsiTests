@@ -43,3 +43,11 @@ Then(/^There are some items with variant indication$/) do
     x.should have_no_selector('button.add-to-basket.button.small')
   }
 end
+
+Then(/^I see the category results message with category name "([^"]*)"$/) do |arg|
+  title = find('header.container.title-wrapper')
+  title.should have_content arg
+  title.should have_content "kategorisinde"
+  title.should have_content "ürünümüz var."
+  (extract_number find_by_id('totalItems').text).to_i.should > 0
+end

@@ -57,8 +57,6 @@ Then(/^I see thumbnails on carousel$/) do
   thumbs = find_by_id('carousel').find('.owl-dots').all('.owl-dot')
   thumbs.each { |x|
     x.find('img', match: :first)
-    x.click
-    sleep 1
   }
 end
 

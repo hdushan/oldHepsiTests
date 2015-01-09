@@ -287,3 +287,9 @@ Feature: Search page is as expected
     Given I visit main page
     When I go to deals of the day page
     Then All deals of the day should have stock indicators
+
+  @1043
+  Scenario: Display search results count text
+    Given I visit main page
+    When I search for "telefon"
+    Then There is a search result count message for search "telefon"

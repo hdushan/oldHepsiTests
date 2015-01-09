@@ -459,9 +459,8 @@ Then(/^I should cycle through all of them and visit links$/) do
   carousel = find_by_id("carousel")
   items = carousel.all('div.owl-dot', :visible => true)
   $links = Array.new
-  items.each { |x|
-    x.click
-    $links.push carousel.find('div.owl-item.active').first('a')['href']
+  items.each_with_index { |x, index|
+    $links.push carousel.all('div.owl-item')[index].first('a')['href']
   }
   $links.each{|x|
     uri = URI.parse(URI.encode(x.strip))
@@ -668,4 +667,10 @@ end
 
 And(/^I wait for "([^"]*)" seconds$/) do |arg|
   sleep arg.to_i
+end
+
+Then(/^There should be a way for me to give feedback$/) do
+  find_by_id("btnSendFeedback").click
+  sleep 5
+  frm = all('iframe', visible: true).select{ |x| x['data-tags']==nil }[0]
 end

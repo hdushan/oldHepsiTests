@@ -116,6 +116,13 @@ Before('@login_enabled') do
   end
 end
 
+Before('@journey') do
+  set_wait_time 60
+end
+
+After('@journey') do
+  revert_to_default_wait_time
+end
 # scenario_times = {}
 #
 # Around() do |scenario, block|

@@ -265,7 +265,7 @@ Feature: Homepage is as expected
   Scenario: Check for feedback button on homepage
     Given I visit main page
     When There is a feedback button on current page
-    Then I should be able to give feedback
+    Then There should be a way for me to give feedback
 
   @481
   Scenario: Check for feedback button on CLP
@@ -273,14 +273,14 @@ Feature: Homepage is as expected
     And I navigate to Category
       | Anne, Bebek Oyuncak | Bebek Güvenlik |
     When There is a feedback button on current page
-    Then I should be able to give feedback
+    Then There should be a way for me to give feedback
 
   @481
   Scenario: Check for feedback button on product details page
     Given I visit main page
     And I search for "SGBABYLISS087307"
     When There is a feedback button on current page
-    Then I should be able to give feedback
+    Then There should be a way for me to give feedback
 
   @1024
   Scenario: Check for new label on footer
