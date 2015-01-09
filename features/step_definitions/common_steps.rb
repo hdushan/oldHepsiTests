@@ -182,6 +182,8 @@ Then(/^I clear filters$/) do
 end
 
 When(/^I sort with "([^"]*)" filter$/) do |arg|
+  find('.search-item', match: :first)
+  result_count = all('.search-item').size
   case arg
     when 'smart'
       find(".sort-wrapper .button").click
@@ -200,6 +202,9 @@ When(/^I sort with "([^"]*)" filter$/) do |arg|
       find_by_id('highestPrice').click
       sleep 2
   end
+  find('.search-item', match: :first)
+  new_result_count = all('.search-item').size
+  result_count.should == new_result_count
 end
 
 Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|

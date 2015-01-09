@@ -11,14 +11,14 @@ Feature: Warmup so that the tests run smoother
     Then I visit these links on warmup
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik              |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
     Scenario Outline: I search for items on warmup

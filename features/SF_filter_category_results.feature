@@ -6,7 +6,7 @@ Feature: Filter category results
   Scenario: Filter by specific attribute
     Given I am on the homepage
     And I navigate to Category
-    | Elektronik Beyaz Eşya | Telefon |
+    | Elektronik | Telefon |
     And I can see the results
     When I filter by material type
     Then I should only see products that fall under my preset range
@@ -15,7 +15,7 @@ Feature: Filter category results
   Scenario: Show fast shipping indicator in category results page for product that offers fast shipping
     Given I am on the homepage
     And I navigate to Category
-      | Elektronik Beyaz Eşya | Telefon |
+      | Elektronik | Telefon |
     When I apply a filter
     | Markalar            | Samsung   |
     | İşletim Türü        | Android   |

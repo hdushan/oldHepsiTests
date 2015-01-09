@@ -10,7 +10,7 @@ Feature: Navigation by categories is as expected
     Given I am on the homepage
     And I see the first level navigation bar with 9 categories
     When I navigate to Category
-      | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+      | Elektronik  | Bilgisayar Tablet |
     Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 
   @429
@@ -58,14 +58,14 @@ Feature: Navigation by categories is as expected
     Then There are campaign banners
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
   @523
@@ -82,14 +82,14 @@ Feature: Navigation by categories is as expected
     Then I don't get the error page
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
   @637

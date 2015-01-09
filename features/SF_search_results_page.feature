@@ -153,7 +153,7 @@ Feature: Search page is as expected
   Scenario: More brands button on CLP
     Given I visit main page
     And I navigate to Category
-    | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+    | Elektronik | Bilgisayar Tablet |
     When There are "10" brands in brand filter
     And There is more brands button
     Then I press more brands button
@@ -217,17 +217,17 @@ Feature: Search page is as expected
     When I search for "köpek maması"
     And I store search result count
     And I apply a filter
-    | Sadece | İndirimli Ürünler |
+    | Sadece | Süper Hızlı Gönderidekiler |
     Then I should have a different result count
 
   @24
   Scenario: Filter by promotions in CLP
     Given I visit main page
     When I navigate to Category
-    | Spor Outdoor | Spor Branşları |
+    | Kitap, Müzik Film, Hobi | Müzik (Medya) |
     And I store search result count
     And I apply a filter
-    | Sadece | Yeni Ürünler |
+    | Sadece | İndirimli Ürünler |
     Then I should have a different result count
 
   @342
@@ -273,7 +273,7 @@ Feature: Search page is as expected
   Scenario: More results button on CLP
     Given I visit main page
     And I navigate to Category
-    | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+    | Elektronik | Bilgisayar Tablet |
     When There are "20" results displayed
     And I click load more results
     Then There are "40" results displayed

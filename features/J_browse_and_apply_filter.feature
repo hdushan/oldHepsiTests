@@ -11,7 +11,7 @@ Feature: Browse categories and apply a filter to find a product
 
   Scenario: Browse Category
     Given I navigate to Category
-      | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+      | Elektronik | Bilgisayar Tablet |
     When I am on results page
     Then There are some results available
 

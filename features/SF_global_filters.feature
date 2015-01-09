@@ -4,15 +4,16 @@
     I'd like to apply global filters
     In order to navigate results easier
 
-  @722 @857 @854 @853
+  @722 @857 @854 @853 @869
   Scenario: Show global filter on homepage
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
     And I should see "İndirimli Ürünler" global filter on main page
     And I should see "Çok Satanlar" global filter on main page
     And I should see "Kargo Bedavalar" global filter on main page
+    And I should see "Bugün Teslimat" global filter on main page
 
-  @722 @857 @854 @853
+  @722 @857 @854 @853 @869
   Scenario Outline: Show global filter on CLP
     Given I visit main page
     When I navigate to Category
@@ -21,14 +22,15 @@
     And I should see "İndirimli Ürünler" global filter on CLP
     And I should see "Çok Satanlar" global filter on CLP
     And I should see "Kargo Bedavalar" global filter on CLP
+    And I should see "Bugün Teslimat" global filter on CLP
     Examples:
     | category               | sub_category       |
-    | Elektronik Beyaz Eşya  | Isıtma ve Soğutma  |
+    | Elektronik   | Isıtma ve Soğutma  |
     | Oto, Bahçe Yapı Market | Güvenlik           |
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
-  @722 @857 @854 @853
+  @722 @857 @854 @853 @859
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
@@ -48,6 +50,7 @@
     | İndirimli Ürünler      | İndirimli ürünler      |
     | Çok Satanlar           | Çok Satanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
+    | Bugün Teslimat         | Bugün Teslimat         |
 
 #  @722 @857 @854
 #  Scenario Outline: Stay on the same results when you click on global filter
@@ -67,7 +70,7 @@
 #    | İndirimli ürünler      |
 #    | Çok Satanlar           |
 
-  @722 @857 @854 @853
+  @722 @857 @854 @853 @859
   Scenario Outline: Use global filter from homepage
     Given I visit main page
     When I apply global filter "<filter>" on "homepage"
@@ -86,6 +89,7 @@
     | İndirimli Ürünler      | İndirimli ürünler      |
     | Çok Satanlar           | Çok Satanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
+    | Bugün Teslimat         | Bugün Teslimat         |
 
   @722 @857 @853
   Scenario Outline: Page title and description with super fast shipping global filter on CLP
@@ -117,7 +121,7 @@
   Scenario: Clear filters on global filter
     Given I visit main page
     And I navigate to Category
-      | Kitap, Müzik Film, Oyun | Kitap & Dergi |
+      | Kitap, Müzik Film, Hobi | Kitap & Dergi |
     When I apply global filter "Süper Hızlı Gönderiler" on "CLP"
     And I store search result count
     And I apply a filter
@@ -134,17 +138,19 @@
       | İndirimli ürünler |
       | Çok Satanlar      |
       | Süper hızlı gönderiler |
+      | Bugün Teslimat         |
 
     @1040
     Scenario: Global filters order on global filters landing page
       Given I visit main page
       When I navigate to Category
-      | Elektronik Beyaz Eşya | Foto & Kamera |
+      | Elektronik | Foto & Kamera |
       Then I see this global filter order on GFLP
       | Kargo Bedavalar |
       | İndirimli ürünler |
       | Çok Satanlar      |
       | Süper hızlı gönderiler |
+      | Bugün Teslimat         |
 
     @1040
     Scenario: Global filters order on CLP
@@ -155,3 +161,4 @@
       | İndirimli ürünler |
       | Çok Satanlar      |
       | Süper hızlı gönderiler |
+      | Bugün Teslimat         |

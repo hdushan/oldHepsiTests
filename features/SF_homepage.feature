@@ -220,21 +220,21 @@ Feature: Homepage is as expected
     Then There are items in the menu content
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
   @326 @merchant_enabled
   Scenario: Check menu on the CLP
     Given I visit main page
     When I navigate to Category
-      | Kitap, Müzik Film, Oyun | Müzik Enstrümanları |
+      | Kitap, Müzik Film, Hobi | Müzik Enstrümanları |
     Then There are some results available
 
   @326 @merchant_enabled
@@ -244,14 +244,14 @@ Feature: Homepage is as expected
     Then There are items in the menu content
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
     @467

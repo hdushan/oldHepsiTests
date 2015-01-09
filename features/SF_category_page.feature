@@ -6,7 +6,7 @@ Feature: Category page is as expected
     Scenario: SEO text in category landing page
       Given I am on the homepage
       Given I navigate to Category
-        | Elektronik Beyaz Eşya | Bilgisayar Tablet |
+        | Elektronik | Bilgisayar Tablet |
       When I click on SEO link
       Then I see a pop up with category title and some SEO text
 
@@ -21,7 +21,7 @@ Feature: Category page is as expected
   Scenario: Show product not available indication on CLP
     Given I visit main page
     When I navigate to Category
-    | Elektronik Beyaz Eşya | Telefon |
+    | Elektronik | Telefon |
     Then There should be an indication that some items are not available
 
   @448
@@ -31,14 +31,14 @@ Feature: Category page is as expected
     Then There are items in the menu content
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
   @448
@@ -49,13 +49,13 @@ Feature: Category page is as expected
     Then I visit these links without an error page
   Examples:
     | item                    |
-    | Elektronik Beyaz Eşya   |
+    | Elektronik   |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
     | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Oyun |
+    | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
