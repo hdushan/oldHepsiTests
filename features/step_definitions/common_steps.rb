@@ -449,7 +449,7 @@ Then(/^I should cycle through all of them and visit links$/) do
   items = carousel.all('div.owl-dot', :visible => true)
   $links = Array.new
   items.each { |x|
-    x.hover
+    x.click
     $links.push carousel.find('div.owl-item.active').first('a')['href']
   }
   $links.each{|x|
