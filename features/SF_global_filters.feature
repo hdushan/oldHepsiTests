@@ -30,7 +30,7 @@
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
-  @722 @857 @854 @853 @859
+  @722 @857 @854 @853 @869
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
@@ -70,7 +70,7 @@
 #    | İndirimli ürünler      |
 #    | Çok Satanlar           |
 
-  @722 @857 @854 @853 @859
+  @722 @857 @854 @853 @869
   Scenario Outline: Use global filter from homepage
     Given I visit main page
     When I apply global filter "<filter>" on "homepage"
