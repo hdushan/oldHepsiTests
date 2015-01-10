@@ -50,7 +50,7 @@ Given(/^I filter by super fast delivery$/) do
 end
 
 When(/^I click load more results$/) do
-  click_button "moreResult"
+  find('button', text: 'Daha fazla sonuç').click
   wait_for_ajax
 end
 
