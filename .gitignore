@@ -8,4 +8,5 @@ results_cucumber.html
 build/
 jmeter.log
 loadtest_results*
+warmup_results*
 jmeter.log
