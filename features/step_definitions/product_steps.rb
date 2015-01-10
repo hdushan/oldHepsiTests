@@ -110,7 +110,9 @@ end
 Then(/^I see the super fast delivery flag$/) do
   # nb: 'per H' is standing in for 'Süper Hızlı' as couldn't work out
   # how to match encoded string correctly
-  find('.product-featured-details').find("img[alt='Süper Hızlı Gönderi']")
+  find('.product-featured-details').all("img", visible:true).select{|x|
+    x['src'].include?('super_hizli.png')
+  }.size.should > 0
 end
 
 Then(/^I see the product information$/) do
