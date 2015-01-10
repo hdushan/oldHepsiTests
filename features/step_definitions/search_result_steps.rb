@@ -172,25 +172,25 @@ end
 
 When(/^There are "([^"]*)" brands in brand filter$/) do |arg|
   i = arg.to_i
-  list = find_by_id('brandList')
+  list = find('.filters-container').find('ol.show-all-brands')
   list.find('label', visible: :true, match: :first)
   list.all('li').select{|x| x['class'] != "hide" && x['class'] != "more-brands"}.size.should == i
 end
 
 And(/^There is more brands button$/) do
-  find_by_id('moreBrandsInFilters')
+  find('.filters-container').find('ol.show-all-brands').find('button.alternative.small')
 end
 
 Then(/^I press more brands button$/) do
-  find_by_id('moreBrandsInFilters').click
+  find('.filters-container').find('ol.show-all-brands').find('button.alternative.small').click
 end
 
 And(/^There are more than "([^"]*)" brands in the filter area$/) do |arg|
   i = arg.to_i
-  list = find_by_id('brandList')
+  list = find('.filters-container').find('ol.show-all-brands')
   list.find('label', visible: :true, match: :first)
+  list.all('li').select{|x| x['class'] != "hide" && x['class'] != "more-brands"}.size.should > i
   list.all('li.hide').size.should == 0
-  list.all('label', visible: :true).size.should > i
 end
 
 And(/^I store search result count$/) do
