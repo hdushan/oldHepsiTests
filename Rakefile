@@ -69,8 +69,8 @@ def check_for_errors(result_file_html, threshold)
   end  
 end
 
-def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path)
-  testRunner = JmeterTestRunner::Test.new(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path)
+def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path, options='')
+  testRunner = JmeterTestRunner::Test.new(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path, options)
   testRunner.start()
 end
 
