@@ -8,7 +8,8 @@ Feature: Filter category results
     And I navigate to Category
     | Elektronik | Telefon |
     And I can see the results
-    When I filter by material type
+    When I apply a filter
+    | Malzeme Türü | Plastik |
     Then I should only see products that fall under my preset range
 
   @36
