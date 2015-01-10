@@ -48,6 +48,26 @@ Then(/^I see the category results message with category name "([^"]*)"$/) do |ar
   title = find('header.container.title-wrapper')
   title.should have_content arg
   title.should have_content "kategorisinde"
-  title.should have_content "ürünümüz var."
+  title.should have_content "ürün bulunmaktadır."
   (extract_number find_by_id('totalItems').text).to_i.should > 0
+end
+
+Then(/^I should be able to sort on CLP$/) do
+  initial = find_by_id('productresults').all('.price-container').collect(&:text)
+  find(".sort-wrapper .button").click
+  find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat').click
+  wait_for_ajax
+  sleep 2
+  find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat')['class'].include?('selected').should == true
+  last = find_by_id('productresults').all('.price-container').collect(&:text)
+  initial.should_not == last
+
+  initial = find_by_id('productresults').all('.price-container').collect(&:text)
+  find(".sort-wrapper .button").click
+  find_by_id('sortResultsHeader').find('a', text: 'En yüksek fiyat').click
+  wait_for_ajax
+  sleep 2
+  find_by_id('sortResultsHeader').find('a', text: 'En yüksek fiyat')['class'].include?('selected').should == true
+  last = find_by_id('productresults').all('.price-container').collect(&:text)
+  initial.should_not == last
 end

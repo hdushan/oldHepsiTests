@@ -9,7 +9,7 @@
       And I visit mobile main page
       When I navigate to Mobile_Category
       | Foto / Kamera |
-      Then I select a sub category in browsing
+      Then I select a sub category in mobile
       | Fotoğraf Makinesi ve Kamera | Tümünü Gör |
       When There are some results available
 

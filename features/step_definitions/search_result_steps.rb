@@ -273,7 +273,7 @@ When(/^There are more filters button on filters$/) do
 end
 
 Then(/^I click every more filters button and expand filters$/) do
-  list = find_by_id('filterResults').all('ol').select{|x| x.first('li.more-brands') != nil }
+  list = find('ol.filters-container').all('ol').select{|x| x.first('li.more-brands') != nil }
   list.each { |x|
     size1 = x.all('li').select{|y| y['class'] != "hide"}.size
     x.find('button.button.alternative.small').click

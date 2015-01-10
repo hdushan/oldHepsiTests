@@ -155,7 +155,7 @@ And(/^I add search result no "([^"]*)" to cart from search results$/) do |arg|
   unless i < 0
     find('.search-item', match: :first)
     item = all('.search-item')[i]
-    item.find('button', text: "Sepete Ekle").click
+    item.find('button.add-to-basket').click
     wait_for_ajax
     page.should have_selector("#notification", :visible => true)
     page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
@@ -268,4 +268,24 @@ Then(/^Results are sorted according to "([^"]*)" filter on mobile$/) do |arg|
       prices = products.collect{|x| format_price x.find('.product-price').text}
       prices.should == (prices.sort).reverse
   end
+end
+
+Then(/^I select a sub category in mobile$/) do |table|
+  # table is a table.hashes.keys # => [:Fotoğraf Makinesi ve Kamera, :Tümünü Gör]
+  values = table.raw[0]
+  i = values.size - 1
+  wait_for_ajax
+  $current_level =  find('ol.category-list-items', :visible => true)
+  values.each_with_index { |x, index|
+    cat = $current_level.find('a', :text => x, match: :first)
+    cat.click
+    wait_for_ajax
+    sleep 1
+    if index == i
+      break
+    end
+    $current_level.first('ul.children-category', :visible=>true)
+    $current_level = $current_level.first('li.expanded', :visible=>true)
+  }
+  $current_results = extract_number find_by_id('totalItems').text
 end

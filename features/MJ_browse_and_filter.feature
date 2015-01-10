@@ -9,7 +9,7 @@
       And I visit mobile main page
       When I navigate to Mobile_Category
         | Beyaz Eşya / Mutfak |
-      Then I select a sub category in browsing
+      Then I select a sub category in mobile
         | Beyaz Eşya & Ankastre  | Tümünü Gör |
       When There are some results available
 

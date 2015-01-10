@@ -108,38 +108,54 @@ end
 Given(/^I select a sub category in browsing$/) do |table|
   # table is a table.hashes.keys # => [:Çevre Birimleri, :Mouse]
   values = table.raw[0]
+  # i = values.size - 1
+  # wait_for_ajax
+  # $current_level =  find('ol.category-list-items', :visible => true)
+  # values.each_with_index { |x, index|
+  #   cat = $current_level.find('a', :text => x, match: :first)
+  #   cat.click
+  #   wait_for_ajax
+  #   sleep 1
+  #   if index == i
+  #     break
+  #   end
+  #   $current_level.first('ul.children-category', :visible=>true)
+  #   $current_level = $current_level.first('li.expanded', :visible=>true)
+  # }
+  # $current_results = extract_number find_by_id('totalItems').text
+
+  cat = find('.widget.CategoryTree')
+  current = cat
   i = values.size - 1
-  wait_for_ajax
-  $current_level =  find('ol.category-list-items', :visible => true)
   values.each_with_index { |x, index|
-    cat = $current_level.find('a', :text => x, match: :first)
-    cat.click
+    current.find('a', text: x, match: :first).click
     wait_for_ajax
-    sleep 1
     if index == i
       break
+    else
+      new = current.find('.list.expanded', match: :first)
+      current = new
     end
-    $current_level.first('ul.children-category', :visible=>true)
-    $current_level = $current_level.first('li.expanded', :visible=>true)
   }
-  $current_results = extract_number find_by_id('totalItems').text
 end
 
 When(/^I apply a filter$/) do |table|
   # table is a table.hashes.keys # => [:Markalar, :Everest]
   values = table.raw
-  filter_tab = find_by_id "filterResults"
+  filter_tab = find ".filters-container"
   $result_stack.clear
   $result_stack.push get_result_count
   values.each { |x|
     filter_tab.first('li', :text=> /^#{x[0]}/ )
     if x[0] == "Değerlendirme Puanı"
-      str = "star_" + (extract_number x[1]).to_s
-      filter_tab.find("label[for='#{str}']").click
+      regex = /star(-|_)#{(extract_number x[1]).to_s}/
+      filter_tab.find('ol.rating-filter-list').all("label").select{|x| x['for'] =~ regex }[0].click
+      wait_for_ajax
     else
       filter_tab.first('label', :text=> /^#{x[1]}/).click
+      wait_for_ajax
     end
-    filter_tab = find_by_id "filterResults"
+    filter_tab = find ".filters-container"
     $result_stack.push get_result_count
   }
   $current_results = extract_number find_by_id('totalItems').text
@@ -364,12 +380,6 @@ And(/^Discounted price is displayed correctly$/) do
   $prod['price']['value'].should == price
   $prod['price']['taxIncluded'].should == true
   $prod['discountRate'].should_not == 0
-  expect(str).to include?('İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:
-
-Ürünün adresinize teslim tarihinden itibaren 14 gün içinde "Sipariş Takibi" sayfasından "İade ve Geri gönderim" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz.
-
-Ürünü iade etmek için, orijinal kutusuyla ve faturasıyla birlikte Hepsiburada.com’a göndermelisiniz. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.
-')
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
@@ -513,13 +523,11 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  a = %(İncelediğiniz ürünü satın aldıktan sonra beklentilerinizi karşılamadığı takdirde iade edebilirsiniz. İade işlemlerinizi aşağıdaki şekilde yapmalısınız:
+  str1 = "star-4"
+  str2 = 'star_4'
 
-Ürünün adresinize teslim tarihinden itibaren 14 gün içinde "Sipariş Takibi" sayfasından "İade ve Geri gönderim" başvurusunda bulunarak iade sürecinizi başlatabilirsiniz.
-
-Ürünü iade etmek için, orijinal kutusuyla ve faturasıyla birlikte Hepsiburada.com’a göndermelisiniz. İadenizin kabul edilmesi için, ürünün hasar görmemiş ve kullanılmamış olması gerekmektedir.
-)
-  p a
+   str1.should =~ /star(-|_)4/
+   str2.should =~ /star(-|_)4/
 end
 
 When(/^I click go to desktop version link$/) do

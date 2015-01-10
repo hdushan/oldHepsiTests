@@ -86,3 +86,10 @@ Feature: Category page is as expected
     | Süpermarket Petshop     | Kağıt & Kozmetik | Kağıt Ürünleri |
     | Kitap, Müzik Film, Hobi | Hobi & Oyun | Oyun & Oyun Konsolları |
     | Giyim, Takı Aksesuar    | Altın/Takı/Mücevher | Takı & Mücevher |
+
+  Scenario: Check sorting in CLP
+    Given I visit main page
+    When I navigate to Category
+    | Elektronik | Yazıcılar Tarayıcılar |
+    And There are some results available
+    Then I should be able to sort on CLP
