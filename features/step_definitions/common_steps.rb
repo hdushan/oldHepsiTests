@@ -209,19 +209,19 @@ When(/^I sort with "([^"]*)" filter$/) do |arg|
   case arg
     when 'smart'
       find(".sort-wrapper .button").click
-      find_by_id('bestMatching').click
+      find_by_id('sortResultsHeader').find('a', text: 'Akıllı sıralama').click
       sleep 2
     when 'most-selling'
       find(".sort-wrapper .button").click
-      find_by_id('bestSelling').click
+      find_by_id('sortResultsHeader').find('a', text: 'Çok Satanlar').click
       sleep 2
     when 'lowest-price'
       find(".sort-wrapper .button").click
-      find_by_id('lowestPrice').click
+      find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat').click
       sleep 2
     when 'highest-price'
       find(".sort-wrapper .button").click
-      find_by_id('highestPrice').click
+      find_by_id('sortResultsHeader').find('a', text: 'En yüksek fiyat').click
       sleep 2
   end
   find('.search-item', match: :first)
