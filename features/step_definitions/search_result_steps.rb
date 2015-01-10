@@ -166,7 +166,7 @@ end
 Then(/^There are "([^"]*)" results displayed$/) do |arg|
   res = find_by_id('productresults')
   res.find('li.search-item', match: :first)
-  items = res.all('li.search-item')
+  items = res.all('li.search-item').select{|x| x.first('h3') != nil}
   items.size.should == arg.to_i
 end
 

@@ -6,7 +6,7 @@
       Given I visit mobile main page
       When I navigate to Mobile_Category
         | Hobi ve Oyun Konsolları |
-      Then I select a sub category in browsing
+      Then I select a sub category in mobile
         | Oyun & Oyun Konsolları | Aksesuarlar | Tümünü Gör |
       When There are some results available
 

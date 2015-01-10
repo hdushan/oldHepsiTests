@@ -133,8 +133,14 @@ Given(/^I select a sub category in browsing$/) do |table|
     if index == i
       break
     else
-      new = current.find('.list.expanded', match: :first)
-      current = new
+      current.find('.list.expanded', match: :first)
+      if values[index + 1] == "Tümünü Gör"
+        new = current.all('.list.expanded').first
+        current = new
+      else
+        new = current.all('.list.expanded')[1]
+        current = new
+      end
     end
   }
 end
