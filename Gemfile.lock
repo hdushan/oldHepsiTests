@@ -1,8 +1,8 @@
 GIT
   remote: http://gitlab.hepsiburada.com/everyone/jmeter-test-runner.git
-  revision: 1d557d8f6784c4c2b9d97e81309fe90d8287aa1d
+  revision: 1098fe5681b9c444c11b8c3924f370de3ffc2ac7
   specs:
-    jmeter-test-runner (0.0.6)
+    jmeter-test-runner (0.0.9)
 
 GEM
   remote: http://rubygems.org/
@@ -24,7 +24,7 @@ GEM
     capybara-page-object (0.6.1)
       activesupport (> 2.1.0)
       capybara
-    capybara-screenshot (1.0.3)
+    capybara-screenshot (1.0.4)
       capybara (>= 1.0, < 3)
       colored
       launchy
@@ -50,13 +50,13 @@ GEM
       multi_json (~> 1.3)
     headless (1.0.2)
     i18n (0.7.0)
-    json (1.8.1)
+    json (1.8.2)
     launchy (2.4.3)
       addressable (~> 2.3)
     method_source (0.8.2)
     mime-types (2.4.3)
-    mini_portile (0.6.1)
-    minitest (5.5.0)
+    mini_portile (0.6.2)
+    minitest (5.5.1)
     multi_json (1.10.1)
     multi_test (0.1.1)
     netrc (0.10.2)
@@ -79,7 +79,7 @@ GEM
       slop (~> 3.4)
       win32console (~> 1.3)
     rack (1.6.0)
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rake (10.4.2)
     rest-client (1.7.2)

@@ -10,7 +10,7 @@ sleep 3
 xhost +
 
 echo "xxxxxxxxxx Start jmeter warmup test" | /usr/games/cowsay
-bundle exec rake warmup
+bundle exec rake warmup[$1]
 
 rc=$?
 

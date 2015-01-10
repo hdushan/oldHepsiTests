@@ -40,14 +40,19 @@ task :performance do |t |
 end
 
 desc "Run Jmeter Warmup Tests"
-task :warmup do |t |
+task :warmup, [:server_url] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
   result_file_html = "warmup_results.html"
+  if args[:server_url] != ""
+    options = "SERVER_URL=#{args[:server_url]}"
+  else
+    options = ''
+  end
   begin
-    run_load_test(loadtest_script, result_file, "xml", result_file_html)
+    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
   rescue => e
     puts e.to_s
     abort("\nWarmup Load test not successful\n")
