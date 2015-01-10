@@ -5,7 +5,7 @@ And /^I click the bestsellers tab/ do
 end
 
 When(/^I click on SEO link$/)do
-  click_link('showCategoryInfo')
+  find_by_id('showCategoryInfo').click
 end
 
 Then(/^I see a pop up with category title and some SEO text$/) do
