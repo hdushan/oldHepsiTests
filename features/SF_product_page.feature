@@ -38,7 +38,6 @@ Feature: Product page is as expected
   Scenario: Display free shipping tag
     Given I select a product with SKU SGSBM8001
     Then I see text indicating that free shipping is available
-    Then I see the returns policy
 
   @103
   Scenario: No free shipping on details

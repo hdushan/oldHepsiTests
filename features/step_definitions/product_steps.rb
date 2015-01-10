@@ -167,8 +167,7 @@ Then(/^I can view the product tech specs$/) do
 end
 
 Then(/^I see text indicating that free shipping is available$/) do
-  find('a.ProductDashboard_button', match: :first)
-  find('.product-featured-details').all('img').select{|x| x['src'].include?('kargo_bedava.png')}.size.should > 0
+  find('.product-price-wrapper').find('span.free-shipping', visible: :true)
 end
 
 Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
