@@ -20,7 +20,7 @@ end
 Capybara.run_server = false
 Capybara.default_driver = :firefox
 Capybara.default_selector = :css
-Capybara.default_wait_time = 20 #default wait time for ajax
+Capybara.default_wait_time = 60 #default wait time for ajax
 Capybara.ignore_hidden_elements = false #ignore hidden elements when testing, make helpful when you hide or show elements using javascript
 Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
 

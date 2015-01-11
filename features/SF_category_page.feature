@@ -46,7 +46,7 @@ Feature: Category page is as expected
     | Giyim, Takı Aksesuar    |
 
   @448
-  Scenario Outline: Hover an menu items and check content
+  Scenario Outline: Hover an menu items and visit content
     Given I visit main page
     And I hover on menu item "<item>"
     When I store links from this menu item
