@@ -4,7 +4,7 @@ sudo -u root /usr/local/bin/bundle install --verbose
 
 killall -9 Xvfb
 
-Xvfb :1 -screen 0 1024x768x24 2>&1 >/dev/null &
+Xvfb :1 -screen 0 1920x1080x24 2>&1 >/dev/null &
 export DISPLAY=:1
 sleep 3
 xhost +
