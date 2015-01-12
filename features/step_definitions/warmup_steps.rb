@@ -26,7 +26,7 @@ end
 Then(/^I visit these links on warmup$/) do
   begin
     $links.each{|x|
-      visit x
+      visit_link x
       steps %{ Then I don't get the error page }
     }
   rescue Exception => e

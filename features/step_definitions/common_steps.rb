@@ -97,7 +97,7 @@ Given(/^I navigate to Category$/) do |table|
   values = table.raw[0]
   cat1 = find('ul.browser-by-category').first('li', :text=> values[0])
   link = cat1.find('div.nav-home-wrapper').first('a', :text=> values[1])['href']
-  visit link
+  visit_link link
   $current_results = extract_number find_by_id('totalItems').text
 end
 
@@ -299,7 +299,7 @@ And(/^I store breadcrumbs$/) do
 end
 
 Then(/^breadcrumbs should be available on google webtools$/) do
-  visit 'http://www.google.com/webmasters/tools/richsnippets'
+  visit_link 'http://www.google.com/webmasters/tools/richsnippets'
   find_by_id("tab-html").click
 
   fill_in("html-input", :with => $html_code)
@@ -330,21 +330,21 @@ When(/^I click on first small banner$/) do
   container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   small_banners = banner_div.find("div.small")
-  visit small_banners.all('a')[0]['href']
+  visit_link small_banners.all('a')[0]['href']
 end
 
 When(/^I click on second small banner$/) do
   container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   small_banners = banner_div.find "div.small"
-  visit small_banners.all('a')[1]['href']
+  visit_link small_banners.all('a')[1]['href']
 end
 
 When(/^I click on big banner$/) do
   container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
   big_banner = banner_div.find "div.big"
-  visit big_banner.first('a')['href']
+  visit_link big_banner.first('a')['href']
 end
 
 And(/^I unhover$/) do
@@ -365,7 +365,7 @@ Then(/^I don't get the error page$/) do
 end
 
 When(/^I use this link form old site to access new site "([^"]*)"$/) do |arg|
-  visit arg
+  visit_link arg
 end
 
 And(/^These filters are present on page "(.*)"$/) do |arg|
@@ -454,7 +454,7 @@ end
 
 Then(/^I visit these links without an error page$/) do
   $links.each{|x|
-    visit x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
@@ -479,8 +479,7 @@ Then(/^I should cycle through all of them and visit links$/) do
     $links.push carousel.all('div.owl-item')[index].first('a')['href']
   }
   $links.each{|x|
-    uri = URI.parse(URI.encode(x.strip))
-    visit uri
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
@@ -503,7 +502,7 @@ And(/^I click breadcrumb "([^"]*)"$/) do |arg|
 end
 
 Given(/^I make a google search with "([^"]*)"$/) do |arg|
-  visit 'http://www.google.com'
+  visit_link 'http://www.google.com'
   fill_in "gbqfq" , :with=>arg
   click_button "gbqfb"
 end
@@ -521,7 +520,7 @@ And(/^I click on logo$/) do
 end
 
 When(/^I visit link "([^"]*)"$/) do |arg|
-  visit format_link arg
+  visit_link arg
 end
 
 Then(/^I get error page$/) do

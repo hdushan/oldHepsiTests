@@ -1,5 +1,5 @@
 Given(/^I visit a static page with id "(.*?)"$/) do |page_id|
-  visit "/staticPage/#{page_id}"
+  visit_link "/staticPage/#{page_id}"
 end
 
 Then(/^I see the static page with title "(.*?)" and canonical link "(.*?)" and content "(.*?)"$/) do |title, canonical_link, content|
@@ -20,7 +20,7 @@ Then(/^I should be able to visit every static banner$/) do
   page.find('ul.static-banners', match: :first)
   links = all('ul.static-banners').collect{|x| x.first('a')['href']}
   links.each { |x|
-    visit  format_link x
+    visit_link  x
     steps %{ Then I don't get the error page }
   }
 end

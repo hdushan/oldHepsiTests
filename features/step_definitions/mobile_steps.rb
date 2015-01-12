@@ -1,7 +1,7 @@
 #encoding: UTF-8
 
 Given(/^I visit mobile main page$/) do
-  visit "/m/"
+  visit_link "/m/"
 end
 
 Then(/^I am at mobile main page$/) do
@@ -23,7 +23,7 @@ When(/^I am on results mobile page$/) do
 end
 
 When(/^I use this link form old site to access mobile site "([^"]*)"$/) do |arg|
-  visit '/m' + arg
+  visit_link '/m' + arg
 end
 
 And(/^These filters are present on mobile page "(.*)"$/) do |arg|

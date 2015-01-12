@@ -4,14 +4,14 @@ When(/^I login with user "([^"]*)" and pass "([^"]*)"$/) do |arg1, arg2|
   account = find_by_id('myAccount')
   account.click
   account.find_by_id('login').click
-  visit('http://checkout.test.hepsiburada.com/liste/default.aspx')
+  visit_link('http://checkout.test.hepsiburada.com/liste/default.aspx')
   find('span', text: "Üye Girişi").click
   find('span', text: "Giriş yap").click
   find_by_id('email').set arg1
   find_by_id('password').set arg2
   find('button', text: "Giriş").click
   sleep 2
-  visit ""
+  visit_link ""
 end
 
 Then(/^I am logged in as "([^"]*)"$/) do |arg|

@@ -120,6 +120,13 @@ Before('@journey') do
   set_wait_time 60
 end
 
+Around do |scenario, block|
+  begin
+    block.call
+  rescue Exception => e
+    p "Timeout received in: #{scenario.name}"
+  end
+end
 After('@journey') do
   revert_to_default_wait_time
 end

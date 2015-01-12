@@ -103,6 +103,14 @@ def select_from_dd dd, option
   dd.find('option', text: option).select_option
 end
 
-def clear_special str
-  return str.gsub(/[^0-9A-Za-z]/, '')
+def visit_link link
+  if link == ""
+    visit_main_page
+  else
+    begin
+      visit format_link(link)
+    rescue Timeout::Error
+      visit format_link(link)
+    end
+  end
 end

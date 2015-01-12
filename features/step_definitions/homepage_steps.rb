@@ -215,13 +215,13 @@ end
 Then(/^I should be able to visit every item in deal of the day carousel$/) do
   links = find_by_id('dealOfTheDayCarousel').all('div.owl-item').collect{|x| x.first('a')['href']}
   links.each{ |x|
-    visit x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
 
 Given(/^I visit legacy home page$/) do
-  visit "http://www.hepsiburada.com"
+  visit_link "http://www.hepsiburada.com"
 end
 
 When(/^I see opt\-in bar$/) do
@@ -266,7 +266,7 @@ end
 Then(/^I should be able to cycle all topsellers$/) do
   links = find('.top-seller').all('.box.product').collect{|x| x.first('a')['href']}
   links.each { |x|
-    visit x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
@@ -297,7 +297,7 @@ And(/^I am able to cycle through products of the week$/) do
   }
   links = div.all('.owl-item').collect{|x| x.first('a')['href']}
   links.each { |x|
-    visit x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end

@@ -96,7 +96,7 @@ Then(/^I go to the banner links without any error page$/) do
   }
 
   links.each { |x|
-    visit x
+    visit_link x
     steps "Then I don't get the error page"
   }
 end

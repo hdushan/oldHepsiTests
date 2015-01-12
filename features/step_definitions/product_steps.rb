@@ -3,7 +3,7 @@ Given(/^I have an empty cart$/) do
   url = current_url
   click_link "shoppingCart"
   click_link "clearCart"
-  visit url
+  visit_link url
 end
 
 Given /^I select a product with SKU (.*)$/ do |sku|
@@ -393,7 +393,7 @@ end
 And(/^I should be able to visit every link on breadcrumb trail$/) do
   links = find('ul.breadcrumbs').all('li[itemtype="http://data-vocabulary.org/Breadcrumb"]').collect{|x| x.first('a')['href']}
   links.each { |x|
-    visit x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
@@ -708,7 +708,7 @@ Then(/^All compatible products details should be accessible$/) do
   table = find_by_id('compatibleProductTab').find('tbody', match: :first)
   links = table.all('tr').collect{|x| x.first('a')['href']}
   links.each { |x|
-    visit format_link x
+    visit_link x
     steps %{ Then I don't get the error page }
   }
 end
