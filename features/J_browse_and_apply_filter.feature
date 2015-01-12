@@ -11,13 +11,13 @@ Feature: Browse categories and apply a filter to find a product
 
   Scenario: Browse Category
     Given I navigate to Category
-      | Elektronik | Bilgisayar Tablet |
+      | Elektronik | Çevre Birimleri |
     When I am on results page
     Then There are some results available
 
   Scenario: Apply Filter
     Given I select a sub category in browsing
-    | Çevre Birimleri | Mouse |
+    | Mouse | Tümünü Gör |
     And There are some results available
     When I apply a filter
     | Markalar            | Everest |

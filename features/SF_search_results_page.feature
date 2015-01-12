@@ -153,7 +153,7 @@ Feature: Search page is as expected
   Scenario: More brands button on CLP
     Given I visit main page
     And I navigate to Category
-    | Elektronik | Bilgisayar Tablet |
+    | Elektronik | Bilgisayar/Tablet |
     When There are "10" brands in brand filter
     And There is more brands button
     Then I press more brands button
@@ -273,7 +273,7 @@ Feature: Search page is as expected
   Scenario: More results button on CLP
     Given I visit main page
     And I navigate to Category
-    | Elektronik | Bilgisayar Tablet |
+    | Elektronik | Bilgisayar/Tablet |
     When There are "20" results displayed
     And I click load more results
     Then There are "40" results displayed

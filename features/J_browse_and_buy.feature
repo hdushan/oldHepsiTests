@@ -11,7 +11,7 @@ Feature: Browse categories to find a product
 
   Scenario: Browse Category
     When I navigate to Category
-    | Elektronik | Bilgisayar Tablet |
+    | Elektronik | Masaüstü Bilgisayar |
     Then There are some results available
 
   Scenario: Go to product details and add to cart

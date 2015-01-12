@@ -6,7 +6,7 @@ Feature: Category page is as expected
     Scenario: SEO text in category landing page
       Given I am on the homepage
       Given I navigate to Category
-        | Elektronik | Bilgisayar Tablet |
+        | Elektronik | Veri Depolama |
       When I click on SEO link
       Then I see a pop up with category title and some SEO text
 

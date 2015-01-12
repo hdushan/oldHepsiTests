@@ -10,7 +10,7 @@ Feature: Navigation by categories is as expected
     Given I am on the homepage
     And I see the first level navigation bar with 9 categories
     When I navigate to Category
-      | Elektronik  | Bilgisayar Tablet |
+      | Elektronik  | Bilgisayar/Tablet |
     Then I see the page with the title Bilgisayar Fiyatları ve Modelleri & %45 indirim & Taksit Avantajı
 
   @429

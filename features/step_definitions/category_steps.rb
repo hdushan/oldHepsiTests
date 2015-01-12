@@ -10,7 +10,7 @@ end
 
 Then(/^I see a pop up with category title and some SEO text$/) do
   page.should have_selector('#categoryTitle')
-  page.should have_content('Bilgisayar Fiyatları ve Modelleri')
+  page.should have_content('Veri Depolama ve Usb Bellekler')
 end
 
 
