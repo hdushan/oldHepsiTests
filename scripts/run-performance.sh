@@ -10,7 +10,7 @@ sleep 3
 xhost +
 
 echo "xxxxxxxxxx Start jmeter performance test" | /usr/games/cowsay
-bundle exec rake performance
+bundle exec rake performance[$1]
 
 rc=$?
 

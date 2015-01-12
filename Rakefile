@@ -24,14 +24,19 @@ task :story, [:storynum] do |t, args|
 end
 
 desc "Run Jmeter Performance Tests"
-task :performance do |t |
+task :performance, [:server_url] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
+  if args[:server_url] != ""
+    options = "SERVER_URL=#{args[:server_url]}"
+  else
+    options = ''
+  end
   begin
-    run_load_test(loadtest_script, result_file, "xml", result_file_html)
+    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
     check_for_errors(result_file_html, 98)
   rescue => e
     puts e.to_s

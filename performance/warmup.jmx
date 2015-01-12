@@ -24,9 +24,9 @@
       <hashTree/>
       <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables - QA" enabled="true">
         <collectionProp name="Arguments.arguments">
-          <elementProp name="SERVER_URL" elementType="Argument">
-            <stringProp name="Argument.name">SERVER_URL</stringProp>
-            <stringProp name="Argument.value">${__P(SERVER,storefront.qa.hepsiburada.com)}</stringProp>
+          <elementProp name="SERVER" elementType="Argument">
+            <stringProp name="Argument.name">SERVER</stringProp>
+            <stringProp name="Argument.value">${__P(SERVER_URL,storefront.qa.hepsiburada.com)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PROTOCOL" elementType="Argument">
@@ -46,7 +46,7 @@
         <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
           <collectionProp name="Arguments.arguments"/>
         </elementProp>
-        <stringProp name="HTTPSampler.domain">${SERVER_URL}</stringProp>
+        <stringProp name="HTTPSampler.domain">${SERVER}</stringProp>
         <stringProp name="HTTPSampler.port">${PORT}</stringProp>
         <stringProp name="HTTPSampler.connect_timeout"></stringProp>
         <stringProp name="HTTPSampler.response_timeout"></stringProp>
@@ -72,8 +72,8 @@
       </SetupThreadGroup>
       <hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
-          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER_URL&quot;) + &quot;\n\n&quot;);
-</stringProp>
+          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);
+log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);</stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
           <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
@@ -86,8 +86,8 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <intProp name="LoopController.loops">-1</intProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">3</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">30</stringProp>
         <longProp name="ThreadGroup.start_time">1418227391000</longProp>
         <longProp name="ThreadGroup.end_time">1418227391000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
