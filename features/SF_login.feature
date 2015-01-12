@@ -6,12 +6,6 @@ Feature: Login using email and password
   I want log-in to HB.com
   So that I can make a purchase or interact with anything in "My Account"
 
-  @51
-  Scenario: Login using email and password
-    Given I am on the homepage
-    When I click the account icon
-    Then I should be redirected to a log-in page
-
   @793
   Scenario: See action to log in from anywhere in Storefront
     Given I am logged out
@@ -71,7 +65,7 @@ Feature: Login using email and password
     And I am remain on the same page
     And my basket reflects no items
 
-  @997
+  @997 @51
   Scenario: Login to site and check account options
     Given I visit main page
     When I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"

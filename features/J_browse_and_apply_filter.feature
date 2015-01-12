@@ -17,7 +17,7 @@ Feature: Browse categories and apply a filter to find a product
 
   Scenario: Apply Filter
     Given I select a sub category in browsing
-    | Mouse | Tümünü Gör |
+    | Mouse |
     And There are some results available
     When I apply a filter
     | Markalar            | Everest |
