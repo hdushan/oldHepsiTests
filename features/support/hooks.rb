@@ -93,7 +93,7 @@ end
 
 After  do |scenario|
   if scenario.failed?
-    page.save_screenshot(Capybara.save_and_open_page_path + "/#{scenario.name}-#{$screenshot_counter.to_s}-failed.png")
+    page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png")
     $screenshot_counter += 1
   end
 end

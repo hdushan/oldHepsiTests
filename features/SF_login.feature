@@ -73,3 +73,8 @@ Feature: Login using email and password
 
   @997
   Scenario: Login to site and check account options
+    Given I visit main page
+    When I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
+    Then I am logged in as "test user"
+    And I get these login options
+    | Mesajlarım | Üyelik Bilgilerim | Hediye Çeklerim | Ödeme Kuponlarım | Çıkış Yap |

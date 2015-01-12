@@ -102,3 +102,7 @@ end
 def select_from_dd dd, option
   dd.find('option', text: option).select_option
 end
+
+def clear_special str
+  return str.gsub(/[^0-9A-Za-z]/, '')
+end
