@@ -79,7 +79,7 @@ When(/^I am on checkout screen$/) do
   # page.should have_selector "#create-order-alternate-address"
   # page.should have_selector "#clearCart"
 
-  sleep 5
+  sleep 15
   header = first('header.box-header', visible: true)
   table = first('table.cart-items')
 
