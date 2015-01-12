@@ -58,7 +58,7 @@ Feature: Navigation by categories is as expected
     Then There are campaign banners
   Examples:
     | item                    |
-    | Elektronik   |
+    | Elektronik              |
     | Ev, Yaşam Ofis          |
     | Oto, Bahçe Yapı Market  |
     | Anne, Bebek Oyuncak     |

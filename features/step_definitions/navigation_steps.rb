@@ -69,13 +69,19 @@ Then(/^I should see the counter on deal of the day items$/) do
     sleep 1
   end
   while forward['class'].include?('disabled') == false
-    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-days', text: "GÜN")
-    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-hours', text: "SAAT")
-    carousel.find('.owl-item.active').should have_selector('.sale-end-timer-minutes', text: "DK")
+    items = carousel.all('.owl-item.active')
+    items.each { |x|
+      x.should have_selector('.sale-end-timer-days', text: "Gün")
+      x.should have_selector('.sale-end-timer-hours', text: "Saat")
+      x.should have_selector('.sale-end-timer-minutes', text: "Dk")
+    }
     forward.click
     sleep 1
   end
-  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-days', text: "GÜN")
-  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-hours', text: "SAAT")
-  carousel.find('.owl-item.active').should have_selector('.sale-end-timer-minutes', text: "DK")
+  items = carousel.all('.owl-item.active')
+  items.each { |x|
+    x.should have_selector('.sale-end-timer-days', text: "Gün")
+    x.should have_selector('.sale-end-timer-hours', text: "Saat")
+    x.should have_selector('.sale-end-timer-minutes', text: "Dk")
+  }
 end
