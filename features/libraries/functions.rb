@@ -114,3 +114,7 @@ def visit_link link
     end
   end
 end
+
+def clear_special str
+  return str.gsub(/[^0-9A-Za-z]/, '')
+end
