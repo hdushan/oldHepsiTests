@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/usr/local/bin/bundle install
+bundle install
 
 echo "xxxxxxxxxx Start jmeter warmup test"
 bundle exec rake warmup[$1]
