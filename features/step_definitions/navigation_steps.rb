@@ -85,3 +85,18 @@ Then(/^I should see the counter on deal of the day items$/) do
     x.should have_selector('.sale-end-timer-minutes', text: "Dk")
   }
 end
+
+Then(/^I go to the banner links without any error page$/) do
+  container = $container
+  banner_divs = container.all "div.flyout-campaign-wrapper"
+  links = Array.new
+  banner_divs.each { |x|
+    x.all("div.small").map{|y| links.push y.first('a')['href']}
+    x.all("div.big").map{|y| links.push y.first('a')['href']}
+  }
+
+  links.each { |x|
+    visit x
+    steps "Then I don't get the error page"
+  }
+end

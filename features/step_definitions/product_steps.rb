@@ -492,8 +492,8 @@ end
 
 
 Then(/^I should see stock left for deal of the day items for "([^"]*)"$/) do |arg|
-  page.should have_selector(".timer-box", text: "ÜRÜN")
-  item_count = extract_number find(".timer-box", text: "ÜRÜN").text
+  page.should have_selector(".timer-box", text: "Ürün")
+  item_count = extract_number find(".timer-box", text: "Ürün").text
   result = execute_sql "select StockQty from dbo.Camera_CatalogProducts where sku='#{arg}'"
   i = result.first['StockQty'].to_i
   item_count.should == i
@@ -645,10 +645,10 @@ end
 Then(/^I should see deal of the day counter in details$/) do
   button = find_by_id("addToCart")
   sku = button["data-sku"]
-  page.should have_selector(".timer-box.sale-end-timer-days", text: "GÜN")
-  page.should have_selector(".timer-box.sale-end-timer-hours", text: "SAAT")
-  page.should have_selector(".timer-box.sale-end-timer-minutes", text: "DK")
-  page.should have_selector(".timer-box.sale-end-timer-seconds", text: "SN")
+  page.should have_selector(".timer-box.sale-end-timer-days", text: "Gün")
+  page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
+  page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
+  page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
   result = execute_sql "select sale_end from dbo.Camera_CatalogProducts where sku='#{sku}'"
   t = Time.new
   result.each{|x| t =  x['sale_end']}
@@ -657,8 +657,8 @@ Then(/^I should see deal of the day counter in details$/) do
   str = diff[:diff]
   days = extract_number str
   hours = diff[:hour]
-  days.should == find(".timer-box.sale-end-timer-days", text: "GÜN").find('div.digits').text.to_i
-  hours.should == find(".timer-box.sale-end-timer-hours", text: "SAAT").find('div.digits').text.to_i
+  days.should == find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
+  hours.should == find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
 end
 
 

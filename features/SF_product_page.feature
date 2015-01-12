@@ -426,7 +426,7 @@ Feature: Product page is as expected
   @984
   Scenario: Rate reviews as negative
     Given I visit main page
-    And I search for "KPEGASUS33620"
+    And I search for "KCIZMELIKEDI53504"
     When I open search result no "1"
     And I click reviews link on details
     And I mark review no "1" as "negative"

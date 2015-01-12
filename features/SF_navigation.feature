@@ -71,15 +71,8 @@ Feature: Navigation by categories is as expected
   @523
   Scenario Outline: Click on banners and go to relevant pages
     Given I visit main page
-    And I hover on menu item "<item>"
-    When I click on first small banner
-    Then I don't get the error page
-    Given I hover on menu item "<item>"
-    When I click on second small banner
-    Then I don't get the error page
-    Given I hover on menu item "<item>"
-    When I click on big banner
-    Then I don't get the error page
+    When I hover on menu item "<item>"
+    Then I go to the banner links without any error page
   Examples:
     | item                    |
     | Elektronik   |

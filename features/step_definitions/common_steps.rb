@@ -318,17 +318,18 @@ end
 
 Then(/^There are campaign banners$/) do
   container = $container
-  banner_div = container.find "div.flyout-campaign-wrapper"
-  small_banners = banner_div.find "div.small"
-  big_banner = banner_div.find "div.big"
-  small_banners.all('img').size.should == 2
-  big_banner.all('img').size.should == 1
+  banner_divs = container.all "div.flyout-campaign-wrapper"
+  banner_divs.each { |x|
+    small_banners = x.all("div.small").size
+    big_banners = x.all("div.big").size
+    (small_banners + big_banners).size.should > 0
+  }
 end
 
 When(/^I click on first small banner$/) do
   container = $container
   banner_div = container.find "div.flyout-campaign-wrapper"
-  small_banners = banner_div.find "div.small"
+  small_banners = banner_div.find("div.small")
   visit small_banners.all('a')[0]['href']
 end
 
@@ -528,11 +529,9 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  str1 = "star-4"
-  str2 = 'star_4'
-
-   str1.should =~ /star(-|_)4/
-   str2.should =~ /star(-|_)4/
+  Timeout.timeout(0.1) do
+    sleep 1
+  end
 end
 
 When(/^I click go to desktop version link$/) do

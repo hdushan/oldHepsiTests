@@ -101,7 +101,7 @@ end
 After('@warmup') do |scenario|
   begin
     p scenario.name
-  rescue
+  rescue Exception => e
     p "Something went wrong in warmup"
   end
 end
