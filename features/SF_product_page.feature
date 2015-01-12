@@ -529,3 +529,20 @@ Feature: Product page is as expected
     When I search for "mbmettgm068"
     And I open search result no "1"
     Then The return policy has text type three
+
+  @970
+  Scenario Outline: Check product details for delivery time badges
+    Given I visit main page
+    And I search for "<sku>"
+    When I open search result no "1"
+    Then I see delivery time as "<time>"
+    Examples:
+    | sku | time |
+    | OFISALPROOSMASA2 | 2-3 Hafta |
+    | MBK105SZR1207    | 1-2 Hafta |
+    | HRFELCO9         | 6 Gün     |
+    | OUTFALFA2021     | 4 Gün     |
+    | HRTASARIM70      | 3 Gün     |
+    | HRFID761         | 2 Gün     |
+    | HRFID714         | 1 Gün     |
+    | HRFELCO30        | 24 Saat   |

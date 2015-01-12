@@ -747,3 +747,7 @@ end
 Then(/^Product details contain "([^"]*)"$/) do |arg|
   find('.timer-wrapper').should have_content arg
 end
+
+Then(/^I see delivery time as "([^"]*)"$/) do |arg|
+  find('.shipping-time').should have_content arg
+end

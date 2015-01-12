@@ -296,7 +296,7 @@ Feature: Homepage is as expected
     | Tek Tıkla Alışveriş | Ödeme ve adres bilgilerinizi kaydedin, tek tıkla alışverişin keyfini yaşayın. |
     | Mobil Cebinizde     | Dilediğiniz her yerden güvenli alışverişin keyfini çıkarın. |
 
-  @1092
+  @1092 @725
   Scenario: Check deal of the day link and deal of the day main page
     Given I visit main page
     When I click deal of the day link
