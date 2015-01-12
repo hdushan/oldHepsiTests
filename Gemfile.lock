@@ -1,8 +1,8 @@
 GIT
   remote: http://gitlab.hepsiburada.com/everyone/jmeter-test-runner.git
-  revision: b6f351c59bcf0843c72de8ac636aeeb7013530da
+  revision: 18381da66ca2382ce6695cedadcc477dedb2db1a
   specs:
-    jmeter-test-runner (0.1.1)
+    jmeter-test-runner (0.1.2)
 
 GEM
   remote: http://rubygems.org/
