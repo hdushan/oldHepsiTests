@@ -211,7 +211,7 @@ System.out.println(vars.get(&quot;PRODUCT_URL&quot;));</stringProp>
             <threadCounts>true</threadCounts>
           </value>
         </objProp>
-        <stringProp name="filename"></stringProp>
+        <stringProp name="filename">/Users/hansdushanthakumar/Workspace/hepsiburada/acceptance-tests/warmup_results.jtl</stringProp>
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
