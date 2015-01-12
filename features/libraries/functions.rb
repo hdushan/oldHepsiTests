@@ -111,6 +111,8 @@ def visit_link link
       visit format_link(link)
     rescue Timeout::Error
       visit format_link(link)
+    rescue Timeout::Error
+      p "Timeout on page: #{link}"
     end
   end
 end
