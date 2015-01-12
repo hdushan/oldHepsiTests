@@ -134,12 +134,14 @@ When /^I click on the first search suggestion/ do
 end
 
 Then /^I see products relating to (.*)/ do | key_term |
+  page.find('.search-item', match: :first)
   page.all('.search-item').each do | search_item |
     search_item.find('.product-title').text.should match(/#{key_term}/i)
   end
 end
 
 And /^I do not like any of the auto complete suggestions/ do
+  sleep 2
 end
 
 When /^I invoke search on my own keywords/ do
