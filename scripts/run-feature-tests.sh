@@ -1,25 +1,20 @@
 #!/bin/bash
 
-sudo -u root /usr/local/bin/bundle install --verbose
+/usr/local/bin/bundle install --verbose
 
-killall -9 Xvfb
-
-Xvfb :1 -screen 0 1920x1080x24 2>&1 >/dev/null &
-export DISPLAY=:1
-sleep 3
-xhost +
+sudo killall -9 xvfb-run 2>&1 >/dev/null
+sudo killall -9 cucumber 2>&1 >/dev/null
+sudo killall -9 firefox 2>&1 >/dev/null
 
 echo "Running tests against http://$1" | /usr/games/cowsay
 
-
-/usr/local/bin/cucumber features"$2" --format pretty --format html --out results.html --format junit --out results.xml host=http://"$1"
+xvfb-run -a --server-args="-screen 0 1920x1080x24" /usr/local/bin/cucumber features"$2" --format pretty --format html --out results.html --format junit --out results.xml host=http://"$1"
 
 rc=$?
 
 if [[ $rc != 0 ]] ; then
-    killall -9 Xvfb
+    killall -9 xvfb-run 2>&1 >/dev/null
     exit $rc
 fi
 
-chmod -R 777 .
-killall -9 Xvfb
+killall -8 Xvfb
