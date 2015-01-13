@@ -1,3 +1,7 @@
+## OS Note
+
+This document is for Mac OS X; if you are trying to run on Windows, please see windows_setup.md instead.
+
 ## Quickstart
 
 	cucumber --tags @journey host=http://storefront.qa.hepsiburada.com
