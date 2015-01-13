@@ -191,13 +191,13 @@ Feature: Homepage is as expected
     When There are "11" items in top sellers section
     Then I should be able to cycle all topsellers
 
-  @326 @merchant_enabled
+  @326
   Scenario: Searching for a product
     Given I visit main page
     When I search for "ayakkabı"
     Then There are some results available
 
-  @326 @merchant_enabled
+  @326
   Scenario: Going to checkout
     Given I visit main page
     When I search for "kulaklık"
@@ -206,14 +206,14 @@ Feature: Homepage is as expected
     Then I go to checkout
     And Product is listed in the checkout screen
 
-  @326 @merchant_enabled
+  @326
   Scenario: Check menu on the details page
     Given I visit main page
     When I search for "saat"
     And I open search result no "3"
     Then I am on product details
 
-  @326 @merchant_enabled
+  @326
   Scenario Outline: Menu should be available on details page
     Given I visit main page
     When I hover on menu item "<item>"
@@ -221,8 +221,8 @@ Feature: Homepage is as expected
   Examples:
     | item                    |
     | Elektronik   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
@@ -230,14 +230,14 @@ Feature: Homepage is as expected
     | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
-  @326 @merchant_enabled
+  @326
   Scenario: Check menu on the CLP
     Given I visit main page
     When I navigate to Category
       | Kitap, Müzik Film, Hobi | Müzik Enstrümanları |
     Then There are some results available
 
-  @326 @merchant_enabled
+  @326
   Scenario Outline: Menu should be available on CLP
     Given I visit main page
     When I hover on menu item "<item>"
@@ -245,8 +245,8 @@ Feature: Homepage is as expected
   Examples:
     | item                    |
     | Elektronik   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |

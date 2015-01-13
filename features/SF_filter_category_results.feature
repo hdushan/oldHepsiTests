@@ -61,7 +61,7 @@ Feature: Filter category results
   Scenario: Filtering a product in browsing
     Given I visit main page
     And I navigate to Category
-      | Oto, Bahçe Yapı Market | Hırdavat |
+      | Oto, Bahçe, Yapı Market | Hırdavat |
     And I select a sub category in browsing
       | Mobilya Hırdavatı | Tümünü Gör |
     When I apply a filter

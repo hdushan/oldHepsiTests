@@ -680,7 +680,7 @@ And(/^I wait for "([^"]*)" seconds$/) do |arg|
 end
 
 Then(/^There should be a way for me to give feedback$/) do
-  find_by_id("btnSendFeedback").click
+  find(".usabilla_live_button_container").click
   sleep 5
   frm = all('iframe', visible: true).select{ |x| x['data-tags']==nil }[0]
 end

@@ -107,7 +107,7 @@
   Scenario Outline: Page title and description with super fast shipping global filter on CLP
     Given I visit main page
     And I navigate to Category
-    | Ev, Yaşam Ofis | Elektrikli Ev Aletleri |
+    | Ev, Yaşam, Ofis | Elektrikli Ev Aletleri |
     When I apply global filter "<filter>" on "CLP"
     Then The page title is "<title>"
     And Page description contains "<description>"

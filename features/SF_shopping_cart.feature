@@ -85,7 +85,7 @@ Feature: Add to basket from details page
     And I add search result no "1" to cart from search results
     Then Cart icon should have an indication of "1"
     When I navigate to Category
-    | Oto, Bahçe Yapı Market | Bahçe & Balkon |
+    | Oto, Bahçe, Yapı Market | Bahçe & Balkon |
     And I add search result no "1" to cart from search results
     Then Cart icon should have an indication of "2"
     When I search for "kitap"

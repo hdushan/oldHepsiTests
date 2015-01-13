@@ -12,7 +12,7 @@ require 'rest-client'
 require 'tiny_tds'
 require 'time_diff'
 
-Capybara.app_host = 'http://storefront.test.hepsiburada.com'#'http://localhost:99'
+Capybara.app_host = 'http://storefront.qa.hepsiburada.com'#'http://localhost:99'
 if ENV['host']
   Capybara.app_host = ENV['host']
 end

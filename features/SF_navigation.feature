@@ -59,8 +59,8 @@ Feature: Navigation by categories is as expected
   Examples:
     | item                    |
     | Elektronik              |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
@@ -76,8 +76,8 @@ Feature: Navigation by categories is as expected
   Examples:
     | item                    |
     | Elektronik   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
@@ -126,7 +126,7 @@ Feature: Navigation by categories is as expected
     | cat1                   | cat2                  |
     | Kozmetik Kişisel Bakım | Duş ve Banyo Ürünleri |
     | Spor Outdoor           | Spor Branşları        |
-    | Ev, Yaşam Ofis         | Ev Tekstili           |
+    | Ev, Yaşam, Ofis         | Ev Tekstili           |
 
   @739
   Scenario Outline: Hide discount an top seller fields if they are disabled

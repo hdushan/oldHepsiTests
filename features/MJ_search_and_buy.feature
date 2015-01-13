@@ -2,6 +2,7 @@
 @journey
   Feature: Search and buy for mobile
 
+    @mobile_merchant_disabled
     Scenario: Search products and buy an item
       Given I visit mobile main page
       And I search for "bebek"

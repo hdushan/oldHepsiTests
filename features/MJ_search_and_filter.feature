@@ -2,6 +2,7 @@
 @journey
   Feature: Search and filter for mobile
 
+    @mobile_merchant_disabled
     Scenario: Search products and filter an item
       Given I visit mobile main page
       And I search for "kalem"

@@ -9,5 +9,4 @@ Feature: Feedback mechanism for beta
   @481
   Scenario: Open feedback window
     Given I am on the homepage
-    When I click the feedback button
     Then There should be a way for me to give feedback

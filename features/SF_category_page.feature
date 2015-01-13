@@ -54,8 +54,8 @@ Feature: Category page is as expected
   Examples:
     | item                    |
     | Elektronik   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |
@@ -78,13 +78,13 @@ Feature: Category page is as expected
     Examples:
     | cat1                    | cat2             | name |
     | Elektronik              | Isıtma ve Soğutma | Isıtma ve Soğutma |
-    | Ev, Yaşam Ofis          | Ofis / Kırtasiye | Kırtasiye / Ofis |
-    | Oto, Bahçe Yapı Market  | Seramik ve Yer Döşemeleri| Seramik ve Yer Döşemeleri   |
+    | Ev, Yaşam, Ofis          | Ofis / Kırtasiye | Kırtasiye / Ofis |
+    | Oto, Bahçe, Yapı Market  | Seramik ve Yer Döşemeleri| Seramik ve Yer Döşemeleri   |
     | Anne, Bebek Oyuncak     | Çocuk Giyim | Çocuk Giyim |
     | Spor Outdoor            | Taraftar ürünleri | Taraftar Ürünleri |
     | Kozmetik Kişisel Bakım  | El & Ayak ve Tırnak Bakımı | El kremleri Ve Bakım Ürünleri |
     | Süpermarket Petshop     | Kağıt & Kozmetik | Kağıt Ürünleri |
-    | Kitap, Müzik Film, Hobi | Hobi & Oyun | Oyun & Oyun Konsolları |
+    | Kitap, Müzik Film, Hobi | Hobi & Oyun | Hobi |
     | Giyim, Takı Aksesuar    | Altın/Takı/Mücevher | Takı & Mücevher |
 
   Scenario: Check sorting in CLP
