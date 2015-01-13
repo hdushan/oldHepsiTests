@@ -4,7 +4,7 @@ This document is for Mac OS X; if you are trying to run on Windows, please see w
 
 ## Quickstart
 
-	cucumber --tags @journey host=http://storefront.qa.hepsiburada.com
+	cucumber --tags @journey host=http://storefront.test.hepsiburada.com
 
 ## Test Setup
 
@@ -48,7 +48,7 @@ If you want to run a specific test, you can specify the file and line number
 
 You can run all regression tests by running
 
-### Linux agent requirements 
+### Linux agent requirements
 
 Linux agents require the following packages to be installed
 

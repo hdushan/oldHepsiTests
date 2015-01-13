@@ -189,7 +189,7 @@ And(/^I should see indicators for "([^"]*)"$/) do |arg|
 end
 
 And(/^I am still on mobile page$/) do
-  page.current_url.include?("storefront.qa.hepsiburada.com/m/")
+  page.current_url.include?("storefront.test.hepsiburada.com/m/")
 end
 
 Then(/^There is a top sellers section in mobile$/) do
