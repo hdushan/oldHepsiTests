@@ -55,6 +55,7 @@ end
 Then(/^I should be able to sort on CLP$/) do
   initial = find_by_id('productresults').all('.price-container').collect(&:text)
   find(".sort-wrapper .button").click
+  find_by_id('sortResultsHeader').find('a', text: 'Akıllı sıralama')['class'].include?('selected').should == true
   find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat').click
   wait_for_ajax
   sleep 2
