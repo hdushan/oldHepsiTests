@@ -36,8 +36,8 @@ Feature: Category page is as expected
   Examples:
     | item                    |
     | Elektronik   |
-    | Ev, Yaşam Ofis          |
-    | Oto, Bahçe Yapı Market  |
+    | Ev, Yaşam, Ofis          |
+    | Oto, Bahçe, Yapı Market  |
     | Anne, Bebek Oyuncak     |
     | Spor Outdoor            |
     | Kozmetik Kişisel Bakım  |

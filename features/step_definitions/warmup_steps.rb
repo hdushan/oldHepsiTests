@@ -2,7 +2,7 @@
 
 Given(/^I hover on menu item "([^"]*)" for warmup$/) do |arg|
   begin
-    el = find('ul.browser-by-category').first('li', :text=> arg)
+    el = find('ul.browser-by-category').first('li', :text=> (capitalize arg))
     $container = el.find('div.nav-home-wrapper')
   rescue Exception => e
     p "something went wrong in warmup"

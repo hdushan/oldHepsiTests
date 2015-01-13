@@ -312,7 +312,7 @@ end
 
 
 When(/^I hover on menu item "([^"]*)"$/) do |arg|
-  el = find('ul.browser-by-category').first('li', :text=> arg)
+  el = find('ul.browser-by-category').first('li', :text=> (capitalize arg))
   $container = el.find('div.nav-home-wrapper')
 end
 
@@ -528,7 +528,7 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  str = "Giyim, Takı AkŞsesuar"
+  str = "Anne, Bebek Oyuncak"
   p capitalize str
 end
 

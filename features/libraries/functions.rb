@@ -135,6 +135,8 @@ def capitalize str
         new << 'Ğ'
       when 'ı'
         new << 'I'
+      when 'ş'
+        new << 'Ş'
       when 'ö'
         new << 'Ö'
       else
@@ -152,6 +154,8 @@ def lower_case str
         new << 'i'
       when 'Ç'
         new << 'ç'
+      when 'Ş'
+        new << 'ş'
       when 'Ü'
         new << 'ü'
       when 'Ğ'
