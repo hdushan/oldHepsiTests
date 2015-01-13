@@ -95,7 +95,7 @@ end
 Given(/^I navigate to Category$/) do |table|
   # table is a table.hashes.keys # => [:Elektronik Beyaz Eşya, :Bilgisayar Tablet]
   values = table.raw[0]
-  cat1 = find('ul.browser-by-category').first('li', :text=> values[0])
+  cat1 = find('ul.browser-by-category').first('li', :text=> (capitalize values[0]))
   link = cat1.find('div.nav-home-wrapper').first('a', :text=> values[1])['href']
   visit_link link
   $current_results = extract_number find_by_id('totalItems').text
@@ -528,9 +528,8 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  Timeout.timeout(0.1) do
-    sleep 1
-  end
+  str = "Giyim, Takı AkŞsesuar"
+  p capitalize str
 end
 
 When(/^I click go to desktop version link$/) do

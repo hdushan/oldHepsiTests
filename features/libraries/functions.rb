@@ -120,3 +120,49 @@ end
 def clear_special str
   return str.gsub(/[^0-9A-Za-z]/, '')
 end
+
+def capitalize str
+  new = String.new
+  for i in 0..(str.size - 1)
+    case str[i]
+      when 'i'
+        new << 'İ'
+      when 'ç'
+        new << 'Ç'
+      when 'ü'
+        new << 'Ü'
+      when 'ğ'
+        new << 'Ğ'
+      when 'ı'
+        new << 'I'
+      when 'ö'
+        new << 'Ö'
+      else
+        new << str[i].upcase
+    end
+  end
+  return new.to_s
+end
+
+def lower_case str
+  new = String.new
+  for i in 0..(str.size - 1)
+    case str[i]
+      when 'İ'
+        new << 'i'
+      when 'Ç'
+        new << 'ç'
+      when 'Ü'
+        new << 'ü'
+      when 'Ğ'
+        new << 'ğ'
+      when 'I'
+        new << 'ı'
+      when 'Ö'
+        new << 'ö'
+      else
+        new << str[i].downcase
+    end
+  end
+  return new.to_s
+end
