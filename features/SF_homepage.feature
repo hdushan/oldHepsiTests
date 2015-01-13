@@ -164,14 +164,14 @@ Feature: Homepage is as expected
     Then Favicon should be on mobile page
 
   @484
-  Scenario: Checking opt-in and opt-out bar on existing website
-    Given I visit legacy home page
-    When I see opt-in bar
-    And I click opt-in button
-    Then I am at main page
-    And I see opt-out bar
-    When I click opt-out button
-    Then I am on old hepsiburada mainpage
+#  Scenario: Checking opt-in and opt-out bar on existing website
+#    Given I visit legacy home page
+#    When I see opt-in bar
+#    And I click opt-in button
+#    Then I am at main page
+#    And I see opt-out bar
+#    When I click opt-out button
+#    Then I am on old hepsiburada mainpage
 
   @484
   Scenario: Never shoving opt-in bar again
