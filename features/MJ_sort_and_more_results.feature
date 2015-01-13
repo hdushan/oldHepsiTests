@@ -15,14 +15,17 @@
       When I click load more results
       Then There are more than "20" results
 
-    Scenario Outline: Sort results
+
+    Scenario: Results are sorted by smart sort
       Given I search for "playstation ps 3"
-      And There are some results available
+      When There are some results available
+      Then Results are sorted according to "smart" filter on mobile
+
+    Scenario Outline: Sort results
       When I sort with "<sort_criteria>" filter on mobile
       Then Results are sorted according to "<sort_criteria>" filter on mobile
       Examples:
       | sort_criteria      |
-      | smart              |
       | most-selling       |
       | lowest-price       |
       | highest-price      |
