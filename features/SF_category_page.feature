@@ -28,41 +28,6 @@ Feature: Category page is as expected
     | Markalar | Apple |
     Then There should be an indication that some items are not available
 
-  @448
-  Scenario Outline: Hover an menu items and check content
-    Given I visit main page
-    When I hover on menu item "<item>"
-    Then There are items in the menu content
-  Examples:
-    | item                    |
-    | Elektronik   |
-    | Ev, Yaşam, Ofis          |
-    | Oto, Bahçe, Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Hobi |
-    | Giyim, Takı Aksesuar    |
-
-  @448
-  Scenario Outline: Hover an menu items and visit content
-    Given I visit main page
-    And I hover on menu item "<item>"
-    When I store links from this menu item
-    Then I visit these links without an error page
-  Examples:
-    | item                    |
-    | Elektronik   |
-    | Ev, Yaşam, Ofis          |
-    | Oto, Bahçe, Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Hobi |
-    | Giyim, Takı Aksesuar    |
-
   Scenario: Check about variant message on CLP
     Given I visit main page
     When I navigate to Category

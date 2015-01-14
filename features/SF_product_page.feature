@@ -571,6 +571,7 @@ Feature: Product page is as expected
     When I open search result no "1"
     And I click add comment from product description
     Then Comment fields should appear as expected
+    And I log out
 
   @1015
   Scenario: Check Mandatory Fields
@@ -580,6 +581,7 @@ Feature: Product page is as expected
     When I open search result no "1"
     And I click add comment from comments tab
     Then I should not be able to submit without mandatory fields
+    And I log out
 
   @1015
   Scenario: Check character limit
@@ -589,6 +591,7 @@ Feature: Product page is as expected
     When I open search result no "1"
     And I click add comment from comments tab
     Then I should not be able to pass character limits
+    And I log out
 
   @1015
   Scenario: Successful comment input
@@ -616,6 +619,7 @@ Feature: Product page is as expected
     | header    | başlık                          |
     | review    | bu review ı yazan adam kör oldu |
     | sku       | AILEMLP001001070                |
+    And I log out
 
 
 

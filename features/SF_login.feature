@@ -72,3 +72,4 @@ Feature: Login using email and password
     Then I am logged in as "test user"
     And I get these login options
     | Mesajlarım | Üyelik Bilgilerim | Hediye Çeklerim | Ödeme Kuponlarım | Çıkış Yap |
+    And I log out

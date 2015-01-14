@@ -921,3 +921,11 @@ And(/^I see the approved comment on the product detail$/) do |table|
   review.should have_selector("div[style='width: #{(rating*20).to_s}%']")
   # add date control
 end
+
+And(/^I log out$/) do
+  visit_main_page
+  div = find_by_id('myAccount')
+  div.click
+  div.find('a', text: "Çıkış Yap").click
+  sleep 2
+end

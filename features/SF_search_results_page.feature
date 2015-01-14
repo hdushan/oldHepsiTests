@@ -286,6 +286,7 @@ Feature: Search page is as expected
   Scenario: All deal of the day items should have stock indicators
     Given I visit main page
     When I go to deals of the day page
+    And I am on deals of the day page
     Then All deals of the day should have stock indicators
 
   @1043
