@@ -83,6 +83,46 @@ task :warmup, [:server_url] do |t, args |
   end  
 end
 
+desc "Run Jmeter Warmup Tests"
+task :warmup_journey, [:server_url] do |t, args |
+  require 'jmeter-test-runner'
+  puts "Running Warmup Load Test"
+  loadtest_script = "performance/warmup_journey.jmx"
+  result_file = "warmup_journey_results.jtl"
+  result_file_html = "warmup_journey_results.html"
+  if args[:server_url] != ""
+    options = "SERVER_URL=#{args[:server_url]}"
+  else
+    options = ''
+  end
+  begin
+    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
+  rescue => e
+    puts e.to_s
+    abort("\nWarmup Load test not successful\n")
+  end  
+end
+
+desc "Run Jmeter Warmup Tests"
+task :warmup_regression, [:server_url] do |t, args |
+  require 'jmeter-test-runner'
+  puts "Running Warmup Load Test"
+  loadtest_script = "performance/warmup_regression.jmx"
+  result_file = "warmup_regression_results.jtl"
+  result_file_html = "warmup_regression_results.html"
+  if args[:server_url] != ""
+    options = "SERVER_URL=#{args[:server_url]}"
+  else
+    options = ''
+  end
+  begin
+    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
+  rescue => e
+    puts e.to_s
+    abort("\nWarmup Load test not successful\n")
+  end  
+end
+
 def check_for_errors(result_file_html, threshold)
   require 'nokogiri'
   page = Nokogiri::HTML(open(result_file_html)) 
