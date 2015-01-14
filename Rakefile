@@ -6,8 +6,8 @@ cucumber_base_options = "--format pretty --format html --out results.html "
 cucumber_command = "#{feature_to_run} #{cucumber_base_options}"
 
 desc "This is a test task"
-task :test, [:param] do | t, args|
-  puts "Hello #{args[:param]}"
+task :test, [:param, :param1] do | t, args|
+  puts "Hello #{args[:param]}, #{args[:param1]}"
 end
 
 desc "Run tests tagged with the story number, Usage example: rake story[36]"
@@ -19,9 +19,10 @@ task :story, [:storynum] do |t, args|
 end
 
 desc "Run a feature file, and rerun it if it failed"
-task :feature_run, [:feature_name] do |t, args|
+task :feature_run, [:feature_name,:host_server] do |t, args|
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
-  puts "***** Running feature #{args[:feature_name]} *****"
+  ENV['host'] = args[:host_server]
+  puts "***** Running feature #{args[:feature_name]} on Server: #{ENV['host']} *****"
   begin
     Cucumber::Rake::Task.new(:cucumber_feature) do |t| 
       cucumber_base_options = "--format pretty --format html --out results.html "
