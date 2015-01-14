@@ -290,16 +290,16 @@ Feature: Product page is as expected
    @726 @1095
    Scenario: See the timer on Deal of the Day product detail pages
      Given I visit main page
-     When I search for "FTKAMEVERST1"
+     When I search for "EVLG49UB820V"
      And I open search result no "1"
      Then I should see deal of the day counter in details
 
   @727 @1095
   Scenario: See stock left for Deal of the Day items
     Given I visit main page
-    When I search for "FTKAMEVERST1"
+    When I search for "EVLG49UB820V"
     And I open search result no "1"
-    Then I should see stock left for deal of the day items for "FTKAMEVERST1"
+    Then I should see stock left for deal of the day items for "EVLG49UB820V"
 
   @168
   Scenario: Search for gold
@@ -546,3 +546,80 @@ Feature: Product page is as expected
     | HRFID761         | 2 Gün     |
     | HRFID714         | 1 Gün     |
     | HRFELCO30        | 24 Saat   |
+
+  @1015
+  Scenario: Comment without login from description
+    Given I visit main page
+    And I search for "yemek kitabı"
+    When I open search result no "1"
+    And I click add comment from product description
+    Then I should be redirected to login page
+
+  @1015
+  Scenario: Comment without login from comment tab
+    Given I visit main page
+    And I search for "yemek kitabı"
+    When I open search result no "1"
+    And I click add comment from comments tab
+    Then I should be redirected to login page
+
+  @1015
+  Scenario: Validate Add Comment fields
+    Given I visit main page
+    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
+    And I search for "bebek maması"
+    When I open search result no "1"
+    And I click add comment from product description
+    Then Comment fields should appear as expected
+
+  @1015
+  Scenario: Check Mandatory Fields
+    Given I visit main page
+    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
+    And I search for "bebek maması"
+    When I open search result no "1"
+    And I click add comment from comments tab
+    Then I should not be able to submit without mandatory fields
+
+  @1015
+  Scenario: Check character limit
+    Given I visit main page
+    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
+    And I search for "bebek maması"
+    When I open search result no "1"
+    And I click add comment from comments tab
+    Then I should not be able to pass character limits
+
+  @1015
+  Scenario: Successful comment input
+    Given I visit main page
+    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
+    And I search for "AILEMLP001001070"
+    When I open search result no "1"
+    And I click add comment from product description
+    Then I add a comment with these values
+    | header    | başlık                          |
+    | review    | bu review ı yazan adam kör oldu |
+    | rating    | 3 star                          |
+    | show_name | Evet                            |
+    And I get a message about successful comment adding
+    And Admin approves added comment
+      | header    | başlık                          |
+      | review    | bu review ı yazan adam kör oldu |
+      | sku       | AILEMLP001001070                |
+    And I see the approved comment on the product detail
+      | header    | başlık                          |
+      | review    | bu review ı yazan adam kör oldu |
+      | rating    | 3 star                          |
+      | name      | test user                       |
+    And I delete comment from db
+    | header    | başlık                          |
+    | review    | bu review ı yazan adam kör oldu |
+    | sku       | AILEMLP001001070                |
+
+
+
+
+
+
+

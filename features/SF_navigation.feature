@@ -139,7 +139,7 @@ Feature: Navigation by categories is as expected
   Examples:
     | cat1         | cat2           |
     | Spor Outdoor | Spor Branşları |
-    | Oto, Bahçe   | Banyo          |
+    | Oto, Bahçe   | Güvenlik       |
 
   @958
   Scenario: Show thumbnails on carousel

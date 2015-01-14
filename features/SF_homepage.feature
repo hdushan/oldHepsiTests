@@ -163,7 +163,7 @@ Feature: Homepage is as expected
     Given I visit mobile main page
     Then Favicon should be on mobile page
 
-  @484
+#  @484
 #  Scenario: Checking opt-in and opt-out bar on existing website
 #    Given I visit legacy home page
 #    When I see opt-in bar

@@ -149,24 +149,24 @@ Feature: Search page is as expected
     When I search for "ahndarabberete"
     Then I should see no results page
 
-  @256
-  Scenario: More brands button on CLP
-    Given I visit main page
-    And I navigate to Category
-    | Elektronik | Bilgisayar/Tablet |
-    When There are "10" brands in brand filter
-    And There is more brands button
-    Then I press more brands button
-    And There are more than "10" brands in the filter area
+#  @256
+#  Scenario: More brands button on CLP
+#    Given I visit main page
+#    And I navigate to Category
+#    | Elektronik | Bilgisayar/Tablet |
+#    When There are "10" brands in brand filter
+#    And There is more brands button
+#    Then I press more brands button
+#    And There are more than "10" brands in the filter area
 
-  @256
-  Scenario: More brands button on search results
-    Given I visit main page
-    And I search for "kitap"
-    When There are "10" brands in brand filter
-    And There is more brands button
-    Then I press more brands button
-    And There are more than "10" brands in the filter area
+#  @256
+#  Scenario: More brands button on search results
+#    Given I visit main page
+#    And I search for "kitap"
+#    When There are "10" brands in brand filter
+#    And There is more brands button
+#    Then I press more brands button
+#    And There are more than "10" brands in the filter area
 
   @253
   Scenario: Filtering results within subcategories (second to third, third to fourth levels)
@@ -264,11 +264,11 @@ Feature: Search page is as expected
       | Ürün Kilogram | 10-15 kg |
     Then There are some results available
 
-  @1020
-  Scenario: Use more filters button on filter fields
-    Given I visit link "/akilli-telefon-c-371946"
-    When There are more filters button on filters
-    Then I click every more filters button and expand filters
+#  @1020
+#  Scenario: Use more filters button on filter fields
+#    Given I visit link "/akilli-telefon-c-371946"
+#    When There are more filters button on filters
+#    Then I click every more filters button and expand filters
 
   Scenario: More results button on CLP
     Given I visit main page

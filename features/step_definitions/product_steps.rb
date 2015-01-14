@@ -483,18 +483,19 @@ Then(/^I should see deal of the day counter for "([^"]*)"$/) do |arg|
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "SAAT")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "DK")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "SN")
-  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{arg}'"
+  result = execute_sql "select sale_end from dbo.EE_CatalogProducts where sku='#{arg}'"
   t = Time.new
-  result.each{|x| t =  x['SaleEnd']}
+  result.each{|x| t =  x['sale_end']}
   p t
   p Time.now
 end
 
 
 Then(/^I should see stock left for deal of the day items for "([^"]*)"$/) do |arg|
+  page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
   page.should have_selector(".timer-box", text: "Ürün")
   item_count = extract_number find(".timer-box", text: "Ürün").text
-  result = execute_sql "select StockQty from dbo.Camera_CatalogProducts where sku='#{arg}'"
+  result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{arg}' and Status = 2 ORDER BY ID DESC"
   i = result.first['StockQty'].to_i
   item_count.should == i
 end
@@ -645,14 +646,15 @@ end
 Then(/^I should see deal of the day counter in details$/) do
   button = find_by_id("addToCart")
   sku = button["data-sku"]
+  page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
   page.should have_selector(".timer-box.sale-end-timer-days", text: "Gün")
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
-  result = execute_sql "select sale_end from dbo.Camera_CatalogProducts where sku='#{sku}'"
+  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
   t = Time.new
-  result.each{|x| t =  x['sale_end']}
-  now = Time.now - 7200
+  result.each{|x| t =  x['SaleEnd']}
+  now = Time.now - 10800
   diff = Time.diff(now, t, '%d')
   str = diff[:diff]
   days = extract_number str
@@ -750,4 +752,172 @@ end
 
 Then(/^I see delivery time as "([^"]*)"$/) do |arg|
   find('.shipping-time').should have_content arg
+end
+
+And(/^I click add comment from product description$/) do
+  find(".ratings-container").find("a", text: "Yorum Yap").click
+end
+
+Then(/^I should be redirected to login page$/) do
+  find_by_id("login-container").find_by_id("email")
+  find_by_id("login-container").find_by_id("password")
+  find_by_id("login-container").find("button", text: "Giriş")
+end
+
+And(/^I click add comment from comments tab$/) do
+  find_by_id("productReviewsTab").click
+  find_by_id("reviewContainer").find("a", text: "Puan ver Yorum yap").click
+end
+
+Then(/^Comment fields should appear as expected$/) do
+  div = find_by_id("addReviewContainer")
+  title = div.find('h5')
+  title.text.should == find_by_id("product-name").text
+  div.find('label', text: "Yorumunuza bir başlık yazınız.")
+  div.find('label', text: "Ürünle ilgili düşüncelerinizi buraya yazınız.")
+  div.find('label', text: "Puan Ver")
+  div.should have_content "Yorumda İsmim gözüksün"
+  header = div.find_by_id('txtTitle')
+  review = div.find_by_id('txtReview')
+  header_counter = div.all("span.count").select{|x| x["data-bind"] == "text: titleCount()"}.first
+  review_counter = div.all("span.count").select{|x| x["data-bind"] == "text: reviewCount()"}.first
+  header_counter.text.should == "150"
+  review_counter.text.should == "2000"
+  div.find_by_id('rating-1')
+  div.find_by_id('rating-2')
+  div.find_by_id('rating-3')
+  div.find_by_id('rating-4')
+  div.find_by_id('rating-5')
+  div.find('label', text: "Evet")
+  div.find('label', text: "Hayır")
+  button = div.find('a', text: 'Yorum Yap')
+end
+
+Then(/^I should not be able to submit without mandatory fields$/) do
+  div = find_by_id("addReviewContainer")
+  button = div.find('a', text: 'Yorum Yap')
+  button.click
+  div.find_by_id("messageContainer", text: "Lütfen başlık giriniz.")
+  div.find_by_id("messageContainer", text: "Lütfen yorum giriniz.")
+  div.find_by_id("messageContainer", text: "Lütfen puan seçiniz.")
+  header = div.find_by_id('txtTitle')
+  review = div.find_by_id('txtReview')
+  header.set "Comment header test1"
+  review.set "Comment review should be at least five sentences test1"
+  button.click
+  div.find_by_id("messageContainer", text: "Lütfen puan seçiniz.")
+
+  header.set ""
+  review.set "Comment review should be at least five sentences test2"
+  div.find_by_id('rating-3').click
+  button.click
+  div.find_by_id("messageContainer", text: "Lütfen başlık giriniz.")
+
+  header.set "Comment header test2"
+  review.set ""
+  div.find_by_id('rating-2').click
+  button.click
+  div.find_by_id("messageContainer", text: "Lütfen yorum giriniz.")
+
+  header.set "as"
+  review.set "new rev"
+  button.click
+  div.find_by_id("messageContainer", text: "Lütfen daha açıklayıcı başlık giriniz.")
+  div.find_by_id("messageContainer", text: "Lütfen daha açıklayıcı yorum giriniz.")
+  end
+
+Then(/^I should not be able to pass character limits$/) do
+  div = find_by_id("addReviewContainer")
+  header = div.find_by_id('txtTitle')
+  review = div.find_by_id('txtReview')
+  c_150 = "Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0"
+  c_151 = "Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl01"
+  c_2000 = "Asdfghjkl0Asdfghjkl0Asdfghj l0Asdfghjkl0Asdfghjkl0Asdfghjkl0A dfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asd ghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjk 0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdf hjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfgh kl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0"
+  c_2002 = "Asdfghjkl0Asdfghjkl0Asdfghj l0Asdfghjkl0Asdfghjkl0Asdfghjkl0A dfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asd ghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjk 0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdf hjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfgh kl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl0Asdfghjkl023"
+  c_special = "# ? .. : < > >|||| !'^+%&/() ^'&/()=)(){[$½#$½£$#[#½\" "
+  header_counter = div.all("span.count").select{|x| x["data-bind"] == "text: titleCount()"}.first
+  header.set c_151
+  header.value.should_not == c_151
+  header.value.should == c_150
+  header_counter.text.should == "0"
+  header.set c_150
+  header.value.should == c_150
+  header_counter.text.should == "0"
+
+  review_counter = div.all("span.count").select{|x| x["data-bind"] == "text: reviewCount()"}.first
+  review.set c_2002
+  review.value.should_not == c_2002
+  review.value.should == c_2000
+  review_counter.text.should == "0"
+  review.set c_2000
+  review.value.should == c_2000
+  review_counter.text.should == "0"
+  
+  header.set "ab"
+  header_counter.text.should == "148"
+  header.set "alper"
+  header_counter.text.should == "145"
+  header.set "alper gamze"
+  header_counter.text.should == "139"
+
+  review.set "as"
+  review_counter.text.should == "1998"
+  review.set "alper"
+  review_counter.text.should == "1995"
+  review.set "alper gamze"
+  review_counter.text.should == "1989"
+end
+
+Then(/^I add a comment with these values$/) do |table|
+  # table is a table.hashes.keys # => [:header, :başlık]
+  values = Hash[table.raw]
+  div = find_by_id("addReviewContainer")
+  button = div.find('a', text: 'Yorum Yap')
+  header = div.find_by_id('txtTitle')
+  review = div.find_by_id('txtReview')
+  header.set values['header']
+  review.set values['review']
+  i = extract_number values['rating']
+  div.find_by_id("rating-#{i.to_s}").click
+  shw_name = values['show_name']
+  div.find('label', text: shw_name).click
+  button.click
+end
+
+And(/^I delete comment from db$/) do |table|
+  # table is a table.hashes.keys # => [:header, :başlık]
+  values = Hash[table.raw]
+  execute_sql %"delete top(1) from i_yorum where
+                yorumheader='#{values['header']}' and yorum = '#{values['review']}'
+                and pf_id = '#{values['sku'].downcase}'"
+end
+
+And(/^I get a message about successful comment adding$/) do
+  title = find_by_id('product-name').text
+  message = find_by_id('successReviewMessage')
+  message.should have_content title
+  message.should have_content "Bu ürün hakkındaki deneyimlerinizi paylaştığınız için teşekkür ederiz. Yorumunuz uygun bulunduğu takdirde en geç bir hafta içinde yayınlanacaktır. Unutmayınız ki yorumların amacı kullanıcılara en doğru bilgiyi direkt olarak bu ürünü kullanan tarafından ulaştırılmasını sağlamaktır. Firmaları ya da kişileri doğrudan hedef alan taraflı yazılar yayınlanmayabilir."
+  message.find('a.closebtn').click
+end
+
+And(/^Admin approves added comment$/) do |table|
+  # table is a table.hashes.keys # => [:header, :başlık]
+  values = Hash[table.raw]
+  execute_sql %"update top(1) i_yorum set onay = 1
+                where yorumheader = '#{values['header']}' and yorum = '#{values['review']}'
+                and pf_id = '#{values['sku'].downcase}'"
+end
+
+And(/^I see the approved comment on the product detail$/) do |table|
+  # table is a table.hashes.keys # => [:header, :başlık]
+  values = Hash[table.raw]
+  steps %{And I refresh page}
+  steps %{And I click add comment from comments tab}
+  review = find_by_id('reviews').find('li.review-item', match: :first)
+  rating = extract_number values['rating']
+  review.should have_content values['header']
+  review.should have_content values['review']
+  review.should have_content values['name']
+  review.should have_selector("div[style='width: #{(rating*20).to_s}%']")
+  # add date control
 end

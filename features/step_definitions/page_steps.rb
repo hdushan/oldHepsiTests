@@ -1,6 +1,6 @@
 #encoding: UTF-8
 Given /^I navigate to the computers category landing page/ do
-  visit_link 'http://storefront.test.hepsiburada.com/bilgisayar-c-2147483646'
+  visit_link 'http://storefront.qa.hepsiburada.com/bilgisayar-c-2147483646'
 end
 
 Then /^I see an indicator of free shipping associated with at least one item/ do

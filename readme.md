@@ -4,7 +4,7 @@ This document is for Mac OS X; if you are trying to run on Windows, please see w
 
 ## Quickstart
 
-	cucumber --tags @journey host=http://storefront.test.hepsiburada.com
+	cucumber --tags @journey host=http://storefront.qa.hepsiburada.com
 
 ## Test Setup
 

@@ -26,7 +26,7 @@
     Examples:
     | category               | sub_category       |
     | Elektronik   | Isıtma ve Soğutma  |
-    | Oto, Bahçe Yapı Market | Güvenlik           |
+    | Oto, Bahçe, Yapı Market | Güvenlik           |
     | Anne, Bebek Oyuncak    | Emzirme            |
     | Kozmetik Kişisel Bakım | Parfüm & Deodorant |
 
@@ -34,7 +34,7 @@
   Scenario Outline: Use global filter from within a category
     Given I visit main page
     And I navigate to Category
-    | Ev, Yaşam Ofis | Mobilya |
+    | Ev, Yaşam, Ofis | Mobilya |
     When I apply global filter "<filter>" on "CLP"
     Then There are some results available
     And I select a sub category in search

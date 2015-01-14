@@ -8,7 +8,7 @@ Feature: Add to basket from details page
     And I clear cart items
     And I visit main page
     And I see the cart item count is 0
-    When I search for "MTSUNOCKE03"
+    When I search for "AYKGREM16998MA42"
     And I select a product from search results
     And I add "2" product(s) to cart
     And I go to checkout
@@ -20,7 +20,7 @@ Feature: Add to basket from details page
     And I clear cart items
     And I visit main page
     And I see the cart item count is 0
-    When I search for "MTSUNOCKE03"
+    When I search for "AYKGREM16998MA42"
     Then I select a product from search results
     And I add "1" product(s) to cart
     And I go to checkout
@@ -34,7 +34,7 @@ Feature: Add to basket from details page
     And I clear cart items
     And I visit main page
     And I see the cart item count is 0
-    When I search for "MTSUNOCKE03"
+    When I search for "AYKGREM16998MA42"
     Then I select a product from search results
     And I add "1" product(s) to cart
     And I go to checkout
@@ -52,7 +52,7 @@ Feature: Add to basket from details page
     And I clear cart items
     And I visit main page
     And I see the cart item count is 0
-    When I search for "MTSUNOCKE03"
+    When I search for "AYKGREM16998MA42"
     Then I select a product from search results
     When I add "1" product(s) to cart
     Then I see the cart item count is 1
