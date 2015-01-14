@@ -8,7 +8,7 @@ sudo killall -9 firefox 2>&1 >/dev/null
 
 echo "Running tests against http://$1" | /usr/games/cowsay
 
-xvfb-run -a --server-args="-screen 0 1920x1080x24" /usr/local/bin/cucumber features"$2" --format pretty --format html --out results.html --format junit --out results.xml host=http://"$1"
+xvfb-run -a --server-args="-screen 0 1920x1080x24" /usr/local/bin/cucumber features/"$2".feature --format pretty --format html --out results.html --format junit --out results.xml host=http://"$1"
 
 rc=$?
 
