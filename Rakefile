@@ -21,20 +21,22 @@ end
 desc "Run a feature file, and rerun it if it failed"
 task :feature_run, [:feature_name,:host_server] do |t, args|
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
-  ENV['host'] = args[:host_server]
-  puts "***** Running feature #{args[:feature_name]} on Server: #{ENV['host']} *****"
+  ENV['host'] = "http://" + args[:host_server]
+  puts "***** Running feature file #{feature_to_run} on Server: #{ENV['host']} *****"
   begin
     Cucumber::Rake::Task.new(:cucumber_feature) do |t| 
       cucumber_base_options = "--format pretty --format html --out results.html "
       t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
+      puts "t.cucumber_opts = #{t.cucumber_opts}"
     end
     Rake::Task[:cucumber_feature].invoke()
   rescue => e
     puts e.to_s
-    puts "***** Rerunning feature #{args[:feature_name]} *****"
+    puts "***** Rerunning feature #{feature_to_run} *****"
     Cucumber::Rake::Task.new(:cucumber_feature_retry) do |t|
       cucumber_base_options = "--format pretty --format html --out results_of_retry.html "
       t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
+      puts "t.cucumber_opts = #{t.cucumber_opts}"
     end
     Rake::Task[:cucumber_feature_retry].invoke()
   end
