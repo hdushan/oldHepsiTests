@@ -1,26 +1,36 @@
 require 'cucumber'
 require 'cucumber/rake/task'
 
-cucumber_base_options = "features --format pretty --format html --out results.html "
-
-Cucumber::Rake::Task.new(task_name="regression", desc="Run all tests except the ones inprogress") do |t|
-  t.cucumber_opts = cucumber_base_options + "--tags ~@flaky"
-end
-
-Cucumber::Rake::Task.new(task_name="inprogress", desc="Run all inprogress tests only") do |t|
-  t.cucumber_opts = cucumber_base_options + "--tags @inprogress"
-end
-
-Cucumber::Rake::Task.new(task_name="flaky", desc="Run all inprogress tests only") do |t|
-  t.cucumber_opts = cucumber_base_options + "--tags @flaky"
-end
+feature_to_run = "features"
+cucumber_base_options = "--format pretty --format html --out results.html "
+cucumber_command = "#{feature_to_run} #{cucumber_base_options}"
 
 desc "Run tests tagged with the story number, Usage example: rake story[36]"
 task :story, [:storynum] do |t, args|
-  Cucumber::Rake::Task.new(:cucumber) do |t|
-    t.cucumber_opts = cucumber_base_options + "--tags @#{args[:storynum]}"
+  Cucumber::Rake::Task.new(:cucumber_story) do |t|
+    t.cucumber_opts = cucumber_command + "--tags @#{args[:storynum]}"
   end
-  Rake::Task[:cucumber].invoke()
+  Rake::Task[:cucumber_story].invoke()
+end
+
+desc "Run a feature file, and rerun it if it failed"
+task :feature, [:feature_name] do |t, args|
+  feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
+  puts "***** Running feature #{args[:feature_name]} *****"
+  begin
+    Cucumber::Rake::Task.new(:cucumber_feature) do |t| 
+      cucumber_base_options = "--format pretty --format html --out results.html "
+      t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
+    end
+    Rake::Task[:cucumber_feature].invoke()
+  rescue => e
+    puts e.to_s
+    puts "***** Rerunning feature #{args[:feature_name]} *****"
+    Cucumber::Rake::Task.new(:cucumber_feature_retry) do |t|
+      cucumber_base_options = "--format pretty --format html --out results_of_retry.html "
+      t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
+    end
+    Rake::Task[:cucumber_feature_retry].invoke()
 end
 
 desc "Run Jmeter Performance Tests"
