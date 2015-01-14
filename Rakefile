@@ -5,6 +5,11 @@ feature_to_run = "features"
 cucumber_base_options = "--format pretty --format html --out results.html "
 cucumber_command = "#{feature_to_run} #{cucumber_base_options}"
 
+desc "This is a test task"
+task :test, [:param] do | t, args|
+  puts "Hello #{args[:param]}"
+end
+
 desc "Run tests tagged with the story number, Usage example: rake story[36]"
 task :story, [:storynum] do |t, args|
   Cucumber::Rake::Task.new(:cucumber_story) do |t|
@@ -13,8 +18,14 @@ task :story, [:storynum] do |t, args|
   Rake::Task[:cucumber_story].invoke()
 end
 
+desc "Run a featurex file, and rerun it if it failed"
+task :feature_runx, [:feature_name] do |t, args|
+  puts "Helloooo"
+end
+
 desc "Run a feature file, and rerun it if it failed"
-task :feature, [:feature_name] do |t, args|
+task :feature_run, [:feature_name] do |t, args|
+  puts "Helloooo"
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
   puts "***** Running feature #{args[:feature_name]} *****"
   begin
@@ -31,6 +42,7 @@ task :feature, [:feature_name] do |t, args|
       t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
     end
     Rake::Task[:cucumber_feature_retry].invoke()
+  end
 end
 
 desc "Run Jmeter Performance Tests"
@@ -88,5 +100,3 @@ def run_load_test(loadtest_path, loadtest_result_path, loadtest_result_format, l
   testRunner = JmeterTestRunner::Test.new(loadtest_path, loadtest_result_path, loadtest_result_format, loadtest_html_result_path, options)
   testRunner.start()
 end
-
-task :default => [:regression]

@@ -8,7 +8,7 @@ sudo killall -9 firefox 2>&1 >/dev/null
 
 echo "Running tests for feature $2, against http://$1" | /usr/games/cowsay
 
-xvfb-run -a --server-args="-screen 0 1920x1080x24" host=http://"$1" /usr/local/bin/bundle exec rake feature["$2"]
+xvfb-run -a --server-args="-screen 0 1920x1080x24" host=http://"$1" /usr/local/bin/bundle exec rake feature_run["$2"]
 
 rc=$?
 
