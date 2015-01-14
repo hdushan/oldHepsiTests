@@ -18,14 +18,8 @@ task :story, [:storynum] do |t, args|
   Rake::Task[:cucumber_story].invoke()
 end
 
-desc "Run a featurex file, and rerun it if it failed"
-task :feature_runx, [:feature_name] do |t, args|
-  puts "Helloooo"
-end
-
 desc "Run a feature file, and rerun it if it failed"
 task :feature_run, [:feature_name] do |t, args|
-  puts "Helloooo"
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
   puts "***** Running feature #{args[:feature_name]} *****"
   begin
