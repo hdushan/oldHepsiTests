@@ -304,3 +304,11 @@ Then(/^There is a search result count message for search "([^"]*)"$/) do |arg|
   title.should have_content "sonuç bulundu."
   (extract_number find_by_id('totalItems').text).to_i.should > 0
 end
+
+Then(/^I don't see more filters buttons in filters$/) do
+  filters = find('.filters-container').all('ol')
+  filters.each { |x|
+    x.all('li.hide').size.should == 0
+    x.first('button').should == nil
+  }
+end

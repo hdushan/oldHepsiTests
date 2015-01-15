@@ -294,3 +294,25 @@ Feature: Search page is as expected
     Given I visit main page
     When I search for "telefon"
     Then There is a search result count message for search "telefon"
+
+  @1192
+  Scenario Outline: Check filter fields for more filters buttons in clps
+    Given I visit main page
+    When I navigate to Category
+    | <cat1> | <cat2> |
+    And There are some results available
+    Then I don't see more filters buttons in filters
+    Examples:
+    | cat1                 | cat2           |
+    | Elektronik           | Akıllı Telefon |
+    | Giyim, Takı Aksesuar | Erkek          |
+
+  @1192
+  Scenario Outline: Check filter fields for more filters buttons in search results
+    Given I visit main page
+    When I search for "<item>"
+    Then I don't see more filters buttons in filters
+    Examples:
+    | item     |
+    | gömlek   |
+    | ayakkabı |

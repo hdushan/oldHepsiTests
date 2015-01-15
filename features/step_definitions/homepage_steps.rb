@@ -327,4 +327,7 @@ Then(/^I am on deals of the day page$/) do
   find_by_id('productresults').find('.search-item', match: :first)
   find_by_id('productresults').all('.search-item').each{|x| x.should have_selector '.discount-badge'}
   find('section.page-options')
+  find('button.button.light').click
+  expect(find('a', text: "En erken biten")[:class]).to include 'selected'
+  find('button.button.light').click
 end
