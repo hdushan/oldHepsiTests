@@ -58,3 +58,8 @@ Feature: Category page is as expected
     | Elektronik | Yazıcılar Tarayıcılar |
     And There are some results available
     Then I should be able to sort on CLP
+
+  @1173
+  Scenario: I shouldn't see vodafone campaign filter on smartphone CLP
+    Given I visit link "/akilli-telefon-c-371946"
+    Then I should not see a filter for "Vodafone"

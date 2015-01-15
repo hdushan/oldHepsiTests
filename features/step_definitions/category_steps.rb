@@ -72,3 +72,7 @@ Then(/^I should be able to sort on CLP$/) do
   last = find_by_id('productresults').all('.price-container').collect(&:text)
   initial.should_not == last
 end
+
+Then(/^I should not see a filter for "([^"]*)"$/) do |arg|
+  find('.FiltersList').all('h6').select{ |x| x.text =~ /#{arg}/i }.size.should == 0
+end
