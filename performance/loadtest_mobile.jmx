@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="SERVER" elementType="Argument">
             <stringProp name="Argument.name">SERVER</stringProp>
-            <stringProp name="Argument.value">${__P(SERVER_URL,passive.hepsiburada.com)}</stringProp>
+            <stringProp name="Argument.value">${__P(SERVER_URL,192.168.57.61)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PROTOCOL" elementType="Argument">
@@ -30,12 +30,12 @@
           </elementProp>
           <elementProp name="SHORT_WAIT" elementType="Argument">
             <stringProp name="Argument.name">SHORT_WAIT</stringProp>
-            <stringProp name="Argument.value">5000</stringProp>
+            <stringProp name="Argument.value">500</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="LONG_WAIT" elementType="Argument">
             <stringProp name="Argument.name">LONG_WAIT</stringProp>
-            <stringProp name="Argument.value">10000</stringProp>
+            <stringProp name="Argument.value">1000</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="RESPONSE_TIME_THRESHOLD" elementType="Argument">
@@ -193,10 +193,10 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
-          <stringProp name="LoopController.loops">20</stringProp>
+          <stringProp name="LoopController.loops">50</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">100</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">60</stringProp>
+        <stringProp name="ThreadGroup.num_threads">300</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">120</stringProp>
         <longProp name="ThreadGroup.start_time">1418227391000</longProp>
         <longProp name="ThreadGroup.end_time">1418227391000</longProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
@@ -277,7 +277,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
           <boolProp name="TransactionController.parent">true</boolProp>
         </TransactionController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -295,7 +295,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -320,7 +320,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -338,7 +338,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -358,7 +358,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -376,7 +376,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -396,7 +396,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -414,7 +414,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -434,7 +434,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -452,7 +452,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -472,7 +472,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/search/suggestions" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/search/suggestions" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="text" elementType="HTTPArgument">
@@ -490,7 +490,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
-            <stringProp name="HTTPSampler.path">/search/suggestions</stringProp>
+            <stringProp name="HTTPSampler.path">/m/search/suggestions</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -510,7 +510,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             </ResponseAssertion>
             <hashTree/>
           </hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/ara" enabled="true">
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/m/ara" enabled="true">
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
               <collectionProp name="Arguments.arguments">
                 <elementProp name="q" elementType="HTTPArgument">
@@ -528,7 +528,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
             <stringProp name="HTTPSampler.protocol"></stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">/ara</stringProp>
+            <stringProp name="HTTPSampler.path">/m/ara</stringProp>
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -541,7 +541,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
             <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Regular Expression Extractor" enabled="true">
               <stringProp name="RegexExtractor.useHeaders">false</stringProp>
               <stringProp name="RegexExtractor.refname">PRODUCT_URL</stringProp>
-              <stringProp name="RegexExtractor.regex">&lt;a href=&quot;(.*?)&quot; data-bind=&quot;click: clickViewProductDetail&quot;</stringProp>
+              <stringProp name="RegexExtractor.regex">a href=&quot;(.*?)&quot; data-bind=&quot;click: clickViewProductDetail&quot;</stringProp>
               <stringProp name="RegexExtractor.template">$1$</stringProp>
               <stringProp name="RegexExtractor.default">NO_PRODUCT_URLS</stringProp>
               <stringProp name="RegexExtractor.match_number">0</stringProp>
