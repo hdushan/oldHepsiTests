@@ -90,7 +90,7 @@ task :warmup, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
-  result_file_html = "warmup_results.html"
+  result_file_html = "" #ie dont create a html report
   if args[:server_url] != ""
     options = "SERVER_URL=#{args[:server_url]}"
   else
@@ -110,7 +110,7 @@ task :warmup_journey, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup_journey.jmx"
   result_file = "warmup_journey_results.jtl"
-  result_file_html = "warmup_journey_results.html"
+  result_file_html = "" #ie dont create a html report
   if args[:server_url] != ""
     options = "SERVER_URL=#{args[:server_url]}"
   else
@@ -130,7 +130,7 @@ task :warmup_regression, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup_regression.jmx"
   result_file = "warmup_regression_results.jtl"
-  result_file_html = "warmup_regression_results.html"
+  result_file_html = "" #ie dont create a html report
   if args[:server_url] != ""
     options = "SERVER_URL=#{args[:server_url]}"
   else

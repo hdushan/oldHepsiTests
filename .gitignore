@@ -8,6 +8,6 @@ results.html
 results_cucumber.html
 build/
 jmeter.log
-loadtest_results*
-warmup_results*
+*results*.html
+*results*.jtl
 jmeter.log
