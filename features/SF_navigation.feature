@@ -165,3 +165,11 @@ Feature: Navigation by categories is as expected
     Given I visit main page
     When There are "9" static banners on homepage
     Then I should be able to visit every static banner
+
+  @1189
+  Scenario: Visit deals of the day page from product details
+    Given I visit main page
+    And I click on first deal of the day
+    When I am on product details
+    And I click deals of the day link from details
+    Then I am on deals of the day page

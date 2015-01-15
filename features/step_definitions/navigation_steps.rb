@@ -100,3 +100,7 @@ Then(/^I go to the banner links without any error page$/) do
     steps "Then I don't get the error page"
   }
 end
+
+And(/^I click deals of the day link from details$/) do
+  find('.timer-wrapper').find('a', text: "Günün Teklifi").click
+end
