@@ -104,3 +104,4 @@ end
 And(/^I click deals of the day link from details$/) do
   find('.timer-wrapper').find('a', text: "Günün Teklifi").click
 end
+

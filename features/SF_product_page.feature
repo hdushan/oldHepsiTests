@@ -767,3 +767,10 @@ Feature: Product page is as expected
       | review    | third new review has been added        |
       | sku       | KTIMAS43484                            |
     And I log out
+
+  @723
+  Scenario: I should be able to see campaign badges in product details
+    Given I visit main page
+    When I search for "TELCEPIPH616GBSI-N"
+    And I open search result no "1"
+    Then I should see badges for the product "TELCEPIPH616GBSI-N"

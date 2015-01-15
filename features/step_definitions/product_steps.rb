@@ -949,3 +949,22 @@ And(/^We change date on rejected comment "([^"]*)" "([^"]*)" "([^"]*)"$/) do |ar
   sku = arg3
   execute_sql "update top(1) i_yorum set date = '2015-01-01 10:26:34.110' where yorumheader='#{header}' and yorum = '#{review}' and pf_id = '#{sku.downcase}' and onay = 2"
 end
+
+Then(/^I should see badges with these images$/) do |table|
+  # table is a table.hashes.keys # => [:hb_90x50_1.png]
+  values = table.raw
+  values.each{ |x|
+    find('.badge-boxes').all('img').select{|y| y['src'].include? x[0] }.size.should == 1
+  }
+end
+
+Then(/^I should see badges for the product "([^"]*)"$/) do |arg|
+  response = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
+  resp = JSON.parse response
+  badges = resp['campaignBadges'].collect{|x| x['badge']}
+  img_sources = find('.badge-boxes').all('.ProductDashboard_button').collect{|x| x.first('img')['src']}
+  img_sources.map!{|x| x.split("/").last }
+  img_sources.each { |x|
+    badges.grep(/#{x}/).size.should == 1
+  }
+end
