@@ -63,6 +63,27 @@ task :performance, [:server_url] do |t, args |
   end  
 end
 
+desc "Run Jmeter Mobile Performance Tests"
+task :mobile_performance, [:server_url] do |t, args |
+  require 'jmeter-test-runner'
+  puts "Running Mobile Load Test"
+  loadtest_script = "performance/loadtest_mobile.jmx"
+  result_file = "loadtest_mobile_results.jtl"
+  result_file_html = "loadtest_mobile_results.html"
+  if args[:server_url] != ""
+    options = "SERVER_URL=#{args[:server_url]}"
+  else
+    options = ''
+  end
+  begin
+    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
+    check_for_errors(result_file_html, 98)
+  rescue => e
+    puts e.to_s
+    abort("\nMobile Load test not successful\n")
+  end  
+end
+
 desc "Run Jmeter Warmup Tests"
 task :warmup, [:server_url] do |t, args |
   require 'jmeter-test-runner'

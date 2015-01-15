@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="SERVER" elementType="Argument">
             <stringProp name="Argument.name">SERVER</stringProp>
-            <stringProp name="Argument.value">${__P(SERVER_URL,passive.hepsiburada.com)}</stringProp>
+            <stringProp name="Argument.value">${__P(SERVER_URL,passive.hepsiburada.com)}/m</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PROTOCOL" elementType="Argument">
@@ -74,7 +74,7 @@
       <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config - Categories" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
-        <stringProp name="filename">categories.csv</stringProp>
+        <stringProp name="filename">mobile_categories.csv</stringProp>
         <boolProp name="quotedData">false</boolProp>
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
@@ -98,8 +98,8 @@
       </SetupThreadGroup>
       <hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
-          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER_URL&quot;) + &quot;\n\n&quot;);
-log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER_URL&quot;) + &quot;\n\n&quot;);</stringProp>
+          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);
+log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);</stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
           <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
