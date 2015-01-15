@@ -919,7 +919,8 @@ And(/^I see the approved comment on the product detail$/) do |table|
   review.should have_content values['review']
   review.should have_content values['name']
   review.should have_selector("div[style='width: #{(rating*20).to_s}%']")
-  # add date control
+  date = Time.now.strftime("%2d.%2m.%4Y")
+  review.find('strong.date').should have_content date
 end
 
 And(/^I log out$/) do
@@ -928,4 +929,23 @@ And(/^I log out$/) do
   div.click
   div.find('a', text: "Çıkış Yap").click
   sleep 2
+end
+
+And(/^I get an error message while adding comment "([^"]*)"$/) do |arg|
+  find_by_id('messageContainer').should have_content arg
+end
+
+And(/^Admin rejects comment for header "([^"]*)" and review "([^"]*)" and "([^"]*)"$/) do |arg1, arg2, arg3|
+  header = arg1
+  review = arg2
+  sku = arg3
+  execute_sql "update top(1) i_yorum set onay = 2 where yorumheader='#{header}' and yorum = '#{review}' and pf_id = '#{sku.downcase}' and onay = -1"
+end
+
+
+And(/^We change date on rejected comment "([^"]*)" "([^"]*)" "([^"]*)"$/) do |arg1, arg2, arg3|
+  header = arg1
+  review = arg2
+  sku = arg3
+  execute_sql "update top(1) i_yorum set date = '2015-01-01 10:26:34.110' where yorumheader='#{header}' and yorum = '#{review}' and pf_id = '#{sku.downcase}' and onay = 2"
 end

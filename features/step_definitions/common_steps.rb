@@ -528,8 +528,8 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  str = "Anne, Bebek Oyuncak"
-  p capitalize str
+  date = Time.now.strftime("%2d.%2m.%4Y")
+  p date
 end
 
 When(/^I click go to desktop version link$/) do
