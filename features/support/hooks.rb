@@ -81,11 +81,12 @@ Before '@chrome' do
 end
 
 Before '~@chrome' do
-  Capybara.current_driver  = :firefox
-  Capybara.default_driver = :firefox
-  Capybara.javascript_driver = :firefox
+  Capybara.current_driver  = :poltergeist
+  Capybara.default_driver = :poltergeist
+  Capybara.javascript_driver = :poltergeist
   begin
-    Capybara.page.driver.browser.manage.window.maximize
+    page.driver.resize_window(1920, 1080)
+  #  Capybara.page.driver.browser.manage.window.maximize
   rescue Exception => e
     p "Unable to maximize window!!!"
   end
@@ -93,7 +94,7 @@ end
 
 After  do |scenario|
   if scenario.failed?
-    page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png")
+    page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png", :full => true)
     $screenshot_counter += 1
   end
 end
