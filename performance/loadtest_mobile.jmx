@@ -15,7 +15,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="SERVER" elementType="Argument">
             <stringProp name="Argument.name">SERVER</stringProp>
-            <stringProp name="Argument.value">${__P(SERVER_URL,storefront.qa.hepsiburada.com)}</stringProp>
+            <stringProp name="Argument.value">${__P(SERVER_URL,passive.hepsiburada.com)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="PROTOCOL" elementType="Argument">
@@ -41,6 +41,21 @@
           <elementProp name="RESPONSE_TIME_THRESHOLD" elementType="Argument">
             <stringProp name="Argument.name">RESPONSE_TIME_THRESHOLD</stringProp>
             <stringProp name="Argument.value">1000</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="MAX_CONCURRENT_USERS" elementType="Argument">
+            <stringProp name="Argument.name">MAX_CONCURRENT_USERS</stringProp>
+            <stringProp name="Argument.value">${__P(MAX_LOAD,300)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DURATION_STEADY_LOAD" elementType="Argument">
+            <stringProp name="Argument.name">DURATION_STEADY_LOAD</stringProp>
+            <stringProp name="Argument.value">${__P(DURATION,600)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RAMPUP" elementType="Argument">
+            <stringProp name="Argument.name">RAMPUP</stringProp>
+            <stringProp name="Argument.value">${__P(RAMP_UP,300)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -98,8 +113,14 @@
       </SetupThreadGroup>
       <hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
-          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);
-log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &quot;\n\n&quot;);</stringProp>
+          <stringProp name="BeanShellSampler.query">System.out.println(&quot;\n\nServer: &quot; +  vars.get(&quot;SERVER&quot;));
+System.out.println(&quot;\nLoad: &quot; +  vars.get(&quot;MAX_CONCURRENT_USERS&quot;));
+System.out.println(&quot;\nDuration: &quot; +  vars.get(&quot;DURATION_STEADY_LOAD&quot;));
+System.out.println(&quot;\nRampUp: &quot; +  vars.get(&quot;RAMPUP&quot;) + &quot;\n\n&quot;);
+log.info(&quot;\n\nServer: &quot; +  vars.get(&quot;SERVER&quot;));
+log.info(&quot;\nLoad: &quot; +  vars.get(&quot;MAX_CONCURRENT_USERS&quot;));
+log.info(&quot;\nDuration: &quot; +  vars.get(&quot;DURATION_STEADY_LOAD&quot;));
+log.info(&quot;\nRampUp: &quot; +  vars.get(&quot;RAMPUP&quot;) + &quot;\n\n&quot;);</stringProp>
           <stringProp name="BeanShellSampler.filename"></stringProp>
           <stringProp name="BeanShellSampler.parameters"></stringProp>
           <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
@@ -191,11 +212,11 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
       </hashTree>
       <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="jp@gc - Ultimate Thread Group (slow rampup)" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="1749329888">
-            <stringProp name="50547">300</stringProp>
-            <stringProp name="53">5</stringProp>
-            <stringProp name="50547">300</stringProp>
-            <stringProp name="56313">900</stringProp>
+          <collectionProp name="-773835458">
+            <stringProp name="835078251">${MAX_CONCURRENT_USERS}</stringProp>
+            <stringProp name="51">3</stringProp>
+            <stringProp name="668786489">${RAMPUP}</stringProp>
+            <stringProp name="1854721598">${DURATION_STEADY_LOAD}</stringProp>
             <stringProp name="1722">60</stringProp>
           </collectionProp>
         </collectionProp>
@@ -777,7 +798,40 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
           </hashTree>
         </hashTree>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <objProp>
+          <name>saveConfig</name>
+          <value class="SampleSaveConfiguration">
+            <time>true</time>
+            <latency>true</latency>
+            <timestamp>true</timestamp>
+            <success>true</success>
+            <label>true</label>
+            <code>true</code>
+            <message>true</message>
+            <threadName>true</threadName>
+            <dataType>true</dataType>
+            <encoding>false</encoding>
+            <assertions>true</assertions>
+            <subresults>true</subresults>
+            <responseData>false</responseData>
+            <samplerData>false</samplerData>
+            <xml>false</xml>
+            <fieldNames>false</fieldNames>
+            <responseHeaders>false</responseHeaders>
+            <requestHeaders>false</requestHeaders>
+            <responseDataOnError>false</responseDataOnError>
+            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+            <assertionsResultsToSave>0</assertionsResultsToSave>
+            <bytes>true</bytes>
+            <threadCounts>true</threadCounts>
+          </value>
+        </objProp>
+        <stringProp name="filename">/Users/hansdushanthakumar/Workspace/hepsiburada/acceptance-tests/loadtest_mobile_results.jtl</stringProp>
+      </ResultCollector>
+      <hashTree/>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -810,40 +864,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
         <stringProp name="filename"></stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
-        <objProp>
-          <name>saveConfig</name>
-          <value class="SampleSaveConfiguration">
-            <time>true</time>
-            <latency>true</latency>
-            <timestamp>true</timestamp>
-            <success>true</success>
-            <label>true</label>
-            <code>true</code>
-            <message>true</message>
-            <threadName>true</threadName>
-            <dataType>true</dataType>
-            <encoding>false</encoding>
-            <assertions>true</assertions>
-            <subresults>true</subresults>
-            <responseData>false</responseData>
-            <samplerData>false</samplerData>
-            <xml>false</xml>
-            <fieldNames>false</fieldNames>
-            <responseHeaders>false</responseHeaders>
-            <requestHeaders>false</requestHeaders>
-            <responseDataOnError>false</responseDataOnError>
-            <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
-            <assertionsResultsToSave>0</assertionsResultsToSave>
-            <bytes>true</bytes>
-            <threadCounts>true</threadCounts>
-          </value>
-        </objProp>
-        <stringProp name="filename"></stringProp>
-      </ResultCollector>
-      <hashTree/>
-      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TimesVsThreadsGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times vs Threads" enabled="true">
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TimesVsThreadsGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times vs Threads" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -884,7 +905,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
         <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
-      <kg.apc.jmeter.vizualizers.CompositeResultCollector guiclass="kg.apc.jmeter.vizualizers.CompositeGraphGui" testclass="kg.apc.jmeter.vizualizers.CompositeResultCollector" testname="jp@gc - Composite Graph" enabled="true">
+      <kg.apc.jmeter.vizualizers.CompositeResultCollector guiclass="kg.apc.jmeter.vizualizers.CompositeGraphGui" testclass="kg.apc.jmeter.vizualizers.CompositeResultCollector" testname="jp@gc - Composite Graph" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -933,7 +954,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
         <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CompositeResultCollector>
       <hashTree/>
-      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -974,7 +995,7 @@ log.info(&quot;\n\nWarming up server: &quot; +  vars.get(&quot;SERVER&quot;) + &
         <boolProp name="exclude_checkbox_state">false</boolProp>
       </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
       <hashTree/>
-      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
+      <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="false">
         <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>

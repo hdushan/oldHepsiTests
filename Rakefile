@@ -6,7 +6,7 @@ cucumber_base_options = "--format pretty --format html --out results.html "
 cucumber_command = "#{feature_to_run} #{cucumber_base_options}"
 
 desc "This is a test task"
-task :test, [:param, :param1] do | t, args|
+task :blah, [:param, :param1] do | t, args|
   puts "Hello #{args[:param]}, #{args[:param1]}"
 end
 
@@ -42,18 +42,18 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
   end
 end
 
-desc "Run Jmeter Performance Tests"
+desc "Run Jmeter Performance Tests (Desktop)"
 task :performance, [:server_url] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
-  if args[:server_url] != ""
-    options = "SERVER_URL=#{args[:server_url]}"
-  else
-    options = ''
-  end
+  options = {}
+  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
+  options["MAX_LOAD"] = args[:max_load] if not args[:max_load].nil?
+  options["RAMP_UP"] = args[:ramup_up] if not args[:ramup_up].nil?
+  options["DURATION"] = args[:duration] if not args[:duration].nil?
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
     check_for_errors(result_file_html, 98)
@@ -63,18 +63,18 @@ task :performance, [:server_url] do |t, args |
   end  
 end
 
-desc "Run Jmeter Mobile Performance Tests"
-task :mobile_performance, [:server_url] do |t, args |
+desc "Run Jmeter Performance Tests (Mobile)"
+task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   require 'jmeter-test-runner'
-  puts "Running Mobile Load Test"
+  puts "Running Mobile Load Test against server: #{args[:server_url]} for duration: #{args[:duration]} secs with max concurrent users: #{args[:max_load]} and ramping up in #{args[:ramup_up]} secs"
   loadtest_script = "performance/loadtest_mobile.jmx"
   result_file = "loadtest_mobile_results.jtl"
   result_file_html = "loadtest_mobile_results.html"
-  if args[:server_url] != ""
-    options = "SERVER_URL=#{args[:server_url]}"
-  else
-    options = ''
-  end
+  options = {}
+  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
+  options["MAX_LOAD"] = args[:max_load] if not args[:max_load].nil?
+  options["RAMP_UP"] = args[:ramup_up] if not args[:ramup_up].nil?
+  options["DURATION"] = args[:duration] if not args[:duration].nil?
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
     check_for_errors(result_file_html, 98)
@@ -91,11 +91,8 @@ task :warmup, [:server_url] do |t, args |
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
   result_file_html = "" #ie dont create a html report
-  if args[:server_url] != ""
-    options = "SERVER_URL=#{args[:server_url]}"
-  else
-    options = ''
-  end
+  options = {}
+  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
   rescue => e
@@ -111,11 +108,8 @@ task :warmup_journey, [:server_url] do |t, args |
   loadtest_script = "performance/warmup_journey.jmx"
   result_file = "warmup_journey_results.jtl"
   result_file_html = "" #ie dont create a html report
-  if args[:server_url] != ""
-    options = "SERVER_URL=#{args[:server_url]}"
-  else
-    options = ''
-  end
+  options = {}
+  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
   rescue => e
@@ -131,11 +125,8 @@ task :warmup_regression, [:server_url] do |t, args |
   loadtest_script = "performance/warmup_regression.jmx"
   result_file = "warmup_regression_results.jtl"
   result_file_html = "" #ie dont create a html report
-  if args[:server_url] != ""
-    options = "SERVER_URL=#{args[:server_url]}"
-  else
-    options = ''
-  end
+  options = {}
+  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
   rescue => e
