@@ -12,7 +12,6 @@ gem 'faker'
 gem 'capybara-screenshot', :group => :test
 gem 'capybara-page-object'
 gem 'rake'
-gem 'pry'
 gem 'rest-client'
 gem 'jmeter-test-runner', :git => 'http://gitlab.hepsiburada.com/everyone/jmeter-test-runner.git'
 gem 'tiny_tds'
