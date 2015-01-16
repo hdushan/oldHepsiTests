@@ -11,16 +11,16 @@ Feature: Search and apply a filter to find a product
     Then I am at main page
 
   Scenario: Search for a product by title
-    When I search for "telefon"
+    When I search for "kitap"
     Then There are some results available
 
   Scenario: Apply Filter
     Given I select a sub category in search
-      | Telefon | Cep Telefonu ve SmartPhone | Akıllı Telefon |
+      | Kitap Film Müzik | Kitap | Dergi |
     And There are some results available
     When I apply a filter
-      | Markalar            | Samsung |
-      | Fiyat Aralığı       | 250 TL - 500 TL |
+      | Yazar | Kolektif |
+      | Değerlendirme Puanı | 5 yıldız |
     Then There are some results available
 
   Scenario: Go to product details and add to cart

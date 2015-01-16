@@ -124,6 +124,12 @@ After('@journey') do
   revert_to_default_wait_time
 end
 
+# Around do |scenario, block|
+#   p "first"
+#   block.call
+#   p "third"
+# end
+
 # scenario_times = {}
 #
 # Around() do |scenario, block|

@@ -528,8 +528,7 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things$/) do
-  x="hans"
-  expect(x).to eq ENV["BLAH"]
+  p "second"
 end
 
 When(/^I click go to desktop version link$/) do
