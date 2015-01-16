@@ -25,30 +25,21 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
   puts "\n\n***** Running feature file #{feature_to_run} on Server: #{ENV['host']} *****\n\n"
   begin
     ENV["BLAH"] = "test"
-    run_cucumber_tests(feature_to_run, "results.html")
+    run_cucumber_tests("cucumber_feature", feature_to_run, "results.html")
   rescue Exception => e
     puts "\n\n***** Rerunning feature #{feature_to_run} *****\n\n"
     ENV["BLAH"] = "hans"
-    run_cucumber_tests_retry(feature_to_run, "results_of_retry.html")
+    run_cucumber_tests("cucumber_feature_retry", feature_to_run, "results_of_retry.html")
   end
 end
 
-def run_cucumber_tests(feature_to_run, results_file)
-  Cucumber::Rake::Task.new(:cucumber_feature) do |t| 
+def run_cucumber_tests(cucumber_task_name, feature_to_run, results_file)
+  Cucumber::Rake::Task.new("#{cucumber_task_name}") do |t| 
     cucumber_base_options = "--format pretty --format html --out #{results_file} "
     t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
     puts "t.cucumber_opts = #{t.cucumber_opts}"
   end
-  Rake::Task[:cucumber_feature].invoke()
-end
-
-def run_cucumber_tests_retry(feature_to_run, results_file)
-  Cucumber::Rake::Task.new(:cucumber_feature_retry) do |t| 
-    cucumber_base_options = "--format pretty --format html --out #{results_file} "
-    t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
-    puts "t.cucumber_opts = #{t.cucumber_opts}"
-  end
-  Rake::Task[:cucumber_feature_retry].invoke()
+  Rake::Task["#{cucumber_task_name}"].invoke()
 end
 
 desc "Run Jmeter Performance Tests (Desktop)"
