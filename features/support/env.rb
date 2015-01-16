@@ -30,16 +30,16 @@ Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FIL
 #   end
 # end
 
-#Capybara.register_driver :firefox do |app|
-#  Capybara::Selenium::Driver.new(app, :browser => :firefox)
-#end
+Capybara.register_driver :firefox do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :firefox)
+end
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, {js_errors:false, phantomjs_options:['--proxy-type=none'], timeout:180})
 end
 
-Capybara.default_driver = :poltergeist
-Capybara.current_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist
+Capybara.default_driver = :firefox
+Capybara.current_driver = :firefox
+Capybara.javascript_driver = :firefox
 
 World(Capybara::DSL)

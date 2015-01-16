@@ -81,12 +81,12 @@ Before '@chrome' do
 end
 
 Before '~@chrome' do
-  Capybara.current_driver  = :poltergeist
-  Capybara.default_driver = :poltergeist
-  Capybara.javascript_driver = :poltergeist
+  Capybara.current_driver  = :firefox
+  Capybara.default_driver = :firefox
+  Capybara.javascript_driver = :firefox
   begin
-    page.driver.resize_window(1920, 1080)
-  #  Capybara.page.driver.browser.manage.window.maximize
+    #page.driver.resize_window(1920, 1080)
+    Capybara.page.driver.browser.manage.window.maximize
   rescue Exception => e
     p "Unable to maximize window!!!"
   end
