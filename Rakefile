@@ -43,17 +43,26 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
 end
 
 desc "Run Jmeter Performance Tests (Desktop)"
-task :performance, [:server_url] do |t, args |
+task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
   result_file_html = "loadtest_results.html"
   options = {}
-  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
-  options["MAX_LOAD"] = args[:max_load] if not args[:max_load].nil?
-  options["RAMP_UP"] = args[:ramup_up] if not args[:ramup_up].nil?
-  options["DURATION"] = args[:duration] if not args[:duration].nil?
+  if (args[:server_url].nil? != true) and (args[:server_url].empty? != true)
+    options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
+  end
+  if (args[:max_load].nil? != true) and (args[:max_load].empty? != true)
+    options["MAX_LOAD"] = args[:max_load] 
+  end
+  if (args[:ramup_up].nil? != true) and (args[:ramup_up].empty? != true)
+    options["RAMP_UP"] = args[:ramup_up]
+  end
+  if (args[:duration].nil? != true) and (args[:duration].empty? != true)
+    options["DURATION"] = args[:duration] 
+  end
+  puts options
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
     check_for_errors(result_file_html, 98)
@@ -71,10 +80,19 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, 
   result_file = "loadtest_mobile_results.jtl"
   result_file_html = "loadtest_mobile_results.html"
   options = {}
-  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
-  options["MAX_LOAD"] = args[:max_load] if not args[:max_load].nil?
-  options["RAMP_UP"] = args[:ramup_up] if not args[:ramup_up].nil?
-  options["DURATION"] = args[:duration] if not args[:duration].nil?
+  if (args[:server_url].nil? != true) and (args[:server_url].empty? != true)
+    options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
+  end
+  if (args[:max_load].nil? != true) and (args[:max_load].empty? != true)
+    options["MAX_LOAD"] = args[:max_load] 
+  end
+  if (args[:ramup_up].nil? != true) and (args[:ramup_up].empty? != true)
+    options["RAMP_UP"] = args[:ramup_up]
+  end
+  if (args[:duration].nil? != true) and (args[:duration].empty? != true)
+    options["DURATION"] = args[:duration] 
+  end
+  puts options
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
     check_for_errors(result_file_html, 98)
