@@ -9,7 +9,7 @@
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
     And I should see "İndirimli Ürünler" global filter on main page
-    And I should see "Çok Satanlar" global filter on main page
+    And I should see "Öne Çıkanlar" global filter on main page
     And I should see "Kargo Bedavalar" global filter on main page
     And I should see "Bugün Teslimat" global filter on main page
 
@@ -20,7 +20,7 @@
     | <category> | <sub_category> |
     Then I should see "Süper Hızlı Gönderiler" global filter on CLP
     And I should see "İndirimli Ürünler" global filter on CLP
-    And I should see "Çok Satanlar" global filter on CLP
+    And I should see "Öne Çıkanlar" global filter on CLP
     And I should see "Kargo Bedavalar" global filter on CLP
     And I should see "Bugün Teslimat" global filter on CLP
     Examples:
@@ -48,7 +48,7 @@
     | filter                 | filter_for_clp |
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
-    | Çok Satanlar           | Çok Satanlar           |
+    | Öne Çıkanlar           | Öne Çıkanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
     | Bugün Teslimat         | Bugün Teslimat         |
 
