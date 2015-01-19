@@ -66,30 +66,11 @@ Then(/^Product is listed in the checkout screen$/) do
   revert_to_default_wait_time
 end
 
-
 When(/^I am on checkout screen$/) do
-  # page.should have_content "Sku"
-  # page.should have_content "Product Name"
-  # page.should have_content "Merchant"
-  # page.should have_content "Quantity"
-  # page.should have_content "Price"
-  # page.should have_content "Sum"
-  #
-  # page.should have_selector "#create-order"
-  # page.should have_selector "#create-order-alternate-address"
-  # page.should have_selector "#clearCart"
-
-  sleep 15
-  header = first('header.box-header', visible: true)
-  table = first('table.cart-items')
-
-  if header == nil && table == nil
-    fail "Cart not found"
-  elsif header == nil
-    table.text.include?('Sku').should == true
-  elsif table == nil
-    header.text.should == "Sepetim"
-  end
+  set_wait_time 20
+  header = find('header.box-header', visible: true)
+  header.text.should == 'Sepetim'
+  revert_to_default_wait_time
 end
 
 Given(/^I navigate to Category$/) do |table|
