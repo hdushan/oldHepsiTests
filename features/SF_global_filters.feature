@@ -87,7 +87,7 @@
     | filter                 | filter_on_results      |
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
-    | Çok Satanlar           | Çok Satanlar           |
+    | Öne Çıkanlar           | Öne Çıkanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
     | Bugün Teslimat         | Bugün Teslimat         |
 
@@ -148,17 +148,17 @@
       Then I see this global filter order on GFLP
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Çok Satanlar      |
+      | Öne Çıkanlar      |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |
 
     @1040
     Scenario: Global filters order on CLP
       Given I visit main page
-      When I apply global filter "Çok Satanlar" on "homepage"
+      When I apply global filter "Öne Çıkanlar" on "homepage"
       Then I see this global filter order on CLP
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Çok Satanlar      |
+      | Öne Çıkanlar     |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |

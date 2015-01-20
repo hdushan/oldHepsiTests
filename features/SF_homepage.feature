@@ -261,26 +261,26 @@ Feature: Homepage is as expected
     When There are some items in deal of the day carousel
     Then Original prices should be displayed in deal of the day items
 
-  @481
-  Scenario: Check for feedback button on homepage
-    Given I visit main page
-    When There is a feedback button on current page
-    Then There should be a way for me to give feedback
-
-  @481
-  Scenario: Check for feedback button on CLP
-    Given I visit main page
-    And I navigate to Category
-      | Anne, Bebek Oyuncak | Bebek Güvenlik |
-    When There is a feedback button on current page
-    Then There should be a way for me to give feedback
-
-  @481
-  Scenario: Check for feedback button on product details page
-    Given I visit main page
-    And I search for "SGBABYLISS087307"
-    When There is a feedback button on current page
-    Then There should be a way for me to give feedback
+#  @481
+#  Scenario: Check for feedback button on homepage
+#    Given I visit main page
+#    When There is a feedback button on current page
+#    Then There should be a way for me to give feedback
+#
+#  @481
+#  Scenario: Check for feedback button on CLP
+#    Given I visit main page
+#    And I navigate to Category
+#      | Anne, Bebek Oyuncak | Bebek Güvenlik |
+#    When There is a feedback button on current page
+#    Then There should be a way for me to give feedback
+#
+#  @481
+#  Scenario: Check for feedback button on product details page
+#    Given I visit main page
+#    And I search for "SGBABYLISS087307"
+#    When There is a feedback button on current page
+#    Then There should be a way for me to give feedback
 
   @1024
   Scenario: Check for new label on footer
