@@ -65,33 +65,6 @@ Before ('@mobile_compatibles_enabled') do
   end
 end
 
-Before '@chrome' do
-  Capybara.register_driver :chrome do |app|
-    Capybara::Selenium::Driver.new(app, :browser => :chrome)
-  end
-
-  Capybara.current_driver  = :chrome
-  Capybara.default_driver = :chrome
-  Capybara.javascript_driver = :chrome
-  begin
-    Capybara.page.driver.browser.manage.window.maximize
-  rescue Exception => e
-    p "Unable to maximize window!!!"
-  end
-end
-
-Before '~@chrome' do
-  Capybara.current_driver  = :poltergeist
-  Capybara.default_driver = :poltergeist
-  Capybara.javascript_driver = :poltergeist
-  begin
-    page.driver.resize_window(1920, 1080)
-    #Capybara.page.driver.browser.manage.window.maximize
-  rescue Exception => e
-    p "Unable to maximize window!!!"
-  end
-end
-
 After  do |scenario|
   if scenario.failed?
     page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png", :full => true)

@@ -9,7 +9,7 @@ require 'capybara-page-object'
 require 'rest-client'
 require 'tiny_tds'
 require 'time_diff'
-require 'capybara/poltergeist'
+#require 'capybara/poltergeist'
 require 'yaml'
 
 def test_data_files(dir)
@@ -35,7 +35,7 @@ end
 
 Capybara.run_server = false
 Capybara.default_selector = :css
-Capybara.default_wait_time = 60 #default wait time for ajax
+Capybara.default_wait_time = 180 #default wait time for ajax
 Capybara.ignore_hidden_elements = false #ignore hidden elements when testing, make helpful when you hide or show elements using javascript
 Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
 
@@ -47,16 +47,23 @@ def is_mac?
   (/darwin/ =~ RUBY_PLATFORM) != nil
 end
 
-#Capybara.register_driver :firefox do |app|
-#  Capybara::Selenium::Driver.new(app, :browser => :firefox)
-#end
-
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, {js_errors:false, phantomjs_options:['--proxy-type=none'], timeout:180})
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :phantomjs)
 end
 
-Capybara.default_driver = :poltergeist
-Capybara.current_driver = :poltergeist
-Capybara.javascript_driver = :poltergeist
+#Capybara.register_driver :poltergeist do |app|
+#  Capybara::Poltergeist::Driver.new(app, {js_errors:false, phantomjs_options:['--proxy-type=none'], timeout:180})
+#end
+
+Capybara.default_driver = :selenium
+Capybara.current_driver = :selenium
+Capybara.javascript_driver = :selenium
+begin
+  #page.driver.resize_window(1920, 1080)
+  Capybara.page.driver.browser.manage.window.maximize
+rescue Exception => e
+  p "Unable to maximise window!!!"
+  p e.to_s
+end
 
 World(Capybara::DSL)
