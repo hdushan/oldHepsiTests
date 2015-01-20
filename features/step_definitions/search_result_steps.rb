@@ -21,8 +21,7 @@ Then(/^I should see a list of (.*) results$/) do | search_term |
 end
 
 Then(/^I should see no results page$/) do
-  expect(find(".no-results-container"))
-  page.should have_content "Üzgünüz, aramanızla eşleşen ürün bulunamadı. Lütfen ürünün adını doğru girdiğinizden emin olunuz. Ana sayfaya dönebilirsiniz ve kategoriler aracılığıyla ürünlere göz gezdirebilirsiniz."
+  expect(page).to have_selector(".no-result")
 end
 
 Then(/^I should see (.*) visible results$/) do | amount_of_visible_results |
