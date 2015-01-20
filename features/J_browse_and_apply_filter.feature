@@ -21,7 +21,7 @@ Feature: Browse categories and apply a filter to find a product
     | Mouse |
     And There are some results available
     When I apply a filter
-    | Markalar            | Everest |
+    | MarkalarFAIL            | Everest |
     | Değerlendirme Puanı | 4 yıldız |
     | Fiyat Aralığı       | 0 TL - 25 TL |
     | Algılama            | Laser      |
