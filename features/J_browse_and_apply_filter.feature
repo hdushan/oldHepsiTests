@@ -21,7 +21,7 @@ Feature: Browse categories and apply a filter to find a product
     | Mouse |
     And There are some results available
     When I apply a filter
-    | MarkalarFAIL            | Everest |
+    | Markalar            | Everest |
     | Değerlendirme Puanı | 4 yıldız |
     | Fiyat Aralığı       | 0 TL - 25 TL |
     | Algılama            | Laser      |
@@ -34,7 +34,7 @@ Feature: Browse categories and apply a filter to find a product
 
   Scenario: Go to checkout
     Given I go to checkout
-    When I am on checkout screen
+    When I am on product details
     Then Product is listed in the checkout screen
 
   Scenario: End Test
