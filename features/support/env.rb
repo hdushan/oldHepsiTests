@@ -9,7 +9,6 @@ require 'capybara-page-object'
 require 'rest-client'
 require 'tiny_tds'
 require 'time_diff'
-#require 'capybara/poltergeist'
 require 'yaml'
 
 def test_data_files(dir)
@@ -47,8 +46,14 @@ def is_mac?
   (/darwin/ =~ RUBY_PLATFORM) != nil
 end
 
+if ENV['browser']
+  $browser_to_use = ENV['browser'].to_sym
+else
+  $browser_to_use = :phantomjs
+end
+
 Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :phantomjs)
+  Capybara::Selenium::Driver.new(app, :browser => $browser_to_use)
 end
 
 #Capybara.register_driver :poltergeist do |app|
