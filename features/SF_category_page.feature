@@ -5,10 +5,11 @@ Feature: Category page is as expected
     @371
     Scenario: SEO text in category landing page
       Given I am on the homepage
-      Given I navigate to Category
-        | Elektronik | Veri Depolama |
-      When I click on SEO link
-      Then I see a pop up with category title and some SEO text
+      When I navigate to Category
+        | Elektronik | Telefon |
+      Then I some see upto 1000 chars of the SEO text
+      And when I click on the view more link
+      Then I see the full SEO test
 
     @627
     Scenario: Hide adults items in women's category result page

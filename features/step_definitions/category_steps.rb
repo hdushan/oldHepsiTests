@@ -4,16 +4,6 @@ And /^I click the bestsellers tab/ do
   find_by_id('bestSelling').click
 end
 
-When(/^I click on SEO link$/)do
-  find_by_id('showCategoryInfo').click
-end
-
-Then(/^I see a pop up with category title and some SEO text$/) do
-  page.should have_selector('#categoryTitle')
-  page.should have_content('Veri Depolama ve Usb Bellekler')
-end
-
-
 Then(/^I should see Fast Shipping offered for product "(.*?)"$/) do |product_name|
   matching_product=nil
   products = page.all("#productResult .product-detail")
@@ -75,4 +65,23 @@ end
 
 Then(/^I should not see a filter for "([^"]*)"$/) do |arg|
   find('.FiltersList').all('h6').select{ |x| x.text =~ /#{arg}/i }.size.should == 0
+end
+
+Then(/^I some see upto (\d+) chars of the SEO text$/) do |arg|
+  expect(page).to have_selector('#categoryInformation')
+  expect(find_by_id('categoryTitle').text.length).to be > 0
+  $original_length_of_seo_description = find_by_id('categoryDescription').text.length
+  expect($original_length_of_seo_description).to be < arg.to_i
+  expect(page).to have_selector('.see-more')
+end
+
+And(/^when I click on the view more link$/) do
+  within('#categoryInformation') do
+    all('.see-more').first.click
+  end
+end
+
+Then(/^I see the full SEO test$/) do
+  new_seo_description =  find_by_id('categoryDescription')
+  expect(new_seo_description.text.length).to be > $original_length_of_seo_description
 end
