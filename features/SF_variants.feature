@@ -56,6 +56,22 @@
     And There are "1" select box variant groups
     And I should be able to cycle through variants
 
+    @700
+    Scenario Outline: Different variants of the product should have different discount values
+      Given I visit main page
+      And I search for "EAKSAN1MP-VP80V0"
+      And I open search result no "1"
+      And I am on product details
+      When I change the variant to "<variant>"
+      Then The discount is "<discount>" percent on details
+    Examples:
+      | variant  | discount |
+      | 90x190   | 72       |
+      | 90x200   | 72       |
+      | 140x190  | 67       |
+      | 150x200  | 66       |
+      | 160x200  | 69       |
+
   Scenario: Select variants which are not size/color/number
     Given I visit main page
     When I search for "ZYPYON400538462"

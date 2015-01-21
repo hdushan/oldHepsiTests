@@ -59,22 +59,6 @@ Feature: Product page reviews and comments
     And I open search result no "1"
     Then I should see a comment made by a "normal" person
 
-  @700
-  Scenario Outline: Different variants of the product should have different discount values
-    Given I visit main page
-    And I search for "EAKSAN1MP-VP80V0"
-    And I open search result no "1"
-    And I am on product details
-    When I change the variant to "<variant>"
-    Then The discount is "<discount>" percent on details
-  Examples:
-    | variant  | discount |
-    | 90x190   | 72       |
-    | 90x200   | 72       |
-    | 140x190  | 67       |
-    | 150x200  | 66       |
-    | 160x200  | 69       |
-
   @984
   Scenario: View reviews through reviews tab
     Given I visit main page
