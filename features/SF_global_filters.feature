@@ -136,7 +136,7 @@
       Then I see this global filter order on mainpage
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Çok Satanlar      |
+      | Öne Çıkanlar      |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |
 
