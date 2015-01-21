@@ -5,6 +5,23 @@ Feature: Product page Add and Remove from basket
   I want to be able to add and remove from basket
   So that I can purchase the item
 
+  @118
+  Scenario: I can add a procurable item to basket
+    Given I select a product with SKU EAKSERELEKTBAT
+    Then I should see the quantity box with a default of 1
+
+  @118 @flaky
+  Scenario: I can add multiple items to basket at once
+    Given I select a product with SKU EAKSERELEKTBAT
+    Then I add "5" product(s) to cart
+
+  @118 @flaky
+  Scenario: I cannot add a negative quantity of items to basket
+    Given I select a product with SKU EAKSERELEKTBAT
+    And I enter a quantity of -1
+    When I add to cart
+    Then I should see an invalid message notification
+
   @323
   Scenario: Remove add to cart from product details when item is out of stock
     Given I visit main page

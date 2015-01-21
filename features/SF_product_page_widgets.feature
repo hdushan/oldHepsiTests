@@ -10,23 +10,6 @@ Feature: BestSellers and other product page widgets
     Given I select a product with SKU EAKSERELEKTBAT
     Then I should see the bestseller section
 
-  @118
-  Scenario: I can add a procurable item to basket
-    Given I select a product with SKU EAKSERELEKTBAT
-    Then I should see the quantity box with a default of 1
-
-  @118 @flaky
-  Scenario: I can add multiple items to basket at once
-    Given I select a product with SKU EAKSERELEKTBAT
-    Then I add "5" product(s) to cart
-
-  @118 @flaky
-  Scenario: I cannot add a negative quantity of items to basket
-    Given I select a product with SKU EAKSERELEKTBAT
-    And I enter a quantity of -1
-    When I add to cart
-    Then I should see an invalid message notification
-
   @94 @recommended_products_on_product_detail_page_enabled
   Scenario: Display suggested products when available and selecting a product takes me to the details page
     Given I select a product with SKU TELCEPSAMN9000-B
