@@ -229,7 +229,7 @@ And /^I wait for all Ajax requests to complete/ do
 end
 
 When(/^I select the color (.*)/) do | color |
-  page.find('label', :text=> color).click
+  find("img[alt='#{color}']").click
 end
 
 Then /^I see a different image$/ do
