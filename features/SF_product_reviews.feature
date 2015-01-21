@@ -28,6 +28,16 @@ Feature: Product page reviews and comments
     Then I am on product details
     And There are no comments on details
 
+  @318
+  Scenario: Comments
+    Given I visit main page
+    And I search for "ZYPYON2897"
+    And I open search result no "1"
+    When I am on product details
+    And There are "3" comments on details
+    And I click on more comments button
+    Then There are "6" comments on details
+
   @329
   Scenario: Anonymizing comments - male
     Given I visit main page

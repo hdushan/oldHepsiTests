@@ -17,17 +17,6 @@ Feature: Product page is as expected
     When I click on the returns policy link
     Then I see the returns policy
 
-  @73
-  Scenario: Display product tech specs
-    Given I select a product with SKU TELCEPSAMN910-B
-    Then I can view the product tech specs
-
-  @68
-  Scenario: Display payment installment options with table-based information
-    Given I select a product with SKU SPORALTISSD5000
-    When I view the payment installments information
-    Then I see at least one payment installment table
-
   @103
   Scenario: Display free shipping tag
     Given I select a product with SKU SGSBM8001
@@ -60,16 +49,6 @@ Feature: Product page is as expected
     When I click on the returns policy link
     Then I see product return information specific to media
 
-  @139
-  Scenario: I see the instalments on a valid product
-    Given I select a product with SKU MTHOTARWMF903EU
-    Then I should see the installments section
-
-  @139
-  Scenario: I should not see the installments section on an invalid product
-    Given I select a product with SKU EAKSERELEKTBAT
-    Then I should not see the installments section
-
   @319
   Scenario: Clicking through to a product
     Given I visit main page
@@ -77,16 +56,6 @@ Feature: Product page is as expected
     And There are some results available
     When I open search result no "2"
     Then I am on product details
-
-  @318
-  Scenario: Comments
-    Given I visit main page
-    And I search for "ZYPYON2897"
-    And I open search result no "1"
-    When I am on product details
-    And There are "3" comments on details
-    And I click on more comments button
-    Then There are "6" comments on details
 
   @318
   Scenario: The return policy
@@ -106,27 +75,11 @@ Feature: Product page is as expected
     When I click product description tab
     Then I get the product description
 
-  @318
-  Scenario: Clicking through technical specs
-    Given I visit main page
-    And I search for "ZYPYON2897"
-    And I open search result no "1"
-    And I am on product details
-    When I click product specs tab
-    Then I get the product specs
-
 #  @726 @ignore
 #  Scenario: see the timer on Deal of the Day product detail pages
 #    Given I visit main page
 #    And I open deal of the day no "1"
 #    Then I see a timer on product details page that shows when the deal ends
-
-  @68
-  Scenario: No installment
-    Given I visit main page
-    When I search for "TELCEPSAMN9000-B"
-    And I open search result no "1"
-    Then There is no installment option for this product
 
   @65
   Scenario: Open details for an item which doesn't have super fast shipping
@@ -172,20 +125,6 @@ Feature: Product page is as expected
     When I open search result no "1"
     Then Product sku is contained in the url
 
-   @726 @1095
-   Scenario: See the timer on Deal of the Day product detail pages
-     Given I visit main page
-     When I search for "TELCEPNOKLU620-B"
-     And I open search result no "1"
-     Then I should see deal of the day counter in details
-
-  @727 @1095
-  Scenario: See stock left for Deal of the Day items
-    Given I visit main page
-    When I search for "EVLG49UB820V"
-    And I open search result no "1"
-    Then I should see stock left for deal of the day items for "EVLG49UB820V"
-
   @488
   Scenario Outline: Check some products for their discounts
     Given I visit main page
@@ -209,40 +148,6 @@ Feature: Product page is as expected
     When I open search result no "1"
     Then I am on product details
     And The discount is "79" percent on details
-
-  @93
-  Scenario: Go to product details without any compatible products
-    Given I visit main page
-    And I search for "OUTBURC15395-1"
-    And I open search result no "1"
-    When I am on product details
-    Then I do not see any compatible products
-
-  @93
-  Scenario: Go to product details with one group of compatible products
-    Given I visit main page
-    And I search for "BD730092"
-    And I open search result no "1"
-    When I click on compatible products tab
-    Then I should see compatible products
-    And There should be only one compatible product group
-
-  @93
-  Scenario: Go to product details with multiple groups of compatible products
-    Given I visit main page
-    And I search for "BD131818"
-    And I open search result no "1"
-    When I click on compatible products tab
-    Then I should see compatible products
-    And There should be multiple compatible product group
-
-  @93
-  Scenario: Go to compatible products details
-    Given I visit main page
-    And I search for "BD730092"
-    And I open search result no "1"
-    When I click on compatible products tab
-    Then All compatible products details should be accessible
 
   @1021
   Scenario: Go to product return policy with product a
