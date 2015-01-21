@@ -44,7 +44,9 @@ Then(/^I add "([^"]*)" product\(s\) to cart$/) do |arg|
     find_by_id("addToCart").click
     wait_for_ajax
     page.should have_selector("#notification", :visible => true)
-    page.should have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
+    within("#notification") do
+      expect(page).to have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
+    end
     page.should have_selector("#notification", visible: :hidden)
   end
 end
