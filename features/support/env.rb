@@ -64,8 +64,8 @@ Capybara.default_driver = :selenium
 Capybara.current_driver = :selenium
 Capybara.javascript_driver = :selenium
 begin
-  #page.driver.resize_window(1920, 1080)
-  Capybara.page.driver.browser.manage.window.maximize
+  Capybara.current_session.driver.browser.manage.window.resize_to(1920, 1080)
+  #Capybara.page.driver.browser.manage.window.maximize
 rescue Exception => e
   p "Unable to maximise window!!!"
   p e.to_s

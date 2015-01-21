@@ -90,6 +90,28 @@ Before('@login_enabled') do
   end
 end
 
+Before('@firefox') do
+  Capybara.register_driver :firefox do |app|
+    Capybara::Selenium::Driver.new(app, :browser => :firefox)
+  end
+  Capybara.default_driver = :firefox
+  Capybara.current_driver = :firefox
+  Capybara.javascript_driver = :firefox
+  begin
+    Capybara.current_session.driver.browser.manage.window.resize_to(1920, 1080)
+    #Capybara.page.driver.browser.manage.window.maximize
+  rescue Exception => e
+    p "Unable to maximise window!!!"
+    p e.to_s
+  end
+end
+
+After('@firefox') do
+  Capybara.default_driver = :selenium
+  Capybara.current_driver = :selenium
+  Capybara.javascript_driver = :selenium
+end
+
 Before('@journey') do
   set_wait_time 60
 end

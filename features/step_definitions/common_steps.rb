@@ -480,15 +480,25 @@ And(/^I click breadcrumb "([^"]*)"$/) do |arg|
 end
 
 Given(/^I make a google search with "([^"]*)"$/) do |arg|
-  visit_link 'http://www.google.com'
-  fill_in "gbqfq" , :with=>arg
-  click_button "gbqfb"
+  visit_link 'http://www.google.com.tr'
+  expect(page).to have_title "Google"
+  fill_in "q" , :with=>arg
+  if $browser_to_use==:phantomjs
+    click_button "Google Search"
+  else
+    click_button "gbqfb"
+  end
 end
 
 When(/^I click on google result no "([^"]*)"$/) do |arg|
+  if $browser_to_use==:phantomjs
+    id_of_google_results = "ires"
+  else
+    id_of_google_results = "rso"
+  end
   i = arg.to_i - 1
   unless i < 0
-    results = find_by_id('rso').all('li.g')
+    results = find_by_id(id_of_google_results).all('li.g')
     results[i].first('h3.r').click
   end
 end

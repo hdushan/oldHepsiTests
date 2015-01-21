@@ -22,12 +22,6 @@ Feature: Navigation by categories is as expected
     And I should be able to visit every link on breadcrumb trail
 
   @359 @merchant_disabled
-  Scenario: Google a hepsiburada item and open it
-    Given I make a google search with "hepsiburada sony playstation"
-    When I click on google result no "1"
-    Then I don't get the error page
-
-  @359 @merchant_disabled
   Scenario: Clicking header on checkout
     Given I visit main page
     When I go to checkout
