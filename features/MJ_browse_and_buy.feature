@@ -15,7 +15,7 @@
 
     Scenario: Add to cart from CLP
       Given I click load more results
-      When I add search result no "5" to cart from search results
+      When I add search result no "5" to cart from search results for mobile
       Then Cart icon should have an indication of "1"
 
     Scenario: Add to cart from details

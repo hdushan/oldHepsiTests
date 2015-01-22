@@ -150,13 +150,9 @@ Then(/^I am on mobile login page$/) do
   find('div.login-container')
 end
 
-And(/^I add search result no "([^"]*)" to cart from search results$/) do |arg|
+And(/^I add search result no "([^"]*)" to cart from search results for mobile$/) do |arg|
   i = arg.to_i - 1
   unless i < 0
-    expect(page).to have_selector('.hovering-box')
-    all('.hovering-box')[i].hover
-    sleep 5
-    #expect(page).to have_selector('button.add-to-basket', :visible => true)
     find_by_id('productresults').find('button.add-to-basket', match: :first)
     item = find_by_id('productresults').all('button.add-to-basket')[i]
     item.click
