@@ -251,6 +251,7 @@ When(/^I click discounted items global filter$/) do
 end
 
 Then(/^I should be able to click show more products multiple times$/) do
+  expect(page).to have_selector('#moreResult')
   res = find_by_id('productresults')
   res.find('.search-item', match: :first)
   results = res.all('.search-item')
@@ -298,9 +299,10 @@ end
 
 Then(/^There is a search result count message for search "([^"]*)"$/) do |arg|
   title = find('header.container.title-wrapper')
-  title.should have_content arg
-  title.should have_content "araması için"
-  title.should have_content "sonuç bulundu."
+  expect(page).to have_selector('.search-results-title')
+  expect(title).to have_content(arg)
+  expect(title).to have_content("araması için")
+  expect(title).to have_content("sonuç bulundu.")
   (extract_number find_by_id('totalItems').text).to_i.should > 0
 end
 
