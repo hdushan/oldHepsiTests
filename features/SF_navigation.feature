@@ -112,7 +112,7 @@ Feature: Navigation by categories is as expected
   @650
   Scenario: Go to product details page for viewing breadcrumbs and check them in GWT
     Given I visit main page
-    And I search for "EAKMETGM153-90190"
+    And I search for "samsung"
     When I open search result no "1"
     And I store breadcrumbs
     Then breadcrumbs should be available on google webtools
