@@ -108,7 +108,7 @@ task :warmup, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
-  result_file_html = "" #ie dont create a html report
+  result_file_html = "warmup_results.html" #leave as '' if you dont want to create a html report
   options = {}
   options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin

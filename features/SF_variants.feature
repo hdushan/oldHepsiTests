@@ -5,6 +5,12 @@
     I would like to view and select variants of a product
     In order to purchase the product I want
 
+    @137
+    Scenario: Display if a product has more variants on the results page
+      Given I am on the homepage
+      When I search for "EVSAM32H5373"
+      Then I should not see the variants message for the product
+
   Scenario: Select variants with selection boxes only
     Given I visit main page
     When I search for "OUTHZTTPVFOT-03"

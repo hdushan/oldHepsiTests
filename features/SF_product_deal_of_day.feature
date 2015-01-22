@@ -18,3 +18,10 @@ Feature: Product page for Deal of Day products
    When I search for "EVLG49UB820V"
    And I open search result no "1"
    Then I should see stock left for deal of the day items for "EVLG49UB820V"
+
+  @730
+  Scenario: All deal of the day items should have stock indicators
+    Given I visit main page
+    When I go to deals of the day page
+    And I am on deals of the day page
+    Then All deals of the day should have stock indicators

@@ -21,6 +21,14 @@ Feature: Navigation by categories is as expected
     Then I should see a breadcrumb trail
     And I should be able to visit every link on breadcrumb trail
 
+  @249
+  Scenario: Navigation using breadcrumbs
+    Given I visit main page
+    And I search for "bebek bezi"
+    When I open search result no "1"
+    Then I should see a breadcrumb trail
+    And I should be able to visit every link on breadcrumb trail
+
   @359 @merchant_disabled
   Scenario: Clicking header on checkout
     Given I visit main page

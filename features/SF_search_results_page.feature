@@ -77,12 +77,6 @@ Feature: Search page is as expected
     And On clicking a related category "Kampanyalar / Samsung"
     Then I should see search results with each result having the word "samsung" in the product name
 
-  @137
-  Scenario: Display if a product has more variants on the results page
-    Given I am on the homepage
-    When I search for "EVSAM32H5373"
-    Then I should not see the variants message for the product
-
   @30
   Scenario: See free shipping on search results
     Given I am on the homepage
@@ -168,67 +162,11 @@ Feature: Search page is as expected
 #    Then I press more brands button
 #    And There are more than "10" brands in the filter area
 
-  @253
-  Scenario: Filtering results within subcategories (second to third, third to fourth levels)
-    Given I visit main page
-    And I search for "ayakkabı"
-    When I select a sub category in search
-    | Giyim / Ayakkabı | Erkek | Erkek Ayakkabı | Erkek Bot |
-    Then There are some results available
-
-  @249
-  Scenario: Navigation using breadcrumbs
-    Given I visit main page
-    And I search for "bebek bezi"
-    When I open search result no "1"
-    Then I should see a breadcrumb trail
-    And I should be able to visit every link on breadcrumb trail
-
-  @229
-  Scenario Outline: Filter by category
-    Given I visit main page
-    When I search for "<item>"
-    And There are some results available
-    Then Sub categories are displayed in filters section
-    Examples:
-    | item   |
-    | kitap  |
-    | defter |
-    | kalem  |
-    | saat   |
-    | silgi  |
-
   @957
   Scenario: Handling empty search
     Given I visit main page
     When I search for ""
     Then I don't get the error page
-
-  @36
-  Scenario: See super fast shipping on topsellers on product details page
-    Given I visit main page
-    When I search for "bebek bezi"
-    And I open search result no "1"
-    Then Top sellers section should include super fast delivery items
-
-  @24
-  Scenario: Filter by promotions in search results
-    Given I visit main page
-    When I search for "köpek maması"
-    And I store search result count
-    And I apply a filter
-    | Sadece | Süper Hızlı Gönderidekiler |
-    Then I should have a different result count
-
-  @24
-  Scenario: Filter by promotions in CLP
-    Given I visit main page
-    When I navigate to Category
-    | Kitap, Müzik Film, Hobi | Müzik (Medya) |
-    And I store search result count
-    And I apply a filter
-    | Sadece | İndirimli Ürünler |
-    Then I should have a different result count
 
   @342
   Scenario: Show product not available indication on results page
@@ -241,28 +179,6 @@ Feature: Search page is as expected
     Given I visit main page
     When I click discounted items global filter
     Then I should be able to click show more products multiple times
-
-  @343
-  Scenario: Specific filters should appear on search results
-    Given I visit main page
-    Given I search for "Michelin lastik"
-    When I apply a filter
-      | Jant Çapı       | 17    |
-      | Kullanım Türü   | Binek |
-      | Taban Genişliği | 225mm |
-    Then There are some results available
-
-  @343
-  Scenario: Specific filters should appear on browsing results
-    Given I visit main page
-    And I navigate to Category
-      | Süpermarket Petshop | Petshop |
-    And I select a sub category in browsing
-      | Kedi | Kedi Mamaları | Tümünü Gör |
-    When I apply a filter
-      | Yaş           | 1-7 Yaş  |
-      | Ürün Kilogram | 10-15 kg |
-    Then There are some results available
 
 #  @1020
 #  Scenario: Use more filters button on filter fields
@@ -282,37 +198,8 @@ Feature: Search page is as expected
     And I click load more results
     Then There are "80" results displayed
 
-  @730
-  Scenario: All deal of the day items should have stock indicators
-    Given I visit main page
-    When I go to deals of the day page
-    And I am on deals of the day page
-    Then All deals of the day should have stock indicators
-
   @1043
   Scenario: Display search results count text
     Given I visit main page
     When I search for "telefon"
     Then There is a search result count message for search "telefon"
-
-  @1192
-  Scenario Outline: Check filter fields for more filters buttons in clps
-    Given I visit main page
-    When I navigate to Category
-    | <cat1> | <cat2> |
-    And There are some results available
-    Then I don't see more filters buttons in filters
-    Examples:
-    | cat1                 | cat2           |
-    | Elektronik           | Akıllı Telefon |
-    | Giyim, Takı Aksesuar | Erkek          |
-
-  @1192
-  Scenario Outline: Check filter fields for more filters buttons in search results
-    Given I visit main page
-    When I search for "<item>"
-    Then I don't see more filters buttons in filters
-    Examples:
-    | item     |
-    | gömlek   |
-    | ayakkabı |

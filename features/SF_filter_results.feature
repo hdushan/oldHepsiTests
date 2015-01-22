@@ -103,3 +103,88 @@ Feature: Filter search results
     When I remove the filter for Ozaki
     When I remove the filter for Muvit
     Then I should see all results
+
+  @253
+  Scenario: Filtering results within subcategories (second to third, third to fourth levels)
+    Given I visit main page
+    And I search for "ayakkabı"
+    When I select a sub category in search
+    | Giyim / Ayakkabı | Erkek | Erkek Ayakkabı | Erkek Bot |
+    Then There are some results available
+
+  @229
+  Scenario Outline: Filter by category
+    Given I visit main page
+    When I search for "<item>"
+    And There are some results available
+    Then Sub categories are displayed in filters section
+    Examples:
+    | item   |
+    | kitap  |
+    | defter |
+    | kalem  |
+    | saat   |
+    | silgi  |
+
+  @24
+  Scenario: Filter by promotions in search results
+    Given I visit main page
+    When I search for "köpek maması"
+    And I store search result count
+    And I apply a filter
+    | Sadece | Süper Hızlı Gönderidekiler |
+    Then I should have a different result count
+
+  @24
+  Scenario: Filter by promotions in CLP
+    Given I visit main page
+    When I navigate to Category
+    | Kitap, Müzik Film, Hobi | Müzik (Medya) |
+    And I store search result count
+    And I apply a filter
+    | Sadece | İndirimli Ürünler |
+    Then I should have a different result count
+
+  @343
+  Scenario: Specific filters should appear on search results
+    Given I visit main page
+    Given I search for "Michelin lastik"
+    When I apply a filter
+      | Jant Çapı       | 17    |
+      | Kullanım Türü   | Binek |
+      | Taban Genişliği | 225mm |
+    Then There are some results available
+
+  @343
+  Scenario: Specific filters should appear on browsing results
+    Given I visit main page
+    And I navigate to Category
+      | Süpermarket Petshop | Petshop |
+    And I select a sub category in browsing
+      | Kedi | Kedi Mamaları | Tümünü Gör |
+    When I apply a filter
+      | Yaş           | 1-7 Yaş  |
+      | Ürün Kilogram | 10-15 kg |
+    Then There are some results available
+
+  @1192
+  Scenario Outline: Check filter fields for more filters buttons in clps
+    Given I visit main page
+    When I navigate to Category
+    | <cat1> | <cat2> |
+    And There are some results available
+    Then I don't see more filters buttons in filters
+    Examples:
+    | cat1                 | cat2           |
+    | Elektronik           | Akıllı Telefon |
+    | Giyim, Takı Aksesuar | Erkek          |
+
+  @1192
+  Scenario Outline: Check filter fields for more filters buttons in search results
+    Given I visit main page
+    When I search for "<item>"
+    Then I don't see more filters buttons in filters
+    Examples:
+    | item     |
+    | gömlek   |
+    | ayakkabı |

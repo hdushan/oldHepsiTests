@@ -22,6 +22,13 @@ Feature: Product page is as expected
     Given I select a product with SKU SGSBM8001
     Then I see text indicating that free shipping is available
 
+  @36
+  Scenario: See super fast shipping on topsellers on product details page
+    Given I visit main page
+    When I search for "bebek bezi"
+    And I open search result no "1"
+    Then Top sellers section should include super fast delivery items
+
   @103
   Scenario: No free shipping on details
     Given I select a product with SKU BD800476
