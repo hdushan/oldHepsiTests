@@ -366,6 +366,7 @@ And(/^Discounted price is displayed correctly$/) do
   price = format_price find('section.detail-main').find('span.price').text
   $prod['price']['value'].should == price
   $prod['price']['taxIncluded'].should == true
+  puts "Discount = #{$prod['discountRate']}"
   $prod['discountRate'].should_not == 0
 end
 
