@@ -253,9 +253,15 @@ end
 
 Then(/^I should be able to click show more products multiple times$/) do
   expect(page).to have_selector('#moreResult')
-  res = find_by_id('productresults')
-  res.find('.search-item', match: :first)
-  results = res.all('.search-item')
+  for i in 1..5
+    res = find_by_id('productresults')
+    res.find('.search-item', match: :first)
+    results = res.all('.search-item')
+    if results.size == RESULTS_PER_PAGE
+      break
+    end
+    sleep 1
+  end
   results.size.should == RESULTS_PER_PAGE
 
   for i in 2..5
@@ -299,8 +305,8 @@ Then(/^All deals of the day should have stock indicators$/) do
 end
 
 Then(/^There is a search result count message for search "([^"]*)"$/) do |arg|
-  title = find('header.container.title-wrapper')
   expect(page).to have_selector('.search-results-title')
+  title = find('header.container.title-wrapper')
   expect(title).to have_content(arg)
   expect(title).to have_content("araması için")
   expect(title).to have_content("sonuç bulundu.")
