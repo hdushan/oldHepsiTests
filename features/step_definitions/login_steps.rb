@@ -2,8 +2,8 @@
 
 When(/^I login with user "([^"]*)" and pass "([^"]*)"$/) do |arg1, arg2|
   account = find_by_id('myAccount')
-  account.click
-  account.find_by_id('login').click
+  account.hover
+  find_by_id('login').click
   visit_link('http://checkout.test.hepsiburada.com/liste/default.aspx')
   find('span', text: "Üye Girişi").click
   find('span', text: "Giriş yap").click
@@ -29,4 +29,12 @@ And(/^I get these login options$/) do |table|
   values.each { |x|
     account.should have_selector('a', text: x)
   }
+end
+
+And(/^I log out$/) do
+  visit_main_page
+  div = find_by_id('myAccount')
+  div.hover
+  find('a', text: "Çıkış Yap").click
+  sleep 2
 end

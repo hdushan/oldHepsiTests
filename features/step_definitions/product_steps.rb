@@ -923,14 +923,6 @@ And(/^I see the approved comment on the product detail$/) do |table|
   review.find('strong.date').should have_content date
 end
 
-And(/^I log out$/) do
-  visit_main_page
-  div = find_by_id('myAccount')
-  div.click
-  div.find('a', text: "Çıkış Yap").click
-  sleep 2
-end
-
 And(/^I get an error message while adding comment "([^"]*)"$/) do |arg|
   find_by_id('messageContainer').should have_content arg
 end
