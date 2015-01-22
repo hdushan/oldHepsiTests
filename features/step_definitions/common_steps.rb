@@ -364,10 +364,10 @@ end
 
 And(/^Discounted price is displayed correctly$/) do
   price = format_price find('section.detail-main').find('span.price').text
-  $prod['price']['value'].should == price
-  $prod['price']['taxIncluded'].should == true
+  expect($prod['price']['value']).to eq(price)
+  expect($prod['price']['taxIncluded']).to be_true
   puts "Discount = #{$prod['discountRate']}"
-  $prod['discountRate'].should_not == 0
+  expect($prod['discountRate']).not_to eq(0)
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
