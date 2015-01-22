@@ -36,3 +36,15 @@ Feature: BestSellers and other product page widgets
     And I search for "iphone"
     When I open search result no "1"
     Then Totals in topsellers section should not be a link
+
+  @859
+  Scenario Outline: See top sellers section on product details
+    Given I visit main page
+    When I search for "<item>"
+    And I open search result no "1"
+    Then There is a top sellers section
+    Examples:
+    | item |
+    | K2HAYY25450 |
+    | AILEBANEKSD110030 |
+    | MTTEFFC22 |
