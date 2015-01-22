@@ -81,6 +81,7 @@ Given(/^I navigate to Category$/) do |table|
   cat1 = find('ul.browser-by-category').first('li', :text=> (capitalize values[0]))
   link = cat1.find('div.nav-home-wrapper').first('a', :text=> values[1])['href']
   visit_link link
+  expect(page).to have_selector('.link-more-results')
   $current_results = extract_number find_by_id('totalItems').text
 end
 

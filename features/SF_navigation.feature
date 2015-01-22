@@ -70,22 +70,22 @@ Feature: Navigation by categories is as expected
     | Kitap, Müzik Film, Hobi |
     | Giyim, Takı Aksesuar    |
 
-  @523
-  Scenario Outline: Click on banners and go to relevant pages
-    Given I visit main page
-    When I hover on menu item "<item>"
-    Then I go to the banner links without any error page
-  Examples:
-    | item                    |
-    | Elektronik   |
-    | Ev, Yaşam, Ofis          |
-    | Oto, Bahçe, Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Hobi |
-    | Giyim, Takı Aksesuar    |
+#  @523
+#  Scenario Outline: Click on banners and go to relevant pages
+#    Given I visit main page
+#    When I hover on menu item "<item>"
+#    Then I go to the banner links without any error page
+#  Examples:
+#    | item                    |
+#    | Elektronik   |
+#    | Ev, Yaşam, Ofis          |
+#    | Oto, Bahçe, Yapı Market  |
+#    | Anne, Bebek Oyuncak     |
+#    | Spor Outdoor            |
+#    | Kozmetik Kişisel Bakım  |
+#    | Süpermarket Petshop     |
+#    | Kitap, Müzik Film, Hobi |
+#    | Giyim, Takı Aksesuar    |
 
   @637
   Scenario Outline: Use some single brand filtered links from old site on new site
