@@ -76,7 +76,7 @@ Feature: Add to basket from details page
     Given I search for "AYKP38462CGBBZ37"
     Then I do not see the 'add to basket' button
 
-  @1112 @merchant_disabled
+  @1112 @merchant_disabled @ignore
   Scenario: Check cart indicator and search suggestions on CLP
     Given I visit main page
     And I clear cart items

@@ -12,6 +12,7 @@ Given /^I select a product from search results$/ do
 end
 
 When(/^I click the 'add to basket' button on results page$/) do
+  all('.hovering-box').first.hover
   find('button.add-to-basket', match: :first).click
 end
 
