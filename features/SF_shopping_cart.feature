@@ -76,26 +76,26 @@ Feature: Add to basket from details page
     Given I search for "AYKP38462CGBBZ37"
     Then I do not see the 'add to basket' button
 
-  @1112 @merchant_disabled @ignore
-  Scenario: Check cart indicator and search suggestions on CLP
-    Given I visit main page
-    And I clear cart items
-    And I visit main page
-    When I apply global filter "İndirimli Ürünler" on "homepage"
-    And I add search result no "1" to cart from search results
-    Then Cart icon should have an indication of "1"
-    When I navigate to Category
-    | Oto, Bahçe, Yapı Market | Bahçe & Balkon |
-    And I add search result no "1" to cart from search results
-    Then Cart icon should have an indication of "2"
-    When I search for "kitap"
-    And I add search result no "1" to cart from search results
-    Then Cart icon should have an indication of "3"
-    When I open search result no "3"
-    And I add "3" product(s) to cart
-    Then Cart icon should have an indication of "4"
-    When I navigate to Category
-    | Kozmetik Kişisel Bakım | Cilt & Vücut Ürünleri |
-    Then Cart icon should have an indication of "4"
-    When I have input sam into search
-    Then I see suggestions based on sam
+#  @1112 @merchant_disabled @ignore
+#  Scenario: Check cart indicator and search suggestions on CLP
+#    Given I visit main page
+#    And I clear cart items
+#    And I visit main page
+#    When I apply global filter "İndirimli Ürünler" on "homepage"
+#    And I add search result no "1" to cart from search results
+#    Then Cart icon should have an indication of "1"
+#    When I navigate to Category
+#    | Oto, Bahçe, Yapı Market | Bahçe & Balkon |
+#    And I add search result no "1" to cart from search results
+#    Then Cart icon should have an indication of "2"
+#    When I search for "kitap"
+#    And I add search result no "1" to cart from search results
+#    Then Cart icon should have an indication of "3"
+#    When I open search result no "3"
+#    And I add "3" product(s) to cart
+#    Then Cart icon should have an indication of "4"
+#    When I navigate to Category
+#    | Kozmetik Kişisel Bakım | Cilt & Vücut Ürünleri |
+#    Then Cart icon should have an indication of "4"
+#    When I have input sam into search
+#    Then I see suggestions based on sam
