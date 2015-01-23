@@ -6,22 +6,6 @@ Feature: Add reviews
   So that others can decide on whether to purchase the item
 
   @1015
-  Scenario: Comment without login from description
-    Given I visit main page
-    And I search for "yemek kitabı"
-    When I open search result no "1"
-    And I click add comment from product description
-    Then I should be redirected to login page
-
-  @1015
-  Scenario: Comment without login from comment tab
-    Given I visit main page
-    And I search for "yemek kitabı"
-    When I open search result no "1"
-    And I click add comment from comments tab
-    Then I should be redirected to login page
-
-  @1015
   Scenario: Validate Add Comment fields
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -29,26 +13,6 @@ Feature: Add reviews
     When I open search result no "1"
     And I click add comment from product description
     Then Comment fields should appear as expected
-    And I log out
-
-  @1015
-  Scenario: Check Mandatory Fields
-    Given I visit main page
-    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
-    And I search for "bebek maması"
-    When I open search result no "1"
-    And I click add comment from comments tab
-    Then I should not be able to submit without mandatory fields
-    And I log out
-
-  @1015
-  Scenario: Check character limit
-    Given I visit main page
-    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
-    And I search for "bebek maması"
-    When I open search result no "1"
-    And I click add comment from comments tab
-    Then I should not be able to pass character limits
     And I log out
 
   @1015
