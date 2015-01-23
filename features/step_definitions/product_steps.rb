@@ -952,7 +952,7 @@ Then(/^I should see badges with these images$/) do |table|
 end
 
 Then(/^I should see badges for the product "([^"]*)"$/) do |arg|
-  response = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/" + arg
+  response = RestClient.get "http://productinformation.qa.hepsiburada.com/product/sku/#{arg}?expand=campaignbadges"
   resp = JSON.parse response
   badges = resp['campaignBadges'].collect{|x| x['badge']}
   img_sources = find('.badge-boxes').all('.ProductDashboard_button').collect{|x| x.first('img')['src']}
