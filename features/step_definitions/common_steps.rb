@@ -42,9 +42,14 @@ Then(/^I add "([^"]*)" product\(s\) to cart$/) do |arg|
     $p_quantity = i
     fill_in "quantity", :with=> i
     find_by_id("addToCart").click
+    puts "Wating for ajax"
     wait_for_ajax
+    puts "Wating for ajax - Done"
     page.should have_selector("#notification", :visible => true)
+    puts "Found notification..printing content"
+    puts find_by_id("notification").text
     within("#notification") do
+      puts "checking content"
       expect(page).to have_content("#{i} Ürün başarılı bir şekilde sepete eklenmiştir.")
     end
     page.should have_selector("#notification", visible: :hidden)
