@@ -120,6 +120,30 @@ After('@journey') do
   revert_to_default_wait_time
 end
 
+Before('@blah') do
+  puts "Before blah"
+end
+
+After('@blah') do
+  puts "After blah"
+end
+
+Before('@add_comments_test') do
+  puts "Resetting list of comments to null"
+  $comments_used_in_test = {}
+  $num_comments_used_in_test = 0
+end
+
+After('@add_comments_test') do
+  puts "Cleaning up comments"
+  $comments_used_in_test.each do |k, v|
+    puts "Deleting comment: #{v.inspect}"
+    execute_sql %"delete top(1) from i_yorum where
+                yorumheader='#{v['header']}' and yorum = '#{v['review']}'
+                and pf_id = '#{v['sku'].downcase}'"
+  end
+end
+
 # Around do |scenario, block|
 #   p "first"
 #   block.call

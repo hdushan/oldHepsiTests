@@ -869,8 +869,9 @@ Then(/^I should not be able to pass character limits$/) do
 end
 
 Then(/^I add a comment with these values$/) do |table|
-  # table is a table.hashes.keys # => [:header, :başlık]
   values = Hash[table.raw]
+  $comments_used_in_test[$num_comments_used_in_test] = {'header' => values['header'], 'review' => values['review'], 'rating' => values['rating'], 'show_name' => values['show_name'], 'sku' => values['sku']}
+  # table is a table.hashes.keys # => [:header, :başlık]
   div = find_by_id("addReviewContainer")
   button = div.find('a', text: 'Yorum Yap')
   header = div.find_by_id('txtTitle')
