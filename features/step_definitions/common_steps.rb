@@ -370,9 +370,17 @@ end
 And(/^Discounted price is displayed correctly$/) do
   price = format_price find('section.detail-main').find('span.price').text
   expect($prod['price']['value']).to eq(price)
-  expect($prod['price']['taxIncluded']).to be_true
+  expect($prod['price']['taxIncluded']).to eq(true)
+  puts "product sku equals #{$prod['productId']}"
   puts "Discount = #{$prod['discountRate']}"
-  expect($prod['discountRate']).not_to eq(0)
+  if $prod['discountRate']==0
+    puts "Discount shouldnt be shown!!"
+    find_by_id("product-discount-rate", :visible=>:hidden)
+    expect(find_by_id("product-discount-rate").visible?).to eq(false)
+  else
+    discount = extract_number find_by_id("product-discount-rate").text
+    expect(discount).to eq($prod['discountRate'])
+  end
 end
 
 Given(/^I retrieve details from product service with id "([^"]*)"$/) do |arg|
