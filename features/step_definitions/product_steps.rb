@@ -871,6 +871,7 @@ end
 Then(/^I add a comment with these values$/) do |table|
   values = Hash[table.raw]
   $comments_used_in_test[$num_comments_used_in_test] = {'header' => values['header'], 'review' => values['review'], 'rating' => values['rating'], 'show_name' => values['show_name'], 'sku' => values['sku']}
+  $num_comments_used_in_test+=1
   # table is a table.hashes.keys # => [:header, :başlık]
   div = find_by_id("addReviewContainer")
   button = div.find('a', text: 'Yorum Yap')
