@@ -13,7 +13,6 @@
       And I open search result no "2"
       And I am on product details
       And I add "2" product(s) to cart
-
-    Scenario: Go to checkout
+#Scenario: Go to checkout
       When I go to checkout
       Then Product is listed in the checkout screen

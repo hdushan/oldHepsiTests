@@ -74,10 +74,11 @@ Then(/^Product is listed in the checkout screen$/) do
 end
 
 When(/^I am on checkout screen$/) do
-  set_wait_time 20
-  header = find('header.box-header', visible: true)
-  header.text.should == 'Sepetim'
-  revert_to_default_wait_time
+  expect(page).to have_selector('header.box-header')
+  expect(page).to have_selector('.cart-title')
+  within('h1.cart-title') do
+    expect(page).to have_content('Sepetim')
+  end
 end
 
 Given(/^I navigate to Category$/) do |table|
@@ -85,6 +86,7 @@ Given(/^I navigate to Category$/) do |table|
   values = table.raw[0]
   cat1 = find('ul.browser-by-category').first('li', :text=> (capitalize values[0]))
   link = cat1.find('div.nav-home-wrapper').first('a', :text=> values[1])['href']
+  puts "\nLink = #{link.to_s}\n"
   visit_link link
   expect(page).to have_selector('.link-more-results')
   $current_results = extract_number find_by_id('totalItems').text

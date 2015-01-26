@@ -16,7 +16,6 @@
       | Süpermarket / Bebek Bezleri ve Alt Açma |
       And I open search result no "7"
       And I add "4" product(s) to cart
-
-    Scenario: Go to checkout
+#Scenario: Go to checkout
       When I go to checkout
       Then Product is listed in the checkout screen

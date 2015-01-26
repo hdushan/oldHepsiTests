@@ -133,9 +133,12 @@ After('@logout_after_test') do
   div = find_by_id('myAccount')
   div.hover
   begin
+    puts "\n\nLogging out in hook"
     find('a', text: "Çıkış Yap").click
+    puts "\n\nLogging out in hook: Successful"
   rescue Exception => e
     puts e
+    puts "\n\nLogging out in hook: UnSuccessful"
   end
   sleep 2
 end
@@ -154,6 +157,14 @@ After('@add_comments_test') do
                 yorumheader='#{v['header']}' and yorum = '#{v['review']}'
                 and pf_id = '#{v['sku'].downcase}'"
   end
+end
+
+
+After('@clear_data_and_close_browser_after_test') do
+  Capybara.reset_sessions!
+  $result_stack.clear
+  puts "\n Cleared data after test in hook"
+  page.execute_script "window.close();"
 end
 
 # Around do |scenario, block|
