@@ -26,7 +26,7 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
   puts "\n\n***** Running feature file #{feature_to_run} on Server: #{ENV['host']} *****\n\n"
   begin
     ENV["BLAH"] = "test"
-    run_cucumber_tests_first_try("cucumber_feature", feature_to_run, "results.html")
+    run_cucumber_tests_first_try(feature_to_run, "results.html")
   rescue Exception => e
     puts "\n\n***** Rerunning failed scenarios in feature #{feature_to_run} *****\n\n"
     puts "\n\n***** Scenarios that will be rerun: *****"
@@ -35,26 +35,26 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
       puts "*****    - #{scenario.strip} *****\n\n"
     end
     ENV["BLAH"] = "hans"
-    run_cucumber_tests_second_try("cucumber_feature_retry", rerun_file, "results_of_retry.html")
+    run_cucumber_tests_second_try(rerun_file, "results_of_retry.html")
   end
 end
 
-def run_cucumber_tests_first_try(cucumber_task_name, feature_to_run, results_file)
-  Cucumber::Rake::Task.new("#{cucumber_task_name}") do |t| 
+def run_cucumber_tests_first_try(feature_to_run, results_file)
+  Cucumber::Rake::Task.new("cucumber_first_try") do |t|
     cucumber_base_options = "--format pretty --format html --out #{results_file} --format rerun --out rerun.txt "
     t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
     puts "t.cucumber_opts = #{t.cucumber_opts}"
   end
-  Rake::Task["#{cucumber_task_name}"].invoke()
+  Rake::Task["cucumber_first_try"].invoke()
 end
 
-def run_cucumber_tests_second_try(cucumber_task_name, rerun_file, results_file)
-  Cucumber::Rake::Task.new("#{cucumber_task_name}") do |t|
+def run_cucumber_tests_second_try(rerun_file, results_file)
+  Cucumber::Rake::Task.new("cucumber_retry") do |t|
     cucumber_base_options = "--format pretty --format html --out #{results_file} "
     t.cucumber_opts = "@#{rerun_file} #{cucumber_base_options}"
     puts "t.cucumber_opts = #{t.cucumber_opts}"
   end
-  Rake::Task["#{cucumber_task_name}"].invoke()
+  Rake::Task["cucumber_retry"].invoke()
 end
 
 desc "Run Jmeter Performance Tests (Desktop)"
