@@ -663,6 +663,17 @@ Then(/^I should see deal of the day counter in details$/) do
   hours.should == find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
 end
 
+Then(/^I should see stock left in details$/) do
+  button = find_by_id("addToCart")
+  sku = button["data-sku"]
+  page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
+  page.should have_selector(".timer-box", text: "Ürün")
+  item_count = extract_number find(".timer-box", text: "Ürün").text
+  result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{sku}' and Status = 2 ORDER BY ID DESC"
+  i = result.first['StockQty'].to_i
+  item_count.should == i
+end
+
 
 Then(/^I do not see any compatible products$/) do
   page.should have_no_selector("#compatibleProducts")
