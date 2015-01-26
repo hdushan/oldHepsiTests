@@ -128,6 +128,18 @@ After('@blah') do
   puts "After blah"
 end
 
+After('@logout_after_test') do
+  visit_main_page
+  div = find_by_id('myAccount')
+  div.hover
+  begin
+    find('a', text: "Çıkış Yap").click
+  rescue Exception => e
+    puts e
+  end
+  sleep 2
+end
+
 Before('@add_comments_test') do
   puts "Resetting list of comments to null"
   $comments_used_in_test = {}

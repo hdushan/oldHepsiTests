@@ -5,7 +5,7 @@ Feature: Add reviews
   I want users to be asked to fill in certain mandatory fields
   So that I can avoid meaningless comments
 
-  @1015
+  @1015 @logout_after_test
   Scenario: Check Mandatory Fields
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -13,9 +13,8 @@ Feature: Add reviews
     When I open search result no "1"
     And I click add comment from comments tab
     Then I should not be able to submit without mandatory fields
-    And I log out
 
-  @1015
+  @1015 @logout_after_test
   Scenario: Check character limit
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -23,4 +22,3 @@ Feature: Add reviews
     When I open search result no "1"
     And I click add comment from comments tab
     Then I should not be able to pass character limits
-    And I log out

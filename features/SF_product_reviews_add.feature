@@ -5,7 +5,7 @@ Feature: Add reviews
   I want to be able to add reviews on the product page
   So that others can decide on whether to purchase the item
 
-  @1015
+  @1015  @logout_after_test
   Scenario: Validate Add Comment fields
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -13,9 +13,8 @@ Feature: Add reviews
     When I open search result no "1"
     And I click add comment from product description
     Then Comment fields should appear as expected
-    And I log out
 
-  @1015 @add_comments_test
+  @1015 @add_comments_test  @logout_after_test
   Scenario: Successful comment input
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -38,13 +37,8 @@ Feature: Add reviews
       | review    | bu review ı yazan adam kör oldu |
       | rating    | 3 star                          |
       | name      | test user                       |
-    #And I delete comment from db
-    #| header    | başlık                          |
-    #| review    | bu review ı yazan adam kör oldu |
-    #| sku       | AILEMLP001001070                |
-    And I log out
 
-  @1015 @add_comments_test
+  @1015 @add_comments_test   @logout_after_test
   Scenario: User should not be able to input second comment for same product
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -82,13 +76,8 @@ Feature: Add reviews
       | show_name | Evet                             |
       | sku       | GYUDEL01SI                       |
     And I get an error message while adding comment "Bu ürünle ilgili yayında olan yorumunuz bulunmaktadır. Ürün Yorumlarım sayfanızdan yorumunuzu silerek yeni bir yorum yapabilirsiniz."
-    #And I delete comment from db
-    #  | header    | new header                      |
-    #  | review    | new review has been added       |
-    #  | sku       | GYUDEL01SI                      |
-    And I log out
 
-  @1015 @add_comments_test
+  @1015 @add_comments_test @logout_after_test
   Scenario: User should not be able to input more than three comments in a day
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -132,21 +121,8 @@ Feature: Add reviews
       | show_name | Evet                              |
       | sku       | SGOB078678                        |
     And I get an error message while adding comment "Üzgünüz, aynı gün içerisinde en fazla 3 yorum yapabilirsiniz."
-#    And I delete comment from db
-#      | header    | new header                             |
-#      | review    | new review has been added              |
-#      | sku       | KTIMAS43484                            |
-#    And I delete comment from db
-#      | header    | second new header                      |
-#      | review    | second new review has been added       |
-#      | sku       | SGBAN512589                            |
-#    And I delete comment from db
-#      | header    | third new header                       |
-#      | review    | third new review has been added        |
-#      | sku       | SGBRAUNEB25                            |
-    And I log out
 
-  @1015 @add_comments_test
+  @1015 @add_comments_test  @logout_after_test
   Scenario: User should not be able to add a comment when they have 3 rejects
     Given I visit main page
     And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
@@ -188,16 +164,3 @@ Feature: Add reviews
       | show_name | Evet                              |
       | sku       | KTIMAS43484                       |
     Then I get an error message while adding comment "Üzgünüz. Bu ürüne daha fazla yorum yapamazsınız."
-#    And I delete comment from db
-#      | header    | new header                             |
-#      | review    | new review has been added              |
-#      | sku       | KTIMAS43484                            |
-#    And I delete comment from db
-#      | header    | second new header                      |
-#      | review    | second new review has been added       |
-#      | sku       | KTIMAS43484                            |
-#    And I delete comment from db
-#      | header    | third new header                       |
-#      | review    | third new review has been added        |
-#      | sku       | KTIMAS43484                            |
-    And I log out

@@ -766,7 +766,9 @@ end
 
 And(/^I click add comment from comments tab$/) do
   find_by_id("productReviewsTab").click
-  find_by_id("reviewContainer").find("a", text: "Puan ver Yorum yap").click
+  expect(page).to have_selector('#tabProductReviews')
+  reviews_box = find_by_id("reviewContainer")
+  reviews_box.find("a", text: "Puan ver Yorum yap").click
 end
 
 Then(/^Comment fields should appear as expected$/) do
