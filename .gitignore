@@ -12,3 +12,5 @@ jmeter.log
 *results*.html
 *results*.jtl
 jmeter.log
+
+rerun.txt

@@ -22,21 +22,36 @@ desc "Run a feature file, and rerun it if it failed"
 task :feature_run, [:feature_name,:host_server] do |t, args|
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
   ENV['host'] = "http://" + args[:host_server]
+  rerun_file = "rerun.txt"
   puts "\n\n***** Running feature file #{feature_to_run} on Server: #{ENV['host']} *****\n\n"
   begin
     ENV["BLAH"] = "test"
-    run_cucumber_tests("cucumber_feature", feature_to_run, "results.html")
+    run_cucumber_tests_first_try("cucumber_feature", feature_to_run, "results.html")
   rescue Exception => e
-    puts "\n\n***** Rerunning feature #{feature_to_run} *****\n\n"
+    puts "\n\n***** Rerunning failed scenarios in feature #{feature_to_run} *****\n\n"
+    puts "\n\n***** Scenarios that will be rerun: *****"
+    scenario_list = File.new(rerun_file, "r")
+    while (scenario = scenario_list.gets)
+      puts "*****    - #{scenario.strip} *****\n\n"
+    end
     ENV["BLAH"] = "hans"
-    run_cucumber_tests("cucumber_feature_retry", feature_to_run, "results_of_retry.html")
+    run_cucumber_tests_second_try("cucumber_feature_retry", rerun_file, "results_of_retry.html")
   end
 end
 
-def run_cucumber_tests(cucumber_task_name, feature_to_run, results_file)
+def run_cucumber_tests_first_try(cucumber_task_name, feature_to_run, results_file)
   Cucumber::Rake::Task.new("#{cucumber_task_name}") do |t| 
-    cucumber_base_options = "--format pretty --format html --out #{results_file} "
+    cucumber_base_options = "--format pretty --format html --out #{results_file} --format rerun --out rerun.txt "
     t.cucumber_opts = "#{feature_to_run} #{cucumber_base_options}"
+    puts "t.cucumber_opts = #{t.cucumber_opts}"
+  end
+  Rake::Task["#{cucumber_task_name}"].invoke()
+end
+
+def run_cucumber_tests_second_try(cucumber_task_name, rerun_file, results_file)
+  Cucumber::Rake::Task.new("#{cucumber_task_name}") do |t|
+    cucumber_base_options = "--format pretty --format html --out #{results_file} "
+    t.cucumber_opts = "@#{rerun_file} #{cucumber_base_options}"
     puts "t.cucumber_opts = #{t.cucumber_opts}"
   end
   Rake::Task["#{cucumber_task_name}"].invoke()
@@ -108,7 +123,7 @@ task :warmup, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
-  result_file_html = "warmup_results.html" #leave as '' if you dont want to create a html report
+  result_file_html = "warmup_results.html" #leave as '' if you dont create a html report
   options = {}
   options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin

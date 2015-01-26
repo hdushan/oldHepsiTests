@@ -534,8 +534,14 @@ Then(/^I get error page$/) do
   first("img", :visible => true)['src'].should == Capybara.app_host + "/Content/images/error.jpg"
 end
 
-Given(/^I test things$/) do
+Given(/^I test things one$/) do
+  p "first"
+  expect(1).to eq(3)
+end
+
+Given(/^I test things two$/) do
   p "second"
+  expect(1).to eq(2)
 end
 
 When(/^I click go to desktop version link$/) do
