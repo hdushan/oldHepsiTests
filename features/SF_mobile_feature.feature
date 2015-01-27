@@ -33,28 +33,20 @@ Feature: Mobile Homepage is as expected
     When I click the Hepsiburada logo
     Then I should be redirected to mobile Homepage
 
-  @10
-  Scenario: Toggling desktop from m.dot
+  @355
+  Scenario: Testing
     Given I visit mobile main page
     When I click go to desktop version link
-    Then I am on the homepage
+    Then I am on old hepsiburada mainpage
 
   @312
-  Scenario: Clear filters button should be disabled
+  Scenario: Clear filters button should be disabled if no filter active and enabled if a filter is applied
     Given I visit mobile main page
     When I navigate to Mobile_Category
     | Ev Elektroniği |
     And I select a sub category in mobile
     | Ses ve Görüntü Sistemleri | Tümünü Gör |
     Then Clear button in filter should be disabled
-
-  @312
-  Scenario: Clear filters button should be enabled
-    Given I visit mobile main page
-    When I navigate to Mobile_Category
-    | Ev Elektroniği |
-    And I select a sub category in mobile
-    | Ses ve Görüntü Sistemleri | Tümünü Gör |
     And I apply a filter on mobile
     | Markalar            | Philips |
     | Değerlendirme Puanı | 4 Yıldız |
@@ -121,12 +113,6 @@ Feature: Mobile Homepage is as expected
     Given I visit mobile main page
     When I click my account button on mobile
     Then I am on mobile login page
-
-  @355
-  Scenario: Testing
-    Given I visit mobile main page
-    When I click go to desktop version link
-    Then I am on old hepsiburada mainpage
 
   @456_mobile
   Scenario Outline: Visit mobile site with links from legacy site

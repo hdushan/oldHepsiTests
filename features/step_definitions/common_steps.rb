@@ -458,6 +458,16 @@ Then(/^I visit these links without an error page$/) do
   }
 end
 
+Then(/^I visit these links (.*?) to (.*?) without an error page$/) do  |start_index, end_index|
+  links_to_visit = $links[start_index.to_i..end_index.to_i]
+  puts "\nNumber of links to visit: #{links_to_visit.length}\n"
+  links_to_visit.each{|x|
+    puts "\nVisiting link: #{x.inspect}\n"
+    visit_link x
+    steps %{ Then I don't get the error page }
+  }
+end
+
 And(/^I store filter results$/) do
   div = find_by_id "productresults"
   $search_results = div.all('li.search-item').map{|x| x.find('h3.product-title').text }
