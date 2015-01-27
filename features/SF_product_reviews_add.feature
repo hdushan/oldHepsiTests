@@ -5,15 +5,6 @@ Feature: Add reviews
   I want to be able to add reviews on the product page
   So that others can decide on whether to purchase the item
 
-  @1015  @logout_after_test
-  Scenario: Validate Add Comment fields
-    Given I visit main page
-    And I login with user "alper.mermer@hepsiburada.com" and pass "Aa123456"
-    And I search for "bebek maması"
-    When I open search result no "1"
-    And I click add comment from product description
-    Then Comment fields should appear as expected
-
   @1015 @add_comments_test  @logout_after_test
   Scenario: Successful comment input
     Given I visit main page
@@ -21,6 +12,7 @@ Feature: Add reviews
     And I search for "AILEMLP001001070"
     When I open search result no "1"
     And I click add comment from product description
+    Then Comment fields should appear as expected
     Then I add a comment with these values
     | header    | başlık                          |
     | review    | bu review ı yazan adam kör oldu |
