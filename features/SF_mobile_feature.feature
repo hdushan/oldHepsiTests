@@ -6,6 +6,15 @@ Feature: Mobile Homepage is as expected
   I want to navigate around the site
   So that I can navigate to products or find information relevant to me
 
+  @248
+  Scenario: Show social icons in footer
+    Given I am on the homepage
+    And I clear the browsers cookies
+    Given I visit mobile main page
+    Then I see the social icons in the footer
+    And I see the security logo in the footer
+    And I see the copyright message in the footer
+
   @10
   Scenario: Clicking around Storefront
     Given I visit mobile main page

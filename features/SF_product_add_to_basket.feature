@@ -30,7 +30,7 @@ Feature: Product page Add and Remove from basket
     Then Add to cart button is not available on product details
 #    And I am able to select different variants
 
-  @318
+  @318 @326
   Scenario: Add to basket
     Given I visit main page
     And I clear cart items
@@ -40,6 +40,8 @@ Feature: Product page Add and Remove from basket
     And I am on product details
     When I add "1" product(s) to cart
     Then Cart icon should have an indication of "1"
+    Then I go to checkout
+    And Product is listed in the checkout screen
 
   @318
   Scenario: Adding to basket without selecting a variant

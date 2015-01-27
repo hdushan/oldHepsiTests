@@ -5,52 +5,13 @@ Feature: Homepage is as expected
   I want to be able to see things on the homepage
   So that I can navigate the site to purchase items
 
-  @190
-  Scenario: Displaying deals on homepage
-    Given I visit main page
-    When There are some items in deal of the day carousel
-    Then Original prices should be displayed in deal of the day items
-    And Deal of the day items have titles
-
-  @190
-  Scenario: Displaying discounted prices on deal of the day products
-    Given I visit main page
-    When There are some items in deal of the day carousel
-    Then Discounted prices should be displayed in deal of the day items
-
-  @190
-  Scenario: Clicking through on a deal
-    Given I visit main page
-    When There are some items in deal of the day carousel
-    Then I should be able to visit every item in deal of the day carousel
-
-  @248
-  Scenario: Show social icons in footer
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Given I visit mobile main page
-    Then I see the social icons in the footer
-
-  @248
-  Scenario: Show security logo in footer
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Given I visit mobile main page
-    Then I see the security logo in the footer
-
-  @248
-  Scenario: Show copyright in the footer
-    Given I am on the homepage
-    And I clear the browsers cookies
-    Given I visit mobile main page
-    Then I see the copyright message in the footer
-
-  @16
+  @16  @326
   Scenario: Searching, with results
     Given I am on the homepage
     And I clear the browsers cookies
     When I search for "iPhone"
-    Then I should see a list of iPhone results
+    Then There are some results available
+    And I should see a list of iPhone results
 
   @16
   Scenario: Searching, with no results
@@ -148,15 +109,11 @@ Feature: Homepage is as expected
     | YouTube                           | https://www.youtube.com/hepsiburada                                         |   Y     |       Y       |
    #Mobil Uygulamalar
 
-  @320
+  @320 @223
   Scenario: Check page title
     Given I visit main page
     Then The page title is "Türkiye'nin En Büyük Online Alışveriş Sitesi Hepsiburada.com"
-
-  @223
-  Scenario: Include favicon on desktop
-    Given I visit main page
-    Then Favicon should be on page
+    And Favicon should be on page
 
   @223
   Scenario: Include favicon on mobile
@@ -192,43 +149,15 @@ Feature: Homepage is as expected
     Then I should be able to cycle all topsellers
 
   @326
-  Scenario: Searching for a product
-    Given I visit main page
-    When I search for "ayakkabı"
-    Then There are some results available
-
-  @326
-  Scenario: Going to checkout
-    Given I visit main page
-    When I search for "kulaklık"
-    And I open search result no "4"
-    And I add "3" product(s) to cart
-    Then I go to checkout
-    And Product is listed in the checkout screen
-
-  @326
   Scenario: Check menu on the details page
     Given I visit main page
     When I search for "saat"
     And I open search result no "3"
     Then I am on product details
-
-  @326
-  Scenario Outline: Menu should be available on details page
-    Given I visit main page
-    When I hover on menu item "<item>"
+    When I hover on menu item "Elektronik"
     Then There are items in the menu content
-  Examples:
-    | item                    |
-    | Elektronik   |
-    | Ev, Yaşam, Ofis          |
-    | Oto, Bahçe, Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Hobi |
-    | Giyim, Takı Aksesuar    |
+    When I hover on menu item "Ev, Yaşam, Ofis"
+    Then There are items in the menu content
 
   @326
   Scenario: Check menu on the CLP
@@ -236,30 +165,12 @@ Feature: Homepage is as expected
     When I navigate to Category
       | Kitap, Müzik Film, Hobi | Müzik Enstrümanları |
     Then There are some results available
-
-  @326
-  Scenario Outline: Menu should be available on CLP
-    Given I visit main page
-    When I hover on menu item "<item>"
+    When I hover on menu item "Spor Outdoor"
     Then There are items in the menu content
-  Examples:
-    | item                    |
-    | Elektronik   |
-    | Ev, Yaşam, Ofis          |
-    | Oto, Bahçe, Yapı Market  |
-    | Anne, Bebek Oyuncak     |
-    | Spor Outdoor            |
-    | Kozmetik Kişisel Bakım  |
-    | Süpermarket Petshop     |
-    | Kitap, Müzik Film, Hobi |
-    | Giyim, Takı Aksesuar    |
-
-    @467
-  Scenario: Check for original prices on deal of the day carousel
-    Given I visit main page
-    And I am at main page
-    When There are some items in deal of the day carousel
-    Then Original prices should be displayed in deal of the day items
+    When I hover on menu item "Ev, Yaşam, Ofis"
+    Then There are items in the menu content
+    When I hover on menu item "Süpermarket Petshop"
+    Then There are items in the menu content
 
 #  @481
 #  Scenario: Check for feedback button on homepage
@@ -282,30 +193,14 @@ Feature: Homepage is as expected
 #    When There is a feedback button on current page
 #    Then There should be a way for me to give feedback
 
-  @1024
+  @1024  @1037
   Scenario: Check for new label on footer
     Given I visit main page
     Then There is a link in the footer with label "Özel Sayfalar"
-
-  @1037
-  Scenario: Display propositions in footer
-    Given I visit main page
-    Then There are these propositions
+    And There are these propositions
     | Kolay İade          | Aldığınız ürünü iade etmek hiç bu kadar kolay olmamıştı. |
     | Bugün Teslimat      | Saat 14:00'e kadar verdiğiniz siparişler aynı gün kapınızda. |
     | Tek Tıkla Alışveriş | Ödeme ve adres bilgilerinizi kaydedin, tek tıkla alışverişin keyfini yaşayın. |
     | Mobil Cebinizde     | Dilediğiniz her yerden güvenli alışverişin keyfini çıkarın. |
 
-  @1092 @725
-  Scenario: Check deal of the day link and deal of the day main page
-    Given I visit main page
-    When I click deal of the day link
-    Then I am on deals of the day page
 
-  @1092
-  Scenario: Check details for a deal of the day
-    Given I visit main page
-    When I click deal of the day link
-    Then I am on deals of the day page
-    When I open deal of the day no "1"
-    Then Product details contain "Günün Teklifi"

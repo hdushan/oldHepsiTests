@@ -299,7 +299,7 @@ Then(/^breadcrumbs should be available on google webtools$/) do
 end
 
 
-When(/^I hover on menu item "([^"]*)"$/) do |arg|
+When(/^I hover on menu item "(.*?)"$/) do |arg|
   el = find('ul.browser-by-category').first('li', :text=> (capitalize arg))
   $container = el.find('div.nav-home-wrapper')
 end
@@ -348,7 +348,7 @@ Then(/^I don't get the error page$/) do
     revert_to_default_wait_time
     url = page.current_url
     visit_main_page
-    p "Page not found error!!! on\n#{url}"
+    puts "Page not found error!!! on:\n#{url}\n"
   end
 end
 
@@ -450,7 +450,9 @@ When(/^I store links from this menu item$/) do
 end
 
 Then(/^I visit these links without an error page$/) do
+  puts "\nNumber of links to visit: #{$links.length}\n"
   $links.each{|x|
+    puts "\nVisiting link: #{x.inspect}\n"
     visit_link x
     steps %{ Then I don't get the error page }
   }

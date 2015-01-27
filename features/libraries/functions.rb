@@ -114,9 +114,8 @@ def visit_link link
     begin
       visit format_link(link)
     rescue Timeout::Error
+      puts "Retrying due to timeout on page: #{link}"
       visit format_link(link)
-    rescue Timeout::Error
-      p "Timeout on page: #{link}"
     end
   end
 end
