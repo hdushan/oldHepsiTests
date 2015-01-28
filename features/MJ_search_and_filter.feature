@@ -2,7 +2,7 @@
 @journey
   Feature: Search and filter for mobile
 
-    @mobile_merchant_disabled
+
     Scenario: Search products and filter an item
       Given I visit mobile main page
       And I search for "kalem"
@@ -14,5 +14,10 @@
       And I am on product details
       And I add "2" product(s) to cart
 #Scenario: Go to checkout
-      When I go to checkout
+      And I am on checkout screen on mobile
       Then Product is listed in the checkout screen
+      And I return to previous page
+      Then Cart icon should have an indication of "1"
+      And I clear cart items
+      And I return to previous page
+      Then Cart icon should have an indication of "0"

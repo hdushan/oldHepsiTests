@@ -39,9 +39,10 @@ Feature: Product page Add and Remove from basket
     And I open search result no "1"
     And I am on product details
     When I add "1" product(s) to cart
-    Then Cart icon should have an indication of "1"
-    Then I go to checkout
-    And Product is listed in the checkout screen
+    And I am on checkout screen
+    Then Product is listed in the checkout screen
+    And I return to previous page
+    Then I see the cart item count is 1
 
   @318
   Scenario: Adding to basket without selecting a variant
@@ -51,7 +52,7 @@ Feature: Product page Add and Remove from basket
     And I am on product details
     Then I should not be able to add to cart without a variant
 
-  @93 @merchant_disabled
+  @93
   Scenario: Add to basket from compatible products
     Given I visit main page
     And I clear cart items
@@ -60,4 +61,7 @@ Feature: Product page Add and Remove from basket
     And I open search result no "1"
     When I click on compatible products tab
     And I add compatible product no "3" to basket
+    And I am on checkout screen
+    Then Product is listed in the checkout screen
+    And I return to previous page
     Then I see the cart item count is 1

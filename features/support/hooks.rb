@@ -65,13 +65,6 @@ Before ('@mobile_compatibles_enabled') do
   end
 end
 
-After  do |scenario|
-  if scenario.failed?
-    page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png", :full => true)
-    $screenshot_counter += 1
-  end
-end
-
 After('@warmup') do |scenario|
   begin
     p scenario.name
@@ -120,12 +113,20 @@ After('@journey') do
   revert_to_default_wait_time
 end
 
-Before('@blah') do
-  puts "Before blah"
+Before('@blah2') do
+  puts "Before blah2"
 end
 
-After('@blah') do
-  puts "After blah"
+Before('@blah1') do
+  puts "Before blah1"
+end
+
+After('@blah2') do
+  puts "After blah2"
+end
+
+After('@blah1') do
+  puts "After blah1"
 end
 
 After('@logout_after_test') do
@@ -165,6 +166,13 @@ After('@clear_data_and_close_browser_after_test') do
   $result_stack.clear
   puts "\n Cleared data after test in hook"
   page.execute_script "window.close();"
+end
+
+After  do |scenario|
+  if scenario.failed?
+    page.save_screenshot(Capybara.save_and_open_page_path + "/#{clear_special scenario.name}-#{$screenshot_counter.to_s}-failed.png", :full => true)
+    $screenshot_counter += 1
+  end
 end
 
 # Around do |scenario, block|

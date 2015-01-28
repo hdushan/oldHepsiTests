@@ -2,7 +2,7 @@
 @journey
   Feature: Search and buy for mobile
 
-    @mobile_merchant_disabled
+
     Scenario: Search products and buy an item
       Given I visit mobile main page
       And I search for "bebek"
@@ -17,5 +17,10 @@
       And I open search result no "7"
       And I add "4" product(s) to cart
 #Scenario: Go to checkout
-      When I go to checkout
+      And I am on checkout screen on mobile
       Then Product is listed in the checkout screen
+      And I return to previous page
+      Then Cart icon should have an indication of "1"
+      And I clear cart items
+      And I return to previous page
+      Then Cart icon should have an indication of "0"

@@ -1,9 +1,8 @@
 
 Feature: Test
-  @blah
+  @blah2 @blah1
   Scenario: Test things 1
     Given I test things one
 
-  @blah
-  Scenario: Test things 2
-    Given I test things two
+  Scenario: Test things 1
+    Given I test things one

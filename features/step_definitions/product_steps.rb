@@ -210,7 +210,7 @@ And(/^I see the discount percentage$/) do
   expect(find('#product-discount-rate'))
 end
 
-Then /^I see the cart item count is (.*)/ do | cart_quantity_count |
+Then /^I see the cart item count is (\d*)/ do | cart_quantity_count |
   page.find_by_id('cartItemCount').should have_content(cart_quantity_count)
 end
 
@@ -710,10 +710,10 @@ And(/^I add compatible product no "([^"]*)" to basket$/) do |arg|
   i = arg.to_i - 1
   unless i < 0
     find_by_id('compatibleProductTab').all(".add-to-basket.button.small")[i].click
-    wait_for_ajax
-    page.should have_selector("#notification", :visible => true)
-    page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
-    page.should have_selector("#notification", visible: :hidden)
+    # wait_for_ajax
+    # page.should have_selector("#notification", :visible => true)
+    # page.should have_content("1 Ürün başarılı bir şekilde sepete eklenmiştir.")
+    # page.should have_selector("#notification", visible: :hidden)
   end
 end
 

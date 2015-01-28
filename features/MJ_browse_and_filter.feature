@@ -2,11 +2,8 @@
 @journey
   Feature: Browse and filter for mobile
 
-    @mobile_merchant_disabled
-    Scenario: Browse to a category
+      Scenario: Browse to a category
       Given I visit mobile main page
-      And I clear cart items
-      And I visit mobile main page
       When I navigate to Mobile_Category
         | Beyaz Eşya / Mutfak |
       Then I select a sub category in mobile
@@ -23,8 +20,12 @@
 #Scenario: Add to cart from details
       Given I open search result no "6"
       When I add "4" product(s) to cart
-      And Cart icon should have an indication of "1"
-      And I go to checkout
+      And I am on checkout screen on mobile
       Then Product is listed in the checkout screen
+      And I return to previous page
+      Then Cart icon should have an indication of "2"
+      And I clear cart items
+      And I return to previous page
+      Then Cart icon should have an indication of "0"
 
 

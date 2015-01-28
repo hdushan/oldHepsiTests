@@ -26,7 +26,10 @@
       And I increase item count by "2"
       And I decrease item count by "1"
       Then I add to cart
-      And I should see a notification of 2 items added to my basket
+      And I am on checkout screen on mobile
+      Then Product is listed in the checkout screen
+      And I return to previous page
+      Then Cart icon should have an indication of "1"
 #Scenario: Check topsellers and recommended products on detail
       Given I search for "iphone"
       And I open search result no "1"

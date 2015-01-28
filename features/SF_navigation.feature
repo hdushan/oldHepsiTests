@@ -29,19 +29,19 @@ Feature: Navigation by categories is as expected
     Then I should see a breadcrumb trail
     And I should be able to visit every link on breadcrumb trail
 
-  @359 @merchant_disabled
+  @359
   Scenario: Clicking header on checkout
     Given I visit main page
     When I go to checkout
     And I click on logo
     Then I don't get the error page
 
-  @359 @merchant_disabled
+  @359
   Scenario: Return 404 http status on not found product page
     When I visit link "/bunjee-pure-3-kapili-1-cekmeceli-gardirop-p-MBNAYG3KAPI3551CEK"
     Then I get error page
 
-  @359 @merchant_disabled
+  @359
   Scenario: Return 404 http status on not found category page
     When I visit link "/liste/department.aspx?categoryid=250006687678094&m_redir=0"
     Then I get error page
