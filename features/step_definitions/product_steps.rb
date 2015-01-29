@@ -646,21 +646,31 @@ end
 Then(/^I should see deal of the day counter in details$/) do
   button = find_by_id("addToCart")
   sku = button["data-sku"]
+  puts "sku: #{sku}"
   page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
   page.should have_selector(".timer-box.sale-end-timer-days", text: "Gün")
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
-  result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
-  t = Time.new
-  result.each{|x| t =  x['SaleEnd']}
-  now = Time.now - 10800
-  diff = Time.diff(now, t, '%d')
-  str = diff[:diff]
-  days = extract_number str
-  hours = diff[:hour]
-  days.should == find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
-  hours.should == find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
+  days_on_page = find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
+  hours_on_page= find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
+  expect(days_on_page).to be_an(Integer)
+  expect(hours_on_page).to be_an(Integer)
+  if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
+    puts "Strict check for Deal of the Day Time counter"
+    result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
+    expect(result.count).to eq(1)
+    t = Time.new
+    result.each{|x| t =  x['SaleEnd']}
+    now = Time.now - 10800
+    diff = Time.diff(now, t, '%d')
+    str = diff[:diff]
+    days_from_database = extract_number str
+    hours_from_database = diff[:hour]
+    expect(days_on_page).to eq(days_from_database)
+    expect(hours_on_page).to eq(hours_from_database)
+  end
+
 end
 
 Then(/^I should see stock left in details$/) do
@@ -669,9 +679,15 @@ Then(/^I should see stock left in details$/) do
   page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
   page.should have_selector(".timer-box", text: "Ürün")
   item_count = extract_number find(".timer-box", text: "Ürün").text
-  result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{sku}' and Status = 2 ORDER BY ID DESC"
-  i = result.first['StockQty'].to_i
-  item_count.should == i
+  expect(item_count.to_i).to be_an(Integer)
+  if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
+    puts "Strict check for Deal of the Day Time counter"
+    result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{sku}' and Status = 2 ORDER BY ID DESC"
+    expect(result.count).to be > 0
+    stock_from_database = result.first['StockQty'].to_i
+    expect(item_count).to eq(stock_from_database)
+  end
+
 end
 
 

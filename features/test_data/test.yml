@@ -1,4 +1,5 @@
-SERVER_URL: "http://storefront.qa.hepsiburada.com"
+SERVER_URL: "http://storefront.test.hepsiburada.com"
+
 
 DATABASE_SERVER: 'euclide2.hepsiburada.dmz'
 DATABASE_PORT: '1433'
@@ -6,8 +7,8 @@ DATABASE_USERNAME: 'DMARKET\amermer'
 DATABASE_PASSWORD: 'Aa12345_7'
 DATABASE_INSTANCE: 'HBDB_TEST'
 
+DEAL_OF_THE_DAY_STRICT: true
+
 BABY_PRODUCT: "bebek bezi"
 GALAX_NOTE_4: "Spigen sgp galaxy note 4"
 BOOK: "kitap"
-
-DEAL_OF_THE_DAY_STRICT: true

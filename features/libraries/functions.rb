@@ -93,11 +93,11 @@ end
 
 def execute_sql str
   mssql = TinyTds::Client.new(
-      :dataserver => 'euclide2.hepsiburada.dmz',
-      :port => '1433',
-      :username => 'DMARKET\amermer',
-      :password => 'Aa12345_7',
-      :database => 'HBDB_TEST'
+      :dataserver => get_test_data("DATABASE_SERVER"),
+      :port => get_test_data("DATABASE_PORT"),
+      :username => get_test_data("DATABASE_USERNAME"),
+      :password => get_test_data("DATABASE_PASSWORD"),
+      :database => get_test_data("DATABASE_INSTANCE")
   )
   results = mssql.execute(str)
   return results

@@ -270,8 +270,10 @@ And(/^Top sellers an discount items are not visible$/) do
   revert_to_default_wait_time
 end
 
-Given(/^I search for a product with "([^"]*)"$/) do |arg|
-  fill_in "productSearch" , :with => arg
+Given(/^I search for a product "(.*?)"$/) do |arg|
+  search_string = get_test_data(arg)
+  puts "#{arg}:#{search_string}"
+  fill_in "productSearch" , :with => search_string
   find_by_id("buttonProductSearch").click
 end
 
@@ -556,12 +558,12 @@ Then(/^I get error page$/) do
 end
 
 Given(/^I test things one$/) do
-  p "first"
+  puts "first"
   expect(1).to eq(1)
 end
 
 Given(/^I test things two$/) do
-  p "second"
+  puts "second"
   expect(1).to eq(2)
 end
 

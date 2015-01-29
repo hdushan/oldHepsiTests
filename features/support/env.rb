@@ -10,26 +10,22 @@ require 'rest-client'
 require 'tiny_tds'
 require 'time_diff'
 require 'yaml'
+require_relative 'data'
 
-def test_data_files(dir)
-  Dir.entries(dir).select{|entry| entry =~ /yml$/}
+$test_data_folder = File.join(Dir.pwd, "features", "test_data")
+
+unless ENV['environment']
+  ENV['environment'] = "test"
 end
 
-def is_test_data_consistent?(data_folder)
-  raise "\n\nTest Data file for the environment #{ENV['environment']} is not found in folder #{data_folder}\n\n" unless test_data_files(data_folder).include? "#{ENV['environment']}.yml"
-end
+$test_data = read_test_data_file(ENV["environment"])
 
-test_data_folder = File.join(Dir.pwd, "features", "test_data")
-
-#is_test_data_consistent?(test_data_folder)
-
-#$test_data = YAML.load_file(File.join(test_data_folder), "#{ENV["environment"]}.yml")
-
-#puts $test_data.keys
-
-Capybara.app_host = 'http://storefront.test.hepsiburada.com'#'http://localhost:99'
 if ENV['host']
   Capybara.app_host = ENV['host']
+elsif ENV['environment']
+  Capybara.app_host = $test_data["SERVER_URL"]
+else
+  Capybara.app_host = 'http://storefront.test.hepsiburada.com'#'http://localhost:99'
 end
 
 Capybara.run_server = false

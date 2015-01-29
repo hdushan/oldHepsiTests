@@ -10,7 +10,7 @@ Feature: Search and apply a filter to find a product
     Given I visit main page
     Then I am at main page
 #Scenario: Search for a product by title
-    When I search for "kitap"
+    When I search for a product "BOOK"
     Then There are some results available
 #Scenario: Apply Filter
     Given I select a sub category in search
