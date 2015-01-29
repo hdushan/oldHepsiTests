@@ -652,8 +652,11 @@ Then(/^I should see deal of the day counter in details$/) do
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
+  sleep 2
   days_on_page = find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
+  puts "Days from page: #{days_on_page}"
   hours_on_page= find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
+  puts "Hours from page: #{hours_on_page}"
   expect(days_on_page).to be_an(Integer)
   expect(hours_on_page).to be_an(Integer)
   if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
@@ -665,8 +668,11 @@ Then(/^I should see deal of the day counter in details$/) do
     now = Time.now - 10800
     diff = Time.diff(now, t, '%d')
     str = diff[:diff]
+    puts "str = #{str}"
     days_from_database = extract_number str
+    puts "dbdays = #{days_from_database}"
     hours_from_database = diff[:hour]
+    puts "dbhours = #{hours_from_database}"
     expect(days_on_page).to eq(days_from_database)
     expect(hours_on_page).to eq(hours_from_database)
   end
