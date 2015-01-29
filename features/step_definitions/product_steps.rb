@@ -652,7 +652,7 @@ Then(/^I should see deal of the day counter in details$/) do
   page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
   page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
   page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
-  sleep 2
+  sleep 10 #Until we find a way to wait till the time has updated on the page.
   days_on_page = find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
   puts "Days from page: #{days_on_page}"
   hours_on_page= find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i

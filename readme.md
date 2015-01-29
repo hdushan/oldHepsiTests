@@ -43,12 +43,6 @@ CD into the acceptance-tests folder and run these:
 * If you want to use phantomjs, install phantomjs, and have the phantomjs executable available in your path
 * If you want to use chrome, install google-chrome and chromedriver, and have the chromedriver executable available in your path
 
-CD into the acceptance-tests folder and run these:
-
-    `bundle config build.nokogiri --use-system-libraries`
-
-    `bundle install --verbose`
-
 
 ## Running on a different host
 

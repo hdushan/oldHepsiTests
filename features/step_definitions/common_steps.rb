@@ -13,7 +13,9 @@ Then(/^There are some results available$/) do
   results = find_by_id "productresults"
   find('li.search-item', match: :first)
   expect(results.all("li.search-item").count).to be > 0
-  results.text.include?('Sonuç bulunamadı').should == false
+  set_wait_time 20
+  expect(page).to have_no_selector(".no-results")
+  revert_to_default_wait_time
 end
 
 Given(/^I open search result no "([^"]*)"$/) do |arg|
@@ -273,8 +275,21 @@ end
 Given(/^I search for a product "(.*?)"$/) do |arg|
   search_string = get_test_data(arg)
   puts "#{arg}:#{search_string}"
-  fill_in "productSearch" , :with => search_string
-  find_by_id("buttonProductSearch").click
+  (1..5).each do |i|
+    puts "Search attempt no: #{i}"
+    fill_in "productSearch" , :with => search_string
+    find_by_id("buttonProductSearch").click
+    set_wait_time 20
+    begin
+      find('.no-results')
+      puts "There are no results!!"
+      sleep 1
+    rescue Exception => e
+      puts "There are results!!"
+      break
+    end
+  end
+  revert_to_default_wait_time
 end
 
 And(/^The discount is "([^"]*)" percent on details$/) do |arg|
