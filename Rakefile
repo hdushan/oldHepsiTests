@@ -25,7 +25,6 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
   rerun_file = "rerun.txt"
   puts "\n\n***** Running feature file #{feature_to_run} on Server: #{ENV['host']} *****\n\n"
   begin
-    ENV["BLAH"] = "test"
     run_cucumber_tests_first_try(feature_to_run, "results.html")
   rescue Exception => e
     puts "\n\n***** Rerunning failed scenarios in feature #{feature_to_run} *****\n\n"
@@ -34,7 +33,25 @@ task :feature_run, [:feature_name,:host_server] do |t, args|
     while (scenario = scenario_list.gets)
       puts "*****    - #{scenario.strip} *****\n\n"
     end
-    ENV["BLAH"] = "hans"
+    run_cucumber_tests_second_try(rerun_file, "results_of_retry.html")
+  end
+end
+
+desc "Run a feature file, and rerun it if it failed"
+task :feature_run_with_host, [:feature_name,:host_environment] do |t, args|
+  feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
+  ENV['environment'] = "http://" + args[:host_environment]
+  rerun_file = "rerun.txt"
+  puts "\n\n***** Running feature file #{feature_to_run} on Environment: #{ENV['environment']} *****\n\n"
+  begin
+    run_cucumber_tests_first_try(feature_to_run, "results.html")
+  rescue Exception => e
+    puts "\n\n***** Rerunning failed scenarios in feature #{feature_to_run} *****\n\n"
+    puts "\n\n***** Scenarios that will be rerun: *****"
+    scenario_list = File.new(rerun_file, "r")
+    while (scenario = scenario_list.gets)
+      puts "*****    - #{scenario.strip} *****\n\n"
+    end
     run_cucumber_tests_second_try(rerun_file, "results_of_retry.html")
   end
 end
