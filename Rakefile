@@ -40,7 +40,7 @@ end
 desc "Run a feature file, and rerun it if it failed"
 task :feature_run_with_host, [:feature_name,:host_environment] do |t, args|
   feature_to_run = "features" + "/" + "#{args[:feature_name]}.feature"
-  ENV['environment'] = "http://" + args[:host_environment]
+  ENV['environment'] = args[:host_environment]
   rerun_file = "rerun.txt"
   puts "\n\n***** Running feature file #{feature_to_run} on Environment: #{ENV['environment']} *****\n\n"
   begin

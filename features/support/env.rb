@@ -14,6 +14,9 @@ require_relative 'data'
 
 $test_data_folder = File.join(Dir.pwd, "features", "test_data")
 
+puts "\n\nENV['host'] = #{ENV['host']}"
+puts "\n\nENV['environment'] = #{ENV['environment']}"
+
 unless ENV['environment']
   ENV['environment'] = "test"
 end
@@ -27,6 +30,8 @@ elsif ENV['environment']
 else
   Capybara.app_host = 'http://storefront.test.hepsiburada.com'#'http://localhost:99'
 end
+
+puts "\n\nCapybara.app_host = #{Capybara.app_host}\n\n"
 
 Capybara.run_server = false
 Capybara.default_selector = :css
