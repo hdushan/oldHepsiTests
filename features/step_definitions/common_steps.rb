@@ -78,11 +78,16 @@ Then(/^Product is listed in the checkout screen$/) do
 end
 
 When(/^I am on checkout screen$/) do
-  expect(page).to have_selector('header.box-header')
-  expect(page).to have_selector('.cart-title')
-  within('h1.cart-title') do
-    expect(page).to have_content('Sepetim')
+  expect(page).to have_title('Sepetim')
+  begin
+    set_wait_time 30
+    find('.fancybox-item.fancybox-close').click
+    puts "Popup found and closed"
+  rescue Exception => e
+    puts "No Popup found"
   end
+  revert_to_default_wait_time
+  expect(page).to have_selector('.cart-title')
 end
 
 When(/^I am on checkout screen on mobile$/) do
