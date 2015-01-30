@@ -166,7 +166,7 @@ def check_for_errors(report_file_format, report_file, threshold)
       puts "\n\n"
       last_row_that_has_totals = result_table[-1]
       total_error_rate_as_a_percentage = last_row_that_has_totals.to_hash[:aggregate_report_error]*100
-      pass_percent = 100-total_error_rate_as_a_percentage
+      pass_percent = (100-total_error_rate_as_a_percentage).round(2)
     else
       puts "\n\nWarning: Invalid report format \'#{report_file_format}\'. Cannot calculate pass percentage!!\n\n"
   end
