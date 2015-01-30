@@ -80,7 +80,7 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
   result_file = "loadtest_results.jtl"
-  result_file_html = "loadtest_results.html"
+  result_file_html = ""
   options = {}
   if (args[:server_url].nil? != true) and (args[:server_url].empty? != true)
     options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
@@ -97,7 +97,7 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   puts options
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
-    check_for_errors(result_file_html, 98)
+    #check_for_errors(result_file_html, 98)
   rescue => e
     puts e.to_s
     abort("\nLoad test not successful\n")
@@ -110,7 +110,7 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, 
   puts "Running Mobile Load Test against server: #{args[:server_url]} for duration: #{args[:duration]} secs with max concurrent users: #{args[:max_load]} and ramping up in #{args[:ramup_up]} secs"
   loadtest_script = "performance/loadtest_mobile.jmx"
   result_file = "loadtest_mobile_results.jtl"
-  result_file_html = "loadtest_mobile_results.html"
+  result_file_html = ""
   options = {}
   if (args[:server_url].nil? != true) and (args[:server_url].empty? != true)
     options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
@@ -127,7 +127,7 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, 
   puts options
   begin
     run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
-    check_for_errors(result_file_html, 98)
+    #check_for_errors(result_file_html, 98)
   rescue => e
     puts e.to_s
     abort("\nMobile Load test not successful\n")
@@ -140,41 +140,7 @@ task :warmup, [:server_url] do |t, args |
   puts "Running Warmup Load Test"
   loadtest_script = "performance/warmup.jmx"
   result_file = "warmup_results.jtl"
-  result_file_html = "warmup_results.html" #leave as '' if you dont create a html report
-  options = {}
-  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
-  begin
-    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
-  rescue => e
-    puts e.to_s
-    abort("\nWarmup Load test not successful\n")
-  end  
-end
-
-desc "Run Jmeter Warmup Tests"
-task :warmup_journey, [:server_url] do |t, args |
-  require 'jmeter-test-runner'
-  puts "Running Warmup Load Test"
-  loadtest_script = "performance/warmup_journey.jmx"
-  result_file = "warmup_journey_results.jtl"
-  result_file_html = "" #ie dont create a html report
-  options = {}
-  options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
-  begin
-    run_load_test(loadtest_script, result_file, "xml", result_file_html, options)
-  rescue => e
-    puts e.to_s
-    abort("\nWarmup Load test not successful\n")
-  end  
-end
-
-desc "Run Jmeter Warmup Tests"
-task :warmup_regression, [:server_url] do |t, args |
-  require 'jmeter-test-runner'
-  puts "Running Warmup Load Test"
-  loadtest_script = "performance/warmup_regression.jmx"
-  result_file = "warmup_regression_results.jtl"
-  result_file_html = "" #ie dont create a html report
+  result_file_html = "" #leave as '' if you dont create a html report
   options = {}
   options["SERVER_URL"] = args[:server_url] if not args[:server_url].nil?
   begin
