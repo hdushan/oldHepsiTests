@@ -1,7 +1,7 @@
 SERVER_URL: "http://storefront.test.hepsiburada.com"
 
 
-DATABASE_SERVER: 'euclide2.hepsiburada.dmz'
+DATABASE_SERVER: 'euclide_test.hepsiburada.dmz'
 DATABASE_PORT: '1433'
 DATABASE_USERNAME: 'DMARKET\amermer'
 DATABASE_PASSWORD: 'Aa12345_7'
