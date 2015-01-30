@@ -97,7 +97,7 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   puts options
   begin
     run_load_test(loadtest_script, result_file, "csv", report_file, options)
-    #check_for_errors(result_file_html, 98)
+    check_for_errors("csv", report_file, 98)
   rescue => e
     puts e.to_s
     abort("\nLoad test not successful\n")
@@ -127,7 +127,7 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, 
   puts options
   begin
     run_load_test(loadtest_script, result_file, "csv", report_file, options)
-    #check_for_errors(result_file_html, 98)
+    check_for_errors("csv", report_file, 98)
   rescue => e
     puts e.to_s
     abort("\nMobile Load test not successful\n")
@@ -151,13 +151,30 @@ task :warmup, [:server_url] do |t, args |
   end  
 end
 
-def check_for_errors(result_file_html, threshold)
-  require 'nokogiri'
-  page = Nokogiri::HTML(open(result_file_html)) 
-  puts page.text.include?("Test Results")
-  pass_percent = page.css(".details")[0].css("td")[2].text.split("%")[0].to_i
-  if pass_percent < threshold
-    raise "\n\nFAIL!!!!!!\nPass percentage of http requests (#{pass_percent}%) is less than the expected threshold (#{threshold}%)\n\n"
+def check_for_errors(report_file_format, report_file, threshold)
+  case report_file_format
+    when "html"
+      require 'nokogiri'
+      page = Nokogiri::HTML(open(report_file))
+      puts page.text.include?("Test Results")
+      pass_percent = page.css(".details")[0].css("td")[2].text.split("%")[0].to_i
+    when "csv"
+      require 'csv'
+      result_table = CSV.table(report_file)
+      puts "\n\n"
+      puts result_table
+      puts "\n\n"
+      last_row_that_has_totals = result_table[-1]
+      total_error_rate_as_a_percentage = last_row_that_has_totals.to_hash[:aggregate_report_error]*100
+      pass_percent = 100-total_error_rate_as_a_percentage
+    else
+      puts "\n\nWarning: Invalid report format \'#{report_file_format}\'. Cannot calculate pass percentage!!\n\n"
+  end
+  if defined? pass_percent
+    puts "\n\nOverall Pass percentage: #{pass_percent}%\n\n"
+    if pass_percent < threshold
+      raise "\n\nFAIL!!!!!!\nPass percentage of http requests (#{pass_percent}%) is less than the expected threshold (#{threshold}%)\n\n"
+    end
   end  
 end
 
