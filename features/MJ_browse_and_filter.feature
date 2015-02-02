@@ -7,7 +7,7 @@
       When I navigate to Mobile_Category
         | Beyaz Eşya / Mutfak |
       Then I select a sub category in mobile
-        | Beyaz Eşya & Ankastre  | Tümünü Gör |
+        | Beyaz Eşya & Ankastre  | Bulaşık Makineleri |
       When There are some results available
 #Scenario: Apply filter for mobile category
       Given I store search result count

@@ -7,7 +7,7 @@
       When I navigate to Mobile_Category
       | Foto / Kamera |
       Then I select a sub category in mobile
-      | Fotoğraf Makinesi ve Kamera | Tümünü Gör |
+      | Fotoğraf Makinesi ve Kamera | Outdoor / Sualtı Fotoğraf Makineleri |
       When There are some results available
 #Scenario: Add to cart from CLP
       Given I click load more results
