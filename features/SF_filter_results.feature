@@ -20,7 +20,6 @@ Feature: Filter search results
     And I can see the results
     Given I filter by rating
     Then I should only see products that fall under my preset range
-    And I see ratings for all products
 
   @28 @reliable
   Scenario: Filter by 'Brand'
@@ -129,7 +128,7 @@ Feature: Filter search results
   @24
   Scenario: Filter by promotions in search results
     Given I visit main page
-    When I search for "köpek maması"
+    When I search for "iphone"
     And I store search result count
     And I apply a filter
     | Sadece | Süper Hızlı Gönderidekiler |

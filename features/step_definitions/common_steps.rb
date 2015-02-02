@@ -152,7 +152,7 @@ end
 When(/^I apply a filter$/) do |table|
   # table is a table.hashes.keys # => [:Markalar, :Everest]
   values = table.raw
-  filter_tab = find ".filters-container"
+  filter_tab = find ".FiltersList"
   $result_stack.clear
   $result_stack.push get_result_count
   values.each { |x|

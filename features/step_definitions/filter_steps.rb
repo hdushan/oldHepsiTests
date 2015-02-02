@@ -14,19 +14,19 @@ Given(/^I filter by first level category$/) do
 end
 
 Given(/^I filter by brand$/) do
-  first('#brandList li label').click
+  first('.show-all-brands li label').click
 end
 
 Given /^I filter for (.*)/ do | filter_name |
-  find_by_id('brandList').find('label', :text => filter_name).click
+  find('.show-all-brands').find('label', :text => filter_name).click
 end
 
 When /^I remove the filter for (.*)/ do | filter_name |
-  find_by_id('brandList').find('label', :text => filter_name).click
+  find('.show-all-brands').find('label', :text => filter_name).click
 end
 
 Given(/^I filter by rating$/) do
-  first('#starRatingList li label').click
+  first('.rating-filter-list li label').click
 end
 
 Given(/^I filter by price$/) do
@@ -69,7 +69,9 @@ Then(/^I should see all results$/) do
 end
 
 Then(/^I cannot click the clear filters button$/) do
-  expect(find('#btnClearFilters')[:disabled]).to eq 'true'
+  set_wait_time 5
+  expect(page).to have_no_selector('#btnClearFilters')
+  revert_to_default_wait_time
 end
 
 Then /^I should not see any selected filters$/ do
