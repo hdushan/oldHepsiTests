@@ -130,13 +130,11 @@ Given(/^I select a sub category in browsing$/) do |table|
   #   $current_level = $current_level.first('li.expanded', :visible=>true)
   # }
   # $current_results = extract_number find_by_id('totalItems').text
-
   cat = find('.widget.CategorySelector')
   current = cat
   i = values.size - 1
   values.each_with_index { |x, index|
-    current.find('a', text: x, match: :first).click
-    wait_for_ajax
+    current.find('a', text: /^#{x}$/, match: :first).click
     if index == i
       break
     else
