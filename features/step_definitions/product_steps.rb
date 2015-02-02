@@ -341,6 +341,7 @@ And(/^I am able to select different variants$/) do
 end
 
 Then(/^Cart icon should have an indication of "([^"]*)"$/) do |arg|
+  find_by_id('cartItemCount', text: arg)
   expect(find_by_id('cartItemCount').text).to eq(arg)
 end
 
