@@ -7,7 +7,7 @@
       When I navigate to Mobile_Category
         | Hobi ve Oyun Konsolları |
       Then I select a sub category in mobile
-        | Oyun & Oyun Konsolları | Aksesuarlar | Tümünü Gör |
+        | Oyun & Oyun Konsolları | Aksesuarlar |
       When There are some results available
 #Scenario: Use more results button
       Given There are "20" results displayed

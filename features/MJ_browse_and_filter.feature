@@ -23,7 +23,7 @@
       And I am on checkout screen on mobile
       Then Product is listed in the checkout screen
       And I return to previous page
-      Then Cart icon should have an indication of "2"
+      Then Cart icon should have an indication of "1"
       And I clear cart items
       And I return to previous page
       Then Cart icon should have an indication of "0"

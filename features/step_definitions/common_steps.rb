@@ -677,9 +677,8 @@ end
 
 And(/^I clear cart items$/) do
   find_by_id('shoppingCart').click
-  sleep 5
-  header = first('header.box-header', visible: true)
-  table = first('table.cart-items')
+  header = find('header.box-header', visible: true)
+  table = find('.cart-item-list')
   if header == nil && table == nil
     empty = find('div.empty-cart')
     if empty == nil
