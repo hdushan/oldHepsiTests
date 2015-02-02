@@ -233,12 +233,18 @@ end
 Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
   case arg
     when 'smart'
-      find_by_id('bestMatching')['class'].include?('selected').should == true
+      within("#sortResultsHeader") do
+        expect(find('a', text: "Akıllı sıralama")['class']).to match(/selected/)
+      end
     when 'most-selling'
-      find_by_id('bestSelling')['class'].include?('selected').should == true
+      within("#sortResultsHeader") do
+        expect(find('a', text: "Öne Çıkanlar")['class']).to match(/selected/)
+      end
     when 'lowest-price'
       begin
-        find_by_id('lowestPrice')['class'].include?('selected').should == true
+        within("#sortResultsHeader") do
+          expect(find('a', text: "En düşük fiyat")['class']).to match(/selected/)
+        end
         products = all('.price-container').select{|x| x['style'] != "display: none;"}
         prices = products.collect{|x| format_price x.find('span.price').text}
         prices.should == prices.sort
@@ -248,7 +254,9 @@ Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
       end
     when 'highest-price'
       begin
-        find_by_id('highestPrice')['class'].include?('selected').should == true
+        within("#sortResultsHeader") do
+          expect(find('a', text: "En yüksek fiyat")['class']).to match(/selected/)
+        end
         products = all('.price-container').select{|x| x['style'] != "display: none;"}
         prices = products.collect{|x| format_price x.find('span.price').text}
         prices.should == (prices.sort).reverse
