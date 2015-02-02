@@ -29,7 +29,7 @@ Feature: Mobile Homepage is as expected
     And I navigate to Mobile_Category
       | Spor Outdoor |
     And I select a sub category in mobile
-      | Spor / Fitness | Spor Branşları | Tümünü Gör |
+      | Spor / Fitness | Spor Branşları |
     When I click the Hepsiburada logo
     Then I should be redirected to mobile Homepage
 
@@ -45,7 +45,7 @@ Feature: Mobile Homepage is as expected
     When I navigate to Mobile_Category
     | Ev Elektroniği |
     And I select a sub category in mobile
-    | Ses ve Görüntü Sistemleri | Tümünü Gör |
+    | Ses ve Görüntü Sistemleri |
     Then Clear button in filter should be disabled
     And I apply a filter on mobile
     | Markalar            | Philips |
@@ -58,7 +58,7 @@ Feature: Mobile Homepage is as expected
     And I navigate to Mobile_Category
       | Anne / Bebek / Oyuncak |
     And I select a sub category in mobile
-      | Anne / Bebek | Tümünü Gör |
+      | Anne / Bebek |
     And I store search result count
     When I apply a filter on mobile
       | Markalar            | Chicco   |
@@ -155,7 +155,7 @@ Feature: Mobile Homepage is as expected
     And I navigate to Mobile_Category
       | Spor Outdoor |
     When I select a sub category in mobile
-      | Spor / Fitness | Spor Branşları | Tümünü Gör |
+      | Spor / Fitness | Spor Branşları |
     Then There are some results available
     And Top sellers an discount items are not visible
 
@@ -165,6 +165,6 @@ Feature: Mobile Homepage is as expected
     And I navigate to Mobile_Category
       | Telefon |
     When I select a sub category in mobile
-      | Cep Telefonu ve SmartPhone | Tümünü Gör |
+      | Cep Telefonu ve SmartPhone |
     Then There are some results available
     And Top sellers an discount items are not visible
