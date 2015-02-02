@@ -131,7 +131,7 @@ Given(/^I select a sub category in browsing$/) do |table|
   # }
   # $current_results = extract_number find_by_id('totalItems').text
 
-  cat = find('.widget.CategoryTree')
+  cat = find('.widget.CategorySelector')
   current = cat
   i = values.size - 1
   values.each_with_index { |x, index|
