@@ -252,7 +252,7 @@ When(/^I click discounted items global filter$/) do
 end
 
 Then(/^I should be able to click show more products multiple times$/) do
-  expect(page).to have_selector('#moreResult')
+  expect(page).to have_selector('.link-more-results')
   for i in 1..5
     res = find_by_id('productresults')
     res.find('.search-item', match: :first)
@@ -265,7 +265,7 @@ Then(/^I should be able to click show more products multiple times$/) do
   results.size.should == RESULTS_PER_PAGE
 
   for i in 2..5
-    find_by_id('moreResult').click
+    find('.link-more-results').click
     wait_for_ajax
     res.find('.search-item', match: :first)
     results = res.all('.search-item')
