@@ -274,7 +274,7 @@ Then(/^I select a sub category in mobile$/) do |table|
   values = table.raw[0]
   i = values.size - 1
   wait_for_ajax
-  $current_level =  find('.category-list-items', :visible => true)
+  $current_level =  find('.CategorySelector', :visible => true)
   values.each_with_index { |x, index|
     cat = $current_level.find('a', text: /^#{x}$/, match: :first)
     cat.click
