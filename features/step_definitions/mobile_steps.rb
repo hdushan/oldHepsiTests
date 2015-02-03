@@ -271,7 +271,6 @@ Then(/^Results are sorted according to "([^"]*)" filter on mobile$/) do |arg|
 end
 
 Then(/^I select a sub category in mobile$/) do |table|
-  # table is a table.hashes.keys # => [:Fotoğraf Makinesi ve Kamera, :Tümünü Gör]
   values = table.raw[0]
   i = values.size - 1
   wait_for_ajax
