@@ -38,6 +38,17 @@ Capybara.default_selector = :css
 Capybara.default_wait_time = 30 #default wait time for ajax
 Capybara.ignore_hidden_elements = false #ignore hidden elements when testing, make helpful when you hide or show elements using javascript
 Capybara.save_and_open_page_path = File.expand_path(File.join(File.dirname(__FILE__), "../../screenshots/"))
+$default_wait_time = Capybara.default_wait_time
+
+Capybara::Node::Element.class_eval do
+  def click_at(x, y)
+
+      right = x - (native.size.width / 2)
+      top = y - (native.size.height / 2)
+      driver.browser.action.move_to(native).move_by(right.to_i, top.to_i).click.perform
+
+  end
+end
 
 def is_windows?
   (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil

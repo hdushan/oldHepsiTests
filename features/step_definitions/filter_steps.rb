@@ -30,7 +30,7 @@ Given(/^I filter by rating$/) do
 end
 
 Given(/^I filter by price$/) do
-  first('#otherFilterList-actual_price li label').click
+  find("li", :text => "Fiyat Aralığı").first("li label").click
 end
 
 Given(/^I filter by shipping style$/) do
@@ -38,7 +38,7 @@ Given(/^I filter by shipping style$/) do
 end
 
 Given(/^I filter by case type$/) do
-  first('#otherFilterList-851_dp li label').click
+  find("li", :text => "Kılıf Tipi").first("li label").click
 end
 
 Given(/^I filter by material type$/) do

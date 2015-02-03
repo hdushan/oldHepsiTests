@@ -377,16 +377,17 @@ And(/^I unhover$/) do
 end
 
 Then(/^I don't get the error page$/) do
+  set_wait_time 5
   begin
-    set_wait_time 5
-    page.should have_no_selector 'img[src="/Content/images/error.jpg"]'
-    revert_to_default_wait_time
-  rescue RSpec::Expectations::ExpectationNotMetError
-    revert_to_default_wait_time
     url = page.current_url
-    visit_main_page
+    page.should have_no_selector 'img[src="/Content/images/error.jpg"]'
+  rescue Exception => e
     puts "Page not found error!!! on:\n#{url}\n"
+    revert_to_default_wait_time
+    raise e
   end
+    revert_to_default_wait_time
+    visit_main_page
 end
 
 When(/^I use this link form old site to access new site "([^"]*)"$/) do |arg|
