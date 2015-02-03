@@ -677,25 +677,23 @@ end
 
 And(/^I clear cart items$/) do
   find_by_id('shoppingCart').click
-  header = find('header.box-header', visible: true)
-  table = find('.cart-item-list')
-  if header == nil && table == nil
-    empty = find('div.empty-cart')
-    if empty == nil
-      fail "Cart not found"
-    end
-  elsif header == nil
-    find_by_id('clearCart').click
-    sleep 2
-  elsif table == nil
-    button = first('a', text: "Sil")
+  expect(page.title).to eq("Sepetim")
+  i=0
+  set_wait_time 30
+  begin
+    button = find('a', text: "Sil")
     while button != nil
+      i = i+1
+      puts "Clearing item #{i}"
       button.click
       wait_for_ajax
       sleep 1
-      button = first('a', text: "Sil")
+      button = find('a', text: "Sil")
     end
+  rescue Exception => e
+    puts "No items in cart"
   end
+  revert_to_default_wait_time
 end
 
 Then(/^I set default wait time to "([^"]*)" seconds$/) do |arg|

@@ -47,8 +47,9 @@ Feature: Product page is as expected
 
   @138
   Scenario: Display original price on search page
+    Given I visit main page
     Given I search for "SGCK0560740"
-    Then I see the original price 59,90 TL on the product with sku SGCK0560740
+    Then I see the original price 167,01 TL on the product with sku SGCK0560740
 
   @140
   Scenario: Display non-generic returns policy for DVD
