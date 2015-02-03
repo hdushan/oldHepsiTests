@@ -95,7 +95,7 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration, :pass_percenta
     options["DURATION"] = args[:duration] 
   end
   if (args[:pass_percentage].nil? != true) and (args[:pass_percentage].empty? != true)
-    expected_pass_percentage = args[:pass_percentage]
+    expected_pass_percentage = args[:pass_percentage].to_i
   else
     expected_pass_percentage = 98
   end
@@ -130,7 +130,7 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration, :pass_p
     options["DURATION"] = args[:duration] 
   end
   if (args[:pass_percentage].nil? != true) and (args[:pass_percentage].empty? != true)
-    expected_pass_percentage = args[:pass_percentage]
+    expected_pass_percentage = args[:pass_percentage].to_i
   else
     expected_pass_percentage = 98
   end
