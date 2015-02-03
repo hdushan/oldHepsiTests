@@ -75,7 +75,7 @@ def run_cucumber_tests_second_try(rerun_file, results_file)
 end
 
 desc "Run Jmeter Performance Tests (Desktop)"
-task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
+task :performance, [:server_url, :max_load, :ramup_up, :duration, :pass_percentage] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Load Test"
   loadtest_script = "performance/loadtest.jmx"
@@ -94,10 +94,15 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
   if (args[:duration].nil? != true) and (args[:duration].empty? != true)
     options["DURATION"] = args[:duration] 
   end
+  if (args[:pass_percentage].nil? != true) and (args[:pass_percentage].empty? != true)
+    expected_pass_percentage = args[:pass_percentage]
+  else
+    expected_pass_percentage = 98
+  end
   puts options
   begin
     run_load_test(loadtest_script, result_file, "csv", report_file, options)
-    check_for_errors("csv", report_file, 98)
+    check_for_errors("csv", report_file, expected_pass_percentage)
   rescue => e
     puts e.to_s
     abort("\nLoad test not successful\n")
@@ -105,7 +110,7 @@ task :performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
 end
 
 desc "Run Jmeter Performance Tests (Mobile)"
-task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, args |
+task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration, :pass_percentage] do |t, args |
   require 'jmeter-test-runner'
   puts "Running Mobile Load Test against server: #{args[:server_url]} for duration: #{args[:duration]} secs with max concurrent users: #{args[:max_load]} and ramping up in #{args[:ramup_up]} secs"
   loadtest_script = "performance/loadtest_mobile.jmx"
@@ -124,10 +129,15 @@ task :mobile_performance, [:server_url, :max_load, :ramup_up, :duration] do |t, 
   if (args[:duration].nil? != true) and (args[:duration].empty? != true)
     options["DURATION"] = args[:duration] 
   end
+  if (args[:pass_percentage].nil? != true) and (args[:pass_percentage].empty? != true)
+    expected_pass_percentage = args[:pass_percentage]
+  else
+    expected_pass_percentage = 98
+  end
   puts options
   begin
     run_load_test(loadtest_script, result_file, "csv", report_file, options)
-    check_for_errors("csv", report_file, 98)
+    check_for_errors("csv", report_file, expected_pass_percentage)
   rescue => e
     puts e.to_s
     abort("\nMobile Load test not successful\n")
