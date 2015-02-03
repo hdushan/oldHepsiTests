@@ -141,7 +141,8 @@ Then(/^I see no variant with prices is selected$/) do
 end
 
 Then(/^I see an error message asking me to make a selection$/) do
-  wait_for_visibility(page, 'div #notification', true)
+  # wait_for_visibility(page, 'div .notification', true)
+  find_by_id("notification", :visible => true)
 end
 
 When(/^I select the first variant with price$/) do
