@@ -275,17 +275,14 @@ Then(/^I select a sub category in mobile$/) do |table|
   values = table.raw[0]
   i = values.size - 1
   wait_for_ajax
-  $current_level =  find('.widget.CategoryTree', :visible => true)
+  $current_level =  find('.category-list-items', :visible => true)
   values.each_with_index { |x, index|
-    cat = $current_level.find('a', :text => x, match: :first)
+    cat = $current_level.find('a', text: /^#{x}$/, match: :first)
     cat.click
-    #wait_for_ajax
     sleep 1
     if index == i
       break
     end
-    #$current_level.first('ul.children-category', :visible=>true)
-    #$current_level = $current_level.first('li.expanded', :visible=>true)
   }
   $current_results = extract_number find_by_id('totalItems').text
 end
