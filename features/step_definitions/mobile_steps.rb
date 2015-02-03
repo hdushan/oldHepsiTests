@@ -271,17 +271,18 @@ Then(/^Results are sorted according to "([^"]*)" filter on mobile$/) do |arg|
 end
 
 Then(/^I select a sub category in mobile$/) do |table|
-  values = table.raw[0]
-  i = values.size - 1
-  wait_for_ajax
-  $current_level =  find('.CategorySelector', :visible => true)
-  values.each_with_index { |x, index|
-    cat = $current_level.find('a', text: /^#{x}$/, match: :first)
-    cat.click
-    sleep 1
-    if index == i
-      break
-    end
-  }
+  sub_categories = table.raw[0]
+  main_sub_category = sub_categories[0]
+  main_sub_category_item = nil
+  within('.CategorySelector') do
+    main_sub_category_item = find('.items .main-item', :visible => true, :text => /#{main_sub_category}/)
+    main_sub_category_item.find("a", :visible => true, :text => /#{main_sub_category}/).click
+  end
+
+  next_level_sub_categories = sub_categories[1..sub_categories.size]
+
+  next_level_sub_categories.each do |sub_category|
+    main_sub_category_item.find("a", :text => /#{sub_category}/, :visible => true, :match => :first).click
+  end
   $current_results = extract_number find_by_id('totalItems').text
 end
