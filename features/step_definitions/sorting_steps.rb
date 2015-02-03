@@ -1,46 +1,48 @@
 #encoding: UTF-8
 When(/^I sort by bestseller$/) do
   find('button.button.light').click
-  click_link 'bestSelling'
+  find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar').click
 end
 
 When(/^I sort by lowest price$/) do
   find('button.button.light').click
-  click_link 'lowestPrice'
+  find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat').click
 end
 
 When(/^I sort by highest price$/) do
   find('button.button.light').click
-  click_link 'highestPrice'
+  find_by_id('sortResultsHeader').find('a', text: 'En yüksek fiyat').click
 end
 
 Then(/^I see the bestseller button is not selected$/) do
   find('button.button.light').click
-  expect(find('#bestSelling')[:class]).to_not include 'selected'
+  set_wait_time 30
+  expect(find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar')[:class]).to_not include 'selected'
+  revert_to_default_wait_time
   find('button.button.light').click
 end
 
 Then(/^I see the lowest price button is selected$/) do
   find('button.button.light').click
-  expect(find('#lowestPrice')[:class]).to include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat')[:class]).to include 'selected'
   find('button.button.light').click
 end
 
 Then(/^I see the bestseller button is selected$/) do
   find('button.button.light').click
-  expect(find('#bestSelling')[:class]).to include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar')[:class]).to include 'selected'
   find('button.button.light').click
 end
 
 Then(/^I see the best matching button is selected$/) do
   find('button.button.light').click
-  expect(find('#bestMatching')[:class]).to include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'Akıllı sıralama')[:class]).to include 'selected'
   find('button.button.light').click
 end
 
 Then(/^I see the highest price button is selected$/) do
   find('button.button.light').click
-  expect(find('#highestPrice')[:class]).to include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'En yüksek fiyat')[:class]).to include 'selected'
   find('button.button.light').click
 end
 
