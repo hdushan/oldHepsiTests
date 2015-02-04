@@ -664,11 +664,14 @@ Then(/^I should see deal of the day counter in details$/) do
   expect(hours_on_page).to be_an(Integer)
   if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
     puts "Strict check for Deal of the Day Time counter"
-    result = execute_sql "select SaleEnd from dbo.Retail_SuperOffer where sku='#{sku}'"
+    result = execute_sql %"select top 1 sale_end as SaleEnd from
+                         ( select SaleEnd as sale_end from dbo.Retail_SuperOffer where sku= '#{sku}' and status='2'
+                          union select sale_end as sale_end from Hepsiburada_SearchProducts where sku= '#{sku}' and StockQtyType=1
+                          and sale_end>=getdate() and sale_start<getdate()) a"
     expect(result.count).to eq(1)
     t = Time.new
     result.each{|x| t =  x['SaleEnd']}
-    now = Time.now - 10800
+    now = Time.now - 7200
     diff = Time.diff(now, t, '%d')
     str = diff[:diff]
     puts "str = #{str}"
@@ -691,7 +694,10 @@ Then(/^I should see stock left in details$/) do
   expect(item_count.to_i).to be_an(Integer)
   if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
     puts "Strict check for Deal of the Day Time counter"
-    result = execute_sql "select StockQty from dbo.Retail_SuperOffer where sku='#{sku}' and Status = 2 ORDER BY ID DESC"
+    result = execute_sql %"select top 1 stock as StockQty
+                          from ( select StockQty as stock from dbo.Retail_SuperOffer where sku='#{sku}' and status='2'
+                          union select StockQty as stock from Hepsiburada_SearchProducts where sku= '#{sku}' and
+                          StockQtyType=1 and sale_end>=getdate() and sale_start<getdate()) a"
     expect(result.count).to be > 0
     stock_from_database = result.first['StockQty'].to_i
     expect(item_count).to eq(stock_from_database)
