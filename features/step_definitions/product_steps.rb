@@ -175,7 +175,6 @@ end
 
 Then(/^I see the original price (.*) on the product with sku (.*)$/) do | price, sku |
   expect(find('.product-old-price', match: :first).text).to include(price)
-  expect(find_link("", :href => /#{sku}/).text).to include(price)
 end
 
 Then(/^I see the original price (.*) on the product details page$/) do | price |
