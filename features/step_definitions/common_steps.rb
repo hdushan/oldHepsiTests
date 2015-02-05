@@ -238,7 +238,7 @@ Then(/^Results are sorted according to "([^"]*)" filter$/) do |arg|
       end
     when 'most-selling'
       within("#sortResultsHeader") do
-        expect(find('a', text: "Öne Çıkanlar")['class']).to match(/selected/)
+        expect(find('a', text: "Çok Satanlar")['class']).to match(/selected/)
       end
     when 'lowest-price'
       begin

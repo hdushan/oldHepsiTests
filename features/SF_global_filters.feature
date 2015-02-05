@@ -9,7 +9,7 @@
     Given I visit main page
     Then I should see "Süper Hızlı Gönderiler" global filter on main page
     And I should see "İndirimli Ürünler" global filter on main page
-    And I should see "Öne Çıkanlar" global filter on main page
+    And I should see "Çok Satanlar" global filter on main page
     And I should see "Kargo Bedavalar" global filter on main page
     And I should see "Bugün Teslimat" global filter on main page
 
@@ -20,7 +20,7 @@
     | <category> | <sub_category> |
     Then I should see "Süper Hızlı Gönderiler" global filter on CLP
     And I should see "İndirimli Ürünler" global filter on CLP
-    And I should see "Öne Çıkanlar" global filter on CLP
+    And I should see "Çok Satanlar" global filter on CLP
     And I should see "Kargo Bedavalar" global filter on CLP
     And I should see "Bugün Teslimat" global filter on CLP
     Examples:
@@ -48,7 +48,7 @@
     | filter                 | filter_for_clp |
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
-    | Öne Çıkanlar           | Öne Çıkanlar           |
+    | Çok Satanlar           | Çok Satanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
     | Bugün Teslimat         | Bugün Teslimat         |
 
@@ -87,7 +87,7 @@
     | filter                 | filter_on_results      |
     | Süper Hızlı Gönderiler | Süper hızlı gönderiler |
     | İndirimli Ürünler      | İndirimli ürünler      |
-    | Öne Çıkanlar           | Öne Çıkanlar           |
+    | Çok Satanlar           | Çok Satanlar           |
     | Kargo Bedavalar        | Kargo Bedavalar        |
     | Bugün Teslimat         | Bugün Teslimat         |
 
@@ -136,7 +136,7 @@
       Then I see this global filter order on mainpage
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Öne Çıkanlar      |
+      | Çok Satanlar     |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |
 
@@ -148,17 +148,17 @@
       Then I see this global filter order on GFLP
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Öne Çıkanlar      |
+      | Çok Satanlar      |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |
 
     @1040
     Scenario: Global filters order on CLP
       Given I visit main page
-      When I apply global filter "Öne Çıkanlar" on "homepage"
+      When I apply global filter "Çok Satanlar" on "homepage"
       Then I see this global filter order on CLP
       | Kargo Bedavalar |
       | İndirimli ürünler |
-      | Öne Çıkanlar     |
+      | Çok Satanlar     |
       | Süper hızlı gönderiler |
       | Bugün Teslimat         |

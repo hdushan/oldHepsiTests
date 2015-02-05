@@ -42,4 +42,3 @@ Feature: Make a search and test both sorting and filter clearing
     Then Results are sorted according to "lowest-price" filter
     When I sort with "highest-price" filter
     Then Results are sorted according to "highest-price" filter
-

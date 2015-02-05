@@ -13,7 +13,7 @@
       | Kargo Bedavalar |
       | Süper Hızlı Gönderiler |
       | İndirimli Ürünler |
-      | Öne Çıkanlar |
+      | Çok Satanlar |
 
     Scenario: Apply a filter on Kargo Bedavalar Global filters page
       Given I visit mobile main page
@@ -35,9 +35,9 @@
       Then I should have a different result count
       And I am still on mobile page
 
-    Scenario: Apply a filter on Öne Çıkanlar Global filters page
+    Scenario: Apply a filter on Çok Satanlar Global filters page
       Given I visit mobile main page
-      When I apply global filter "Öne Çıkanlar" on "homepage"
+      When I apply global filter "Çok Satanlar" on "homepage"
       And There are some results available
       And I store search result count
       And I apply a filter on mobile

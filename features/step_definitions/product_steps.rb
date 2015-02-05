@@ -475,7 +475,7 @@ end
 
 Then(/^There is a top sellers section$/) do
   sect = find('.top-seller')
-  sect.should have_content('Öne Çıkanlar')
+  sect.should have_content('Çok Satanlar')
   sect.find('div.box.product', match: :first)
   sect.all('div.box.product').size.should <= 9
 end
