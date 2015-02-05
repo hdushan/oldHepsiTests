@@ -10,7 +10,7 @@ Feature: Product page for Deal of Day products
     Given I visit main page
     When I search for "TELCEPNOKLU620-B"
     And I open search result no "1"
-    Then I should see deal of the day counter in details
+    Then I should see real deal of the day counter in details
 
  @727 @1095
  Scenario: See stock left for Deal of the Day items
