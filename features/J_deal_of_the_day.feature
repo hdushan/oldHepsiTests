@@ -13,6 +13,6 @@ Feature: Deal of the Day
     Then All deals of the day should have stock indicators
     And I open search result no "1"
  #Scenario: See time left for Deal of the Day items
-    Then I should see deal of the day counter in details
+    Then I should see all deal of the day counter in details
  #Scenario: See stock left for Deal of the Day items
    Then I should see stock left in details

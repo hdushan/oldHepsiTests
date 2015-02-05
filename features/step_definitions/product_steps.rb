@@ -645,6 +645,23 @@ When(/^I click on first deal of the day$/) do
   find_by_id("dealOfTheDayCarousel").find(".owl-item.active").find("img").click
 end
 
+
+Then(/^I should see all deal of the day counter in details$/) do
+  button = find_by_id("addToCart")
+  sku = button["data-sku"]
+  puts "sku: #{sku}"
+  page.all('.timer-wrapper').select{|x| x['style'] != 'display: none'} .size.should > 0
+  page.should have_selector(".timer-box.sale-end-timer-days", text: "Gün")
+  page.should have_selector(".timer-box.sale-end-timer-hours", text: "Saat")
+  page.should have_selector(".timer-box.sale-end-timer-minutes", text: "Dk")
+  page.should have_selector(".timer-box.sale-end-timer-seconds", text: "Sn")
+  sleep 10 #Until we find a way to wait till the time has updated on the page.
+  days_on_page = find(".timer-box.sale-end-timer-days", text: "Gün").find('div.digits').text.to_i
+  hours_on_page= find(".timer-box.sale-end-timer-hours", text: "Saat").find('div.digits').text.to_i
+  expect(days_on_page).to be_an(Integer)
+  expect(hours_on_page).to be_an(Integer)
+end
+
 Then(/^I should see deal of the day counter in details$/) do
   button = find_by_id("addToCart")
   sku = button["data-sku"]
