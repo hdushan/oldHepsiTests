@@ -216,7 +216,7 @@ When(/^I sort with "([^"]*)" filter$/) do |arg|
       find_by_id('sortResultsHeader').find('a', text: 'Akıllı sıralama').click
     when 'most-selling'
       find(".sort-wrapper .button").click
-      find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar').click
+      find_by_id('sortResultsHeader').find('a', text: 'Çok Satanlar').click
     when 'lowest-price'
       find(".sort-wrapper .button").click
       find_by_id('sortResultsHeader').find('a', text: 'En düşük fiyat').click

@@ -1,7 +1,7 @@
 #encoding: UTF-8
 When(/^I sort by bestseller$/) do
   find('button.button.light').click
-  find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar').click
+  find_by_id('sortResultsHeader').find('a', text: 'Çok Satanlar').click
 end
 
 When(/^I sort by lowest price$/) do
@@ -17,7 +17,7 @@ end
 Then(/^I see the bestseller button is not selected$/) do
   find('button.button.light').click
   set_wait_time 30
-  expect(find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar')[:class]).to_not include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'Çok Satanlar')[:class]).to_not include 'selected'
   revert_to_default_wait_time
   find('button.button.light').click
 end
@@ -30,7 +30,7 @@ end
 
 Then(/^I see the bestseller button is selected$/) do
   find('button.button.light').click
-  expect(find_by_id('sortResultsHeader').find('a', text: 'Öne Çıkanlar')[:class]).to include 'selected'
+  expect(find_by_id('sortResultsHeader').find('a', text: 'Çok Satanlar')[:class]).to include 'selected'
   find('button.button.light').click
 end
 
