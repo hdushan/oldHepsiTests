@@ -58,7 +58,7 @@ Feature: Mobile Homepage is as expected
     And I navigate to Mobile_Category
       | Anne / Bebek / Oyuncak |
     And I select a sub category in mobile
-      | Anne / Bebek |
+      | Anne / Bebek | Tümünü Gör |
     And I store search result count
     When I apply a filter on mobile
       | Markalar            | Chicco   |

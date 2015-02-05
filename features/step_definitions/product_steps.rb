@@ -670,7 +670,7 @@ Then(/^I should see deal of the day counter in details$/) do
     expect(result.count).to eq(1)
     t = Time.new
     result.each{|x| t =  x['SaleEnd']}
-    now = Time.now - 10800
+    now = Time.now
     diff = Time.diff(now, t, '%d')
     str = diff[:diff]
     puts "str = #{str}"
