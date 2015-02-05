@@ -700,13 +700,13 @@ Then(/^I should see deal of the day counter in details$/) do
   if get_test_data("DEAL_OF_THE_DAY_STRICT")==true
     puts "Strict check for Deal of the Day Time counter"
     result = execute_sql %"select top 1 sale_end as SaleEnd from
-                         ( select SaleEnd as sale_end from dbo.Retail_SuperOffer where sku= '#{sku}' and status='2'
-                          union select sale_end as sale_end from Hepsiburada_SearchProducts where sku= '#{sku}' and StockQtyType=1
-                          and sale_end>=getdate() and sale_start<getdate()) a"
+( select SaleEnd as sale_end, 1 as o from dbo.Retail_SuperOffer where sku= 'TELCEPNOKLU620-B' and status='2'
+    union select sale_end as sale_end, 2 as o from Hepsiburada_SearchProducts where sku= 'TELCEPNOKLU620-B' and StockQtyType=1
+    and sale_end>=getdate() and sale_start<getdate()) a order by o"
     expect(result.count).to eq(1)
     t = Time.new
     result.each{|x| t =  x['SaleEnd']}
-    now = Time.now - 7200
+    now = Time.now
     diff = Time.diff(now, t, '%d')
     str = diff[:diff]
     puts "str = #{str}"
