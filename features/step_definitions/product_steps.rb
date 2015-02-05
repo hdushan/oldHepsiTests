@@ -677,8 +677,9 @@ Then(/^I should see real deal of the day counter in details$/) do
     puts "dbhours = #{hours_from_database}"
     expect(days_on_page).to eq(days_from_database)
     expect(hours_on_page).to eq(hours_from_database)
+  end
+  
 end
-
 
 Then(/^I should see deal of the day counter in details$/) do
   button = find_by_id("addToCart")
