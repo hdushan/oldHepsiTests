@@ -1,8 +1,8 @@
 GIT
   remote: http://gitlab.hepsiburada.com/everyone/jmeter-test-runner.git
-  revision: f303f17ba48e28f0adbbd68c22d3b5c78e664eeb
+  revision: a640c788e14adedfdaf802e8a98a5f8b7c592690
   specs:
-    jmeter-test-runner (0.2.8)
+    jmeter-test-runner (0.3.3)
 
 GEM
   remote: http://rubygems.org/
@@ -56,6 +56,7 @@ GEM
     netrc (0.10.2)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    progressbar (0.21.0)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -104,9 +105,11 @@ DEPENDENCIES
   faker
   headless
   jmeter-test-runner!
+  progressbar
   rake
   rest-client
   rspec
+  rubyzip
   selenium-webdriver
   time_diff
   tiny_tds
