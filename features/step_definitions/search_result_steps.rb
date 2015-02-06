@@ -308,8 +308,8 @@ Then(/^There is a search result count message for search "([^"]*)"$/) do |arg|
   expect(page).to have_selector('.search-results-title')
   title = find('header.container.title-wrapper')
   expect(title).to have_content(arg)
-  expect(title).to have_content("araması için")
-  expect(title).to have_content("sonuç bulundu.")
+  # expect(title).to have_content("araması için")
+  # expect(title).to have_content("sonuç bulundu.")
   (extract_number find_by_id('totalItems').text).to_i.should > 0
 end
 
