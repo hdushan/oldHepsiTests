@@ -10,7 +10,7 @@
     Given I visit main page
     Then I am at main page
 #Scenario: Search for a product by title
-    When I search for "kitap"
+    When I search for a product "BOOK"
     Then There are some results available
 #Scenario: Go to product details and add to cart
     Given I open search result no "1"
